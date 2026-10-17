@@ -1,12 +1,39 @@
 # South-View HBCU Connections
 
 ## Use
-Open `index.html` in a modern browser. No installation, API key, or live network connection is required. Keep `index.html`, `app.js`, `data.js`, `style.css`, `images/`, and `fonts/` together when uploading to a static host.
+Serve these files on a static website host, or run `python3 -m http.server 8000` and open `http://localhost:8000`. No installation or API key is required. Keep `index.html`, `app.js`, `data.js`, `content-config.js`, `sheet-content.js`, `style.css`, `images/`, and `fonts/` together. The school cards and bundled profiles work offline; live Google Sheets updates require a network connection and an HTTP(S) page.
 
 For Wix, embed the hosted page in an HTML iframe with title="Atlanta HBCU connections", width="100%", and a height appropriate for the host page. Allow enough height for the school cards on mobile.
 
 ## School selection
 Five school buttons display bundled official institutional logos, school names, and an Explore timeline action. Founding years are not displayed on the main page. The desktop layout has three cards above two centered cards; tablets use two columns and phones use one. Image sources are recorded in `images/schools/SOURCES.md`. Images retain their original colors and proportions; if one fails to load, the school name remains visible and the button still works.
+
+## Add people without editing code
+
+- [Open the Add a Person form](https://docs.google.com/forms/d/e/1FAIpQLSdKrniEZMaU0MyBf-WwBQU4qLjea9jDq3xMqhyVrKjxc7lkYg/viewform)
+- [Open the South-View content sheet](https://docs.google.com/spreadsheets/d/1L8A5vvuU3bUk8sq8bk_3koTH5QejEJ-VgaYrUnA-HDo/edit) (editors only)
+
+1. Submit the form: College, Timeline year, Name, Life dates, College connection, Institutional Connection and Legacy, Biography, Burial Location, Photo, Sources. Life dates, Burial Location, and Sources are optional. A portrait image is required. Google requires sign-in for file uploads.
+2. In **Form Responses 1**, check **Published** (column L) on the submitted row. Edit response cells directly for later corrections. Uncheck Published to remove a sheet-managed profile.
+3. The **Website** tab fills automatically. Leave its headers and formula intact. Only this tab is published, as CSV. Keep automatic republishing enabled. Visitors get updates on page load after Google's publishing/cache delay; an already open page needs a refresh.
+
+Enter one point per line for Legacy and Biography. The loader removes leading bullet/number markers, blank lines, and excess whitespace, and renders consistent site typography. Sources accept one full HTTP(S) URL per line, optionally preceded by a title and ` | `. For Burial Location, paste the verified Google Maps share link or a coordinate URL such as `https://maps.google.com/?q=LATITUDE,LONGITUDE`. Leave it blank if unknown; the existing Burial Location section will show "Location is not available." A supplied invalid link rejects the entry.
+
+All required values must be present. Years must have four digits, be earlier than 2026, and not predate the chosen institution. Invalid source URLs and duplicate people are rejected. Every portrait must load successfully **before** its person and timeline entry are added. Broken/private images, incomplete profiles, and invalid rows are skipped as complete records. Errors go to the browser console; the website does not write to the sheet.
+
+The form's dedicated portrait-upload folder must allow public viewing for images to work for signed-out site visitors. Use that folder only for portraits intended for publication. Publishing the Website tab does not publish the images themselves. Drive file links in the feed are converted to image thumbnail URLs automatically. File hosting limits still apply.
+
+`content-config.js` contains the published CSV URL, exclusive year limit, and timeout. `sheet-content.js` parses CSV, validates complete records, checks photos, and updates the existing profile/timeline arrays in one step. A failed feed request leaves the existing content untouched. The two bundled profiles remain as a fallback and are replaced (without duplicate names) by matching published sheet entries; unpublishing a replacement restores its bundled version.
+
+Developer checks: `node --test tests/sheet-content.test.js`. To manually reload the configured feed in the console, use `southViewContent.refresh()`. Read `southViewContent.status` for load state and rejected rows. No credentials or write API keys belong in this public static site.
+
+The Website tab currently uses this formula in A2, with columns A:K headed College, Timeline year, Name, Life dates, College connection, Institutional Connection and Legacy, Biography, Photo, Sources, Entry ID, Burial Location:
+
+```excel
+=IFNA(FILTER({'Form Responses 1'!B:D,'Form Responses 1'!H:J,'Form Responses 1'!E:G,ARRAYFORMULA("sheet-"&ROW('Form Responses 1'!A:A)),'Form Responses 1'!K:K},'Form Responses 1'!L:L=TRUE),"")
+```
+
+After connecting the feed, deploy the updated HTML and both new scripts along with the existing assets once. Future content changes only require the form/sheet workflow.
 
 ## Edit content
 
@@ -63,7 +90,7 @@ Profiles show the person's name, life dates, and school connection, followed by 
 | `bio` | Array of factual bullet sentences about their life, preferably in chronological order. |
 | `image` | Optional object with `url`, `alt`, and optional `credit`. Unlike a school logo, this is an object rather than a path string. |
 | `burialLocation` | Optional Google Maps URL string for the burial location. Appears after Biography as a link, never as a bullet. Missing, empty, or invalid web links display "Location is not available." |
-| `sources` | Optional array of `{ title, url }` research references. These are stored in the data but are not currently rendered in the profile. |
+| `sources` | Optional array of `{ title, url }` research references. These appear as clickable references in a Sources section at the end of the profile. |
 
 Example format using an excerpt of the existing Ludie Clay Andrews profile:
 
@@ -158,4 +185,4 @@ southViewHistory.updateEntry('spelman', 'new-entry', {sortYear: 1955});
 southViewHistory.removeEntry('spelman', 'new-event');
 ```
 
-The runtime API changes the current page's memory, not a server database. To retain changes, save them in data.js or connect this API to your own content backend. No entry-creation form or suggestion feature is included. `HistoryStore` validates dates and references, and notifies the open timeline on changes. `timelineLayout` calculates positions and collision lanes.
+The runtime API changes the current page's memory, not a server database. To retain manual changes, save them in data.js or use the Google Form/Sheet workflow above. The entry form is separate from the public website. `HistoryStore` validates dates and references, and notifies the open timeline on changes. `timelineLayout` calculates positions and collision lanes.

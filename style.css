@@ -125,3 +125,6 @@ body{margin:0;background:#fff}.sv-feature{--ink:#1a1d1a;--gold:#a69666;--muted:#
  .sv-school-name { margin-bottom: 22px; }
 }
 @media (prefers-reduced-motion: reduce) { .sv-feature .sv-school-card { transition: none; transform: none; } }
+
+.sv-profile-copy { overflow-wrap: anywhere; }
+.sv-profile-sources a { color: inherit; text-underline-offset: .2em; }
