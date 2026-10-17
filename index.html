@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>HBCU Connections | South-View</title><meta name="description" content="Explore Atlanta HBCUs and their connections to South-View Cemetery on an interactive map."><link rel="stylesheet" href="style.css"></head><body>
+<main id="southview-hbcu" class="sv-feature">
+ <h1>HBCU Connections</h1>
+ <p class="sv-intro">Explore Atlanta’s historically Black colleges and universities. Select a campus to discover its connections to South-View Cemetery.</p>
+ <div class="sv-map-frame">
+  <div id="map-interactions">
+   <svg id="campus-map" role="group" aria-label="Interactive Atlanta map. Use arrow keys to pan, plus and minus to zoom." tabindex="0" xmlns="http://www.w3.org/2000/svg"><title>Atlanta HBCU map</title><desc>Real OpenStreetMap street geometry. Drag to pan, scroll or pinch to zoom, and select a campus marker to open its timeline. An institution dropdown provides an alternative to the markers.</desc><g id="geography" aria-hidden="true"></g><g id="campus-markers"></g></svg>
+   <div class="sv-map-toolbar"><label for="institution-select">Explore an institution</label><select id="institution-select"><option value="">Select an HBCU</option></select></div>
+   <div class="sv-zoom" aria-label="Map controls"><button id="zoom-in" aria-label="Zoom in">+</button><button id="zoom-out" aria-label="Zoom out">−</button><button id="reset-map" aria-label="Reset to campus view" title="Reset to campus view">⌂</button></div>
+   <div class="sv-map-bottom"><div class="sv-legend"><span><i></i> HBCU</span><button id="fit-all">View all locations</button></div><div class="sv-map-meta"><span id="map-scale"></span><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a></div></div>
+  </div>
+  <div class="sv-sr" id="map-announcement" aria-live="polite"></div>
+ </div>
+  <section id="timeline-overlay" class="sv-timeline sv-panel" role="dialog" aria-modal="true" aria-labelledby="timeline-title" hidden>
+   <button id="close-timeline" class="sv-close" aria-label="Close timeline">×</button><p class="sv-kicker">South-View · HBCU connections</p><h2 id="timeline-title"></h2><p id="timeline-description"></p><div class="sv-timeline-toolbar"><div><button id="timeline-prev" aria-label="Previous timeline entries">←</button><button id="timeline-next" aria-label="Next timeline entries">→</button></div></div><div id="timeline-entries" tabindex="0" aria-label="Horizontal historical timeline"></div><div class="sv-timeline-foot"><span id="timeline-range"></span><span>Click a name to explore their story.</span><a id="founding-source" target="_blank" rel="noopener noreferrer">Institution history ↗</a></div>
+  </section>
+  <div id="profile-backdrop" class="sv-backdrop" hidden></div>
+  <section id="profile-overlay" class="sv-profile sv-panel" role="dialog" aria-modal="true" aria-labelledby="profile-title" hidden><button id="close-profile" class="sv-close" aria-label="Close profile">×</button><div id="profile-content"></div></section>
+ <p class="sv-hint">Drag to move the map. Scroll, pinch, or use + and − to zoom.</p>
+</main><script src="map-data.js"></script><script src="data.js"></script><script src="app.js"></script></body></html>
