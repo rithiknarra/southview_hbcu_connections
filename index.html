@@ -4,15 +4,17 @@
  <div id="school-browser">
   <h1>HBCU Connections</h1>
   <p class="sv-intro">Discover the connections between Atlanta&rsquo;s historically Black colleges and universities and South-View Cemetery.</p>
-  <section class="sv-schools" aria-labelledby="school-heading" aria-describedby="school-instructions">
-   <div class="sv-school-heading"><h2 id="school-heading">Choose a school. Discover a story.</h2><p id="school-instructions">Select a school to explore its timeline, then choose a person&rsquo;s name to read their story.</p></div>
+  <section class="sv-schools" aria-labelledby="school-heading">
+   <div class="sv-school-heading"><h2 id="school-heading">Choose a school. Discover a story.</h2></div>
    <div id="school-grid" class="sv-school-grid"></div>
    <noscript><p>Please enable JavaScript to explore the school timelines and stories.</p></noscript>
   </section>
  </div>
   <section id="timeline-overlay" class="sv-timeline sv-panel" role="dialog" aria-modal="true" aria-labelledby="timeline-title" hidden>
-   <button type="button" id="back-to-schools" class="sv-back"><span aria-hidden="true">←</span> All schools</button><p class="sv-kicker">South-View · HBCU connections</p><h2 id="timeline-title"></h2><p id="timeline-description"></p><div class="sv-timeline-toolbar"><div><button id="timeline-prev" aria-label="Previous timeline entries">←</button><button id="timeline-next" aria-label="Next timeline entries">→</button></div></div><div id="timeline-entries" tabindex="0" aria-label="Horizontal historical timeline"></div><div class="sv-timeline-foot"><span id="timeline-range"></span><span>Click a name to explore their story.</span><a id="founding-source" target="_blank" rel="noopener noreferrer">Institution history ↗</a></div>
+   <div class="sv-bar"><div class="sv-wrap"><button type="button" id="back-to-schools" class="sv-back"><span aria-hidden="true">←</span> <span class="sv-back-label">All schools</span></button><a id="founding-source" class="sv-history" target="_blank" rel="noopener noreferrer">Institution history <span aria-hidden="true">↗</span><span class="sv-sr"> (opens in a new tab)</span></a></div></div>
+   <div class="sv-hero"><div class="sv-wrap sv-school-head"><div id="timeline-crest" class="sv-crest"><img id="timeline-logo" alt=""></div><div class="sv-school-intro"><h2 id="timeline-title"></h2><p class="sv-founded">Founded <b id="timeline-founded"></b></p><p id="timeline-description"></p></div></div></div>
+   <div class="sv-band"><div class="sv-wrap sv-band-head"><h3>Timeline · <span id="timeline-range"></span></h3><div class="sv-band-tools"><span>Select a name to read their story</span><button type="button" id="timeline-prev" aria-label="Previous timeline entries">←</button><button type="button" id="timeline-next" aria-label="Next timeline entries">→</button></div></div><div class="sv-wrap"><div id="timeline-entries" tabindex="0" aria-label="Horizontal historical timeline"></div></div></div>
   </section>
   <div id="profile-backdrop" class="sv-backdrop" hidden></div>
-  <section id="profile-overlay" class="sv-profile sv-panel" role="dialog" aria-modal="true" aria-labelledby="profile-title" hidden><button type="button" id="back-to-timeline" class="sv-back"><span aria-hidden="true">←</span> <span id="profile-back-label">Back to timeline</span></button><div id="profile-content"></div></section>
+  <section id="profile-overlay" class="sv-profile sv-panel" role="dialog" aria-modal="true" aria-labelledby="profile-title" hidden><div class="sv-bar"><div class="sv-wrap"><button type="button" id="back-to-timeline" class="sv-back"><span aria-hidden="true">←</span> <span id="profile-back-label" class="sv-back-label">Back to timeline</span></button></div></div><div id="profile-content"></div></section>
 </main><script src="data.js"></script><script src="content-config.js"></script><script src="sheet-content.js"></script><script src="app.js"></script></body></html>
