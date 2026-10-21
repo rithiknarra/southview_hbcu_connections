@@ -135,46 +135,6 @@ const PEOPLE = [
     "burialLocation": ""
   },
   {
-    "id": "hank-aaron",
-    "name": "Hank Aaron",
-    "years": "February 5, 1934 - January 22, 2021",
-    "image": {
-      "url": "images/people/Hank Aaron.jpg",
-      "alt": "Portrait of Hank Aaron",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hank_Aaron_1974.jpg",
-      "license": "Public domain",
-      "licenseUrl": "",
-      "attributionRequired": false
-    },
-    "connections": [
-      {
-        "institutionId": "medicine",
-        "label": "Donor: Hank and Billye Aaron announced a $3 million gift to Morehouse School of Medicine in 2015."
-      }
-    ],
-    "bio": [
-      "Born in Mobile, Alabama; became a Major League Baseball player with the Milwaukee and Atlanta Braves and the Milwaukee Brewers.",
-      "Surpassed Babe Ruth's career home-run record in 1974 and finished his playing career with 755 home runs.",
-      "Used his public standing and philanthropy to support educational opportunity and community health."
-    ],
-    "legacy": [
-      "The Aarons' 2015 gift supported expansion of the Hugh Gloster Medical Education building and creation of the Billye Suber Aaron Student Pavilion.",
-      "His relationship to the medical school was philanthropic; he was not a medical-school graduate.",
-      "Participated in a public vaccination event at the school in January 2021 to encourage confidence in vaccination."
-    ],
-    "burialLocation": "",
-    "sources": [
-      {
-        "title": "Hank Aaron - Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Hank_Aaron"
-      },
-      {
-        "title": "Morehouse School of Medicine gift announcement",
-        "url": "https://www.msm.edu/RSSFeedArticles/September2015/HankBillyeAaronStudentPavilion.php"
-      }
-    ]
-  },
-  {
     "id": "samuel-archer",
     "name": "Samuel Archer",
     "years": "December 23, 1870 - January 15, 1941",
@@ -185,7 +145,7 @@ const PEOPLE = [
     "connections": [
       {
         "institutionId": "morehouse",
-        "label": "Educator, coach, and fifth president of Morehouse College, serving as president from 1931 to 1937."
+        "label": "Served as the fifth president of Morehouse College from 1931 to 1937. Also worked at the college as an educator and coach."
       }
     ],
     "bio": [
@@ -221,7 +181,7 @@ const PEOPLE = [
     "connections": [
       {
         "institutionId": "clark",
-        "label": "Dean and researcher at Atlanta University, a predecessor of Clark Atlanta University; joined after leaving Lincoln University in 1957."
+        "label": "Joined Atlanta University in 1957 and served as a dean and researcher. Atlanta University later became part of Clark Atlanta University."
       }
     ],
     "bio": [
@@ -301,7 +261,7 @@ const PEOPLE = [
     "connections": [
       {
         "institutionId": "clark",
-        "label": "Became professor of music at Clark University in Atlanta in 1895; Clark University later became Clark College, a predecessor of Clark Atlanta University."
+        "label": "Became a professor of music at Clark University in 1895. Clark University later became Clark College, a predecessor of Clark Atlanta University."
       }
     ],
     "bio": [
@@ -337,7 +297,7 @@ const PEOPLE = [
     "connections": [
       {
         "institutionId": "morris",
-        "label": "Appointed the second principal of Morris Brown College in 1886."
+        "label": "Became the second principal of Morris Brown College in 1886."
       }
     ],
     "bio": [
@@ -359,42 +319,6 @@ const PEOPLE = [
     ]
   },
   {
-    "id": "john-wesley-dobbs",
-    "name": "John Wesley Dobbs",
-    "years": "March 26, 1882 - August 30, 1961",
-    "image": {
-      "url": "images/people/John Wesley Dobbs.webp",
-      "alt": "Portrait of John Wesley Dobbs"
-    },
-    "connections": [
-      {
-        "institutionId": "morehouse",
-        "label": "Completed the high-school course at Atlanta Baptist College, later Morehouse College, in 1901."
-      }
-    ],
-    "bio": [
-      "Atlanta civic leader, railway mail clerk, and longtime leader of the Prince Hall Masons.",
-      "Organized campaigns to expand Black voter registration and political participation.",
-      "Co-founded the Atlanta Negro Voters League with A. T. Walden in 1946."
-    ],
-    "legacy": [
-      "His 1901 credential was from the institution's preparatory course; it is not presented here as a college degree.",
-      "Used education, public speaking, and civic organizing to advocate for Black Atlantans.",
-      "His six daughters graduated from Spelman College, including opera singer Mattiwilda Dobbs."
-    ],
-    "burialLocation": "",
-    "sources": [
-      {
-        "title": "John Wesley Dobbs - Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/John_Wesley_Dobbs"
-      },
-      {
-        "title": "John Wesley Dobbs Family papers - Amistad Research Center",
-        "url": "https://amistadresearch.wordpress.com/2011/05/09/john-wesley-dobbs-family-papers-1873-2001/"
-      }
-    ]
-  },
-  {
     "id": "mattiwilda-dobbs",
     "name": "Mattiwilda Dobbs",
     "years": "July 11, 1925 - December 8, 2015",
@@ -409,17 +333,18 @@ const PEOPLE = [
     "connections": [
       {
         "institutionId": "spelman",
-        "label": "Graduated from Spelman College in 1946 with a degree in Spanish and music."
+        "label": "Graduated from Spelman College in 1946 with a bachelor’s degree in music."
       }
     ],
     "bio": [
-      "Atlanta-born coloratura soprano and daughter of civic leader John Wesley Dobbs.",
-      "Continued vocal study in New York and earned a master's degree in Spanish at Columbia University.",
-      "Built an international opera career, performing at major European and American opera houses."
+      "Broke racial barriers in international opera, becoming the first Black singer to perform at Milan’s La Scala in 1953.",
+      "Refused to perform for segregated audiences.",
+      "Helped prepare future generations of performers through teaching at the University of Texas and Howard University."
     ],
     "legacy": [
-      "Spelman teachers encouraged her to pursue vocal training.",
-      "Became the first Black singer to perform at La Scala in 1953 and later sang leading roles at the Metropolitan Opera.",
+      "Earned her bachelor’s degree in music from Spelman in 1946.",
+      "Developed her voice under Spelman instructors Naomi Maise and Willis Laurence James.",
+      "Was one of six Dobbs sisters who graduated from Spelman.",
       "Received an honorary doctorate in fine arts from Spelman in 1979."
     ],
     "burialLocation": "",
@@ -427,6 +352,22 @@ const PEOPLE = [
       {
         "title": "Mattiwilda Dobbs - Wikipedia",
         "url": "https://en.wikipedia.org/wiki/Mattiwilda_Dobbs"
+      },
+      {
+        "title": "Mattiwilda Dobbs Janzon — The HistoryMakers",
+        "url": "https://thehistorymakers.org/biography/mattiwilda-dobbs-janzon-40"
+      },
+      {
+        "title": "The Dobbs Girls — Spelman Glee Club newsletter, June 2017",
+        "url": "https://www.spelman.edu/_1_Docs-and-Files/academics/music/2017-06-newsletter.pdf"
+      },
+      {
+        "title": "The legend of Mattiwilda Dobbs — Atlanta Journal-Constitution",
+        "url": "https://images.ajc.com/news/atlanta-news/the-legend-of-mattiwilda-dobbs/HUWHVUYVRJAFLHWEJTPWFSR6XI/"
+      },
+      {
+        "title": "South-View Bench by the Road — Toni Morrison Society",
+        "url": "https://www.tonimorrisonsociety.org/twenty-third-bench-by-the-road.php"
       }
     ]
   },
@@ -438,7 +379,7 @@ const PEOPLE = [
     "connections": [
       {
         "institutionId": "clark",
-        "label": "Earned a bachelor's degree from Atlanta University in 1927 and later taught at Clark College; both are predecessors of Clark Atlanta University."
+        "label": "Earned a bachelor's degree from Atlanta University in 1927 and later taught at Clark College. Both are predecessors of Clark Atlanta University."
       }
     ],
     "bio": [
@@ -555,7 +496,7 @@ const PEOPLE = [
     "connections": [
       {
         "institutionId": "morris",
-        "label": "Namesake of Alonzo Herndon Stadium, which opened at Morris Brown College in 1948, after his death."
+        "label": "Alonzo Herndon Stadium at Morris Brown College was named in his honor. The stadium opened in 1948, after his death."
       }
     ],
     "bio": [
@@ -581,53 +522,6 @@ const PEOPLE = [
     ]
   },
   {
-    "id": "graham-w-jackson-sr",
-    "name": "Graham W. Jackson Sr.",
-    "years": "February 22, 1903 - January 15, 1983",
-    "image": {
-      "url": "images/people/Graham W. Jackson Sr..jpg",
-      "alt": "Portrait of Graham W. Jackson Sr.",
-      "credit": "Ed Clark / The LIFE Picture Collection",
-      "attributionRequired": true
-    },
-    "connections": [
-      {
-        "institutionId": "morehouse",
-        "label": "Studied at Morehouse College during the early 1920s."
-      },
-      {
-        "institutionId": "clark",
-        "label": "Also studied at Atlanta University, a predecessor of Clark Atlanta University; the available biography does not identify his attendance dates."
-      }
-    ],
-    "bio": [
-      "Multi-instrumentalist and music educator from Virginia who built a long career in Atlanta.",
-      "Taught music at Booker T. Washington High School from 1928 to 1940.",
-      "Performed for President Franklin D. Roosevelt and became nationally known through a photograph taken after Roosevelt's death."
-    ],
-    "legacy": [
-      "Sources place his Morehouse attendance in the early 1920s but differ on the exact years; the timeline therefore uses an approximate date.",
-      "His biography also identifies Atlanta University study; 'By 1983' is a life-end bound, not a graduation or enrollment year.",
-      "Combined performance with music education and community outreach."
-    ],
-    "burialLocation": "",
-    "sources": [
-      {
-        "title": "Graham W. Jackson Sr. - Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Graham_W._Jackson_Sr."
-      },
-      {
-        "title": "Graham Jackson family interview - Georgia Public Broadcasting",
-        "url": "https://www.gpb.org/blogs/hullingers-musings/2025/04/17/80-year-westside-atlanta-roots"
-      },
-      {
-        "title": "Graham Jackson biography - The Syncopated Times",
-        "url": "https://syncopatedtimes.com/graham-washington-jackson-sr-1903-1983/"
-      }
-    ],
-    "researchNote": "Atlanta University attendance dates need confirmation; Morehouse dates differ across sources."
-  },
-  {
     "id": "jesse-b-blayton",
     "name": "Jesse B. Blayton",
     "years": "December 6, 1897 - September 7, 1977",
@@ -644,7 +538,7 @@ const PEOPLE = [
       },
       {
         "institutionId": "clark",
-        "label": "Taught accounting at Atlanta University beginning in 1930; Atlanta University is a predecessor of Clark Atlanta University."
+        "label": "Began teaching accounting at Atlanta University in 1930. Atlanta University later became part of Clark Atlanta University."
       }
     ],
     "bio": [
@@ -821,7 +715,7 @@ const PEOPLE = [
     "connections": [
       {
         "institutionId": "morehouse",
-        "label": "Earned a Bachelor of Theology from Morehouse College in 1931 and later served as a trustee."
+        "label": "Earned a Bachelor of Theology from Morehouse College in 1930 and later served as a trustee."
       }
     ],
     "bio": [
@@ -831,7 +725,7 @@ const PEOPLE = [
     ],
     "legacy": [
       "Began theological study at Morehouse in 1925 while working to support his family.",
-      "Completed his theology degree in 1931.",
+      "Completed his theology degree in 1930.",
       "Maintained a long association with the college through service on its board of trustees."
     ],
     "burialLocation": "",
@@ -839,58 +733,10 @@ const PEOPLE = [
       {
         "title": "Martin Luther King Sr. - Wikipedia",
         "url": "https://en.wikipedia.org/wiki/Martin_Luther_King_Sr."
-      }
-    ]
-  },
-  {
-    "id": "john-lewis",
-    "name": "John Lewis",
-    "years": "February 21, 1940 - July 17, 2020",
-    "image": {
-      "url": "images/people/John Lewis.jpg",
-      "alt": "Portrait of John Lewis",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Lewis-2006_(cropped).jpg",
-      "license": "Public domain",
-      "licenseUrl": "",
-      "attributionRequired": false
-    },
-    "connections": [
-      {
-        "institutionId": "morehouse",
-        "label": "Honorary-degree recipient from Morehouse College, documented by 2003; his earned degrees were from institutions in Nashville."
       },
       {
-        "institutionId": "clark",
-        "label": "Honorary-degree recipient from Clark Atlanta University, documented by 2003."
-      },
-      {
-        "institutionId": "medicine",
-        "label": "Morehouse School of Medicine's 2017 commencement speaker and honorary Doctor of Humane Letters recipient."
-      }
-    ],
-    "bio": [
-      "Civil-rights leader born near Troy, Alabama; studied at the American Baptist Theological Seminary and Fisk University.",
-      "Chaired the Student Nonviolent Coordinating Committee and helped lead the 1965 Selma voting-rights march.",
-      "Represented Georgia's Fifth Congressional District in the U.S. House of Representatives from 1987 until his death."
-    ],
-    "legacy": [
-      "Morehouse College and Clark Atlanta University recognized his public service with honorary degrees.",
-      "The 'By 2003' entries reflect the date of a Congressional Record account, not verified award years.",
-      "Addressed Morehouse School of Medicine graduates in 2017 and received an honorary doctorate there."
-    ],
-    "burialLocation": "",
-    "sources": [
-      {
-        "title": "John Lewis - Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/John_Lewis"
-      },
-      {
-        "title": "Morehouse School of Medicine commencement announcement",
-        "url": "https://www.msm.edu/RSSFeedArticles/May2017/johnlewismsm33rdcommencementaddress.php"
-      },
-      {
-        "title": "Congressional Record, October 7, 2003",
-        "url": "https://www.govinfo.gov/content/pkg/CRECB-2003-pt18/pdf/CRECB-2003-pt18.pdf"
+        "title": "King at Morehouse — Morehouse College (father, Class of 1930)",
+        "url": "https://morehouse.edu/academics/centers-and-institutes/martin-luther-king-jr-collection/king-at-morehouse"
       }
     ]
   },
@@ -902,7 +748,7 @@ const PEOPLE = [
     "connections": [
       {
         "institutionId": "clark",
-        "label": "Attended Clark College and returned to teach there in 1971; Clark College is a predecessor of Clark Atlanta University."
+        "label": "Attended Clark College and returned as a teacher in 1971. Clark College later became part of Clark Atlanta University."
       }
     ],
     "bio": [
@@ -931,7 +777,7 @@ const PEOPLE = [
     "connections": [
       {
         "institutionId": "clark",
-        "label": "Clark College graduate and three-sport athlete before joining the Atlanta Black Crackers in 1937."
+        "label": "Graduated from Clark College, where he played baseball, basketball, and football. Clark College later became part of Clark Atlanta University."
       }
     ],
     "bio": [
@@ -957,46 +803,6 @@ const PEOPLE = [
     ]
   },
   {
-    "id": "herman-j-russell",
-    "name": "Herman J. Russell",
-    "years": "December 23, 1930 - November 15, 2014",
-    "image": {
-      "url": "images/people/Herman J. Russell.png",
-      "alt": "Portrait of Herman J. Russell"
-    },
-    "connections": [
-      {
-        "institutionId": "clark",
-        "label": "Philanthropic supporter: included Clark Atlanta University in a 1999 pledge supporting entrepreneurship education."
-      },
-      {
-        "institutionId": "morehouse",
-        "label": "Philanthropic supporter: included Morehouse College in the same 1999 entrepreneurship-education pledge."
-      }
-    ],
-    "bio": [
-      "Atlanta entrepreneur who founded H. J. Russell & Company and helped build major projects across the city.",
-      "Studied building construction at Tuskegee Institute.",
-      "Supported civil-rights leaders and educational initiatives through philanthropy."
-    ],
-    "legacy": [
-      "Pledged $4 million in 1999 across Clark Atlanta University, Morehouse College, Georgia State University, and Tuskegee University.",
-      "His connection here is as a donor, not as a Clark or Morehouse graduate.",
-      "The Clark College graduate mentioned in family biographies was his wife, Otelia Hackney Russell."
-    ],
-    "burialLocation": "",
-    "sources": [
-      {
-        "title": "Herman J. Russell - Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Herman_J._Russell"
-      },
-      {
-        "title": "Herman Russell - New Georgia Encyclopedia",
-        "url": "https://www.georgiaencyclopedia.org/articles/business-economy/herman-j-russell-1930-2014/"
-      }
-    ]
-  },
-  {
     "id": "henry-mcneal-turner",
     "name": "Henry McNeal Turner",
     "years": "February 1, 1834 - May 8, 1915",
@@ -1011,7 +817,7 @@ const PEOPLE = [
     "connections": [
       {
         "institutionId": "morris",
-        "label": "Namesake of Turner Theological Seminary, named in his honor in 1900 while it was part of Morris Brown College."
+        "label": "Turner Theological Seminary was named in his honor in 1900. At the time, the seminary was part of Morris Brown College."
       }
     ],
     "bio": [
@@ -1091,7 +897,7 @@ const PEOPLE = [
     "connections": [
       {
         "institutionId": "clark",
-        "label": "Graduated from Atlanta University in 1883 with training in education; the institution is a predecessor of Clark Atlanta University."
+        "label": "Graduated from Atlanta University in 1883 with training in education. The institution is a predecessor of Clark Atlanta University."
       }
     ],
     "bio": [
@@ -1128,7 +934,7 @@ const PEOPLE = [
     "connections": [
       {
         "institutionId": "morehouse",
-        "label": "Morehouse alumnus who joined the faculty in 1946 and chaired the Department of Philosophy and Religion."
+        "label": "Graduated from Morehouse College in 1937. Joined its faculty in 1946 and chaired the Department of Philosophy and Religion."
       }
     ],
     "bio": [
@@ -1150,6 +956,10 @@ const PEOPLE = [
       {
         "title": "Auburn Avenue Research Library history - Georgia Tech",
         "url": "https://leading-edge.iac.gatech.edu/building-memories/auburn-avenue-research-library/"
+      },
+      {
+        "title": "From Samuel W. Williams — Stanford King Institute (A.B., Morehouse, 1937)",
+        "url": "https://kinginstitute.stanford.edu/king-papers/documents/samuel-w-williams"
       }
     ]
   },
@@ -1182,6 +992,231 @@ const PEOPLE = [
       {
         "title": "Asa G. Yancey Sr. - Wikipedia",
         "url": "https://en.wikipedia.org/wiki/Asa_G._Yancey_Sr."
+      }
+    ]
+  },
+  {
+    "id": "ernestine-erskine-brazeal",
+    "name": "Ernestine Erskine Brazeal",
+    "years": "1905 – 2002",
+    "image": {
+      "url": "images/people/Ernestine Erskine Brazeal.jpg",
+      "alt": "Portrait of Ernestine Erskine Brazeal",
+      "sourceUrl": "https://netroamer.com/jj/"
+    },
+    "connections": [
+      {
+        "institutionId": "spelman",
+        "label": "Graduated from Spelman College in 1928. Later taught history and served as the college’s alumnae secretary."
+      }
+    ],
+    "legacy": [
+      "Taught history at Spelman College.",
+      "Served as Spelman’s alumnae secretary from 1943 to 1976.",
+      "Returned after retirement to help prepare for Spelman’s centennial.",
+      "Helped collect and preserve publications, photographs, and artifacts that became the foundation of the Spelman College Archives."
+    ],
+    "bio": [
+      "Helped preserve Black women’s educational history through her work collecting historical records and photographs.",
+      "Alongside her husband, Morehouse educator Brailsford Reese Brazeal, welcomed students into their home for mentoring and gatherings with educators."
+    ],
+    "burialLocation": "",
+    "sources": [
+      {
+        "title": "Taronda Elise Spencer memorial program — Digital Library of Georgia",
+        "url": "https://dlg.usg.edu/record/aarl_afpc_spencertarondaelise20130601"
+      },
+      {
+        "title": "Reflections, April 2006, pages 2–3 — Georgia Historic Preservation Division",
+        "url": "https://georgiawildlife.com/sites/default/files/hpd/pdf/AfricanAmericanHistoricPlaces/April%202006.pdf"
+      },
+      {
+        "title": "Brailsford Reese Brazeal family burial record",
+        "url": "https://peoplelegacy.com/dr_brailsford_reese_brazeal-5q1H7g1"
+      }
+    ]
+  },
+  {
+    "id": "irene-carolyn-dobbs-jackson",
+    "name": "Irene Carolyn Dobbs Jackson",
+    "years": "February 16, 1908 – January 19, 1999",
+    "image": {
+      "url": "images/people/Irene Carolyn Dobbs Jackson.jpg",
+      "alt": "Portrait of Irene Carolyn Dobbs Jackson",
+      "sourceUrl": "https://dlg.usg.edu/record/aarl_afpc_jacksonirenecarolyndobbs19990123"
+    },
+    "connections": [
+      {
+        "institutionId": "spelman",
+        "label": "Graduated from Spelman College in 1929. Later taught French, Latin, and music at the college."
+      }
+    ],
+    "legacy": [
+      "Graduated as valedictorian of Spelman’s Class of 1929.",
+      "Taught French, Latin, and music at Spelman during her teaching career.",
+      "Was the first of six Dobbs sisters to graduate from Spelman."
+    ],
+    "bio": [
+      "Helped desegregate Atlanta’s public library in 1959 by becoming its first Black library-card holder.",
+      "Educated generations of students during a 50-year teaching career across several historically Black institutions.",
+      "Led the Department of Foreign Languages at North Carolina Central University during the final 19 years of her career."
+    ],
+    "burialLocation": "",
+    "sources": [
+      {
+        "title": "Irene Carolyn Dobbs Jackson funeral program — Digital Library of Georgia",
+        "url": "https://dlg.usg.edu/record/aarl_afpc_jacksonirenecarolyndobbs19990123"
+      },
+      {
+        "title": "The Dobbs Girls — Spelman Glee Club newsletter, June 2017",
+        "url": "https://www.spelman.edu/_1_Docs-and-Files/academics/music/2017-06-newsletter.pdf"
+      },
+      {
+        "title": "The Life of Dr. Irene Dobbs Jackson — Westside Future Fund",
+        "url": "https://www.westsidefuturefund.org/the-woman-behind-a-family-of-history-makers-the-life-of-dr-irene-dobbs-jackson/"
+      }
+    ]
+  },
+  {
+    "id": "louisa-georgia-jackson-williams",
+    "name": "Louisa Georgia Jackson Williams",
+    "years": "October 11, 1942 – May 19, 2021",
+    "image": {
+      "url": "images/people/Louisa Georgia Jackson Williams.jpg",
+      "alt": "Portrait of Louisa Georgia Jackson Williams",
+      "sourceUrl": "https://www.carlmwilliams.com/obituaries/louisa-jackson-williams"
+    },
+    "connections": [
+      {
+        "institutionId": "spelman",
+        "label": "Graduated from Spelman College in 1964 with a Bachelor of Arts in Psychology."
+      }
+    ],
+    "legacy": [
+      "Earned a Bachelor of Arts in Psychology from Spelman in 1964.",
+      "Participated in the college Glee Club.",
+      "Supported Spelman through philanthropic giving."
+    ],
+    "bio": [
+      "Educated children for approximately 35 years in Atlanta, Kalamazoo, Michigan, and Downingtown, Pennsylvania.",
+      "Earned Teacher of the Year recognition at West Bradford Elementary School.",
+      "Contributed to community service through the Magnolia Links and served on the diaconate of First Congregational Church."
+    ],
+    "burialLocation": "",
+    "sources": [
+      {
+        "title": "Louisa Georgia (Jackson) Williams obituary — Carl M. Williams Funeral Directors",
+        "url": "https://www.carlmwilliams.com/obituaries/louisa-jackson-williams"
+      },
+      {
+        "title": "Spelman philanthropy report, 2008–09",
+        "url": "https://www.spelman.edu/_1_Docs-and-Files/giving/philanthropy-report-2008-09.pdf"
+      }
+    ]
+  },
+  {
+    "id": "marguerite-f-simon",
+    "name": "Marguerite F. Simon",
+    "years": "Died April 25, 2014",
+    "image": {
+      "url": "images/people/Marguerite F. Simon portrait.jpg",
+      "alt": "Portrait of Marguerite F. Simon",
+      "sourceUrl": "https://dlg.usg.edu/record/aarl_afpc_simonmargueritef20140503"
+    },
+    "connections": [
+      {
+        "institutionId": "spelman",
+        "label": "Graduated from Spelman College in 1935. Later returned as a professor of physical education."
+      }
+    ],
+    "legacy": [
+      "Graduated from Spelman College in 1935.",
+      "Returned to Spelman as a professor of physical education, promoting students’ health and physical development."
+    ],
+    "bio": [
+      "Devoted her career to physical education and the well-being of generations of students.",
+      "Was a longtime member of Atlanta’s First Congregational Church."
+    ],
+    "burialLocation": "",
+    "sources": [
+      {
+        "title": "Marguerite F. Simon obituary",
+        "url": "https://www.carlmwilliams.com/obituaries/marguerite-simon"
+      },
+      {
+        "title": "Spelman philanthropy report, 2010–11",
+        "url": "https://www.spelman.edu/_1_Docs-and-Files/giving/philanthropy-report-2010-2011.pdf"
+      },
+      {
+        "title": "Marguerite F. Simon funeral program — Digital Library of Georgia",
+        "url": "https://dlg.usg.edu/record/aarl_afpc_simonmargueritef20140503"
+      }
+    ]
+  },
+  {
+    "id": "vashti-elizabeth-calanthe-scott-ellis",
+    "name": "Vashti Elizabeth Calanthe Scott-Ellis",
+    "years": "April 20, 1906 – March 25, 1995",
+    "image": {
+      "url": "images/people/Vashti Elizabeth Calanthe Scott-Ellis.jpg",
+      "alt": "Portrait of Vashti Elizabeth Calanthe Scott-Ellis",
+      "sourceUrl": "https://dlg.usg.edu/record/aarl_afpc_scottellisvashtielizabethcalanthe19950330"
+    },
+    "connections": [
+      {
+        "institutionId": "spelman",
+        "label": "Graduated from Spelman Seminary in 1925."
+      }
+    ],
+    "legacy": [
+      "Graduated from Spelman Seminary in 1925.",
+      "Received the Lincoln Medal for writing for her essay on President Lincoln.",
+      "Established a writing award at Spelman with her sisters Esther and Ruth in memory of their parents."
+    ],
+    "bio": [
+      "Joined her family in publishing the Atlanta Daily World in 1932 and served on its editorial staff.",
+      "Wrote the advice column “Eleanor” and the parenting column “Majoring with Minors,” as well as poems and short stories.",
+      "Founded the Door of Hope in Atlanta to help unmarried mothers.",
+      "Served as PTA president at E. R. Carter Elementary School and as a Sunday School assistant at Ebenezer Baptist Church."
+    ],
+    "burialLocation": "",
+    "sources": [
+      {
+        "title": "Vashti Scott-Ellis funeral program — Digital Library of Georgia",
+        "url": "https://dlg.usg.edu/record/aarl_afpc_scottellisvashtielizabethcalanthe19950330"
+      }
+    ]
+  },
+  {
+    "id": "dorothy-alexander-brooks",
+    "name": "Dorothy Alexander Brooks",
+    "years": "1941 – 2012",
+    "image": {
+      "url": "images/people/Dorothy Alexander Brooks.jpg",
+      "alt": "Portrait of Dorothy Alexander Brooks",
+      "sourceUrl": "https://dlg.usg.edu/record/aarl_afpc_brooksdorothyalexander20120128"
+    },
+    "connections": [
+      {
+        "institutionId": "spelman",
+        "label": "Graduated from Spelman College in 1962 with a degree in Social Science and Education."
+      }
+    ],
+    "legacy": [
+      "Earned an undergraduate degree in Social Science and Education from Spelman College as a member of the Class of 1962.",
+      "Remained connected to the college through the Spelman College Alumnae Association."
+    ],
+    "bio": [
+      "Worked in federal government for 25 years, including service with the U.S. Department of Housing and Urban Development.",
+      "Directed a Fair Housing and Equal Opportunity office in Louisville, Kentucky.",
+      "Received recognition from the NAACP and federal agencies for her work on behalf of the rights and welfare of others.",
+      "Volunteered with the Friendship Baptist Church tutorial program and participated in civic organizations, including Delta Sigma Theta and the Atlanta Chapter of Girl Friends."
+    ],
+    "burialLocation": "",
+    "sources": [
+      {
+        "title": "Dorothy Alexander Brooks funeral program — Digital Library of Georgia",
+        "url": "https://dlg.usg.edu/record/aarl_afpc_brooksdorothyalexander20120128"
       }
     ]
   }
@@ -1225,27 +1260,54 @@ const TIMELINES = [
         "sortYear": 1954,
         "displayDate": "c. 1954",
         "title": "Bazoline Estelle Usher"
+      },
+      {
+        "id": "ernestine-erskine-brazeal-spelman",
+        "personId": "ernestine-erskine-brazeal",
+        "sortYear": 1928,
+        "displayDate": "1928",
+        "title": "Ernestine Erskine Brazeal"
+      },
+      {
+        "id": "irene-carolyn-dobbs-jackson-spelman",
+        "personId": "irene-carolyn-dobbs-jackson",
+        "sortYear": 1929,
+        "displayDate": "1929",
+        "title": "Irene Carolyn Dobbs Jackson"
+      },
+      {
+        "id": "louisa-georgia-jackson-williams-spelman",
+        "personId": "louisa-georgia-jackson-williams",
+        "sortYear": 1964,
+        "displayDate": "1964",
+        "title": "Louisa Georgia Jackson Williams"
+      },
+      {
+        "id": "marguerite-f-simon-spelman",
+        "personId": "marguerite-f-simon",
+        "sortYear": 1935,
+        "displayDate": "1935",
+        "title": "Marguerite F. Simon"
+      },
+      {
+        "id": "vashti-elizabeth-calanthe-scott-ellis-spelman",
+        "personId": "vashti-elizabeth-calanthe-scott-ellis",
+        "sortYear": 1925,
+        "displayDate": "1925",
+        "title": "Vashti Elizabeth Calanthe Scott-Ellis"
+      },
+      {
+        "id": "dorothy-alexander-brooks-spelman",
+        "personId": "dorothy-alexander-brooks",
+        "sortYear": 1962,
+        "displayDate": "1962",
+        "title": "Dorothy Alexander Brooks"
       }
     ]
   },
   {
     "institutionId": "medicine",
-    "entries": [
-      {
-        "id": "hank-aaron-medicine",
-        "personId": "hank-aaron",
-        "sortYear": 2015,
-        "displayDate": "2015",
-        "title": "Hank Aaron"
-      },
-      {
-        "id": "john-lewis-medicine",
-        "personId": "john-lewis",
-        "sortYear": 2017,
-        "displayDate": "2017",
-        "title": "John Lewis"
-      }
-    ]
+    "entries": []
   },
   {
     "institutionId": "morehouse",
@@ -1263,20 +1325,6 @@ const TIMELINES = [
         "sortYear": 1929,
         "displayDate": "1929",
         "title": "William Holmes Borders"
-      },
-      {
-        "id": "john-wesley-dobbs-morehouse",
-        "personId": "john-wesley-dobbs",
-        "sortYear": 1901,
-        "displayDate": "1901",
-        "title": "John Wesley Dobbs"
-      },
-      {
-        "id": "graham-w-jackson-sr-morehouse",
-        "personId": "graham-w-jackson-sr",
-        "sortYear": 1924,
-        "displayDate": "c. 1924",
-        "title": "Graham W. Jackson Sr."
       },
       {
         "id": "jesse-b-blayton-morehouse",
@@ -1302,23 +1350,9 @@ const TIMELINES = [
       {
         "id": "martin-luther-king-sr-morehouse",
         "personId": "martin-luther-king-sr",
-        "sortYear": 1931,
-        "displayDate": "1931",
+        "sortYear": 1930,
+        "displayDate": "1930",
         "title": "Martin Luther King Sr."
-      },
-      {
-        "id": "john-lewis-morehouse",
-        "personId": "john-lewis",
-        "sortYear": 2003,
-        "displayDate": "By 2003",
-        "title": "John Lewis"
-      },
-      {
-        "id": "herman-j-russell-morehouse",
-        "personId": "herman-j-russell",
-        "sortYear": 1999,
-        "displayDate": "1999",
-        "title": "Herman J. Russell"
       },
       {
         "id": "samuel-woodrow-williams-morehouse",
@@ -1368,13 +1402,6 @@ const TIMELINES = [
         "title": "Adrienne McNeil Herndon"
       },
       {
-        "id": "graham-w-jackson-sr-clark",
-        "personId": "graham-w-jackson-sr",
-        "sortYear": 1983,
-        "displayDate": "By 1983",
-        "title": "Graham W. Jackson Sr."
-      },
-      {
         "id": "jesse-b-blayton-clark",
         "personId": "jesse-b-blayton",
         "sortYear": 1930,
@@ -1389,13 +1416,6 @@ const TIMELINES = [
         "title": "Virginia Lacy Jones"
       },
       {
-        "id": "john-lewis-clark",
-        "personId": "john-lewis",
-        "sortYear": 2003,
-        "displayDate": "By 2003",
-        "title": "John Lewis"
-      },
-      {
         "id": "duke-pearson-clark",
         "personId": "duke-pearson",
         "sortYear": 1971,
@@ -1408,13 +1428,6 @@ const TIMELINES = [
         "sortYear": 1937,
         "displayDate": "By 1937",
         "title": "Donald Reeves"
-      },
-      {
-        "id": "herman-j-russell-clark",
-        "personId": "herman-j-russell",
-        "sortYear": 1999,
-        "displayDate": "1999",
-        "title": "Herman J. Russell"
       },
       {
         "id": "bazoline-estelle-usher-clark",

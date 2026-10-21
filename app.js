@@ -30,12 +30,12 @@ function timelineLayout(entries,start,currentYear,width,labelFor,availableHeight
   group.entries.push(entry);
  }
  let previousX=padding,previousEntryYear=null,extra=0,index=0;
- const locations=new Map(),anchors=[{year:start,x:padding}],laneEnds=[[-Infinity,-Infinity],[-Infinity,-Infinity]];
+ const locations=new Map(),anchors=[{year:start,x:padding}],laneEnds=[[-Infinity],[-Infinity]];
  for(const group of groups){
   const groupPositions=[];
   for(const entry of group.entries){
    const side=index++%2,naturalX=padding+(group.year-start)*pixelsPerYear+extra;
-   // Two lanes on each side are available before adding horizontal space.
+   // Keep one clear row per side; expand crowded years instead of crossing labels with stems.
    const neededX=Math.min(...laneEnds[side])+labelWidth/2+24+0.001;
    const x=Math.max(naturalX,labelWidth/2+4,locations.size?previousX+(previousEntryYear===group.year?16:0):padding,neededX);
    extra+=x-naturalX;
