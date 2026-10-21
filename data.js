@@ -688,8 +688,13 @@ const PEOPLE = [
       "Identified Morehouse president Benjamin E. Mays as an important mentor.",
       "His studies at Morehouse helped shape a career in ministry and nonviolent civil-rights leadership."
     ],
+    "burialNote": "Originally buried at South-View Cemetery in 1968; his remains were moved to the King Center in 1970. He is now entombed there alongside Coretta Scott King and is no longer buried at South-View.",
     "burialLocation": "",
     "sources": [
+      {
+        "title": "National Park Service - A Strong and Enduring Acknowledgment",
+        "url": "https://www.nps.gov/malu/a-strong-and-enduring-acknowledgment.htm"
+      },
       {
         "title": "Martin Luther King Jr. - Wikipedia",
         "url": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr."
@@ -728,7 +733,7 @@ const PEOPLE = [
       "Completed his theology degree in 1930.",
       "Maintained a long association with the college through service on its board of trustees."
     ],
-    "burialLocation": "",
+    "burialLocation": "https://www.google.com/maps/place/Rev+Martin+Luther+King+Sr.+Grave/@33.7014766,-84.3745437,18z/data=!4m6!3m5!1s0x88f503cee438dc73:0xba1440e6e2739918!8m2!3d33.7014766!4d-84.3737141!16s%2Fg%2F11l2969tss?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D",
     "sources": [
       {
         "title": "Martin Luther King Sr. - Wikipedia",

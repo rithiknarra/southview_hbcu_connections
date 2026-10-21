@@ -193,3 +193,8 @@ body{margin:0;background:#fff}
 
 .sv-profile .sv-photo-contain{object-fit:contain;object-position:center;background:var(--wash)}
 .sv-photo-credit a{text-underline-offset:3px;overflow-wrap:anywhere}
+
+/* Keep former burial information visible before the biography sections. */
+.sv-burial-note{margin:28px 0 0;padding:18px 20px;border-left:3px solid var(--gold);background:var(--wash)}
+.sv-burial-note strong{font:600 14px/1.4 SV Manrope,Manrope,sans-serif}
+.sv-burial-note p{margin:8px 0 0;font:18px/1.6 SV EB Garamond,Georgia,serif;color:var(--muted)}
