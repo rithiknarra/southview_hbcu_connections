@@ -77,8 +77,8 @@
       const school = institutions.find(i => key(i.name) === key(get('College')));
       if (!school) return error('Choose a supported college.');
       const yearText = get('Timeline year'), year = Number(yearText);
-      if (!/^\d{4}$/.test(yearText) || year >= yearBefore || year < school.founded)
-        return error(`Use a four-digit year from ${school.founded} through ${yearBefore - 1}.`);
+      if (!/^\d{4}$/.test(yearText) || year >= yearBefore || year < (school.timelineStart ?? school.founded))
+        return error(`Use a four-digit year from ${school.timelineStart ?? school.founded} through ${yearBefore - 1}.`);
       const name = singleLine(get('Name')), connection = singleLine(get('College connection'));
       const bio = bullets(get('Biography')), legacy = bullets(get('Institutional Connection and Legacy'));
       const image = photoURL(get('Photo')), sourceId = singleLine(get('Entry ID'));
