@@ -347,7 +347,7 @@ const PEOPLE = [
       "Was one of six Dobbs sisters who graduated from Spelman.",
       "Received an honorary doctorate in fine arts from Spelman in 1979."
     ],
-    "burialLocation": "",
+    "burialLocation": "https://maps.app.goo.gl/iXNY1aV1Cg4YKZLr7",
     "sources": [
       {
         "title": "Mattiwilda Dobbs - Wikipedia",
@@ -375,7 +375,12 @@ const PEOPLE = [
     "id": "grace-towns-hamilton",
     "name": "Grace Towns Hamilton",
     "years": "February 10, 1907 - June 17, 1992",
-    "image": null,
+    "image": {
+      "url": "images/people/Grace Town Hamilton.jpg",
+      "alt": "Portrait of Grace Towns Hamilton seated between the American and Georgia flags",
+      "credit": "Grace Towns Hamilton Papers. Archives Research Center, Atlanta University Center, Robert W. Woodruff Library.",
+      "attributionRequired": true
+    },
     "connections": [
       {
         "institutionId": "clark",
@@ -424,7 +429,7 @@ const PEOPLE = [
       "The timeline uses 'By 1953' because Florence Read, who invited her to teach, retired that year; it is not an asserted hiring date.",
       "Her work connected education, design, entrepreneurship, and international travel."
     ],
-    "burialLocation": "",
+    "burialLocation": "https://maps.app.goo.gl/NPh39ChZFTz4v2aa8",
     "sources": [
       {
         "title": "Freddye Scarborough Henderson - Wikipedia",
@@ -635,7 +640,10 @@ const PEOPLE = [
     "id": "alfred-daniel-king",
     "name": "Alfred Daniel King",
     "years": "July 30, 1930 - July 21, 1969",
-    "image": null,
+    "image": {
+      "url": "images/people/Alfred Daniel King.jpg",
+      "alt": "Portrait of Alfred Daniel King"
+    },
     "connections": [
       {
         "institutionId": "morehouse",
@@ -749,7 +757,10 @@ const PEOPLE = [
     "id": "duke-pearson",
     "name": "Duke Pearson",
     "years": "August 17, 1932 - August 4, 1980",
-    "image": null,
+    "image": {
+      "url": "images/people/Duke Pearson.jpg",
+      "alt": "Portrait of Duke Pearson"
+    },
     "connections": [
       {
         "institutionId": "clark",
@@ -778,7 +789,10 @@ const PEOPLE = [
     "id": "donald-reeves",
     "name": "Donald Reeves",
     "years": "July 31, 1911 - January 3, 1973",
-    "image": null,
+    "image": {
+      "url": "images/people/Donald Soup Reeves.jpg",
+      "alt": "Portrait of Donald Reeves"
+    },
     "connections": [
       {
         "institutionId": "clark",
@@ -992,7 +1006,7 @@ const PEOPLE = [
       "Became the first Black member of Emory University's medical faculty in 1964.",
       "Helped create accredited surgical-training opportunities for Black physicians."
     ],
-    "burialLocation": "",
+    "burialLocation": "https://maps.app.goo.gl/aQsFWYjbcJgy7Dgw5",
     "sources": [
       {
         "title": "Asa G. Yancey Sr. - Wikipedia",
@@ -1107,7 +1121,7 @@ const PEOPLE = [
       "Earned Teacher of the Year recognition at West Bradford Elementary School.",
       "Contributed to community service through the Magnolia Links and served on the diaconate of First Congregational Church."
     ],
-    "burialLocation": "",
+    "burialLocation": "https://maps.app.goo.gl/YH4X5VTcG5z3pFK6A",
     "sources": [
       {
         "title": "Louisa Georgia (Jackson) Williams obituary — Carl M. Williams Funeral Directors",
@@ -1142,7 +1156,7 @@ const PEOPLE = [
       "Devoted her career to physical education and the well-being of generations of students.",
       "Was a longtime member of Atlanta’s First Congregational Church."
     ],
-    "burialLocation": "",
+    "burialLocation": "https://maps.app.goo.gl/mTMYnRcKbYXN3o7f9",
     "sources": [
       {
         "title": "Marguerite F. Simon obituary",
@@ -1217,7 +1231,7 @@ const PEOPLE = [
       "Received recognition from the NAACP and federal agencies for her work on behalf of the rights and welfare of others.",
       "Volunteered with the Friendship Baptist Church tutorial program and participated in civic organizations, including Delta Sigma Theta and the Atlanta Chapter of Girl Friends."
     ],
-    "burialLocation": "",
+    "burialLocation": "https://maps.app.goo.gl/AAsqMQcgpFBsXgNk7",
     "sources": [
       {
         "title": "Dorothy Alexander Brooks funeral program — Digital Library of Georgia",

@@ -151,7 +151,7 @@ body{margin:0;background:#fff}
 .sv-profile .sv-photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top}
 .sv-profile .sv-placeholder{background:var(--wash);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;aspect-ratio:4/5;color:#84877e;font:15px SV EB Garamond,Georgia,serif}
 .sv-placeholder svg{width:90px;height:90px;fill:none;stroke:#969c8e;stroke-width:1}
-.sv-photo-credit{margin-top:8px;font:12px/1.5 SV Manrope,Manrope,sans-serif;color:var(--soft)}
+.sv-photo-credit{position:absolute;top:100%;left:0;right:0;margin-top:8px;font:12px/1.5 SV Manrope,Manrope,sans-serif;color:var(--soft)}
 .sv-profile-copy{min-width:0;max-width:66ch;overflow-wrap:anywhere}
 .sv-feature .sv-profile h2{font-size:clamp(40px,5vw,66px);font-weight:700;line-height:1.02;text-wrap:balance}
 .sv-life-dates{margin:14px 0 0;font:500 15px/1.5 SV Manrope,Manrope,sans-serif;color:var(--soft);font-variant-numeric:tabular-nums}
@@ -172,6 +172,7 @@ body{margin:0;background:#fff}
  .sv-profile-band-in,.sv-profile-body{grid-template-columns:minmax(0,1fr);gap:20px}
  .sv-profile-band-in{padding-top:28px}
  .sv-portrait{max-width:200px;margin-bottom:0}
+ .sv-photo-credit{position:static}
  .sv-profile-who{padding-bottom:28px}
  .sv-profile-body .sv-profile-copy{grid-column:1;padding-bottom:40px}
  .sv-profile-list{font-size:18px}

@@ -20,7 +20,7 @@ function timelineLayout(entries,start,currentYear,width,labelFor,availableHeight
  const end=Math.max(currentYear,start+1,...entries.map(e=>e.sortYear));
  const viewportWidth=Math.max(1,width),compact=viewportWidth<600;
  const labelWidth=compact?180:240,fontSize=compact?23:27,padding=8;
- // Stretch only crowded date ranges; quiet intervals keep their normal scale.
+ // Compress long quiet intervals slightly, then expand crowded dates for readable names.
  const baseSpan=Math.max(viewportWidth,labelWidth+32)-padding*2;
  const pixelsPerYear=baseSpan/(end-start);
  const groups=[];
@@ -29,12 +29,21 @@ function timelineLayout(entries,start,currentYear,width,labelFor,availableHeight
   if(!group||group.year!==entry.sortYear){group={year:entry.sortYear,entries:[]};groups.push(group);}
   group.entries.push(entry);
  }
+ // Keep the first 20 years of each gap at normal scale; tighten the remainder by 25%.
+ let previousYear=start,quietReduction=0;
+ for(const group of groups){
+  quietReduction+=Math.max(0,group.year-previousYear-20)*pixelsPerYear*.25;
+  group.baseX=padding+(group.year-start)*pixelsPerYear-quietReduction;
+  previousYear=group.year;
+ }
+ if(groups.length)quietReduction+=Math.max(0,end-previousYear-20)*pixelsPerYear*.25;
+ const quietSpan=baseSpan-quietReduction;
  let previousX=padding,previousEntryYear=null,extra=0,index=0;
  const locations=new Map(),anchors=[{year:start,x:padding}],laneEnds=[[-Infinity],[-Infinity]];
  for(const group of groups){
   const groupPositions=[];
   for(const entry of group.entries){
-   const side=index++%2,naturalX=padding+(group.year-start)*pixelsPerYear+extra;
+   const side=index++%2,naturalX=group.baseX+extra;
    // Keep one clear row per side; expand crowded years instead of crossing labels with stems.
    const neededX=Math.min(...laneEnds[side])+labelWidth/2+24+0.001;
    const x=Math.max(naturalX,labelWidth/2+4,locations.size?previousX+(previousEntryYear===group.year?16:0):padding,neededX);
@@ -46,10 +55,10 @@ function timelineLayout(entries,start,currentYear,width,labelFor,availableHeight
   if(group.year>start&&group.year<end)anchors.push({year:group.year,x:(groupPositions[0]+groupPositions.at(-1))/2});
  }
  if(groups.length){
-  const right=baseSpan+padding+extra;
+  const right=quietSpan+padding+extra;
   extra+=Math.max(0,previousX+labelWidth/2+4-right);
  }
- const canvasWidth=baseSpan+padding*2+extra,span=canvasWidth-padding*2;
+ const canvasWidth=Math.max(baseSpan+padding*2,quietSpan+padding*2+extra),span=canvasWidth-padding*2;
  anchors.push({year:end,x:canvasWidth-padding});
  // Ticks and event dots share this piecewise date scale after local expansion.
  const xForYear=year=>{
