@@ -174,7 +174,13 @@ window.southViewHistory=historyStore;
 const schoolPicker=new SchoolPicker(institutionTimeline);
 const peopleSearch=new PeopleSearch(historyStore,profileCard);
 window.southViewContent=SouthViewContent.install(historyStore,window.SOUTHVIEW_CONTENT_CONFIG);
-window.southViewContent.refresh().then(result=>{$('#southview-hbcu').dataset.contentStatus=result.state;});
+const contentStatus=$('#content-status');
+if(window.SOUTHVIEW_CONTENT_CONFIG?.csvUrl){contentStatus.hidden=false;contentStatus.textContent='Loading profiles…';}
+window.southViewContent.refresh().then(result=>{
+ $('#southview-hbcu').dataset.contentStatus=result.state;
+ contentStatus.hidden=result.state!=='error'&&result.state!=='partial';
+ contentStatus.textContent=result.state==='error'?'Profiles could not be loaded. Please reload the page to try again.':result.state==='partial'?'Some profiles could not be loaded. Please try again later.':'';
+});
 
 // Restore one navigation level at a time without rebuilding the current timeline.
 window.addEventListener('popstate', event => {

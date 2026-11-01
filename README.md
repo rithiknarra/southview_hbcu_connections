@@ -1,7 +1,7 @@
 # South-View HBCU Connections 
 
 ## Use
-Serve these files on a static website host, or run `python3 -m http.server 8000` and open `http://localhost:8000`. No installation or API key is required. Keep `index.html`, `app.js`, `data.js`, `content-config.js`, `sheet-content.js`, `style.css`, `images/`, and `fonts/` together. The school cards and bundled profiles work offline; live Google Sheets updates require a network connection and an HTTP(S) page.
+Serve these files on a static website host, or run `python3 -m http.server 8000` and open `http://localhost:8000`. No installation or API key is required. Keep `index.html`, `app.js`, `data.js`, `content-config.js`, `sheet-content.js`, `style.css`, `images/`, and `fonts/` together. Live profiles require a network connection and an HTTP(S) page. When a CSV feed is configured, it controls which profiles appear; bundled profiles are not an outage fallback. Without a configured feed, bundled profiles remain available offline.
 
 For Wix, embed the hosted page in an HTML iframe with title="Atlanta HBCU connections", width="100%", and a height appropriate for the host page. Allow enough height for the school cards on mobile.
 
@@ -14,9 +14,11 @@ Five school buttons display bundled official institutional logos, school names, 
 - [Open the South-View content sheet](https://docs.google.com/spreadsheets/d/1L8A5vvuU3bUk8sq8bk_3koTH5QejEJ-VgaYrUnA-HDo/edit) (editors only)
 
 1. Fill out the form to add a person. Upload a portrait; optionally add its original page URL in **Photo source**. In **Sources**, enter one full URL per line, optionally as `Source title | https://…`.
-2. Open **Form Responses 1** in the Sheet and check **Published** on their row.
+2. Open **Form Responses** in the Sheet, review the submission, and check **Published** in column M.
 3. Refresh the website after Google's update takes effect; this may take a few minutes.
-4. Edit their row in the Sheet to make corrections, or uncheck **Published** to remove their sheet entry.
+4. For previously included people, edit **Existing Profiles**. For new submissions, edit **Form Responses**. Keep Entry IDs unchanged. Uncheck **Published** in column M to remove a row from the website, or check it again to restore the row. A person with multiple school rows must have each relevant row unpublished to remove all appearances.
+
+**Final Website** is the automatic published feed; do not edit its generated rows. After a successful load, search results and timelines include only accepted records in this feed. Unpublished people are never restored from bundled data. Optional bundled metadata may supplement published records, but cannot make a person visible. If a refresh fails, the current page retains its last successfully loaded records. A fresh page with an unavailable feed shows a loading error and no profiles rather than exposing unpublished bundled records. Published rows with invalid content or inaccessible portraits are still rejected; the page reports a partial-load message, with detailed errors in the browser console.
 
 ## School configuration
 

@@ -128,25 +128,29 @@
 
   function install(store, config, options = {}) {
     if (!config?.csvUrl) return { refresh: async () => ({ configured: false }) };
-    const basePeople = structuredClone(store.people), baseTimelines = structuredClone(store.timelines);
+    // Bundled records supply optional metadata only, never publication decisions.
+    const basePeople = structuredClone(store.people);
     const fetcher = options.fetch || root.fetch.bind(root);
     const verifyImage = options.checkImage || (url => checkImage(url, config.timeoutMs));
     let inFlight;
     const status = { state: 'loading', errors: [], updatedAt: null };
 
+    // A configured live feed owns visibility, including after a page reload.
+    // Do not expose unpublished bundled records while loading or on an outage.
+    store.people.splice(0, store.people.length);
+    store.timelines.splice(0, store.timelines.length);
+    store.notify(null);
+
     function apply(snapshot) {
-      const people = structuredClone(basePeople), timelines = structuredClone(baseTimelines);
+      const people = [], timelines = [];
       for (const person of snapshot.people) {
         let merged = person;
-        // A submitted version of a bundled example replaces its original, without duplicate names.
-        const existing = people.findIndex(p => key(p.name) === key(person.name) &&
+        // Retain optional metadata only for people explicitly present in the feed.
+        const existing = basePeople.find(p => key(p.name) === key(person.name) &&
           p.connections.some(c => c.institutionId === person.connections[0].institutionId));
-        if (existing >= 0) {
+        if (existing) {
           // Preserve optional fields maintained outside this feed, such as burialLocation.
-          merged = { ...people[existing], ...person };
-          const oldId = people[existing].id;
-          people.splice(existing, 1);
-          timelines.forEach(t => { t.entries = t.entries.filter(e => e.personId !== oldId); });
+          merged = { ...structuredClone(existing), ...person };
         }
         people.push(merged);
       }
