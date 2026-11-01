@@ -1,9 +1,19 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>HBCU Connections | South-View</title><meta name="description" content="Discover Atlanta HBCUs and their connections to South-View Cemetery through school timelines and personal stories."><link rel="stylesheet" href="style.css"></head><body>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>HBCU Connections | South-View</title><meta name="description" content="Discover Atlanta HBCUs and their connections to South-View Cemetery through school timelines and personal stories."><link rel="stylesheet" href="style.css?v=20261101-18"></head><body>
 <main id="southview-hbcu" class="sv-feature">
  <div id="school-browser">
   <h1>HBCU Connections</h1>
   <p class="sv-intro">Discover the connections between Atlanta&rsquo;s historically Black colleges and universities and South-View Cemetery.</p>
+  <section class="sv-search" aria-labelledby="people-search-heading">
+   <h2 id="people-search-heading">Find a person</h2>
+   <div class="sv-search-controls">
+    <div class="sv-search-field"><label for="people-query">Search by name</label><input id="people-query" type="search" placeholder="Search people by name…" autocomplete="off" aria-controls="people-results"></div>
+    <div class="sv-search-filter"><label for="people-school">College</label><select id="people-school" aria-controls="people-results"><option value="">All colleges</option></select></div>
+    <button type="button" id="people-clear" hidden>Clear search</button>
+   </div>
+   <p id="people-search-status" class="sv-search-status" role="status" aria-live="polite">Search across all colleges, or choose a college to browse its people.</p>
+   <ul id="people-results" class="sv-search-results" aria-label="People matching your search" hidden></ul>
+  </section>
   <section class="sv-schools" aria-labelledby="school-heading">
    <div class="sv-school-heading"><h2 id="school-heading">Choose a school. Discover a story.</h2></div>
    <div id="school-grid" class="sv-school-grid"></div>
@@ -17,4 +27,4 @@
   </section>
   <div id="profile-backdrop" class="sv-backdrop" hidden></div>
   <section id="profile-overlay" class="sv-profile sv-panel" role="dialog" aria-modal="true" aria-labelledby="profile-title" hidden><div class="sv-bar"><div class="sv-wrap"><button type="button" id="back-to-timeline" class="sv-back"><span aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" focusable="false"><path d="M16 10H4M9 5l-5 5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span id="profile-back-label" class="sv-back-label">Back to Timeline</span></button></div></div><div id="profile-content"></div></section>
-</main><script src="data.js"></script><script src="content-config.js"></script><script src="sheet-content.js"></script><script src="app.js"></script></body></html>
+</main><script src="data.js?v=20261101-17"></script><script src="content-config.js"></script><script src="sheet-content.js?v=20261101-10"></script><script src="app.js?v=20261101-16"></script></body></html>

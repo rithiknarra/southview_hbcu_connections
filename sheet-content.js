@@ -82,6 +82,9 @@
       const name = singleLine(get('Name')), connection = singleLine(get('College connection'));
       const bio = bullets(get('Biography')), legacy = bullets(get('Institutional Connection and Legacy'));
       const image = photoURL(get('Photo')), sourceId = singleLine(get('Entry ID'));
+      const photoSourceText = get('Photo source');
+      const photoSource = publicURL(photoSourceText);
+      if (photoSourceText && !photoSource) return error('Photo source must be a complete http or https link, or left blank.');
       const hasBurialLocation = headers.includes('burial location');
       const burialText = get('Burial Location');
       const burialLocation = publicURL(burialText);
@@ -101,10 +104,10 @@
       }
       ids.add(sourceId); names.add(identity);
       const id = `sheet:${sourceId}`;
-      people.push({ id, name, years: singleLine(get('Life dates')), bio, legacy, sources,
+      people.push({ id, name, years: singleLine(get('Life dates')), bio, legacy, sources, showSources: true,
         ...(hasBurialLocation ? { burialLocation } : {}),
         connections: [{ institutionId: school.id, label: connection }],
-        image: { url: image, alt: `Portrait of ${name}` } });
+        image: { url: image, sourceUrl: photoSource, alt: `Portrait of ${name}` } });
       timelines.push({ institutionId: school.id, entries: [{ id, personId: id, sortYear: year, displayDate: yearText }] });
     });
     return { people, timelines, errors };

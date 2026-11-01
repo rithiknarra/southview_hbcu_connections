@@ -108,7 +108,7 @@ body{margin:0;background:#fff}
 .sv-feature #timeline-entries{max-width:100%;overscroll-behavior-x:contain;overflow-x:auto;overflow-y:hidden;scrollbar-color:#b8b9ac transparent}
 .sv-time-canvas{position:relative}
 .sv-time-axis{position:absolute;top:calc(var(--axis-y) - 1px);height:2px;background:#000}
-.sv-origin,.sv-present{position:absolute;transform:translateX(-50%);text-align:center;font-family:SV Cormorant,Georgia,serif}
+.sv-origin,.sv-present{position:absolute;width:120px;transform:translateX(-50%);text-align:center;font-family:SV Cormorant,Georgia,serif}
 .sv-origin i,.sv-present i{position:absolute;top:0;display:block;width:13px;height:13px;border:3px solid var(--wash);background:#000;box-shadow:0 0 0 1px #000;border-radius:50%;transform:translate(-50%,-50%)}
 .sv-origin strong,.sv-present strong{font-size:32px;font-weight:400;display:block;line-height:1;padding-top:26px}
 .sv-origin span,.sv-present span{display:block;font:12px SV Manrope,sans-serif;margin-top:8px;color:#636958}
@@ -135,14 +135,13 @@ body{margin:0;background:#fff}
 .sv-timeline-empty{position:absolute;top:40px;left:16px;right:16px;text-align:center;font:30px SV Cormorant,Georgia,serif;color:#74786e}
 .sv-timeline-empty span{display:block;font:14px SV EB Garamond,Georgia,serif;margin-top:10px}
 
-/* Profile: photo, name, dates and connection on a band in the school color; the photo overlaps the page below,
-   where the sections line up with the name. */
+/* Portraits and captions stay inside the school-color band. Body copy aligns with the name. */
 .sv-profile-band{background:var(--school-color);color:#fff}
 .sv-profile-band-in,.sv-profile-body{display:grid;grid-template-columns:280px minmax(0,1fr);gap:clamp(32px,5vw,72px)}
-.sv-profile-band-in{align-items:end;padding-top:48px}
-.sv-portrait{position:relative;z-index:1;margin:0 0 -56px}
-.sv-frame{padding:10px;border:1px solid var(--school-rule);background:#fff;box-shadow:0 12px 32px #1a1d1a24}
-.sv-profile-who{min-width:0;padding-bottom:40px}
+.sv-profile-band-in{align-items:start;padding-block:40px}
+.sv-portrait{width:100%;min-width:0;margin:0;align-self:start}
+.sv-frame{width:100%;overflow:hidden;border:1px solid var(--school-rule);background:var(--wash)}
+.sv-profile-who{min-width:0;padding:0;align-self:start;text-align:left}
 .sv-feature .sv-profile-band h2{color:#fff}
 .sv-profile-band .sv-life-dates{color:var(--on-school-soft)}
 .sv-profile-band .sv-profile-connection{max-width:60ch;margin:18px 0 0;padding:0;border:0;color:var(--on-school-text)}
@@ -151,9 +150,9 @@ body{margin:0;background:#fff}
 .sv-profile .sv-photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top}
 .sv-profile .sv-placeholder{background:var(--wash);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;aspect-ratio:4/5;color:#84877e;font:15px SV EB Garamond,Georgia,serif}
 .sv-placeholder svg{width:90px;height:90px;fill:none;stroke:#969c8e;stroke-width:1}
-.sv-photo-credit{position:absolute;top:100%;left:0;right:0;margin-top:8px;font:12px/1.5 SV Manrope,Manrope,sans-serif;color:var(--soft)}
+.sv-photo-credit{margin:0;padding:12px 0 0;background:transparent;font:12px/1.5 SV Manrope,Manrope,sans-serif;color:var(--on-school-soft);overflow-wrap:anywhere}
 .sv-profile-copy{min-width:0;max-width:66ch;overflow-wrap:anywhere}
-.sv-feature .sv-profile h2{font-size:clamp(40px,5vw,66px);font-weight:700;line-height:1.02;text-wrap:balance}
+.sv-feature .sv-profile h2{font-size:clamp(40px,5vw,66px);font-weight:700;line-height:1.08;text-wrap:balance}
 .sv-life-dates{margin:14px 0 0;font:500 15px/1.5 SV Manrope,Manrope,sans-serif;color:var(--soft);font-variant-numeric:tabular-nums}
 .sv-profile-connection{margin:22px 0 0;padding-bottom:20px;border-bottom:1px solid var(--gold);font:500 16px/1.6 SV Manrope,Manrope,sans-serif}
 .sv-feature .sv-profile h3{margin:40px 0 14px;font-size:30px;font-weight:700;line-height:1.15}
@@ -170,10 +169,9 @@ body{margin:0;background:#fff}
  #timeline-description{font-size:17px}
  .sv-band-tools span{display:none}
  .sv-profile-band-in,.sv-profile-body{grid-template-columns:minmax(0,1fr);gap:20px}
- .sv-profile-band-in{padding-top:28px}
+ .sv-profile-band-in{padding-block:28px}
  .sv-portrait{max-width:200px;margin-bottom:0}
- .sv-photo-credit{position:static}
- .sv-profile-who{padding-bottom:28px}
+ .sv-profile-who{padding:0}
  .sv-profile-body .sv-profile-copy{grid-column:1;padding-bottom:40px}
  .sv-profile-list{font-size:18px}
 }
@@ -199,3 +197,41 @@ body{margin:0;background:#fff}
 .sv-burial-note{margin:28px 0 0;padding:18px 20px;border-left:3px solid var(--gold);background:var(--wash)}
 .sv-burial-note strong{font:600 14px/1.4 SV Manrope,Manrope,sans-serif}
 .sv-burial-note p{margin:8px 0 0;font:18px/1.6 SV EB Garamond,Georgia,serif;color:var(--muted)}
+
+/* References for the researched profile cards. */
+.sv-profile-sources{margin-top:32px;padding-top:8px;border-top:1px solid var(--rule)}
+.sv-profile-sources ol{margin:0;padding-left:1.4em}
+.sv-profile-sources li{margin:10px 0;font:17px/1.5 SV EB Garamond,Georgia,serif;overflow-wrap:anywhere}
+.sv-profile-sources a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.sv-profile-sources a:hover{color:#715821}
+.sv-profile-sources a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+
+/* One compact source link, aligned with the portrait edge. */
+.sv-photo-credit{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left}
+.sv-photo-source{font-weight:600}
+.sv-photo-credit a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+
+/* Search is available before choosing a school. */
+.sv-search{margin:32px 0;padding:24px;background:#f7f4eb;border:1px solid #ded5bc;border-top:3px solid var(--gold);border-radius:6px}
+.sv-feature .sv-search h2{font-size:32px;margin:0 0 18px}
+.sv-search-controls{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.sv-search-field{flex:2 1 280px;min-width:0}
+.sv-search-filter{flex:1 1 220px;min-width:0}
+.sv-search label{display:block;margin-bottom:7px;font-size:13px;font-weight:600}
+.sv-search input,.sv-search select{width:100%;min-height:48px;border:1px solid #a7a99f;border-radius:3px;padding:11px 12px;background:#fff;color:var(--ink);font:16px SV Manrope,Manrope,sans-serif}
+.sv-search #people-clear{min-height:48px;padding:10px 14px;border:1px solid #a7a99f;border-radius:3px;background:#fff;color:var(--ink);font:14px SV Manrope,Manrope,sans-serif}
+.sv-search-status{font-size:14px;line-height:1.5;color:var(--muted);margin:14px 0 0}
+.sv-search-results{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-height:480px;overflow-y:auto}
+.sv-search-result{display:flex;align-items:center;gap:14px;width:100%;height:100%;padding:12px;text-align:left;border:1px solid #d4d3c9;border-left:3px solid var(--result-color,var(--gold));border-radius:3px;background:#fff;color:var(--ink);cursor:pointer}
+.sv-search-result:hover{background:#f6f5ef;border-color:var(--gold)}
+.sv-search-result img{width:52px;height:64px;object-fit:cover;object-position:top;flex-shrink:0}
+.sv-search-result>span{min-width:0}
+.sv-search-result strong{display:block;font:700 24px/1.15 SV Cormorant,Georgia,serif;overflow-wrap:anywhere}
+.sv-search-colleges{display:block;margin-top:5px;font:12px/1.5 SV Manrope,Manrope,sans-serif;color:var(--muted)}
+.sv-search-arrow{margin-left:auto;flex-shrink:0}
+.sv-search :is(input,select,button):focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+@media(max-width:600px){.sv-search-results{grid-template-columns:1fr}.sv-search-controls{gap:12px}.sv-search-field,.sv-search-filter{flex-basis:100%}}
+
+.sv-search #people-clear{background:#715821;border-color:#715821;color:#fff;font-weight:600}
+.sv-search #people-clear:hover{background:#58441a}
+@media(max-width:600px){.sv-search{padding:20px 16px}}
