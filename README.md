@@ -1,87 +1,101 @@
-# South-View HBCU Connections 
+# South-View HBCU Connections
 
-## Use
-Serve these files on a static website host, or run `python3 -m http.server 8000` and open `http://localhost:8000`. No installation or API key is required. Keep `index.html`, `app.js`, `data.js`, `content-config.js`, `sheet-content.js`, `style.css`, `images/`, and `fonts/` together. Live profiles require a network connection and an HTTP(S) page. When a CSV feed is configured, it controls which profiles appear; bundled profiles are not an outage fallback. Without a configured feed, bundled profiles remain available offline.
+An interactive website connecting people associated with South-View Cemetery to Atlanta’s historically Black colleges and universities. Built for the South-View Foundation, it brings together school timelines, portraits, biographies, and supporting references.
 
-For Wix, embed the hosted page in an HTML iframe with title="Atlanta HBCU connections", width="100%", and a height appropriate for the host page. Allow enough height for the school cards on mobile.
+Visitors can explore Morehouse College, Spelman College, Morris Brown College, Morehouse School of Medicine, and Clark Atlanta University, or search by name and filter by college. The site supports mobile layouts, keyboard navigation, and reduced-motion preferences.
 
-## School selection
-Five school buttons display bundled official institutional logos, school names, and an Explore timeline action. Founding years are not displayed on the main page. The cards and the centered "Choose a school. Discover a story." heading sit on a light grey band (`#f6f6f2`) that runs edge to edge and down to the bottom of the window. Each card's top stripe uses its school's `color`; on hover the card border and arrow take that color too. The desktop layout has three cards above two centered cards; tablets use two columns and phones use one. Image sources are recorded in `images/schools/SOURCES.md`. Images retain their original colors and proportions; if one fails to load, the school name remains visible and the button still works.
+## Key links
 
-## Add or edit people
+- [Visit the website](https://southview-hbcu-connections.netlify.app/)
+- [Open the content spreadsheet](https://docs.google.com/spreadsheets/d/1L8A5vvuU3bUk8sq8bk_3koTH5QejEJ-VgaYrUnA-HDo/edit) — editing requires an authorized Google account.
+- [Add a Person form](https://docs.google.com/forms/d/e/1FAIpQLSdKrniEZMaU0MyBf-WwBQU4qLjea9jDq3xMqhyVrKjxc7lkYg/viewform)
 
-- [Open the Add a Person form](https://docs.google.com/forms/d/e/1FAIpQLSdKrniEZMaU0MyBf-WwBQU4qLjea9jDq3xMqhyVrKjxc7lkYg/viewform)
-- [Open the South-View content sheet](https://docs.google.com/spreadsheets/d/1L8A5vvuU3bUk8sq8bk_3koTH5QejEJ-VgaYrUnA-HDo/edit) (editors only)
+For detailed staff instructions and screenshots, refer to the separate **South-View HBCU Connections Website Maintenance and Content Guide** supplied with the project handoff. This README covers the project overview, content workflow, and essentials for maintaining the website files.
 
-1. Fill out the form to add a person. Upload a portrait; optionally add its original page URL in **Photo source**. In **Sources**, enter one full URL per line, optionally as `Source title | https://…`.
-2. Open **Form Responses** in the Sheet, review the submission, and check **Published** in column M.
-3. Refresh the website after Google's update takes effect; this may take a few minutes.
-4. For previously included people, edit **Existing Profiles**. For new submissions, edit **Form Responses**. Keep Entry IDs unchanged. Uncheck **Published** in column M to remove a row from the website, or check it again to restore the row. A person with multiple school rows must have each relevant row unpublished to remove all appearances.
+## Managing content
 
-**Final Website** is the automatic published feed; do not edit its generated rows. After a successful load, search results and timelines include only accepted records in this feed. Unpublished people are never restored from bundled data. Optional bundled metadata may supplement published records, but cannot make a person visible. If a refresh fails, the current page retains its last successfully loaded records. A fresh page with an unavailable feed shows a loading error and no profiles rather than exposing unpublished bundled records. Published rows with invalid content or inaccessible portraits are still rejected; the page reports a partial-load message, with detailed errors in the browser console.
+Routine profile updates happen through Google Forms and Google Sheets, without editing website code.
 
-## School configuration
-
-School-card settings live in `data.js`. To add or edit people, use the Form/Sheet workflow above.
-
-### School cards: INSTITUTIONS
-
-Cards are generated automatically from `INSTITUTIONS`, sorted by founding year from oldest to newest. Schools with the same founding year retain their order in the array. The current order is Morehouse College, Spelman College, Morris Brown College, Morehouse School of Medicine, and Clark Atlanta University. Each object uses these fields:
-
-| Field | What it controls |
+| Task | Where to work |
 | --- | --- |
-| `id` | Stable school identifier used by timelines and person connections. Current ids: `spelman`, `morehouse`, `clark`, `morris`, `medicine`. |
-| `name` | Full school name on the card and at the top of its timeline. |
-| `image` | Local logo path as a string, such as `images/schools/spelman.png`. |
-| `founded` | Numeric founding year used to sort the school cards and set the timeline's starting year; hidden on the main page. |
-| `foundingNote` | School description shown below the timeline heading, not on the selection card. The timeline first shows its opening sentence with a "Read more" button for the rest and a "Read less" button to collapse it again. |
-| `foundingSource` | URL for the "Institution history" link in the timeline top bar. |
-| `color` | Hex color for the school: the card's top stripe, and the background of its timeline and profile headers. Use a deep shade that keeps white text readable. Current values: Spelman `#1b3a73`, Morehouse `#6b1f2a`, Clark Atlanta `#9b1b30`, Morris Brown `#4a2c6d`, School of Medicine `#003b5c`. |
+| Add a person | Submit the form, then review and publish the row in **Form Responses**. |
+| Edit a person originally included on the site | Edit their row in **Existing Profiles**. |
+| Edit a later form submission | Edit their original row in **Form Responses**. |
+| Hide or restore a record | Uncheck or check **Published** in column M of its input tab. |
+| Change school information or website design | Ask the website maintainer to update the project files. |
 
-For example, this is the current Morris Brown record, formatted for readability:
+**Final Website** automatically combines published rows from both input tabs. Do not edit its generated cells. Keep column headings, Entry IDs, and formulas unchanged. If a person has multiple school rows, unpublish each relevant row to remove all appearances. Allow a few minutes for updates, then refresh the website.
 
-```js
-{
-  id: 'morris',
-  name: 'Morris Brown College',
-  image: 'images/schools/morris.png',
-  founded: 1881,
-  foundingNote: 'Morris Brown College is a historically Black liberal arts college located in Atlanta, Georgia. Founded in 1881 by the African Methodist Episcopal Church, it has a long tradition of expanding access to higher education and supporting students in a nurturing environment. With a commitment to academic achievement, personal growth, and public service, Morris Brown prepares students to pursue meaningful careers and make positive contributions to society.',
-  foundingSource: 'https://morrisbrown.edu/history/'
-}
+The form accepts a portrait upload. **Photo** stores the image link; optional **Photo source** stores the original webpage and appears beneath the portrait. Images must be accessible to website visitors—publishing the spreadsheet does not change private image permissions. Required photo credits and burial-history notes need maintainer assistance because the adapter has no dedicated spreadsheet fields for them.
+
+Use separate lines for biography and legacy points. In **Sources**, enter one full URL per line, optionally as `Source title | https://example.org/page`. Available non-Wikipedia references appear on profiles. Leave **Burial Location** blank unless an exact South-View gravestone location is confirmed.
+
+### Publication behavior and limits
+
+- With a live feed configured, the published spreadsheet controls visibility. Unpublished records are not restored from bundled data. Bundled records may supply optional metadata for matching published people.
+- A failed refresh retains the current page’s last successfully loaded records. A fresh page with an unavailable feed shows an error and no profiles. Without a configured live feed, bundled profiles remain available offline.
+- Invalid records and profiles whose portraits cannot load are rejected. The page reports a partial-load message; detailed errors are available in the browser console. Validation messages are not written back to the sheet.
+- The current feed accepts four-digit timeline years **through 2025**, within the selected school’s timeline range. Later years require updating `yearBefore` in `content-config.js`. Approximate display dates such as “By 1953” are supported in bundled data, but not by the current spreadsheet adapter.
+
+## Historical content and attribution
+
+Connections include graduates, faculty, academic leaders, and documented institutional namesakes. Morehouse School of Medicine also includes documented donors and speakers. Describe the verified relationship accurately, and label historical training programs and uncertain dates clearly.
+
+Clark Atlanta University’s timeline starts in 1865 for predecessor history while retaining its 1988 founding date. Morehouse School of Medicine’s timeline starts in 1975, with independence in 1981 noted separately.
+
+Confirm South-View burial connections, use supporting sources, and retain required image attribution. School logo sources are listed in [images/schools/SOURCES.md](images/schools/SOURCES.md). Bundled font licenses are in `fonts/OFL-*.txt`.
+
+## Running and hosting
+
+The website uses plain HTML, CSS, and JavaScript. No build step, package installation, or API key is required to run it. Live spreadsheet content requires an internet connection and an HTTP or HTTPS page.
+
+For a local preview, install Python 3 if needed, open a terminal in the repository folder, and run:
+
+```sh
+python3 -m http.server 8000
 ```
 
-Edit the existing object instead of adding another object with the same id. Keep ids unchanged when updating wording so existing timeline and profile connections continue to work. Use the full school name and a factual description of about three sentences, matching the Spelman introduction: identify the school and location, summarize its founding, then explain its educational mission and community contribution. The card's "Explore timeline" wording is shared by all schools and is defined in `SchoolPicker` in `app.js`.
+Open `http://localhost:8000`. Stop the server with Ctrl+C.
 
-The page introduction and the "Choose a school. Discover a story." heading are in `index.html`. Card spacing, type sizes, responsive layout, and the navy background behind the white School of Medicine logo are in `style.css`. Store replacement school images in `images/schools/` and update [the image source list](images/schools/SOURCES.md). School logo images use empty alt text because the button already announces the full school name.
+For hosting, publish the website files together with `index.html` at the site root. Include all scripts, `style.css`, `images/`, and `fonts/`. Local code edits do not change the live site until deployed. Update asset version query strings in `index.html` when needed to avoid stale browser caches.
 
-School descriptions appear above their timelines. The four expanded descriptions were checked against official institutional pages on 2026-10-17:
+The hosted page can be embedded in Wix or another site using an iframe with a descriptive title, full width, and enough height for mobile content. Timeline and profile overlays fill the iframe, not the surrounding parent page.
 
-- Morehouse College: [mission and values](https://morehouse.edu/about/mission-and-values) and [history](https://morehouse.edu/about/our-history/).
-- Clark Atlanta University: [about](https://www.cau.edu/about-clark-atlanta) and [history](https://www.cau.edu/about/history).
-- Morris Brown College: [mission](https://morrisbrown.edu/about-mbc/) and [history](https://morrisbrown.edu/history/).
-- Morehouse School of Medicine: [overview and mission](https://www.msm.edu/about_us/) and [history](https://www.msm.edu/about_us/msm-history.php).
+## Project files
 
-## UI classes
-`SchoolPicker`: accessible school buttons that open timelines.
-`InstitutionTimeline`: school-specific, horizontally scrollable timeline overlay.
-`ProfileCard`: reusable profile overlay.
-`OverlayManager`: close buttons, Escape, focus restoration, and focus trapping. Closing the profile returns to its timeline; closing the timeline returns to the selected school button. The school browser stays inert while either overlay is open.
+| File or folder | Purpose |
+| --- | --- |
+| `index.html` | Page structure, introductory text, search controls, and overlay containers. |
+| `app.js` | Search, school selection, timelines, profile display, and navigation. |
+| `data.js` | School settings, bundled historical records, and timeline entries. |
+| `content-config.js` | Published CSV address, year cutoff, and loading timeout. |
+| `sheet-content.js` | Spreadsheet parsing, validation, and publication behavior. |
+| `style.css` | Fonts, colors, responsive layout, and interaction styles. |
+| `images/people/` | Bundled portraits; spreadsheet records may also link to these hosted files. |
+| `images/schools/` | School logos and their source list. |
+| `fonts/` | Bundled fonts and licenses. |
+| `tests/` | Checks for publishing, search, source display, and timeline layout. |
 
-## Styling
-The palette and typography were compared with https://www.southviewpreservation.com/historyintheneighborhood on 2026-10-17. The page uses Cormorant Garamond for headings and school names, Manrope for introductory text and school actions, and EB Garamond for descriptions and biographies. Main text is `#1a1d1a`, secondary text `#4a4d4a`, near-black action text `#1a1d1a`, and muted gold accents `#a69666`. The background and school cards are white, with `#dcded7` card borders. The desktop page heading is 50.55px and school names are 29px bold; mobile keeps its smaller page heading. Introductory text is 18px. Each card is one accessible button with a plain "Explore timeline" action separated by a thin line. Hover and keyboard-focus states provide visual feedback, and reduced-motion preferences are respected. Timeline names, dots, and interface actions use near-black in place of green. Event dates use plain near-black text centered in a break in the gold divider beside each name. For entries below the timeline, the divider sits above the name; for entries above the timeline, it sits below the name. School logos retain their own brand colors. Font files are bundled for offline appearance; see `fonts/OFL-*.txt`.
+School settings are defined in `INSTITUTIONS` in `data.js`; keep school IDs stable when editing descriptions, logos, names, or colors. Cards are sorted by founding year. Check spreadsheet photo links before removing hosted portraits.
 
-## Full-page timelines and profiles
-Selecting a school opens a full-viewport timeline. A sticky top bar holds the "All Schools" back button and the "Institution history" link, which opens the college history page in a new tab. Below it, the school logo sits beside the school name, founding year, and description in a centered content group, all in white on the school's `color`, with a light gold stripe underneath. The timeline itself sits on a light grey band (`#f6f6f2`) that fills the rest of the window, with a "Timeline · start – end" label and arrow controls; the solid black axis and its dots share the same center line. The timeline spans the width between the heading and the right arrow button; its axis ends at the centers of the endpoint dots so no line protrudes beyond them. Labels near either endpoint shift inward to remain fully visible. Its left endpoint is the institution's founding year; its right endpoint is the current year or the latest entry, whichever is later. CAU's header keeps its 1988 founding date; its timeline starts in 1865 to include explicitly labeled predecessor-institution connections. MSM starts in 1975, with independence in 1981 noted separately. Each entry shows the person's name or event title. Crowded date ranges expand horizontally only when needed to keep labels within one row on each side; the portion of each empty interval beyond 20 years is compressed by 25%. Year ticks follow the same expanded date scale and are omitted near profile stems and endpoint labels to prevent collisions. The axis retains the founding and current years, with dedicated space around both endpoint labels. Entries alternate above and below the axis in one row on each side. Crowded years gain horizontal space so stems do not cross other names. The timeline uses the full display width and centers itself in the remaining display height. Sparse timelines fit smaller screens; busy timelines can scroll horizontally to keep names readable. Wrapped names receive extra lane spacing, mobile labels and headings use smaller type, and short desktop windows use a compact school header. Resizing the window, rotating a device, or expanding the school description recalculates the layout; arrow controls, keyboard focus, and normal touch scrolling remain available.
+The live connection uses a published, read-only CSV address in `content-config.js`. If replacing the spreadsheet, update this address and preserve the expected column headings. Never store Google credentials in project files.
 
-Selecting a name opens a separate full-page profile. The top bar and a header band use the school's `color`: the framed portrait sits on the left of the band and aligns with the name and connection beside it, with the name, life dates, and college connection in white beside it (stacked on phones). Connection and Legacy and Biography follow below, lined up with the name. Empty sections are hidden, and the gravestone map link appears only when an exact South-View gravestone location is supplied by the user. Leave `burialLocation` empty when unknown. The back button or Escape returns to the timeline, preserving the scroll position. Closing the timeline returns to the selected school button. These overlays cover the browser viewport. If embedded in a Wix iframe, they cover that iframe, not the surrounding parent website; full-parent-page coverage requires native placement or a host-controlled full-screen iframe/lightbox.
+## Verification and troubleshooting
 
-## Source display
-All profiles display their available non-Wikipedia references at the end of the card. Each portrait has a single **Photo source** link when a source URL is available. Required image-license credits remain available through the link’s tooltip and accessible text. The timeline top bar also links to the institution’s history.
+After content updates, check search results, the relevant timeline, profile text, portraits, sources, and map links. After code changes, also check mobile layout, keyboard navigation, and back buttons.
 
-## Researched South-View profiles
-The bundled data includes 35 profiles and 38 college connections. See [the content review](RESEARCH.md) for inclusion decisions, portrait requests, historical-date bounds, and burial-location limitations. Clark Atlanta uses `timelineStart: 1865` for predecessor history while retaining `founded: 1988`. Burial links are reserved for exact South-View gravestone locations supplied by the user; no general cemetery or memorial map links are shown.
+| Issue | First checks |
+| --- | --- |
+| A profile is missing | Published, required fields, school name, allowed year, and public portrait access. |
+| An edit has not appeared | Correct input row, time for Google’s update, and a refreshed page. |
+| A person remains after unpublishing | Other published school rows in either input tab; latest website code deployed. |
+| Profiles cannot load | Internet connection and feed address; maintainers can inspect `window.southViewContent.status` and browser-console errors. |
+| An embedded page is cut off | Iframe height and mobile presentation. |
 
-The active lists include graduates, faculty, academic leaders, and documented institutional namesakes. Morehouse School of Medicine also includes documented donors and speakers. Each card states the specific connection; timeline dates represent graduation, an appointment, a gift, an event, or a dedication as appropriate. Historical training programs are labeled explicitly.
+With Node.js installed, run automated checks from the repository folder:
 
-The main page includes a name search and college filter. Results open the shared profile directly, and Back to Search preserves the query and filter. Published sheet records become searchable when the feed loads.
+```sh
+node --test tests/*.test.js
+```
+
+Save dated backups before changing spreadsheet formulas or hosting settings. Keep account ownership and support contacts in the handoff guide. When reporting an issue, include the affected profile or school, the expected result, and a screenshot; do not share passwords.
