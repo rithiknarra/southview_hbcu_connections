@@ -87,3 +87,19 @@ test('all published cards expose their references and resolve to complete local 
   assert(people.get(entry.personId).connections.some(c=>c.institutionId===timeline.institutionId),entry.personId);
  }
 });
+
+
+test('print references display as escaped text alongside linked web sources', () => {
+ const book = 'South-View: An African American City of the Dead, p. 241';
+ const html = profileSourcesMarkup({ showSources: true, sources: [
+  { title: book },
+  { title: '<Archive & manuscript>' },
+  { title: 'Web archive', url: 'https://example.org/archive' },
+  { title: '  ' }
+ ] });
+ assert(html.includes('<li>' + book + '</li>'));
+ assert(html.includes('&lt;Archive &amp; manuscript&gt;'));
+ assert.equal((html.match(/<li>/g) || []).length, 3);
+ assert.equal((html.match(/<a /g) || []).length, 1);
+ assert(!html.includes('worldcat'));
+});

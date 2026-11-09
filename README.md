@@ -28,7 +28,7 @@ Routine profile updates happen through Google Forms and Google Sheets, without e
 
 The form accepts a portrait upload. **Photo** stores the image link; optional **Photo source** stores the original webpage and appears beneath the portrait. Images must be accessible to website visitors—publishing the spreadsheet does not change private image permissions. Required photo credits and burial-history notes need maintainer assistance because the adapter has no dedicated spreadsheet fields for them.
 
-Use separate lines for biography and legacy points. In **Sources**, enter one full URL per line, optionally as `Source title | https://example.org/page`. Available non-Wikipedia references appear on profiles. Leave **Burial Location** blank unless an exact South-View gravestone location is confirmed.
+Use separate lines for biography and legacy points. In **Sources**, enter one reference per line. For web sources, use a full URL, optionally as `Source title | https://example.org/page`. For books and other print sources, enter a plain-text citation with the relevant page numbers; no URL is required. Available non-Wikipedia references appear on profiles. Leave **Burial Location** blank unless an exact South-View gravestone location is confirmed.
 
 ### Publication behavior and limits
 

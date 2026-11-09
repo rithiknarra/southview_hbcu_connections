@@ -98,3 +98,26 @@ test('a malformed feed retains the last published records without restoring omit
  assert.equal(store.people,people);assert.equal(store.timelines,timelines);
  assert.equal(store.people.length,1);assert.equal(store.people[0].id,'sheet:test-person');
 });
+
+
+test('published profiles accept an unlinked book citation alongside a web reference', async () => {
+ const book = 'D. L. Henderson: South-View: An African American City of the Dead (2018), p. 241';
+ const row = values.map((v, i) => i === 8 ? book + '\n' + v : v);
+ const store = { institutions, people: [], timelines: [], notify() {} };
+ const adapter = install(store, { csvUrl: 'https://example.org/feed.csv' }, {
+  fetch: async () => ({ ok: true, text: async () => csv([row]) }), checkImage: async () => {}
+ });
+ const result = await adapter.refresh();
+ assert.equal(result.state, 'ready');
+ assert.equal(store.people.length, 1);
+ assert.deepEqual(store.people[0].sources, [{ title: book }, { title: 'Archive', url: 'https://example.org/biography' }]);
+ assert.equal(store.timelines[0].entries.length, 1);
+});
+
+test('malformed and unsafe source links cannot pass as unlinked citations', () => {
+ for (const source of ['Archive | missing-url', 'https://', 'javascript:alert(1)', 'file:///private/book']) {
+  const result = readContent(csv([values.map((v, i) => i === 8 ? source : v)]), institutions);
+  assert.equal(result.people.length, 0, source);
+  assert.equal(result.errors.length, 1, source);
+ }
+});

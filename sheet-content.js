@@ -99,7 +99,14 @@
       for (const line of bullets(get('Sources'))) {
         const match = line.match(/^(.*?)\s*(https?:\/\/\S+)$/);
         const url = match && publicURL(match[2]);
-        if (!url) return error('Each source must be a full http or https link, optionally preceded by its title.');
+        if (!url) {
+          // Books and other print references may be cited without a web address.
+          // Keep rejecting malformed or unsafe links instead of disguising them as print citations.
+          if (match || /[|]|\b(?:https?|javascript|data|file):/i.test(line))
+            return error('Use a plain-text print citation or a complete http or https source link.');
+          sources.push({ title: line });
+          continue;
+        }
         sources.push({ title: match[1].replace(/[|—–-]\s*$/, '').trim() || new URL(url).hostname, url });
       }
       ids.add(sourceId); names.add(identity);

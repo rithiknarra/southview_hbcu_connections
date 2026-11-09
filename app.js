@@ -92,6 +92,10 @@ const photoCreditMarkup = image => {
 const profileSourcesMarkup = person => {
  if(person.showSources!==true)return '';
  const sources=(person.sources||[]).flatMap(source=>{
+  if(!source.url){
+   const title=String(source.title||'').trim();
+   return title?[`<li>${esc(title)}</li>`]:[];
+  }
   try{
    const url=new URL(source.url);
    if(!['https:','http:'].includes(url.protocol)||/(^|\.)wikipedia\.org$/i.test(url.hostname))return [];
