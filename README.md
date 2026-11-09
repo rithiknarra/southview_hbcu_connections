@@ -1,4 +1,4 @@
-# South-View HBCU Connections
+# South-View HBCU Connections 
 
 An interactive website connecting people associated with South-View Cemetery to Atlanta’s historically Black colleges and universities. Built for the South-View Foundation, it brings together school timelines, portraits, biographies, and supporting references.
 
