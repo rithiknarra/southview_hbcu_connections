@@ -28,7 +28,7 @@ Routine profile updates happen through Google Forms and Google Sheets, without e
 
 The form accepts an optional portrait upload. **Photo** stores the image link; **Photo source** stores the original webpage and appears beneath the portrait as a credit. A blank Photo displays the profile without an image, placeholder, or reserved picture area. Images must be accessible to website visitors—publishing the spreadsheet does not change private image permissions. Detailed photographer and license credits need maintainer assistance.
 
-The **Photo** cell may be blank. The profile and timeline entry will still appear, and the profile will show "No portrait available." A supplied photo must have a valid, publicly accessible link.
+The **Photo** cell may be blank. The profile and timeline entry will still appear, with no portrait area on the profile. A supplied photo must have a valid, publicly accessible link.
 
 Use separate lines for biography and legacy points. In **Sources**, enter one reference per line. For web sources, use a full URL, optionally as `Source title | https://example.org/page`. For books and other print sources, enter a plain-text citation with the relevant page numbers; no URL is required. Available non-Wikipedia references appear on profiles. Leave **Burial Location** blank unless an exact South-View gravestone location is confirmed.
 
