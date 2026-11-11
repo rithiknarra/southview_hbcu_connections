@@ -188,7 +188,7 @@ test('importing every existing profile preserves all wording, portrait metadata,
   const entry=timelines.find(t=>t.institutionId===school.id).entries.find(e=>e.personId===person.id);
   return [school.name,entry.sortYear,person.name,person.years,connection.label,
    person.legacy.join('\n'),person.bio.join('\n'),`https://example.org/${encodeURIComponent(person.image.url)}`,
-   person.sources.map(s=>`${s.title} | ${s.url}`).join('\n'),person.id,person.burialLocation||'',person.image.sourceUrl];
+   person.sources.map(s=>s.url?`${s.title} | ${s.url}`:s.title).join('\n'),person.id,person.burialLocation||'',person.image.sourceUrl];
  });
  const store={people:structuredClone(people),institutions,timelines:structuredClone(timelines),notify(){}};
  let currentRows=rows;
@@ -244,4 +244,15 @@ test('sheet ownership hides deleted and invalid records without resurrecting bun
  feed=csv([renamed]);await adapter.refresh();
  assert.equal(store.people.length,1);assert.equal(store.people[0].id,original.id);assert.equal(store.people[0].name,'Corrected Person');
  fail=true;await adapter.refresh();assert.equal(store.people[0].name,'Corrected Person','a failed refresh retains the last valid snapshot');
+});
+
+test('a published profile without a photo remains visible without an image request',async()=>{
+ const blank=values.map((v,i)=>i===7?'':v);
+ const parsed=readContent(csv([blank]),institutions);
+ assert.equal(parsed.errors.length,0);assert.equal(parsed.people[0].image,null);
+ const store={institutions,people:[],timelines:[],notify(){}};
+ const adapter=install(store,{csvUrl:'https://example.org/feed.csv'},{fetch:async()=>({ok:true,text:async()=>csv([blank])}),checkImage:async()=>{throw new Error('No image should be requested');}});
+ assert.equal((await adapter.refresh()).state,'ready');assert.equal(store.people.length,1);assert.equal(store.people[0].image,null);
+ const invalid=values.map((v,i)=>i===7?'not-an-image-url':v);
+ assert.equal(readContent(csv([invalid]),institutions).people.length,0);
 });

@@ -26,7 +26,7 @@ Routine profile updates happen through Google Forms and Google Sheets, without e
 
 **Final Website** automatically combines published rows from both input tabs. Do not edit its generated cells. Keep column headings, Entry IDs, and formulas unchanged. If a person has multiple school rows, unpublish each relevant row to remove all appearances. Allow a few minutes for updates, then refresh the website.
 
-The form accepts a portrait upload. **Photo** stores the image link; optional **Photo source** stores the original webpage and appears beneath the portrait. Images must be accessible to website visitors—publishing the spreadsheet does not change private image permissions. Required photo credits and burial-history notes need maintainer assistance because the adapter has no dedicated spreadsheet fields for them.
+The form accepts an optional portrait upload. **Photo** stores the image link; **Photo source** stores the original webpage and appears beneath the portrait as a credit. A blank Photo displays the profile without an image, placeholder, or reserved picture area. Images must be accessible to website visitors—publishing the spreadsheet does not change private image permissions. Detailed photographer and license credits need maintainer assistance.
 
 The **Photo** cell may be blank. The profile and timeline entry will still appear, and the profile will show "No portrait available." A supplied photo must have a valid, publicly accessible link.
 
@@ -103,3 +103,5 @@ node --test tests/*.test.js
 Save dated backups before changing spreadsheet formulas or hosting settings. Keep account ownership and support contacts in the handoff guide. When reporting an issue, include the affected profile or school, the expected result, and a screenshot; do not share passwords.
 
 Rights-reviewed bundled portraits retain their image, source, license, and credit when the sheet contains an older photo. Updating one of those portraits requires maintainer review of its rights metadata.
+
+For a citation beside a claim, end the relevant college-connection sentence or biography/legacy bullet with `[Source name](https://example.org/page)`. The site displays it as a linked `(Source name)`. Add the full reference once in **Sources**, using author or organization, title, publisher/site, and year when known, followed by `| URL`. For a print source, include the author, title, publisher, year, and relevant pages without inventing a web address. In the prose, use a plain parenthetical book citation with its page number. HTML is not accepted in sheet text.

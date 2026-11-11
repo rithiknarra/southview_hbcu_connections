@@ -3,7 +3,7 @@
    Atlanta University (1865) and Clark University/College (1869) predecessor connections.
    Dates prefixed with "By" or "c." are bounds or approximations, not asserted graduation dates.
    Missing image values await user-supplied portraits; see RESEARCH.md.
-   Image credits display only when attributionRequired is true. */
+   Image credits appear beneath each available portrait. */
 const INSTITUTIONS = [
   {
     "id": "spelman",
@@ -67,38 +67,39 @@ const PEOPLE = [
       "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
       "credit": "Ruby Doris Smith-Robinson. Author credited as dadewumi on Wikimedia Commons; CC BY 3.0. Displayed at website sizes.",
       "attributionRequired": true,
-      "fit": "contain"
+      "fit": "contain",
+      "caption": "dadewumi / Wikimedia Commons"
     },
     "connections": [
       {
         "institutionId": "spelman",
-        "label": "Graduated from Spelman College in 1965 with a degree in physical education. Organized with the Atlanta Student Movement while a student."
+        "label": "Graduated from Spelman College in 1965 with a degree in physical education. Organized with the Atlanta Student Movement while a student. [SNCC Digital Gateway](https://snccdigital.org/people/ruby-doris-smith-robinson/)"
       }
     ],
     "bio": [
-      "Attended SNCC’s founding conference at Shaw University and became one of the organization’s central administrators.",
-      "Joined the 1961 Rock Hill sit-in campaign and served a 30-day sentence as part of the jail-no-bail strategy. Later that year, joined the Freedom Rides and was imprisoned in Mississippi’s Parchman Penitentiary.",
-      "As SNCC’s administrative secretary, coordinated support for organizers in Mississippi, Alabama, and Georgia, ensuring that field workers received supplies and transportation.",
-      "Organized the Sojourner Truth Motor Fleet, providing vehicles for civil rights workers traveling throughout the South.",
-      "Became SNCC’s executive secretary in 1966, overseeing the organization’s national office and its support for field organizing."
+      "Attended SNCC’s founding conference at Shaw University and became one of the organization’s central administrators. [SNCC Digital Gateway](https://snccdigital.org/people/ruby-doris-smith-robinson/)",
+      "Joined the 1961 Rock Hill sit-in campaign and served a 30-day sentence as part of the jail-no-bail strategy. Later that year, joined the Freedom Rides and was imprisoned in Mississippi’s Parchman Penitentiary. [SNCC Digital Gateway](https://snccdigital.org/people/ruby-doris-smith-robinson/)",
+      "As SNCC’s administrative secretary, coordinated support for organizers in Mississippi, Alabama, and Georgia, ensuring that field workers received supplies and transportation. [SNCC Digital Gateway](https://snccdigital.org/people/ruby-doris-smith-robinson/)",
+      "Organized the Sojourner Truth Motor Fleet, providing vehicles for civil rights workers traveling throughout the South. [SNCC Digital Gateway](https://snccdigital.org/people/ruby-doris-smith-robinson/)",
+      "Became SNCC’s executive secretary in 1966, overseeing the organization’s national office and its support for field organizing. [SNCC Digital Gateway](https://snccdigital.org/people/ruby-doris-smith-robinson/)"
     ],
     "legacy": [
-      "Organized with the Committee on Appeal for Human Rights (COAHR), the Atlanta Student Movement’s coordinating organization, while attending Spelman. Represented COAHR on SNCC’s Coordinating Committee in 1961 and Executive Committee in 1962.",
-      "Worked as a teaching assistant at Spelman in 1961 and as a swimming instructor at Morehouse’s summer camp in 1960.",
-      "Continued her studies alongside her organizing work and completed her physical education degree in 1965."
+      "Organized with the Committee on Appeal for Human Rights (COAHR), the Atlanta Student Movement’s coordinating organization, while attending Spelman. Represented COAHR on SNCC’s Coordinating Committee in 1961 and Executive Committee in 1962. [SNCC Digital Gateway](https://snccdigital.org/people/ruby-doris-smith-robinson/)",
+      "Worked as a teaching assistant at Spelman in 1961 and as a swimming instructor at Morehouse’s summer camp in 1960. [SNCC](https://snccdigital.org/wp-content/uploads/digitalcollections/64_sncc_staff-jobs.pdf)",
+      "Continued her studies alongside her organizing work and completed her physical education degree in 1965. [SNCC Digital Gateway](https://snccdigital.org/people/ruby-doris-smith-robinson/)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "SNCC Digital Gateway: Ruby Doris Smith Robinson’s organizing and leadership",
+        "title": "SNCC Digital Gateway — Ruby Doris Smith (Robinson) — 2016",
         "url": "https://snccdigital.org/people/ruby-doris-smith-robinson/"
       },
       {
-        "title": "SNCC: Original Atlanta office staff credentials, circa 1964",
+        "title": "SNCC — Personnel Credentials of the Atlanta SNCC Office, undated, probably 1964 — SNCC Digital Gateway",
         "url": "https://snccdigital.org/wp-content/uploads/digitalcollections/64_sncc_staff-jobs.pdf"
       },
       {
-        "title": "Stanford King Institute: Ruby Doris Smith correspondence and education",
+        "title": "Stanford King Institute — To Ruby Doris Smith — The Martin Luther King, Jr. Research and Education Institute",
         "url": "https://kinginstitute.stanford.edu/king-papers/documents/ruby-doris-smith"
       }
     ],
@@ -115,42 +116,43 @@ const PEOPLE = [
       "licenseUrl": "https://catalog.hathitrust.org/Record/000019745",
       "credit": "Ludie A. Andrews, R.N., illustration in Adah B. Thoms, Pathfinders: A History of the Progress of Colored Graduate Nurses (New York: Kay Printing House, 1929). Public domain in the United States. Reproduction from the 1929 volume shown by Alembic Rare Books; cropped to the printed portrait, with no retouching.",
       "attributionRequired": false,
-      "fit": "contain"
+      "fit": "contain",
+      "caption": "Adah B. Thoms, Pathfinders (1929), via Alembic Rare Books"
     },
     "years": "Died January 1969",
     "connections": [
       {
         "institutionId": "spelman",
-        "label": "Completed Spelman’s nurse-training course in 1906. Later led campus infirmaries serving Morehouse, Spelman, and Atlanta University."
+        "label": "Completed Spelman’s nurse-training course in 1906. Later led campus infirmaries serving Morehouse, Spelman, and Atlanta University. [Georgia Women of Achievement](https://www.georgiawomen.org/ludie-clay-andrews)"
       }
     ],
     "legacy": [
-      "Graduated from Spelman’s MacVicar Hospital nurse-training program in 1906.",
-      "Served as superintendent of the Morehouse College Infirmary from 1922 to 1928, then led the joint Morehouse-Spelman-Atlanta University Infirmary until 1948.",
-      "Taught health education in the Spelman-Morehouse summer school and continued caring for students throughout her later nursing career."
+      "Graduated from Spelman’s MacVicar Hospital nurse-training program in 1906. [Georgia Women of Achievement](https://www.georgiawomen.org/ludie-clay-andrews)",
+      "Served as superintendent of the Morehouse College Infirmary from 1922 to 1928, then led the joint Morehouse-Spelman-Atlanta University Infirmary until 1948. [Georgia Women of Achievement](https://www.georgiawomen.org/ludie-clay-andrews)",
+      "Taught health education in the Spelman-Morehouse summer school and continued caring for students throughout her later nursing career. [Georgia Women of Achievement](https://www.georgiawomen.org/ludie-clay-andrews)"
     ],
     "bio": [
-      "Began her nursing leadership at Lula Grove Hospital and Training School for Colored Nurses, where she supervised patient care and taught student nurses.",
-      "Organized Grady’s Municipal Training School for Colored Nurses in 1914. The school received its charter in 1917 and opened professional nursing education to Black women in Atlanta.",
-      "Challenged the exclusion of Black nurses from Georgia’s licensing system, pursuing a lengthy legal campaign for their right to take the state examination and receive registration.",
-      "Worked in public health through the Neighborhood Union and Atlanta Tuberculosis Association, and served as an Atlanta Urban League trustee.",
-      "Received the Mary Mahoney Award in 1943 for her contributions to nursing and opportunities for Black nurses."
+      "Began her work as a nursing leader at Lula Grove Hospital and Training School for Colored Nurses, where she supervised patient care and taught student nurses. [American National Biography](https://academic.oup.com/american-national-biography/reference/63042/reference-article-abstract/570335526)",
+      "Organized Grady’s Municipal Training School for Colored Nurses in 1914. The school received its charter in 1917 and opened professional nursing education to Black women in Atlanta. [Georgia State University Library](https://exhibits.library.gsu.edu/grady-exhibit/timeline-of-major-events/)",
+      "Challenged the exclusion of Black nurses from Georgia’s licensing system, pursuing a lengthy legal campaign for their right to take the state examination and receive registration. [Georgia State University Library](https://exhibits.library.gsu.edu/grady-exhibit/timeline-of-major-events/)",
+      "Worked in public health through the Neighborhood Union and Atlanta Tuberculosis Association, and served as an Atlanta Urban League trustee. [Georgia Women of Achievement](https://www.georgiawomen.org/ludie-clay-andrews)",
+      "Received the Mary Mahoney Award in 1943 for her contributions to nursing and opportunities for Black nurses. [Georgia Women of Achievement](https://www.georgiawomen.org/ludie-clay-andrews)"
     ],
     "sources": [
       {
-        "title": "Georgia Women of Achievement: Ludie Clay Andrews’s nursing and campus service",
+        "title": "Georgia Women of Achievement — Ludie Clay Andrews",
         "url": "https://www.georgiawomen.org/ludie-clay-andrews"
       },
       {
-        "title": "Georgia State University Library: Grady nursing-school timeline and licensing campaign",
+        "title": "Georgia State University Library — Timeline of Major Events",
         "url": "https://exhibits.library.gsu.edu/grady-exhibit/timeline-of-major-events/"
       },
       {
-        "title": "American National Biography: Ludie Andrews’s training and early nursing leadership",
+        "title": "American National Biography — Andrews, Ludie Clay",
         "url": "https://academic.oup.com/american-national-biography/reference/63042/reference-article-abstract/570335526"
       },
       {
-        "title": "Spelman College Archives: Albert Manley papers, correspondence with nurse Ludie Andrews",
+        "title": "Spelman College Archives — The Albert Manley Presidential Collection — Spelman College",
         "url": "https://www.spelman.edu/_1_Docs-and-Files/archives/finding-aids/albert-e-manley-presidential-papers.pdf"
       }
     ],
@@ -168,49 +170,50 @@ const PEOPLE = [
       "license": "Public domain in the United States (NoC-US)",
       "licenseUrl": "https://rightsstatements.org/vocab/NoC-US/1.0/",
       "credit": "Samuel Archer Family, circa 1920. Morehouse College Photographs, Atlanta University Center Robert W. Woodruff Library. Cropped; seated man identified by the site owner.",
-      "fit": "contain"
+      "fit": "contain",
+      "caption": "Morehouse College Photographs / AUC Woodruff Library; cropped"
     },
     "connections": [
       {
         "institutionId": "morehouse",
-        "label": "Served as Morehouse College’s fifth president from 1931 to 1937, following years as a teacher, coach, and dean."
+        "label": "Served as Morehouse College’s fifth president from 1931 to 1937, following years as a teacher, coach, and dean. [Morehouse Athletics](https://morehouseathletics.com/honors/den-of-honor/dr-samuel-h-archer/13)"
       }
     ],
     "bio": [
-      "Graduated from Colgate University in 1902, where he was among its early Black football players.",
-      "Devoted his career to teaching and college leadership. Former students and colleagues remembered his combination of demanding scholarship, humor, and close attention to young men’s development."
+      "Graduated from Colgate University in 1902, where he was among its early Black football players. [Anonymous](https://www.colgate.edu/news/stories/glimpse-colgate-history)",
+      "Devoted his career to teaching and college leadership. Former students and colleagues remembered his combination of demanding scholarship, humor, and close attention to young men’s development. [Giles](https://files.eric.ed.gov/fulltext/EJ751763.pdf)"
     ],
     "legacy": [
-      "Joined Morehouse’s mathematics faculty in 1905 and also coached its football team. Served as acting president while John Hope was away during World War I.",
-      "Served as dean of the college from 1920 to 1931 and also directed its summer school. Worked with John Hope to build a faculty that included Benjamin E. Mays and sociologist E. Franklin Frazier.",
-      "Mentored Howard Thurman during his Morehouse years and continued advising him after graduation as Thurman developed his career in ministry and higher education.",
-      "Became Morehouse’s fifth president in 1931 and led the college during the Great Depression.",
-      "Established maroon and white as the college’s colors, drawing on those of his alma mater, Colgate University. Morehouse named Archer Hall in recognition of his service."
+      "Joined Morehouse’s mathematics faculty in 1905 and also coached its football team. Served as acting president while John Hope was away during World War I. [Morehouse Athletics](https://morehouseathletics.com/honors/den-of-honor/dr-samuel-h-archer/13)",
+      "Served as dean of the college from 1920 to 1931 and also directed its summer school. Worked with John Hope to build a faculty that included Benjamin E. Mays and sociologist E. Franklin Frazier. [Atlanta University Center](https://findingaids.auctr.edu/repositories/2/resources/202)",
+      "Mentored Howard Thurman during his Morehouse years and continued advising him after graduation as Thurman developed his career in ministry and higher education. [Giles](https://files.eric.ed.gov/fulltext/EJ751763.pdf)",
+      "Became Morehouse’s fifth president in 1931 and led the college during the Great Depression. [Morehouse Athletics](https://morehouseathletics.com/honors/den-of-honor/dr-samuel-h-archer/13)",
+      "Established maroon and white as the college’s colors, drawing on those of his alma mater, Colgate University. Morehouse named Archer Hall in recognition of his service. [Morehouse Athletics](https://morehouseathletics.com/honors/den-of-honor/dr-samuel-h-archer/13)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Morehouse Athletics: Samuel H. Archer, educator and president",
+        "title": "Morehouse Athletics — Dr. Samuel H. Archer — Den of Honor — Morehouse College Athletics",
         "url": "https://morehouseathletics.com/honors/den-of-honor/dr-samuel-h-archer/13"
       },
       {
-        "title": "Atlanta University Center: Morehouse College Office of the Presidents records",
+        "title": "Atlanta University Center — Morehouse College Office of the Presidents, 1890–1967 — AUC Woodruff Library",
         "url": "https://findingaids.auctr.edu/repositories/2/resources/202"
       },
       {
-        "title": "Colgate University: Samuel Howard Archer’s education and legacy",
+        "title": "Anonymous — A glimpse of Colgate history — 2017",
         "url": "https://www.colgate.edu/news/stories/glimpse-colgate-history"
       },
       {
-        "title": "Howard Thurman Papers Project: Letter to Samuel Archer, April 14, 1936",
+        "title": "Howard Thurman — Letter to Samuel Archer, April 14, 1936 — 1936",
         "url": "https://www.thurmanpapersproject.org/node/558"
       },
       {
-        "title": "Howard Thurman Papers Project: Morehouse faculty, Dean Archer, and Thurman’s education",
+        "title": "Howard Thurman Papers Project — Biographical Essay",
         "url": "https://www.thurmanpapersproject.org/index.php/biography/biographical-vol1"
       },
       {
-        "title": "Mark S. Giles: Howard Thurman — The Making of a Morehouse Man (2006)",
+        "title": "Mark S. Giles — Howard Thurman: The Making of a Morehouse Man, 1919–1923 — Educational Foundations — 2006",
         "url": "https://files.eric.ed.gov/fulltext/EJ751763.pdf"
       }
     ],
@@ -226,40 +229,41 @@ const PEOPLE = [
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Horace_Mann_Bond.jpg",
       "license": "Public domain",
       "licenseUrl": "",
-      "attributionRequired": false
+      "attributionRequired": false,
+      "caption": "Wikimedia Commons"
     },
     "connections": [
       {
         "institutionId": "clark",
-        "label": "Joined Atlanta University in 1957 and served as a dean and researcher."
+        "label": "Joined Atlanta University in 1957 and served as a dean and researcher. [Huff](https://www.georgiaencyclopedia.org/articles/education/horace-mann-bond-1904-1972/)"
       }
     ],
     "bio": [
-      "As president of Fort Valley State College from 1939 to 1945, improved its curriculum and finances and oversaw its transition to a four-year, degree-granting institution.",
-      "Led Lincoln University from 1945 to 1957 as its first Black president.",
-      "Challenged claims of racial inferiority based on intelligence tests, examining the effects of unequal schooling and social conditions on test results.",
-      "Conducted historical research with John Hope Franklin and C. Vann Woodward for the NAACP Legal Defense and Educational Fund in 1953. Their work contributed to the arguments in Brown v. Board of Education.",
-      "Helped establish the Africa-America Institute in 1953 to support educational exchange and opportunities for African students.",
-      "Wrote The Education of the Negro in the American Social Order and Negro Education in Alabama, examining the political and economic conditions shaping Black education."
+      "As president of Fort Valley State College from 1939 to 1945, improved its curriculum and finances and oversaw its transition to a four-year, degree-granting institution. [Huff](https://www.georgiaencyclopedia.org/articles/education/horace-mann-bond-1904-1972/)",
+      "Led Lincoln University from 1945 to 1957 as its first Black president. [Huff](https://www.georgiaencyclopedia.org/articles/education/horace-mann-bond-1904-1972/)",
+      "Challenged claims of racial inferiority based on intelligence tests, examining the effects of unequal schooling and social conditions on test results. [Huff](https://www.georgiaencyclopedia.org/articles/education/horace-mann-bond-1904-1972/)",
+      "Conducted historical research with John Hope Franklin and C. Vann Woodward for the NAACP Legal Defense and Educational Fund in 1953. Their work contributed to the arguments in Brown v. Board of Education. [Huff](https://www.georgiaencyclopedia.org/articles/education/horace-mann-bond-1904-1972/)",
+      "Helped establish the Africa-America Institute in 1953 to support educational exchange and opportunities for African students. [Huff](https://www.georgiaencyclopedia.org/articles/education/horace-mann-bond-1904-1972/)",
+      "Wrote The Education of the Negro in the American Social Order and Negro Education in Alabama, examining the political and economic conditions shaping Black education. [Huff](https://www.georgiaencyclopedia.org/articles/education/horace-mann-bond-1904-1972/)"
     ],
     "legacy": [
-      "Served as dean of Atlanta University’s School of Education from 1957 to 1966, teaching and directing the school’s academic work.",
-      "Conducted research on Black recipients of doctoral degrees while at Atlanta University.",
-      "Became director of the university’s Bureau of Educational and Social Research in 1966 and continued educational research until retiring in 1971.",
-      "Spoke as an Atlanta University education leader before the U.S. Commission on Civil Rights in 1962, challenging the use of test scores to justify racial exclusion in school desegregation plans."
+      "Served as dean of Atlanta University’s School of Education from 1957 to 1966, teaching and directing the school’s academic work. [Huff](https://www.georgiaencyclopedia.org/articles/education/horace-mann-bond-1904-1972/)",
+      "Conducted research on Black recipients of doctoral degrees while at Atlanta University. [Huff](https://www.georgiaencyclopedia.org/articles/education/horace-mann-bond-1904-1972/)",
+      "Became director of the university’s Bureau of Educational and Social Research in 1966 and continued educational research until retiring in 1971. [Huff](https://www.georgiaencyclopedia.org/articles/education/horace-mann-bond-1904-1972/)",
+      "Spoke as an Atlanta University education leader before the U.S. Commission on Civil Rights in 1962, challenging the use of test scores to justify racial exclusion in school desegregation plans. [Horace Mann Bond](https://www.usccr.gov/files/historical/1962/62-002.pdf#page=81)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "New Georgia Encyclopedia — Horace Mann Bond",
+        "title": "Christopher A. Huff — Horace Mann Bond — New Georgia Encyclopedia — 2007",
         "url": "https://www.georgiaencyclopedia.org/articles/education/horace-mann-bond-1904-1972/"
       },
       {
-        "title": "Horace Mann Bond — testimony on planning school desegregation, U.S. Commission on Civil Rights (1962), pp. 73–79",
+        "title": "Horace Mann Bond — Fourth Annual Education Conference on Problems of Segregation and Desegregation of Public Schools — pp. 73–79 — U.S. Commission on Civil Rights — 1962",
         "url": "https://www.usccr.gov/files/historical/1962/62-002.pdf#page=81"
       },
       {
-        "title": "UMass Amherst Libraries — Horace Mann Bond papers and career history",
+        "title": "UMass Amherst Libraries — Horace Mann Bond Papers",
         "url": "https://scua.library.umass.edu/bond-horace-mann-1904-1972/"
       }
     ],
@@ -277,36 +281,37 @@ const PEOPLE = [
       "license": "Public domain or no known copyright restrictions (Library of Congress assessment)",
       "licenseUrl": "https://www.loc.gov/item/sn82015425/?st=calendar#rights-and-access",
       "attributionRequired": false,
-      "fit": "contain"
+      "fit": "contain",
+      "caption": "Atlanta Daily World (1962) / Library of Congress; cropped"
     },
     "connections": [
       {
         "institutionId": "morehouse",
-        "label": "Graduated from Morehouse College in 1929. Returned as an instructor in 1936."
+        "label": "Graduated from Morehouse College in 1929. Returned as an instructor in 1936. [Hatfield](https://www.georgiaencyclopedia.org/articles/arts-culture/william-holmes-borders-1905-1993/)"
       }
     ],
     "bio": [
-      "Led Wheat Street Baptist Church from 1937 for more than five decades, developing services that included an employment agency, a credit union, childcare, and a medical clinic.",
-      "Helped create affordable housing through Wheat Street’s church-sponsored housing program, extending the congregation’s work beyond worship into neighborhood needs.",
-      "Organized voter registration and campaigned for Black police officers in Atlanta. In 1957, he and five fellow ministers challenged segregated bus seating through the Love, Law, and Liberation Movement. Their test case helped secure a 1959 ruling against the segregation law.",
-      "Chaired the Student-Adult Liaison Committee that negotiated the desegregation of Atlanta lunch counters in 1961.",
-      "Broadcast sermons to Black and white listeners and published Seven Minutes at the “Mike” in the Deep South. His preaching addressed religious life alongside racial inequality and public affairs."
+      "Led Wheat Street Baptist Church from 1937 for more than five decades, developing services that included an employment agency, a credit union, childcare, and a medical clinic. [Hatfield](https://www.georgiaencyclopedia.org/articles/arts-culture/william-holmes-borders-1905-1993/)",
+      "Helped create affordable housing through Wheat Street’s church-sponsored housing program, extending the congregation’s work beyond worship to address neighborhood needs. [Hatfield](https://www.georgiaencyclopedia.org/articles/arts-culture/william-holmes-borders-1905-1993/)",
+      "Organized voter registration and campaigned for Black police officers in Atlanta. In 1957, he and five fellow ministers challenged segregated bus seating through the Love, Law, and Liberation Movement. Their test case helped secure a 1959 ruling against the segregation law. [Hatfield](https://www.georgiaencyclopedia.org/articles/arts-culture/william-holmes-borders-1905-1993/)",
+      "Chaired the Student-Adult Liaison Committee that negotiated the desegregation of Atlanta lunch counters in 1961. [Hatfield](https://www.georgiaencyclopedia.org/articles/arts-culture/william-holmes-borders-1905-1993/)",
+      "Broadcast sermons to Black and white listeners and published Seven Minutes at the “Mike” in the Deep South. His preaching addressed religious life alongside racial inequality and public affairs. [Hatfield](https://www.georgiaencyclopedia.org/articles/arts-culture/william-holmes-borders-1905-1993/)"
     ],
     "legacy": [
-      "Returned to Morehouse in 1936 as an instructor after graduate study at Garrett Theological Seminary and Northwestern University. Became pastor of Wheat Street Baptist Church the following year."
+      "Returned to Morehouse in 1936 as an instructor after graduate study at Garrett Theological Seminary and Northwestern University. Became pastor of Wheat Street Baptist Church the following year. [Hatfield](https://www.georgiaencyclopedia.org/articles/arts-culture/william-holmes-borders-1905-1993/)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "New Georgia Encyclopedia: William Holmes Borders’s ministry and community institutions",
+        "title": "Edward A. Hatfield — William Holmes Borders — New Georgia Encyclopedia — 2007",
         "url": "https://www.georgiaencyclopedia.org/articles/arts-culture/william-holmes-borders-1905-1993/"
       },
       {
-        "title": "Stanford King Institute: William Holmes Borders Sr.",
+        "title": "Stanford King Institute — Borders, William Holmes, Sr. — The Martin Luther King, Jr. Research and Education Institute",
         "url": "https://kinginstitute.stanford.edu/borders-william-holmes-sr"
       },
       {
-        "title": "William Holmes Borders: Letter to Martin Luther King Jr., April 6, 1957",
+        "title": "William Holmes Borders — From William Holmes Borders — The Martin Luther King, Jr. Research and Education Institute",
         "url": "https://kinginstitute.stanford.edu/king-papers/documents/william-holmes-borders"
       }
     ],
@@ -322,37 +327,38 @@ const PEOPLE = [
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ariel_Serena_Hedges_Bowen,_ca._1880s.jpg",
       "license": "Public domain",
       "licenseUrl": "",
-      "attributionRequired": false
+      "attributionRequired": false,
+      "caption": "Wikimedia Commons"
     },
     "connections": [
       {
         "institutionId": "clark",
-        "label": "Became a professor of music at Clark University in 1895."
+        "label": "Became a professor of music at Clark University in 1895. [Culp](https://www.gutenberg.org/cache/epub/18772/pg18772-images.html#Page_264)"
       }
     ],
     "bio": [
-      "Taught history and English at Tuskegee Institute under Booker T. Washington before moving to Atlanta.",
-      "Served as state president of Georgia’s Woman’s Christian Temperance Union No. 2, leading the organization’s work among Black women.",
-      "Spoke at Chautauqua in 1899 about the activities of Georgia’s WCTU No. 2.",
-      "Wrote “Music in the Home” and “The Ethics of Reform,” addressing music education and social reform.",
-      "Contributed to the 1902 collection Twentieth Century Negro Literature, which brought together Black writers discussing education, civil rights, and public life."
+      "Taught history and English at Tuskegee Institute under Booker T. Washington before moving to Atlanta. [Culp](https://www.gutenberg.org/cache/epub/18772/pg18772-images.html#Page_264)",
+      "Served as state president of Georgia’s Woman’s Christian Temperance Union No. 2, leading the organization’s work among Black women. [Culp](https://www.gutenberg.org/cache/epub/18772/pg18772-images.html#Page_264)",
+      "Spoke at Chautauqua in 1899 about the activities of Georgia’s WCTU No. 2. [The Chautauquan Daily](https://chqdaily.com/wp-content/uploads/2023/06/081722_Daily.pdf)",
+      "Wrote “Music in the Home” and “The Ethics of Reform,” addressing music education and social reform. [Culp](https://www.gutenberg.org/cache/epub/18772/pg18772-images.html#Page_264)",
+      "Contributed to the 1902 collection Twentieth Century Negro Literature, which brought together Black writers discussing education, civil rights, and public life. [Culp](https://www.gutenberg.org/cache/epub/18772/pg18772-images.html#Page_264)"
     ],
     "legacy": [
-      "Became professor of music at Clark University in 1895.",
-      "Worked as a vocalist, pianist, and pipe organist alongside her teaching."
+      "Became professor of music at Clark University in 1895. [Culp](https://www.gutenberg.org/cache/epub/18772/pg18772-images.html#Page_264)",
+      "Worked as a vocalist, pianist, and pipe organist alongside her teaching. [Culp](https://www.gutenberg.org/cache/epub/18772/pg18772-images.html#Page_264)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Twentieth Century Negro Literature (1902) — Ariel S. Bowen biography and essay",
+        "title": "D. W. Culp, editor — Twentieth century Negro literature — Project Gutenberg",
         "url": "https://www.gutenberg.org/cache/epub/18772/pg18772-images.html#Page_264"
       },
       {
-        "title": "Atlanta Housing — Ariel Serena Hedges Bowen’s educational and civic work",
+        "title": "Jaylen Black — Atlanta Housing Introduces Ariel Place at Bowen, Bringing Fuller Bowen Family Legacy Forward — Atlanta Housing — 2026",
         "url": "https://www.atlantahousing.org/atlanta-housing-introduces-ariel-place-at-bowen-bringing-fuller-bowen-family-legacy-forward/"
       },
       {
-        "title": "The Chautauquan Daily — Black temperance activists at Chautauqua (August 17, 2022)",
+        "title": "The Chautauquan Daily — The Chautauquan Daily, August 17, 2022 — 2022",
         "url": "https://chqdaily.com/wp-content/uploads/2023/06/081722_Daily.pdf"
       }
     ],
@@ -368,45 +374,46 @@ const PEOPLE = [
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aliceduggedcary.jpg",
       "license": "Public domain",
       "licenseUrl": "",
-      "attributionRequired": false
+      "attributionRequired": false,
+      "caption": "Wikimedia Commons"
     },
     "connections": [
       {
         "institutionId": "morris",
-        "label": "Became the second principal of Morris Brown College in 1886."
+        "label": "Became the second principal of Morris Brown College in 1886. [Zeta Phi Beta](https://zphib1920.org/membership/member-highlight-honorary-members/)"
       }
     ],
     "bio": [
-      "Graduated from Wilberforce University in 1881 and worked as a teacher and assistant principal before moving to Atlanta.",
-      "Became the first principal of Atlanta’s Mitchell Street School in 1887, adding public-school leadership to her college work.",
-      "Led the Auburn Branch of the Carnegie Library when it opened in 1921, the first Atlanta public-library branch serving Black residents under segregation.",
-      "As president of the Georgia Federation of Colored Women’s Clubs, coordinated its work with the Woman’s Committee of the Council of National Defense during World War I. Led an Atlanta canteen committee that served Black soldiers and opened a Red Cross workroom on Auburn Avenue."
+      "Graduated from Wilberforce University in 1881 and worked as a teacher and assistant principal before moving to Atlanta. [Zeta Phi Beta](https://zphib1920.org/membership/member-highlight-honorary-members/)",
+      "Became the first principal of Atlanta’s Mitchell Street School in 1887, adding public-school leadership to her college work. [Zeta Phi Beta](https://zphib1920.org/membership/member-highlight-honorary-members/)",
+      "Led the Auburn Branch of the Carnegie Library when it opened in 1921, the first Atlanta public-library branch serving Black residents under segregation. [Fulton County Library System](https://www.fulcolibrary.org/aarl/aarl-history/)",
+      "As president of the Georgia Federation of Colored Women’s Clubs, coordinated its work with the Woman’s Committee of the Council of National Defense during World War I. Led an Atlanta canteen committee that served Black soldiers and opened a Red Cross workroom on Auburn Avenue. [Alice Dugged Cary](https://dlg.usg.edu/record/dlg_ggpd_s-ga-bd475-pc6-br1-bw6-b1919)"
     ],
     "legacy": [
-      "Served as Morris Brown’s second principal during the college’s early years.",
-      "Was identified as chair of science at Morris Brown in the proceedings of the 1902 National Baptist Convention.",
-      "Helped establish Zeta Phi Beta’s Beta Chapter at Morris Brown in 1921, the sorority’s second chapter."
+      "Served as Morris Brown’s second principal during the college’s early years. [Zeta Phi Beta](https://zphib1920.org/membership/member-highlight-honorary-members/)",
+      "Was identified as chair of science at Morris Brown in the proceedings of the 1902 National Baptist Convention. [National Baptist Convention](https://s3.amazonaws.com/media2.sbhla.org/aaa/nbc/NBC_1902.pdf)",
+      "Helped establish Zeta Phi Beta’s Beta Chapter at Morris Brown in 1921, the sorority’s second chapter. [Zeta Phi Beta](https://zphib1920.org/membership/member-highlight-honorary-members/)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Fulton County Library System: History of the Auburn Avenue Research Library",
+        "title": "Fulton County Library System — History of the Auburn Avenue Research Library",
         "url": "https://www.fulcolibrary.org/aarl/aarl-history/"
       },
       {
-        "title": "Georgia Public Library Service: Auburn Branch staff and Alice Dugged Cary",
+        "title": "Georgia Public Library Service — Auburn Branch Staff — Equal Access: The Unfolding Legacy of the Auburn Branch",
         "url": "https://georgialibraries.omeka.net/s/AARL/page/staff"
       },
       {
-        "title": "National Baptist Convention: 1902 proceedings identifying Cary’s science chairmanship",
+        "title": "National Baptist Convention — Proceedings of the National Baptist Convention, 1902 — 1902",
         "url": "https://s3.amazonaws.com/media2.sbhla.org/aaa/nbc/NBC_1902.pdf"
       },
       {
-        "title": "Zeta Phi Beta: Alice Dugged Cary’s institutional leadership",
+        "title": "Zeta Phi Beta — Member Highlight (Honorary Members) — Zeta Phi Beta Sorority, Incorporated — 2023",
         "url": "https://zphib1920.org/membership/member-highlight-honorary-members/"
       },
       {
-        "title": "Alice Dugged Cary: Report on Georgia Black women’s wartime service (1919), pp. 85–86",
+        "title": "Alice Dugged Cary — Final report of Woman's Committee, Council of National Defense, Georgia Division, 1917 April-1919 July — Digital Library of Georgia",
         "url": "https://dlg.usg.edu/record/dlg_ggpd_s-ga-bd475-pc6-br1-bw6-b1919"
       }
     ],
@@ -422,42 +429,46 @@ const PEOPLE = [
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mattiwilda_Dobbs_1957.JPG",
       "license": "Public domain",
       "licenseUrl": "",
-      "attributionRequired": false
+      "attributionRequired": false,
+      "caption": "Wikimedia Commons"
     },
     "connections": [
       {
         "institutionId": "spelman",
-        "label": "Graduated from Spelman College in 1946. Returned as artist-in-residence in 1974–1975."
+        "label": "Graduated from Spelman College in 1946. Returned as artist-in-residence in 1974–1975. [Trap](https://www.georgiaencyclopedia.org/articles/arts-culture/mattiwilda-dobbs-1925-2015/)"
       }
     ],
     "bio": [
-      "Won the International Music Competition in Geneva in 1951 and built an international operatic career. In 1953, became the first Black singer to perform at La Scala in Milan.",
-      "Made her Metropolitan Opera debut as Gilda in Rigoletto in 1956 and became the first Black woman offered a long-term contract by the company.",
-      "Refused to perform for segregated audiences. In 1962, sang at Atlanta Municipal Auditorium after its desegregation, bringing her performances to an integrated audience in her hometown.",
-      "Combined performance with the education of younger singers through university teaching, master classes, and recitals. She also served on the Metropolitan Opera’s board and a National Endowment for the Arts recital panel."
+      "Won the International Music Competition in Geneva in 1951 and built an international operatic career. In 1953, became the first Black singer to perform at La Scala in Milan. [Trap](https://www.georgiaencyclopedia.org/articles/arts-culture/mattiwilda-dobbs-1925-2015/)",
+      "Made her Metropolitan Opera debut as Gilda in Rigoletto in 1956 and became the first Black woman offered a long-term contract by the company. [Trap](https://www.georgiaencyclopedia.org/articles/arts-culture/mattiwilda-dobbs-1925-2015/)",
+      "Refused to perform for segregated audiences. In 1962, sang at Atlanta Municipal Auditorium after its desegregation, bringing her performances to an integrated audience in her hometown. [Trap](https://www.georgiaencyclopedia.org/articles/arts-culture/mattiwilda-dobbs-1925-2015/)",
+      "Combined performance with the education of younger singers through university teaching, master classes, and recitals. She also served on the Metropolitan Opera’s board and a National Endowment for the Arts recital panel. [The HistoryMakers](https://www.thehistorymakers.org/biography/mattiwilda-dobbs-janzon-40)"
     ],
     "legacy": [
-      "Began formal voice training at Spelman with Naomi Maise and Willis Laurence James, and sang in the Spelman College Glee Club. Graduated as valedictorian in 1946.",
-      "Returned as artist-in-residence for the 1974–1975 academic year, giving recitals and teaching master classes.",
-      "Also taught at the University of Texas and Howard University, where she became a professor of voice."
+      "Began formal voice training at Spelman with Naomi Maise and Willis Laurence James, and sang in the Spelman College Glee Club. Graduated as valedictorian in 1946. [University of South Florida Contemporary Art Museum](https://ira.usf.edu/cam/exhibitions/2021_01_Still_Here/Still-Here-Study-Guide.pdf)",
+      "Returned as artist-in-residence for the 1974–1975 academic year, giving recitals and teaching master classes. [Trap](https://www.georgiaencyclopedia.org/articles/arts-culture/mattiwilda-dobbs-1925-2015/)",
+      "Also taught at the University of Texas and Howard University, where she became a professor of voice. [Trap](https://www.georgiaencyclopedia.org/articles/arts-culture/mattiwilda-dobbs-1925-2015/)"
     ],
     "burialLocation": "https://maps.app.goo.gl/iXNY1aV1Cg4YKZLr7",
     "sources": [
       {
-        "title": "New Georgia Encyclopedia: Mattiwilda Dobbs’s career and Spelman residency",
+        "title": "Diane Trap — Mattiwilda Dobbs — New Georgia Encyclopedia — 2005",
         "url": "https://www.georgiaencyclopedia.org/articles/arts-culture/mattiwilda-dobbs-1925-2015/"
       },
       {
-        "title": "The HistoryMakers: Mattiwilda Dobbs Janzon oral-history biography",
+        "title": "The HistoryMakers — Mattiwilda Dobbs Janzon",
         "url": "https://www.thehistorymakers.org/biography/mattiwilda-dobbs-janzon-40"
       },
       {
-        "title": "Spelman College Glee Club: The Dobbs Girls, June 2017 newsletter",
+        "title": "Spelman College Glee Club — Resonance — Spelman College Glee Club Alumnae Newsletter, June 2017 — Spelman College — 2017",
         "url": "https://www.spelman.edu/_1_Docs-and-Files/academics/music/2017-06-newsletter.pdf"
       },
       {
-        "title": "University of South Florida Contemporary Art Museum: Mattiwilda Dobbs’s Spelman voice training and 1946 rehearsal photograph",
+        "title": "University of South Florida Contemporary Art Museum — Griff Davis and Langston Hughes: Letters and Photographs, 1947–1967 — Still Here Study Guide",
         "url": "https://ira.usf.edu/cam/exhibitions/2021_01_Still_Here/Still-Here-Study-Guide.pdf"
+      },
+      {
+        "title": "D. L. Henderson — South-View: An African American City of the Dead — Carrelspin Press — 2018 — pp. 194-195"
       }
     ],
     "showSources": true
@@ -474,38 +485,39 @@ const PEOPLE = [
       "sourceUrl": "https://dlg.usg.edu/record/geh_byd_3504",
       "license": "CC BY-NC-ND 4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "fit": "contain"
+      "fit": "contain",
+      "caption": "Boyd Lewis / Atlanta History Center"
     },
     "connections": [
       {
         "institutionId": "clark",
-        "label": "Earned a bachelor's degree from Atlanta University in 1927 and later taught at Clark College."
+        "label": "Earned a bachelor's degree from Atlanta University in 1927 and later taught at Clark College. [Spritzer and Bergmark](https://www.georgiaencyclopedia.org/articles/history-archaeology/grace-towns-hamilton-1907-1992)"
       }
     ],
     "bio": [
-      "Surveyed Black workers for the Works Progress Administration in Memphis and developed interracial programs on college campuses through the YWCA.",
-      "Became executive director of the Atlanta Urban League in 1943, leading campaigns for better schooling, housing, health care, and voting rights for Black Atlantans.",
-      "Helped organize Atlanta’s 1946 Black voter-registration campaign and worked to improve hospital access through the Hughes Spalding Pavilion at Grady Memorial Hospital.",
-      "Elected to the Georgia legislature in 1965, becoming the first Black woman elected to the General Assembly. She worked on legislative and congressional redistricting to expand Black political representation.",
-      "Helped write Atlanta’s 1973 city charter, establishing district representation that increased Black residents’ representation on the City Council.",
-      "Served as an adviser to the U.S. Civil Rights Commission from 1985 to 1987."
+      "Surveyed Black workers for the Works Progress Administration in Memphis and developed interracial programs on college campuses through the YWCA. [Spritzer and Bergmark](https://www.georgiaencyclopedia.org/articles/history-archaeology/grace-towns-hamilton-1907-1992)",
+      "Became executive director of the Atlanta Urban League in 1943, leading campaigns for better schooling, housing, health care, and voting rights for Black Atlantans. [Spritzer and Bergmark](https://www.georgiaencyclopedia.org/articles/history-archaeology/grace-towns-hamilton-1907-1992)",
+      "Helped organize Atlanta’s 1946 Black voter-registration campaign and worked to improve hospital access through the Hughes Spalding Pavilion at Grady Memorial Hospital. [Spritzer and Bergmark](https://www.georgiaencyclopedia.org/articles/history-archaeology/grace-towns-hamilton-1907-1992)",
+      "Elected to the Georgia legislature in 1965, becoming the first Black woman elected to the General Assembly. She worked on legislative and congressional redistricting to expand Black political representation. [Spritzer and Bergmark](https://www.georgiaencyclopedia.org/articles/history-archaeology/grace-towns-hamilton-1907-1992)",
+      "Helped write Atlanta’s 1973 city charter, establishing district representation that increased Black residents’ representation on the City Council. [Spritzer and Bergmark](https://www.georgiaencyclopedia.org/articles/history-archaeology/grace-towns-hamilton-1907-1992)",
+      "Served as an adviser to the U.S. Civil Rights Commission from 1985 to 1987. [University of Mississippi](https://egrove.olemiss.edu/swl/37/)"
     ],
     "legacy": [
-      "Earned her undergraduate degree at Atlanta University in 1927.",
-      "Returned after graduate study to teach psychology at Clark College and the Atlanta School of Social Work."
+      "Earned her undergraduate degree at Atlanta University in 1927. [Spritzer and Bergmark](https://www.georgiaencyclopedia.org/articles/history-archaeology/grace-towns-hamilton-1907-1992)",
+      "Returned after graduate study to teach psychology at Clark College and the Atlanta School of Social Work. [Spritzer and Bergmark](https://www.georgiaencyclopedia.org/articles/history-archaeology/grace-towns-hamilton-1907-1992)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "New Georgia Encyclopedia — Grace Towns Hamilton",
+        "title": "Lorraine N. Spritzer, Jean B. Bergmark — Grace Towns Hamilton — New Georgia Encyclopedia — 2002",
         "url": "https://www.georgiaencyclopedia.org/articles/history-archaeology/grace-towns-hamilton-1907-1992"
       },
       {
-        "title": "Georgia Women of Achievement — Grace Towns Hamilton’s public service",
+        "title": "Georgia Women of Achievement — Grace Towns Hamilton",
         "url": "https://www.georgiawomen.org/grace-towns-hamilton"
       },
       {
-        "title": "University of Mississippi — Grace Hamilton oral-history interview (1984)",
+        "title": "Grace Hamilton — Georgia: Oral Interview with Grace Hamilton (Part 1 of 2) — eGrove",
         "url": "https://egrove.olemiss.edu/swl/37/"
       }
     ],
@@ -523,35 +535,36 @@ const PEOPLE = [
       "licenseUrl": "https://www.loc.gov/item/sn82015425/?st=calendar#rights-and-access",
       "credit": "Freddye Scarborough Henderson, Atlanta Daily World, National Edition, May 19, 1951, World Mother of 1951 photograph. Freddye Scarborough Henderson Family Papers, Auburn Avenue Research Library, via Georgia Public Library Service. Cropped to the mother explicitly identified in the caption. Library of Congress describes Chronicling America newspapers as public domain or having no known copyright restrictions, with a caveat for third-party material; no separate photo credit appears beside this image.",
       "attributionRequired": false,
-      "fit": "contain"
+      "fit": "contain",
+      "caption": "Atlanta Daily World (1951) / Auburn Avenue Research Library; cropped"
     },
     "connections": [
       {
         "institutionId": "spelman",
-        "label": "Taught at Spelman College for 11 years at the invitation of president Florence Read."
+        "label": "Taught at Spelman College for 11 years at the invitation of president Florence Read. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_hendersonfreddyescarborough20070124)"
       }
     ],
     "bio": [
-      "Helped establish the National Association of Fashion and Accessory Designers and served as its first president, promoting the work of Black designers to the wider fashion industry.",
-      "Led a delegation of designers to Europe, where members visited major fashion houses. Her fashion journalism included the “Fashion Trends” series for the Associated Negro Press.",
-      "Founded Henderson Travel Service with her husband Jake in Atlanta in 1955, creating a Black-owned agency that organized international travel for African American customers.",
-      "Expanded tours to Africa in 1957, including travel for Ghana’s independence celebrations. The agency also arranged international tours for professional associations, churches, fraternities, and sororities."
+      "Helped establish the National Association of Fashion and Accessory Designers and served as its first president, promoting the work of Black designers to the wider fashion industry. [Georgia Public Library Service](https://georgialibraries.omeka.net/s/aarl-freddye/page/hendersons)",
+      "Led a delegation of designers to Europe, where members visited major fashion houses. Her fashion journalism included the “Fashion Trends” series for the Associated Negro Press. [Georgia Public Library Service](https://georgialibraries.omeka.net/s/aarl-freddye/item?tag=Freddye+Henderson)",
+      "Founded Henderson Travel Service with her husband Jake in Atlanta in 1955, creating a Black-owned agency that organized international travel for African American customers. [Georgia Public Library Service](https://georgialibraries.omeka.net/s/aarl-freddye/page/hendersons)",
+      "Expanded tours to Africa in 1957, including travel for Ghana’s independence celebrations. The agency also arranged international tours for professional associations, churches, fraternities, and sororities. [Georgia Public Library Service](https://georgialibraries.omeka.net/s/aarl-freddye/page/hendersons)"
     ],
     "legacy": [
-      "Recruited by Spelman president Florence Read to teach home economics, textiles, fashion design, applied art, and personality development. Taught at the college for 11 years."
+      "Recruited by Spelman president Florence Read to teach home economics, textiles, fashion design, applied art, and personality development. Taught at the college for 11 years. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_hendersonfreddyescarborough20070124)"
     ],
     "burialLocation": "https://maps.app.goo.gl/NPh39ChZFTz4v2aa8",
     "sources": [
       {
-        "title": "Auburn Avenue Research Library: Freddye Henderson funeral program and Spelman teaching",
+        "title": "Auburn Avenue Research Library — A Service Honoring the Life of Freddye Scarborough Henderson — Digital Library of Georgia",
         "url": "https://dlg.usg.edu/record/aarl_afpc_hendersonfreddyescarborough20070124"
       },
       {
-        "title": "Georgia Public Library Service: Henderson family papers and travel-service history",
+        "title": "Georgia Public Library Service — About the Hendersons — The Freddye Scarborough Henderson Family Papers",
         "url": "https://georgialibraries.omeka.net/s/aarl-freddye/page/hendersons"
       },
       {
-        "title": "Georgia Public Library Service: Original fashion writing and professional records",
+        "title": "Georgia Public Library Service — The Freddye Scarborough Henderson Family Papers",
         "url": "https://georgialibraries.omeka.net/s/aarl-freddye/item?tag=Freddye+Henderson"
       }
     ],
@@ -568,36 +581,40 @@ const PEOPLE = [
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adrienne_Herndon_portrait.jpg",
       "license": "Public domain",
       "licenseUrl": "",
-      "attributionRequired": false
+      "attributionRequired": false,
+      "caption": "Wikimedia Commons"
     },
     "connections": [
       {
         "institutionId": "clark",
-        "label": "Graduated from Atlanta University's Normal Department in 1890 and later taught at the university."
+        "label": "Graduated from Atlanta University's Normal Department in 1890 and later taught at the university. [National Park Service](https://npgallery.nps.gov/pdfhost/docs/NHLS/Text/00000261.pdf)"
       }
     ],
     "bio": [
-      "Performed on stages in Boston and New York while pursuing a professional acting career.",
-      "Faced discriminatory casting that restricted the roles available to Black actresses.",
-      "Studied at the Boston School of Expression and performed a one-woman presentation of Antony and Cleopatra in Boston in 1904.",
-      "Took a leading role in planning the Herndon family home near Atlanta University, including spaces intended for university gatherings and theatrical performances."
+      "Performed on stages in Boston and New York while pursuing a professional acting career. [National Park Service](https://npgallery.nps.gov/pdfhost/docs/NHLS/Text/00000261.pdf)",
+      "Faced discriminatory casting that restricted the roles available to Black actresses. [National Park Service](https://npgallery.nps.gov/pdfhost/docs/NHLS/Text/00000261.pdf)",
+      "Studied at the Boston School of Expression and performed a one-woman presentation of Antony and Cleopatra in Boston in 1904. [National Park Service](https://npgallery.nps.gov/pdfhost/docs/NHLS/Text/00000261.pdf)",
+      "Took a leading role in planning the Herndon family home near Atlanta University, including spaces intended for university gatherings and theatrical performances. [National Park Service](https://npgallery.nps.gov/pdfhost/docs/NHLS/Text/00000261.pdf)"
     ],
     "legacy": [
-      "Graduated from Atlanta University’s Normal Department in 1890 and joined its faculty in 1895.",
-      "Introduced Shakespeare into the university’s curriculum and taught elocution.",
-      "Directed annual Shakespeare productions during commencement season, involving students in public performances.",
-      "Trained student actors in concentration, voice control, movement, and character interpretation, describing her methods in “Shakespeare at Atlanta University” in 1906.",
-      "Directed The Merchant of Venice in 1905 and The Taming of the Shrew in 1906. The productions raised money for a proposed university auditorium, chapel, and gymnasium."
+      "Graduated from Atlanta University’s Normal Department in 1890 and joined its faculty in 1895. [National Park Service](https://npgallery.nps.gov/pdfhost/docs/NHLS/Text/00000261.pdf)",
+      "Introduced Shakespeare into the university’s curriculum and taught elocution. [Herndon](https://archive.org/details/sim_voice_1906-07_3_7)",
+      "Directed annual Shakespeare productions during commencement season, involving students in public performances. [Herndon](https://archive.org/details/sim_voice_1906-07_3_7)",
+      "Trained student actors in concentration, voice control, movement, and character interpretation, describing her methods in “Shakespeare at Atlanta University” in 1906. [Herndon](https://archive.org/details/sim_voice_1906-07_3_7)",
+      "Directed The Merchant of Venice in 1905 and The Taming of the Shrew in 1906. The productions raised money for a proposed university auditorium, chapel, and gymnasium. [Herndon](https://archive.org/details/sim_voice_1906-07_3_7)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "National Park Service — Herndon Home landmark nomination",
+        "title": "National Park Service — Herndon Home — National Historic Landmark Nomination",
         "url": "https://npgallery.nps.gov/pdfhost/docs/NHLS/Text/00000261.pdf"
       },
       {
-        "title": "Adrienne E. Herndon — “Shakespeare at Atlanta University,” The Voice of the Negro (July 1906), pp. 482–486",
+        "title": "Adrienne E. Herndon — Shakespeare at Atlanta University — The Voice of the Negro — 1906",
         "url": "https://archive.org/details/sim_voice_1906-07_3_7"
+      },
+      {
+        "title": "D. L. Henderson — South-View: An African American City of the Dead — Carrelspin Press — 2018 — pp. 209-210"
       }
     ],
     "showSources": true
@@ -612,39 +629,40 @@ const PEOPLE = [
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alonzo_herndon.jpg",
       "license": "Public domain",
       "licenseUrl": "",
-      "attributionRequired": false
+      "attributionRequired": false,
+      "caption": "Wikimedia Commons"
     },
     "connections": [
       {
         "institutionId": "morris",
-        "label": "Morris Brown College’s Alonzo Herndon Stadium opened in 1948 in his honor."
+        "label": "Morris Brown College’s Alonzo Herndon Stadium opened in 1948 in his honor. [PBS](https://www.pbs.org/video/from-slavery-to-legacy-alonzo-herndon-jedhv7/)"
       }
     ],
     "bio": [
-      "Built a successful Atlanta barbering business and invested its earnings in residential and commercial real estate.",
-      "Founded the enterprise that became Atlanta Life Insurance Company in 1905. The company provided insurance to Black customers and grew into one of the country’s leading Black-owned insurers.",
-      "Supported local educational, religious, and charitable institutions and participated in organizations advancing Black economic and civil rights."
+      "Built a successful Atlanta barbering business and invested its earnings in residential and commercial real estate. [Henderson](https://www.georgiaencyclopedia.org/articles/business-economy/alonzo-herndon-1858-1927/)",
+      "Founded the enterprise that became Atlanta Life Insurance Company in 1905. The company provided insurance to Black customers and grew into one of the country’s leading Black-owned insurers. [Henderson](https://www.georgiaencyclopedia.org/articles/business-economy/alonzo-herndon-1858-1927/)",
+      "Supported local educational, religious, and charitable institutions and participated in organizations advancing Black economic and civil rights. [Henderson](https://www.georgiaencyclopedia.org/articles/business-economy/alonzo-herndon-1858-1927/)"
     ],
     "legacy": [
-      "Morris Brown named Alonzo Herndon Stadium in his honor. The stadium opened in 1948 and served as the college’s football venue.",
-      "His son Norris Herndon and Atlanta Life supported construction of the stadium and other improvements at Morris Brown."
+      "Morris Brown named Alonzo Herndon Stadium in his honor. The stadium opened in 1948 and served as the college’s football venue. [PBS](https://www.pbs.org/video/from-slavery-to-legacy-alonzo-herndon-jedhv7/)",
+      "His son Norris Herndon and Atlanta Life supported construction of the stadium and other improvements at Morris Brown. [PBS](https://www.pbs.org/video/from-slavery-to-legacy-alonzo-herndon-jedhv7/)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "New Georgia Encyclopedia: Alonzo Herndon’s businesses and public service",
+        "title": "Alexa B. Henderson — Alonzo Herndon — New Georgia Encyclopedia — 2004",
         "url": "https://www.georgiaencyclopedia.org/articles/business-economy/alonzo-herndon-1858-1927/"
       },
       {
-        "title": "Library of Congress: Alonzo Herndon and Atlanta Life",
+        "title": "Library of Congress — Alonzo Herndon, Founder of Atlanta Life Born",
         "url": "https://guides.loc.gov/this-month-in-business-history/june/alonzo-herndon"
       },
       {
-        "title": "PBS: From Slavery to Legacy — Alonzo Herndon and the family’s Morris Brown support",
+        "title": "PBS — From Slavery to Legacy — Alonzo Herndon — 2024",
         "url": "https://www.pbs.org/video/from-slavery-to-legacy-alonzo-herndon-jedhv7/"
       },
       {
-        "title": "The Atlanta Journal-Constitution: Herndon Stadium’s history",
+        "title": "Jillian Price — Morris Brown College’s former Herndon Stadium could soon be demolished — The Atlanta Journal-Constitution — 2024",
         "url": "https://www.ajc.com/news/atlanta-black-history/the-past-was-bright-but-the-future-looks-bleak-for-herndon-stadium/O52PYZR4UBCKJGUQUIAPUVWQ3U/"
       }
     ],
@@ -662,12 +680,13 @@ const PEOPLE = [
       "sourceUrl": "https://radar.auctr.edu/node/77569",
       "license": "Public domain in the United States (NoC-US)",
       "licenseUrl": "https://rightsstatements.org/vocab/NoC-US/1.0/",
-      "fit": "contain"
+      "fit": "contain",
+      "caption": "Atlanta University Photographs / AUC Woodruff Library"
     },
     "connections": [
       {
         "institutionId": "morehouse",
-        "label": "Taught accounting at Morehouse College from 1925 to 1930."
+        "label": "Taught accounting at Morehouse College from 1925 to 1930. [Hope](https://www.sbana.org/wp-content/uploads/2019/02/Opportunity-Journal-of-Negro-Life-Volume-9_November1931-Trained-Men-for-Negro-Business-by-John-Hope.pdf#page=7)"
       },
       {
         "institutionId": "clark",
@@ -675,30 +694,30 @@ const PEOPLE = [
       }
     ],
     "bio": [
-      "Became Georgia’s first Black certified public accountant in 1928 and practiced accounting while teaching.",
-      "Served as a bank president in Atlanta.",
-      "Purchased WERD in 1949, establishing the first radio station in the United States owned and operated by an African American.",
-      "Employed Black broadcasters and developed programming that included rhythm and blues, local news, and coverage of Black community life.",
-      "Provided airtime for Martin Luther King Jr. and other Southern Christian Leadership Conference leaders during the civil-rights movement. WERD and the SCLC occupied the same Auburn Avenue building."
+      "Became Georgia’s first Black certified public accountant in 1928 and practiced accounting while teaching. [Gale / Encyclopedia.com](https://www.encyclopedia.com/education/news-wires-white-papers-and-books/blayton-jesse-b-sr)",
+      "Served as a bank president in Atlanta. [Gale / Encyclopedia.com](https://www.encyclopedia.com/education/news-wires-white-papers-and-books/blayton-jesse-b-sr)",
+      "Purchased WERD in 1949, establishing the first radio station in the United States owned and operated by an African American. [Etling](https://www.georgiaencyclopedia.org/articles/arts-culture/werd/)",
+      "Employed Black broadcasters and developed programming that included rhythm and blues, local news, and coverage of Black community life. [Etling](https://www.georgiaencyclopedia.org/articles/arts-culture/werd/)",
+      "Provided airtime for Martin Luther King Jr. and other Southern Christian Leadership Conference leaders during the civil rights movement. WERD and the SCLC occupied the same Auburn Avenue building. [Etling](https://www.georgiaencyclopedia.org/articles/arts-culture/werd/)"
     ],
     "legacy": [
-      "Taught accounting at Morehouse College from 1925 to 1930 before joining Atlanta University’s faculty in 1930.",
-      "Supervised 18 advanced accounting students keeping books for Black-owned Atlanta businesses in 1931. Their fieldwork included shops, a printing company, a hospital, and a church.",
-      "Encouraged Black students to enter accounting at a time when white-owned firms largely refused to employ Black accountants.",
-      "His radio station, WERD, featured Atlanta University professors discussing news affecting Black Atlantans."
+      "Taught accounting at Morehouse College from 1925 to 1930 before joining Atlanta University’s faculty in 1930. [Hope](https://www.sbana.org/wp-content/uploads/2019/02/Opportunity-Journal-of-Negro-Life-Volume-9_November1931-Trained-Men-for-Negro-Business-by-John-Hope.pdf#page=7)",
+      "Supervised 18 advanced accounting students keeping books for Black-owned Atlanta businesses in 1931. Their fieldwork included shops, a printing company, a hospital, and a church. [Hope](https://www.sbana.org/wp-content/uploads/2019/02/Opportunity-Journal-of-Negro-Life-Volume-9_November1931-Trained-Men-for-Negro-Business-by-John-Hope.pdf#page=7)",
+      "Encouraged Black students to enter accounting at a time when white-owned firms largely refused to employ Black accountants. [Etling](https://www.georgiaencyclopedia.org/articles/arts-culture/werd/)",
+      "His radio station, WERD, featured Atlanta University professors discussing news affecting Black Atlantans. [Etling](https://www.georgiaencyclopedia.org/articles/arts-culture/werd/)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "John Hope — “Trained Men for Negro Business,” Opportunity (November 1931), pp. 343–345",
+        "title": "John Hope — Trained Men for Negro Business — pp. 343–345 — 1931",
         "url": "https://www.sbana.org/wp-content/uploads/2019/02/Opportunity-Journal-of-Negro-Life-Volume-9_November1931-Trained-Men-for-Negro-Business-by-John-Hope.pdf#page=7"
       },
       {
-        "title": "New Georgia Encyclopedia — WERD",
+        "title": "Laurence W. Etling — WERD — New Georgia Encyclopedia — 2005",
         "url": "https://www.georgiaencyclopedia.org/articles/arts-culture/werd/"
       },
       {
-        "title": "Gale / Encyclopedia.com — Jesse B. Blayton Sr.",
+        "title": "Gale / Encyclopedia.com — Blayton, Jesse B., Sr. — Encyclopedia.com",
         "url": "https://www.encyclopedia.com/education/news-wires-white-papers-and-books/blayton-jesse-b-sr"
       }
     ],
@@ -714,40 +733,41 @@ const PEOPLE = [
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Virginia_Lacy_Jones_(13270287595).jpg",
       "license": "No restrictions",
       "licenseUrl": "https://www.flickr.com/commons/usage/",
-      "attributionRequired": false
+      "attributionRequired": false,
+      "caption": "Atlanta History Center / Flickr Commons"
     },
     "connections": [
       {
         "institutionId": "clark",
-        "label": "Became dean of Atlanta University's School of Library Service in 1945 and served until 1981."
+        "label": "Became dean of Atlanta University's School of Library Service in 1945 and served until 1981. [Atlanta University Center / Digital Library of Georgia](https://dlg.usg.edu/record/auu_auc-115)"
       }
     ],
     "bio": [
-      "Taught library science at Prairie View and worked at Louisville Municipal College before joining Atlanta University.",
-      "Earned a doctorate in library service at the University of Chicago in 1945, becoming the second African American to earn a doctorate in the field.",
-      "Recruited future librarian Satia Marshall Orange through a fellowship offer. Orange later directed the American Library Association’s Office for Literacy and Outreach Services.",
-      "Wrote about unequal funding, book collections, and staffing in segregated public libraries.",
-      "Served on the editorial board of Phylon and in leadership roles in national library organizations, including the American Library Association’s executive board."
+      "Taught library science at Prairie View and worked at Louisville Municipal College before joining Atlanta University. [Atlanta University Center / Digital Library of Georgia](https://dlg.usg.edu/record/auu_auc-115)",
+      "Earned a doctorate in library service at the University of Chicago in 1945, becoming the second African American to earn a doctorate in the field. [Atlanta University Center / Digital Library of Georgia](https://dlg.usg.edu/record/auu_auc-115)",
+      "Recruited future librarian Satia Marshall Orange through a fellowship offer. Orange later directed the American Library Association’s Office for Literacy and Outreach Services. [American Library Association](https://www.ala.org/news/2022/04/new-ala-endowment-honoring-satia-marshall-orange-benefit-spectrum-scholarship-program)",
+      "Wrote about unequal funding, book collections, and staffing in segregated public libraries. [Atlanta University Center / Digital Library of Georgia](https://dlg.usg.edu/record/auu_auc-115)",
+      "Served on the editorial board of Phylon and in leadership roles in national library organizations, including the American Library Association’s executive board. [Atlanta University Center / Digital Library of Georgia](https://dlg.usg.edu/record/auu_auc-115)"
     ],
     "legacy": [
-      "Joined Atlanta University in 1939 as catalog librarian at Trevor Arnett Library.",
-      "Surveyed other library schools’ administration and curricula while helping plan Atlanta University’s School of Library Service, then joined its faculty when it opened in 1941.",
-      "Served as dean from 1945 to 1981. In 1967, opened the school’s conference on improving children’s access to books about Black history and achievements, urging better representation in school and library collections.",
-      "Worked with the school’s faculty to integrate Southern public libraries and regional professional organizations.",
-      "Became the first director of the Atlanta University Center’s Robert W. Woodruff Library in 1981."
+      "Joined Atlanta University in 1939 as catalog librarian at Trevor Arnett Library. [Atlanta University Center / Digital Library of Georgia](https://dlg.usg.edu/record/auu_auc-115)",
+      "Surveyed other library schools’ administration and curricula while helping plan Atlanta University’s School of Library Service, then joined its faculty when it opened in 1941. [Atlanta University Center / Digital Library of Georgia](https://dlg.usg.edu/record/auu_auc-115)",
+      "Served as dean from 1945 to 1981. In 1967, opened the school’s conference on improving children’s access to books about Black history and achievements, urging better representation in school and library collections. [Jones](https://files.eric.ed.gov/fulltext/ED032087.pdf#page=14)",
+      "Worked with the school’s faculty to integrate Southern public libraries and regional professional organizations. [Atlanta University Center / Digital Library of Georgia](https://dlg.usg.edu/record/auu_auc-115)",
+      "Became the first director of the Atlanta University Center’s Robert W. Woodruff Library in 1981. [Atlanta University Center / Digital Library of Georgia](https://dlg.usg.edu/record/auu_auc-115)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Atlanta University Center / Digital Library of Georgia: Virginia Lacy Jones’s papers and library leadership",
+        "title": "Atlanta University Center / Digital Library of Georgia — Virginia Lacy Jones papers — Digital Library of Georgia",
         "url": "https://dlg.usg.edu/record/auu_auc-115"
       },
       {
-        "title": "Virginia Lacy Jones — opening address, Atlanta University conference on Black representation in children’s books (1967), pp. 1–3",
+        "title": "Virginia Lacy Jones — Opening Address — The Georgia Child’s Access to Materials Pertaining to American Negroes — pp. 1–3 — Atlanta University School of Library Services — 1968",
         "url": "https://files.eric.ed.gov/fulltext/ED032087.pdf#page=14"
       },
       {
-        "title": "American Library Association — Jones’s recruitment of Satia Marshall Orange",
+        "title": "American Library Association — New ALA endowment honoring Satia Marshall Orange to benefit Spectrum Scholarship Program",
         "url": "https://www.ala.org/news/2022/04/new-ala-endowment-honoring-satia-marshall-orange-benefit-spectrum-scholarship-program"
       }
     ],
@@ -763,42 +783,48 @@ const PEOPLE = [
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Martin_Luther_King,_Henry_Elkins,_and_Alberta_Williams_King_at_Ebenezer,_1962_(cropped).png",
       "license": "Public domain",
       "licenseUrl": "",
-      "attributionRequired": false
+      "attributionRequired": false,
+      "caption": "Wikimedia Commons"
     },
     "connections": [
       {
         "institutionId": "morris",
-        "label": "Earned a bachelor’s degree from Morris Brown College in 1938."
+        "label": "Earned a bachelor’s degree from Morris Brown College in 1938. [Stanford King Institute](https://kinginstitute.stanford.edu/king-alberta-williams)"
       }
     ],
     "bio": [
-      "Taught briefly before Atlanta’s restrictions on married women teachers ended her classroom career.",
-      "Founded Ebenezer Baptist Church’s choir and served as its organist and choir director for decades. She helped organize the church’s musical and women’s activities.",
-      "Participated in the NAACP, YWCA, and Women’s International League for Peace and Freedom.",
-      "Worked with Coretta Scott King and Christine King Farris to restore Martin Luther King Jr.’s birth home as a place the public could visit.",
-      "Was killed while playing the organ during Sunday worship at Ebenezer in June 1974."
+      "Taught briefly before Atlanta’s restrictions on married women teachers ended her classroom career. [Stanford King Institute](https://kinginstitute.stanford.edu/king-alberta-williams)",
+      "Founded Ebenezer Baptist Church’s choir and served as its organist and choir director for decades. She helped organize the church’s musical and women’s activities. [Stanford King Institute](https://kinginstitute.stanford.edu/king-alberta-williams)",
+      "Participated in the NAACP, YWCA, and Women’s International League for Peace and Freedom. [Stanford King Institute](https://kinginstitute.stanford.edu/king-alberta-williams)",
+      "Worked with Coretta Scott King and Christine King Farris to restore Martin Luther King Jr.’s birth home as a place the public could visit. [Stanford King Institute](https://kinginstitute.stanford.edu/king-alberta-williams)",
+      "Was killed while playing the organ during Sunday worship at Ebenezer in June 1974. [Stanford King Institute](https://kinginstitute.stanford.edu/king-alberta-williams)",
+      "Sources differ on her birth year: the Stanford King Institute gives 1903, while Atlanta History Center’s catalog identifies her as born in 1904. [Stanford King Institute](https://kinginstitute.stanford.edu/king-alberta-williams)"
     ],
     "legacy": [
-      "Continued her education at Morris Brown while raising her family and serving Ebenezer Baptist Church, completing her bachelor’s degree in 1938.",
-      "Also studied at Spelman Seminary and earned a teaching certificate from Hampton Normal and Industrial Institute before her Morris Brown degree."
+      "Continued her education at Morris Brown while raising her family and serving Ebenezer Baptist Church, completing her bachelor’s degree in 1938. [Stanford King Institute](https://kinginstitute.stanford.edu/king-alberta-williams)",
+      "Also studied at Spelman Seminary and earned a teaching certificate from Hampton Normal and Industrial Institute before her Morris Brown degree. [Stanford King Institute](https://kinginstitute.stanford.edu/king-alberta-williams)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Stanford King Institute: Alberta Williams King’s education and church work",
+        "title": "Stanford King Institute — King, Alberta Williams — The Martin Luther King, Jr. Research and Education Institute",
         "url": "https://kinginstitute.stanford.edu/king-alberta-williams"
       },
       {
-        "title": "Morris Brown College: 2024 President’s Report, alumni facts",
+        "title": "Morris Brown College — President’s Report 2024 — 2024",
         "url": "https://morrisbrown.edu/wp-content/uploads/2024/10/MBC-Presidents-Report_2024_FINAL_v5.pdf"
       },
       {
-        "title": "National Park Service: Restoration of the King birth home",
+        "title": "National Park Service — A Loving Home of Influence",
         "url": "https://home.nps.gov/malu/a-loving-home-of-influence.htm"
       },
       {
-        "title": "National Park Service: Collier Heights historic district documentation",
+        "title": "National Park Service — Collier Heights Historic District — National Register of Historic Places Registration Form",
         "url": "https://npgallery.nps.gov/GetAsset/c5d4cda7-9db5-452f-8e99-d5f11932fd21/"
+      },
+      {
+        "title": "Atlanta History Center — Alberta Williams King funeral — Digital Library of Georgia",
+        "url": "https://dlg.usg.edu/record/geh_byd_3463"
       }
     ],
     "showSources": true
@@ -810,36 +836,37 @@ const PEOPLE = [
     "image": {
       "url": "images/people/Alfred Daniel King.jpg",
       "alt": "Portrait of Alfred Daniel King",
-      "sourceUrl": "https://en.wikipedia.org/wiki/File:AD_King.jpg"
+      "sourceUrl": "https://en.wikipedia.org/wiki/File:AD_King.jpg",
+      "caption": "Via Wikipedia"
     },
     "connections": [
       {
         "institutionId": "morehouse",
-        "label": "Graduated from Morehouse College in 1959. Became a pastor and organizer in the civil rights movement."
+        "label": "Graduated from Morehouse College in 1959. Became a pastor and organizer in the civil rights movement. [Stanford King Institute](https://kinginstitute.stanford.edu/king-alfred-daniel-williams)"
       }
     ],
     "bio": [
-      "Joined the October 1960 Atlanta lunch-counter sit-in in which he, Martin Luther King Jr., and dozens of other demonstrators were arrested.",
-      "Helped lead the Birmingham campaign while pastoring First Street Baptist Church in Ensley. After his home was bombed in May 1963, he continued organizing and urged demonstrators to maintain nonviolence.",
-      "Became pastor of Zion Baptist Church in Louisville in 1965 and campaigned for open housing. The city adopted an open-housing ordinance in 1968.",
-      "Supported the Southern Christian Leadership Conference and the Poor People’s Campaign, addressing racial discrimination and economic inequality.",
-      "Returned to Atlanta after his brother’s assassination and became co-pastor of Ebenezer Baptist Church in September 1968."
+      "Joined the October 1960 Atlanta lunch-counter sit-in in which he, Martin Luther King Jr., and dozens of other demonstrators were arrested. [Stanford King Institute](https://kinginstitute.stanford.edu/king-alfred-daniel-williams)",
+      "Helped lead the Birmingham campaign while pastoring First Street Baptist Church in Ensley. After his home was bombed in May 1963, he continued organizing and urged demonstrators to maintain nonviolence. [Stanford King Institute](https://kinginstitute.stanford.edu/king-alfred-daniel-williams)",
+      "Became pastor of Zion Baptist Church in Louisville in 1965 and campaigned for open housing. The city adopted an open-housing ordinance in 1968. [A. D. King Foundation](https://www.adkingfoundation.com/about)",
+      "Supported the Southern Christian Leadership Conference and the Poor People’s Campaign, addressing racial discrimination and economic inequality. [A. D. King Foundation](https://www.adkingfoundation.com/about)",
+      "Returned to Atlanta after his brother’s assassination and became co-pastor of Ebenezer Baptist Church in September 1968. [Stanford King Institute](https://kinginstitute.stanford.edu/king-alfred-daniel-williams)"
     ],
     "legacy": [
-      "Earned his bachelor’s degree at Morehouse in 1959 before becoming pastor of Mount Vernon First Baptist Church in Newnan, Georgia."
+      "Earned his bachelor’s degree at Morehouse in 1959 before becoming pastor of Mount Vernon First Baptist Church in Newnan, Georgia. [Stanford King Institute](https://kinginstitute.stanford.edu/king-alfred-daniel-williams)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Stanford King Institute: Alfred Daniel Williams King’s ministry and organizing",
+        "title": "Stanford King Institute — King, Alfred Daniel Williams — The Martin Luther King, Jr. Research and Education Institute",
         "url": "https://kinginstitute.stanford.edu/king-alfred-daniel-williams"
       },
       {
-        "title": "A. D. King Foundation: Nonviolent organizing and the open-housing campaign",
+        "title": "A. D. King Foundation — About Us — A D KING FOUNDATION — A D KING FOUNDATION",
         "url": "https://www.adkingfoundation.com/about"
       },
       {
-        "title": "Alfred Daniel King: Letter about his Ensley pastorate, April 2, 1962",
+        "title": "Alfred Daniel King — From Alfred Daniel King — The Martin Luther King, Jr. Research and Education Institute",
         "url": "https://kinginstitute.stanford.edu/king-papers/documents/alfred-daniel-king-1"
       }
     ],
@@ -855,40 +882,41 @@ const PEOPLE = [
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Martin_Luther_King_Sr,_c1977-81.jpg",
       "license": "Public domain",
       "licenseUrl": "",
-      "attributionRequired": false
+      "attributionRequired": false,
+      "caption": "Wikimedia Commons"
     },
     "connections": [
       {
         "institutionId": "morehouse",
-        "label": "Earned his theology degree from Morehouse College in 1930. Later served on the boards of Morehouse and Atlanta University."
+        "label": "Earned his theology degree from Morehouse College in 1930. Later served on the boards of Morehouse and Atlanta University. [Stanford King Institute](https://kinginstitute.stanford.edu/king-martin-luther-sr)"
       }
     ],
     "bio": [
-      "Led Ebenezer Baptist Church from 1931 until his retirement in 1975, expanding its role as a religious and civic institution.",
-      "Worked through the Atlanta Civic and Political League and the NAACP to register Black voters and challenge discrimination. In 1939, called for a mass voter-registration effort and a march to City Hall.",
-      "Chaired the Committee on the Equalization of Teachers’ Salaries, which challenged discriminatory pay for Black teachers with legal assistance from the NAACP.",
-      "Supported the civil rights work of his sons and continued public advocacy after Martin Luther King Jr.’s assassination. His ministry connected church leadership with campaigns for voting rights, education, and equal treatment."
+      "Led Ebenezer Baptist Church from 1931 until his retirement in 1975, expanding its role as a religious and civic institution. [National Park Service](https://www.nps.gov/malu/planyourvisit/upload/EBC_History.pdf)",
+      "Worked through the Atlanta Civic and Political League and the NAACP to register Black voters and challenge discrimination. In 1939, called for a mass voter-registration effort and a march to City Hall. [Stanford King Institute](https://kinginstitute.stanford.edu/king-martin-luther-sr)",
+      "Chaired the Committee on the Equalization of Teachers’ Salaries, which challenged discriminatory pay for Black teachers with legal assistance from the NAACP. [Stanford King Institute](https://kinginstitute.stanford.edu/king-martin-luther-sr)",
+      "Supported the civil rights work of his sons and continued public advocacy after Martin Luther King Jr.’s assassination. His ministry connected church leadership with campaigns for voting rights, education, and equal treatment. [Stanford King Institute](https://kinginstitute.stanford.edu/king-martin-luther-sr)"
     ],
     "legacy": [
-      "Entered Morehouse in 1926 and completed his theology degree in 1930.",
-      "Elected to Morehouse’s board of trustees on April 24, 1947. Also served on Atlanta University’s board."
+      "Entered Morehouse in 1926 and completed his theology degree in 1930. [Stanford King Institute](https://kinginstitute.stanford.edu/king-martin-luther-sr)",
+      "Elected to Morehouse’s board of trustees on April 24, 1947. Also served on Atlanta University’s board. [Stanford King Institute](https://kinginstitute.stanford.edu/king-sr-elected-trustee-morehouse)"
     ],
     "burialLocation": "https://www.google.com/maps/place/Rev+Martin+Luther+King+Sr.+Grave/@33.7014766,-84.3745437,18z/data=!4m6!3m5!1s0x88f503cee438dc73:0xba1440e6e2739918!8m2!3d33.7014766!4d-84.3737141!16s%2Fg%2F11l2969tss?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D",
     "sources": [
       {
-        "title": "Stanford King Institute: Martin Luther King Sr.’s education and civic leadership",
+        "title": "Stanford King Institute — King, Martin Luther, Sr. — The Martin Luther King, Jr. Research and Education Institute",
         "url": "https://kinginstitute.stanford.edu/king-martin-luther-sr"
       },
       {
-        "title": "National Park Service: Ebenezer Baptist Church history",
+        "title": "National Park Service — A Brief History of Ebenezer Baptist Church",
         "url": "https://www.nps.gov/malu/planyourvisit/upload/EBC_History.pdf"
       },
       {
-        "title": "Morehouse College: The King family at Morehouse",
+        "title": "Morehouse College — King at Morehouse",
         "url": "https://morehouse.edu/academics/centers-and-institutes/martin-luther-king-jr-collection/king-at-morehouse"
       },
       {
-        "title": "Stanford King Institute: Martin Luther King Sr. elected a Morehouse trustee, April 24, 1947",
+        "title": "Stanford King Institute — King, Sr., elected trustee of Morehouse — The Martin Luther King, Jr. Research and Education Institute",
         "url": "https://kinginstitute.stanford.edu/king-sr-elected-trustee-morehouse"
       }
     ],
@@ -902,37 +930,38 @@ const PEOPLE = [
       "url": "images/people/Duke Pearson.jpg",
       "alt": "Portrait of Duke Pearson",
       "sourceUrl": "https://www.bluenote.com/artist/duke-pearson/",
-      "credit": "Photograph by Francis Wolff / Blue Note Records."
+      "credit": "Photograph by Francis Wolff / Blue Note Records.",
+      "caption": "Francis Wolff / Blue Note Records"
     },
     "connections": [
       {
         "institutionId": "clark",
-        "label": "Attended Clark College and returned as a teacher in 1971."
+        "label": "Attended Clark College and returned as a teacher in 1971. [Blue Note Records](https://www.bluenote.com/artist/duke-pearson/)"
       }
     ],
     "bio": [
-      "Performed with Donald Byrd and the Art Farmer–Benny Golson Jazztet and worked as an accompanist and musical director for Nancy Wilson.",
-      "Recorded as a bandleader for Blue Note and wrote compositions including “Jeannine,” “Idle Moments,” “Sweet Honey Bee,” and “Cristo Redentor.”",
-      "Arranged Donald Byrd’s A New Perspective in 1963, combining a jazz ensemble with a choir.",
-      "Became a Blue Note producer and talent scout in 1963. His arranging work included recordings by Grant Green, Stanley Turrentine, Lee Morgan, and Blue Mitchell.",
-      "Led his own big band in the late 1960s and accompanied Carmen McRae and Joe Williams during the 1970s."
+      "Performed with Donald Byrd and the Art Farmer–Benny Golson Jazztet and worked as an accompanist and musical director for Nancy Wilson. [Blue Note Records](https://www.bluenote.com/artist/duke-pearson/)",
+      "Recorded as a bandleader for Blue Note and wrote compositions including “Jeannine,” “Idle Moments,” “Sweet Honey Bee,” and “Cristo Redentor.” [Blue Note Records](https://www.bluenote.com/artist/duke-pearson/)",
+      "Arranged Donald Byrd’s A New Perspective in 1963, combining a jazz ensemble with a choir. [Blue Note Records](https://www.bluenote.com/spotlight/the-man-in-the-shadows-duke-pearson-arranger/)",
+      "Became a Blue Note producer and talent scout in 1963. His arranging work included recordings by Grant Green, Stanley Turrentine, Lee Morgan, and Blue Mitchell. [Blue Note Records](https://www.bluenote.com/spotlight/the-man-in-the-shadows-duke-pearson-arranger/)",
+      "Led his own big band in the late 1960s and accompanied Carmen McRae and Joe Williams during the 1970s. [Blue Note Records](https://www.bluenote.com/artist/duke-pearson/)"
     ],
     "legacy": [
-      "Attended Clark College before his professional recording career.",
-      "Returned to Clark as a teacher in 1971 after working as a pianist, composer, arranger, and producer at Blue Note Records."
+      "Attended Clark College before his professional recording career. [Blue Note Records](https://www.bluenote.com/artist/duke-pearson/)",
+      "Returned to Clark as a teacher in 1971 after working as a pianist, composer, arranger, and producer at Blue Note Records. [Blue Note Records](https://www.bluenote.com/artist/duke-pearson/)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Blue Note Records — Duke Pearson artist biography",
+        "title": "Blue Note Records — Duke Pearson — 2019",
         "url": "https://www.bluenote.com/artist/duke-pearson/"
       },
       {
-        "title": "Blue Note Records — The Man in the Shadows: Duke Pearson, Arranger",
+        "title": "Blue Note Records — The Man In The Shadows: Duke Pearson, Arranger — 2013",
         "url": "https://www.bluenote.com/spotlight/the-man-in-the-shadows-duke-pearson-arranger/"
       },
       {
-        "title": "Jazz Lines Foundation — Duke Pearson biography and score notes",
+        "title": "Jazz Lines Foundation — Big Bertha — full score and biographical notes",
         "url": "https://www.ejazzlines.com/mc_files/2/jlp7334.pdf"
       }
     ],
@@ -945,38 +974,39 @@ const PEOPLE = [
     "image": {
       "url": "images/people/Donald Soup Reeves.jpg",
       "alt": "Portrait of Donald Reeves",
-      "sourceUrl": "https://en.wikipedia.org/wiki/File:Donald_Soup_Reeves.jpg"
+      "sourceUrl": "https://en.wikipedia.org/wiki/File:Donald_Soup_Reeves.jpg",
+      "caption": "Via Wikipedia"
     },
     "connections": [
       {
         "institutionId": "clark",
-        "label": "Played baseball, basketball, and football at Clark before entering professional baseball with the Atlanta Black Crackers in 1937."
+        "label": "Played baseball, basketball, and football at Clark before entering professional baseball with the Atlanta Black Crackers in 1937. [Atlanta History Center](https://www.atlantahistorycenter.com/blog/the-black-crackers-atlantas-negro-league-baseball-legacy/)"
       }
     ],
     "bio": [
-      "Entered professional baseball with the Atlanta Black Crackers in 1937.",
-      "Played right field on Atlanta’s 1938 team, which won the second half of the Negro American League season. Teammate Gabby Kemp later recalled his contributions as a hitter.",
-      "Played at Ponce de Leon Park with the Black Crackers during segregation. On the road, the team faced exclusion from ballparks, dressing rooms, restaurants, and lodging.",
-      "Continued his career with the Indianapolis ABCs in 1939 and the Chicago American Giants in 1940 and 1941.",
-      "Later worked as a teacher in Atlanta’s school system."
+      "Entered professional baseball with the Atlanta Black Crackers in 1937. [Atlanta History Center](https://www.atlantahistorycenter.com/blog/the-black-crackers-atlantas-negro-league-baseball-legacy/)",
+      "Played right field on Atlanta’s 1938 team, which won the second half of the Negro American League season. Teammate Gabby Kemp later recalled his contributions as a hitter. [Atlanta History Center](https://www.atlantahistorycenter.com/blog/the-black-crackers-atlantas-negro-league-baseball-legacy/)",
+      "Played at Ponce de Leon Park with the Black Crackers during segregation. On the road, the team faced exclusion from ballparks, dressing rooms, restaurants, and lodging. [Atlanta History Center](https://www.atlantahistorycenter.com/blog/the-black-crackers-atlantas-negro-league-baseball-legacy/)",
+      "Continued his career with the Indianapolis ABCs in 1939 and the Chicago American Giants in 1940 and 1941. [Atlanta History Center](https://www.atlantahistorycenter.com/blog/the-black-crackers-atlantas-negro-league-baseball-legacy/)",
+      "Later worked as a teacher in Atlanta’s school system. [Atlanta History Center](https://www.atlantahistorycenter.com/blog/the-black-crackers-atlantas-negro-league-baseball-legacy/)"
     ],
     "legacy": [
-      "Played baseball, basketball, and football at Clark.",
-      "Helped lead Clark’s basketball team to victory over Tuskegee in January 1934.",
-      "Was inducted into Clark Atlanta University’s Athletics Hall of Fame in 1997."
+      "Played baseball, basketball, and football at Clark. [Washington Tribune](https://dangerouspress.org/papers/washington-tribune/1934-01-25)",
+      "Helped lead Clark’s basketball team to victory over Tuskegee in January 1934. [Washington Tribune](https://dangerouspress.org/papers/washington-tribune/1934-01-25)",
+      "Was inducted into Clark Atlanta University’s Athletics Hall of Fame in 1997. [Atlanta History Center](https://www.atlantahistorycenter.com/blog/the-black-crackers-atlantas-negro-league-baseball-legacy/)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Washington Tribune — Clark’s basketball victory over Tuskegee (January 25, 1934)",
+        "title": "Washington Tribune — Washington Tribune — Thursday, January 25, 1934 — 1934",
         "url": "https://dangerouspress.org/papers/washington-tribune/1934-01-25"
       },
       {
-        "title": "Atlanta History Center — The Black Crackers: Atlanta’s Negro League Baseball Legacy",
+        "title": "Gemma Solomons — The Black Crackers: Atlanta’s Negro League Baseball Legacy — Atlanta History Center — 2021",
         "url": "https://www.atlantahistorycenter.com/blog/the-black-crackers-atlantas-negro-league-baseball-legacy/"
       },
       {
-        "title": "Leslie Heaphy, Society for American Baseball Research — The Atlanta Black Crackers",
+        "title": "Leslie Heaphy — The Atlanta Black Crackers — Society for American Baseball Research",
         "url": "https://sabr.org/journal/article/the-atlanta-black-crackers/"
       }
     ],
@@ -992,37 +1022,38 @@ const PEOPLE = [
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Henry_McNeil_Turner.jpg",
       "license": "Public domain",
       "licenseUrl": "",
-      "attributionRequired": false
+      "attributionRequired": false,
+      "caption": "Wikimedia Commons"
     },
     "connections": [
       {
         "institutionId": "morris",
-        "label": "Turner Theological Seminary, then part of Morris Brown College, was named in his honor in 1900."
+        "label": "Turner Theological Seminary, then part of Morris Brown College, was named in his honor in 1900. [Turner Theological Seminary](https://www.turnerseminary.org/ourhistory)"
       }
     ],
     "bio": [
-      "Helped recruit the First Regiment of U.S. Colored Troops during the Civil War and served as its chaplain.",
-      "Organized AME congregations across Georgia after emancipation, recruiting members and establishing churches in communities that lacked trained ministers and meeting places.",
-      "Helped organize Georgia’s Republican Party, served in the state constitutional convention, and won election to the Georgia House of Representatives. In 1868, protested the legislature’s expulsion of its Black members.",
-      "Became an AME bishop in 1880. Promoted the denomination’s work in Africa and Latin America and advocated African American emigration to Africa.",
-      "Published The Genius and Theory of Methodist Polity, a guide to church governance, and spoke and wrote extensively against racial discrimination."
+      "Helped recruit the First Regiment of U.S. Colored Troops during the Civil War and served as its chaplain. [Angell](https://www.georgiaencyclopedia.org/articles/arts-culture/henry-mcneal-turner-1834-1915)",
+      "Organized AME congregations across Georgia after emancipation, recruiting members and establishing churches in communities that lacked trained ministers and meeting places. [Angell](https://www.georgiaencyclopedia.org/articles/arts-culture/henry-mcneal-turner-1834-1915)",
+      "Helped organize Georgia’s Republican Party, served in the state constitutional convention, and won election to the Georgia House of Representatives. In 1868, protested the legislature’s expulsion of its Black members. [Angell](https://www.georgiaencyclopedia.org/articles/arts-culture/henry-mcneal-turner-1834-1915)",
+      "Became an AME bishop in 1880. Promoted the denomination’s work in Africa and Latin America and advocated African American emigration to Africa. [Angell](https://www.georgiaencyclopedia.org/articles/arts-culture/henry-mcneal-turner-1834-1915)",
+      "Published The Genius and Theory of Methodist Polity, a guide to church governance, and spoke and wrote extensively against racial discrimination. [Angell](https://www.georgiaencyclopedia.org/articles/arts-culture/henry-mcneal-turner-1834-1915)"
     ],
     "legacy": [
-      "Morris Brown opened its Department of Theology in 1894 and named it Turner Theological Seminary in 1900, honoring his leadership in the African Methodist Episcopal Church.",
-      "The department trained ministers for the AME Church. Turner Seminary remained affiliated with Morris Brown until 1957, when it joined the Interdenominational Theological Center."
+      "Morris Brown opened its Department of Theology in 1894 and named it Turner Theological Seminary in 1900, honoring his leadership in the African Methodist Episcopal Church. [Turner Theological Seminary](https://www.turnerseminary.org/ourhistory)",
+      "The department trained ministers for the AME Church. Turner Seminary remained affiliated with Morris Brown until 1957, when it joined the Interdenominational Theological Center. [Turner Theological Seminary](https://www.turnerseminary.org/ourhistory)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Turner Theological Seminary: Institutional history",
+        "title": "Turner Theological Seminary — Our History — Turner Seminary",
         "url": "https://www.turnerseminary.org/ourhistory"
       },
       {
-        "title": "New Georgia Encyclopedia: Henry McNeal Turner’s church and political leadership",
+        "title": "Stephen W. Angell — Henry McNeal Turner — New Georgia Encyclopedia — 2002",
         "url": "https://www.georgiaencyclopedia.org/articles/arts-culture/henry-mcneal-turner-1834-1915"
       },
       {
-        "title": "Morris Brown College: Catalog history, Digital Library of Georgia",
+        "title": "Morris Brown College — Morris Brown College catalogs — Digital Library of Georgia",
         "url": "https://dlg.usg.edu/record/auu_auc-007-catalog"
       }
     ],
@@ -1038,12 +1069,13 @@ const PEOPLE = [
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bazoline_Usher_(13269931405).jpg",
       "license": "No restrictions",
       "licenseUrl": "https://www.flickr.com/commons/usage/",
-      "attributionRequired": false
+      "attributionRequired": false,
+      "caption": "Atlanta History Center / Flickr Commons"
     },
     "connections": [
       {
         "institutionId": "clark",
-        "label": "Atlanta University alumna."
+        "label": "Atlanta University alumna. [Georgia Historic Preservation Division](https://dca.georgia.gov/document/newsletters/april-2016-reflectionspdf/download)"
       },
       {
         "institutionId": "spelman",
@@ -1051,29 +1083,32 @@ const PEOPLE = [
       }
     ],
     "bio": [
-      "Taught in Virginia before returning to Atlanta’s public schools, where she worked as a classroom teacher, assistant principal, and principal.",
-      "Served as assistant principal at Booker T. Washington High School and became principal of David T. Howard Grammar School in 1929.",
-      "Became supervisor of education for Black students in Atlanta in 1944, then the highest position held by a Black educator in the city’s school system.",
-      "Helped establish Girl Scout troops for Black girls in Atlanta in 1943 and recruited Black women to lead the troops, organized as District V."
+      "Taught in Virginia before returning to Atlanta’s public schools, where she worked as a classroom teacher, assistant principal, and principal. [Georgia Historic Preservation Division](https://dca.georgia.gov/document/newsletters/april-2016-reflectionspdf/download)",
+      "Served as assistant principal at Booker T. Washington High School and became principal of David T. Howard Grammar School in 1929. [Georgia Historic Preservation Division](https://dca.georgia.gov/document/newsletters/april-2016-reflectionspdf/download)",
+      "Became supervisor of education for Black students in Atlanta in 1944, then the highest position held by a Black educator in the city’s school system. [Georgia Historic Preservation Division](https://dca.georgia.gov/document/newsletters/april-2016-reflectionspdf/download)",
+      "Helped establish Girl Scout troops for Black girls in Atlanta in 1943 and recruited Black women to lead the troops, organized as District V. [Georgia Historic Preservation Division](https://dca.georgia.gov/document/newsletters/april-2016-reflectionspdf/download)"
     ],
     "legacy": [
-      "Atlanta University: attended its preparatory school, graduated from the college in 1906, and later earned a master’s degree in education.",
-      "Spelman College: taught for three years after retiring from Atlanta’s public schools in 1954.",
-      "University of Chicago: pursued graduate study."
+      "Atlanta University: attended its preparatory school, graduated from the college in 1906, and later earned a master’s degree in education. [Georgia Historic Preservation Division](https://dca.georgia.gov/document/newsletters/april-2016-reflectionspdf/download)",
+      "Spelman College: taught for three years after retiring from Atlanta’s public schools in 1954. [Georgia Historic Preservation Division](https://dca.georgia.gov/document/newsletters/april-2016-reflectionspdf/download)",
+      "University of Chicago: pursued graduate study. [Harvard Schlesinger Library](https://guides.library.harvard.edu/schlesinger_bwohp/biographies)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Atlanta History Center: Bazoline Usher’s teaching, school leadership, and visual arts collection",
+        "title": "Atlanta History Center — Bazoline Usher Visual Arts Collection",
         "url": "https://album.atlantahistorycenter.com/digital/collection/p17222coll54"
       },
       {
-        "title": "Georgia Historic Preservation Division — A True Woman of Distinction: Bazoline Usher",
+        "title": "Georgia Historic Preservation Division — A True Woman of Distinction: Bazoline Usher — 2016",
         "url": "https://dca.georgia.gov/document/newsletters/april-2016-reflectionspdf/download"
       },
       {
-        "title": "Harvard Schlesinger Library — Bazoline Usher’s education and teaching career",
+        "title": "Harvard Schlesinger Library — Black Women Oral History Project Interviews, 1976–1981: Biographies",
         "url": "https://guides.library.harvard.edu/schlesinger_bwohp/biographies"
+      },
+      {
+        "title": "D. L. Henderson — South-View: An African American City of the Dead — Carrelspin Press — 2018 — p. 247"
       }
     ],
     "showSources": true
@@ -1088,40 +1123,44 @@ const PEOPLE = [
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dinah_Watts_Pace.jpg",
       "license": "Public domain",
       "licenseUrl": "",
-      "attributionRequired": false
+      "attributionRequired": false,
+      "caption": "Wikimedia Commons"
     },
     "connections": [
       {
         "institutionId": "clark",
-        "label": "Graduated from Atlanta University in 1883 with training in education."
+        "label": "Graduated from Atlanta University in 1883 with training in education. [Richings](https://www.gutenberg.org/cache/epub/64338/pg64338-images.html#Page_239)"
       }
     ],
     "bio": [
-      "Organized a Sunday school for children in Atlanta’s Summerhill neighborhood after the Civil War. It developed into Pleasant Grove, later Reed Street Baptist Church and today Paradise Missionary Baptist Church.",
-      "Alongside her classroom teaching in Covington, visited families and helped care for their children. She began taking orphaned children into her own home.",
-      "Founded the Covington Colored Orphans Home in 1890, later known as the Reed Home and Industrial School, providing children with housing, care, and education.",
-      "Combined academic instruction with practical and vocational training. The school accepted children without limiting admission to a single religious denomination.",
-      "Expanded from caring for a small group of children to operating a school with several buildings and additional teachers.",
-      "Continued the work for decades. Paradise Baptist Church’s history credits her with educating about 700 children by the time of her death in 1933."
+      "Organized a Sunday school for children in Atlanta’s Summerhill neighborhood after the Civil War. It developed into Pleasant Grove, later Reed Street Baptist Church and today Paradise Missionary Baptist Church. [Paradise Missionary Baptist Church](https://paradiseatlmbc.org/our-history)",
+      "Alongside her classroom teaching in Covington, visited families and helped care for their children. She began taking orphaned children into her own home. [Richings](https://www.gutenberg.org/cache/epub/64338/pg64338-images.html#Page_239)",
+      "Founded the Covington Colored Orphans Home in 1890, later known as the Reed Home and Industrial School, providing children with housing, care, and education. [Richings](https://www.gutenberg.org/cache/epub/64338/pg64338-images.html#Page_239)",
+      "Combined academic instruction with practical and vocational training. The school accepted children without limiting admission to a single religious denomination. [Richings](https://www.gutenberg.org/cache/epub/64338/pg64338-images.html#Page_239)",
+      "Expanded from caring for a small group of children to operating a school with several buildings and additional teachers. [Richings](https://www.gutenberg.org/cache/epub/64338/pg64338-images.html#Page_239)",
+      "Continued the work for decades. Paradise Baptist Church’s history credits her with educating about 700 children by the time of her death in 1933. [Paradise Missionary Baptist Church](https://paradiseatlmbc.org/our-history)"
     ],
     "legacy": [
-      "Graduated from Atlanta University’s Normal Department in June 1883 and began teaching in Covington that summer.",
-      "Employed three fellow Atlanta University graduates or former students as teachers at the Reed Home and School.",
-      "Taught Bazoline Estelle Usher and recommended her for Atlanta University’s preparatory school. Usher later graduated from the university and became supervisor of education for Black students in Atlanta’s public schools."
+      "Graduated from Atlanta University’s Normal Department in June 1883 and began teaching in Covington that summer. [Richings](https://www.gutenberg.org/cache/epub/64338/pg64338-images.html#Page_239)",
+      "Employed three fellow Atlanta University graduates or former students as teachers at the Reed Home and School. [Richings](https://www.gutenberg.org/cache/epub/64338/pg64338-images.html#Page_239)",
+      "Taught Bazoline Estelle Usher and recommended her for Atlanta University’s preparatory school. Usher later graduated from the university and became supervisor of education for Black students in Atlanta’s public schools. [Todd](https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=miami1682031615785713&disposition=inline)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "G. F. Richings — Reed Orphan Home, its teaching staff and educational program (1902)",
+        "title": "G. F. Richings — Evidences of Progress Among Colored People — Project Gutenberg",
         "url": "https://www.gutenberg.org/cache/epub/64338/pg64338-images.html#Page_239"
       },
       {
-        "title": "Paradise Missionary Baptist Church — Dinah Watts Pace’s founding and educational work",
+        "title": "Paradise Missionary Baptist Church — Our History",
         "url": "https://paradiseatlmbc.org/our-history"
       },
       {
-        "title": "Sophia Maxine Todd, Miami University — Bazoline Usher’s education and Pace’s recommendation (2023)",
+        "title": "Sophia Maxine Todd — “I Did It as a Discipline to Myself…”: Black Women in Pursuit of Collegiate Education During the Early Twentieth Century — Miami University — 2023",
         "url": "https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=miami1682031615785713&disposition=inline"
+      },
+      {
+        "title": "D. L. Henderson — South-View: An African American City of the Dead — Carrelspin Press — 2018 — p. 233"
       }
     ],
     "showSources": true
@@ -1137,41 +1176,42 @@ const PEOPLE = [
       "license": "CC BY-SA 4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "attributionRequired": true,
-      "credit": "InstantMaruchan / Wikimedia Commons"
+      "credit": "InstantMaruchan / Wikimedia Commons",
+      "caption": "InstantMaruchan / Wikimedia Commons"
     },
     "connections": [
       {
         "institutionId": "morehouse",
-        "label": "Graduated from Morehouse College in 1937. Returned in 1946 to chair its Department of Philosophy and Religion."
+        "label": "Graduated from Morehouse College in 1937. Returned in 1946 to chair its Department of Philosophy and Religion. [Encyclopedia of Arkansas](https://encyclopediaofarkansas.net/entries/samuel-woodrow-williams-529/)"
       }
     ],
     "bio": [
-      "Combined his teaching with ministry at Friendship Baptist Church and leadership in Atlanta’s civil rights organizations.",
-      "As an Atlanta NAACP leader, challenged segregated public transportation and supported litigation against segregated public schools.",
-      "Supported the Atlanta Student Movement and encouraged student leaders to publish “An Appeal for Human Rights” in 1960.",
-      "Helped establish the Atlanta Summit Leadership Council to address segregation, poverty, and transportation needs. Later served on the city’s Community Relations Commission, which brought residents’ concerns to public officials."
+      "Combined his teaching with ministry at Friendship Baptist Church and leadership in Atlanta’s civil rights organizations. [Encyclopedia of Arkansas](https://encyclopediaofarkansas.net/entries/samuel-woodrow-williams-529/)",
+      "As an Atlanta NAACP leader, challenged segregated public transportation and supported litigation against segregated public schools. [Encyclopedia of Arkansas](https://encyclopediaofarkansas.net/entries/samuel-woodrow-williams-529/)",
+      "Supported the Atlanta Student Movement and encouraged student leaders to publish “An Appeal for Human Rights” in 1960. [Encyclopedia of Arkansas](https://encyclopediaofarkansas.net/entries/samuel-woodrow-williams-529/)",
+      "Helped establish the Atlanta Summit Leadership Council to address segregation, poverty, and transportation needs. Later served on the city’s Community Relations Commission, which brought residents’ concerns to public officials. [Encyclopedia of Arkansas](https://encyclopediaofarkansas.net/entries/samuel-woodrow-williams-529/)"
     ],
     "legacy": [
-      "Returned to Morehouse in 1946 as chair of Philosophy and Religion after teaching and serving as a chaplain at Alcorn College and Alabama A&M.",
-      "Taught and mentored students including Martin Luther King Jr., Samuel DuBois Cook, and Maynard Jackson.",
-      "Co-taught Morehouse’s Seminar in Social Philosophy with Martin Luther King Jr. in 1961–1962. The course examined ethics and social organization, including democracy and the relationship between individual conduct and society."
+      "Returned to Morehouse in 1946 as chair of Philosophy and Religion after teaching and serving as a chaplain at Alcorn College and Alabama A&M. [Encyclopedia of Arkansas](https://encyclopediaofarkansas.net/entries/samuel-woodrow-williams-529/)",
+      "Taught and mentored students including Martin Luther King Jr., Samuel DuBois Cook, and Maynard Jackson. [Samuel W. Williams](https://kinginstitute.stanford.edu/king-papers/documents/samuel-w-williams)",
+      "Co-taught Morehouse’s Seminar in Social Philosophy with Martin Luther King Jr. in 1961–1962. The course examined ethics and social organization, including democracy and the relationship between individual conduct and society. [Stanford King Institute](https://kinginstitute.stanford.edu/king-papers/documents/outline-lecture-social-philosophy-0)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Encyclopedia of Arkansas: Samuel Woodrow Williams’s teaching and civil rights work",
+        "title": "Encyclopedia of Arkansas — Samuel Woodrow Williams (1912–1970)",
         "url": "https://encyclopediaofarkansas.net/entries/samuel-woodrow-williams-529/"
       },
       {
-        "title": "Samuel W. Williams: Correspondence preserved by the Stanford King Institute",
+        "title": "Samuel W. Williams — From Samuel W. Williams — The Martin Luther King, Jr. Research and Education Institute",
         "url": "https://kinginstitute.stanford.edu/king-papers/documents/samuel-w-williams"
       },
       {
-        "title": "American Philosophical Association: Morehouse’s philosophical tradition",
+        "title": "American Philosophical Association — A Citadel of the Ideal",
         "url": "https://blog.apaonline.org/2018/04/17/black-issues-in-philosophy-a-citadel-of-the-ideal/"
       },
       {
-        "title": "Stanford King Institute: Original lecture outline for the Morehouse Social Philosophy seminar, October 1961",
+        "title": "Stanford King Institute — “Outline of Lecture in Social Philosophy” — The Martin Luther King, Jr. Research and Education Institute",
         "url": "https://kinginstitute.stanford.edu/king-papers/documents/outline-lecture-social-philosophy-0"
       }
     ],
@@ -1189,12 +1229,13 @@ const PEOPLE = [
       "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
       "attributionRequired": true,
       "credit": "Dr. Asa Yancey, Figure 1 in Xu TO, Levitt MA, Feng C., Controversies in Hirschsprung surgery (2024), doi:10.1136/wjps-2024-000887. CC BY-NC 4.0. Image unchanged.",
-      "fit": "contain"
+      "fit": "contain",
+      "caption": "Xu, Levitt and Feng, World Journal of Pediatric Surgery (2024)"
     },
     "connections": [
       {
         "institutionId": "morehouse",
-        "label": "Graduated with highest honors from Morehouse College in 1937 before studying medicine at the University of Michigan."
+        "label": "Graduated with highest honors from Morehouse College in 1937 before studying medicine at the University of Michigan. [Emory School of Medicine](https://med.emory.edu/departments/surgery/education/general-surgery-residency/asa-yancey-bio.html)"
       },
       {
         "institutionId": "medicine",
@@ -1202,37 +1243,37 @@ const PEOPLE = [
       }
     ],
     "bio": [
-      "Trained in surgery under Charles Drew at Howard University’s Freedmen’s Hospital and led surgery at the Veterans Administration hospital in Tuskegee from 1948 to 1958.",
-      "Published a surgical technique for Hirschsprung disease in 1952, seeking to reduce the risk of injury to surrounding nerves. The operation is now recognized in surgical literature as the Yancey-Soave technique.",
-      "Became chief of surgery at Grady’s Hughes Spalding Pavilion in 1958 and established a surgical residency program that expanded training opportunities for Black physicians in Georgia.",
-      "Joined Emory’s medical faculty in 1964 as its first Black faculty member. In 1972, became Grady’s medical director and an associate dean at Emory’s School of Medicine.",
-      "Served on the Atlanta Board of Education from 1966 to 1976 while continuing his clinical and teaching work."
+      "Trained in surgery under Charles Drew at Howard University’s Freedmen’s Hospital and led surgery at the Veterans Administration hospital in Tuskegee from 1948 to 1958. [Emory School of Medicine](https://med.emory.edu/departments/surgery/education/general-surgery-residency/asa-yancey-bio.html)",
+      "Published a surgical technique for Hirschsprung disease in 1952, seeking to reduce the risk of injury to surrounding nerves. The operation is now recognized in surgical literature as the Yancey-Soave technique. [Asa G. Yancey and colleagues](https://pmc.ncbi.nlm.nih.gov/articles/PMC2617332/)",
+      "Became chief of surgery at Grady’s Hughes Spalding Pavilion in 1958 and established a surgical residency program that expanded training opportunities for Black physicians in Georgia. [Emory School of Medicine](https://med.emory.edu/departments/surgery/education/general-surgery-residency/asa-yancey-bio.html)",
+      "Joined Emory’s medical faculty in 1964 as its first Black faculty member. In 1972, became Grady’s medical director and an associate dean at Emory’s School of Medicine. [Emory School of Medicine](https://med.emory.edu/departments/surgery/education/general-surgery-residency/asa-yancey-bio.html)",
+      "Served on the Atlanta Board of Education from 1966 to 1976 while continuing his clinical and teaching work. [Emory School of Medicine](https://med.emory.edu/departments/surgery/education/general-surgery-residency/asa-yancey-bio.html)"
     ],
     "legacy": [
-      "Graduated from Morehouse with highest honors in 1937 before earning his medical degree at the University of Michigan in 1941.",
-      "Received Morehouse’s Bennie Service Award in 1990 for his contributions to medicine and the community.",
-      "Joined Morehouse School of Medicine as a clinical professor of surgery in 1984, after years of surgical teaching and leadership at Grady and Emory."
+      "Graduated from Morehouse with highest honors in 1937 before earning his medical degree at the University of Michigan in 1941. [Emory School of Medicine](https://med.emory.edu/departments/surgery/education/general-surgery-residency/asa-yancey-bio.html)",
+      "Received Morehouse’s Bennie Service Award in 1990 for his contributions to medicine and the community. [Emory School of Medicine](https://med.emory.edu/departments/surgery/education/general-surgery-residency/asa-yancey-bio.html)",
+      "Joined Morehouse School of Medicine as a clinical professor of surgery in 1984, after years of surgical teaching and leadership at Grady and Emory. [The Atlanta Journal-Constitution](https://www.legacy.com/us/obituaries/atlanta/name/asa-yancey-obituary?id=32767817)"
     ],
     "burialLocation": "https://maps.app.goo.gl/aQsFWYjbcJgy7Dgw5",
     "sources": [
       {
-        "title": "Emory School of Medicine: Asa G. Yancey’s medical and educational leadership",
+        "title": "Emory School of Medicine — Dr. Asa Yancey’s Biography",
         "url": "https://med.emory.edu/departments/surgery/education/general-surgery-residency/asa-yancey-bio.html"
       },
       {
-        "title": "The HistoryMakers: Asa G. Yancey oral-history biography",
+        "title": "The HistoryMakers — Asa G. Yancey Sr.",
         "url": "https://www.thehistorymakers.org/biography/dr-asa-yancey-sr"
       },
       {
-        "title": "Asa G. Yancey and colleagues: Original 1952 surgical paper",
+        "title": "Asa G. Yancey and colleagues — A Modification of the Swenson Technique for Congenital Megacolon — PubMed Central (PMC)",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2617332/"
       },
       {
-        "title": "World Journal of Pediatric Surgery: Recognition of the Yancey-Soave technique",
+        "title": "World Journal of Pediatric Surgery — Controversies in Hirschsprung surgery — PubMed Central (PMC)",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11429006/"
       },
       {
-        "title": "Asa G. Yancey Sr.: Family obituary documenting his 1984 medical-school appointment and South-View burial",
+        "title": "The Atlanta Journal-Constitution — Asa Yancey Obituary",
         "url": "https://www.legacy.com/us/obituaries/atlanta/name/asa-yancey-obituary?id=32767817"
       }
     ],
@@ -1245,38 +1286,39 @@ const PEOPLE = [
     "image": {
       "url": "images/people/Ernestine Erskine Brazeal.jpg",
       "alt": "Portrait of Ernestine Erskine Brazeal",
-      "sourceUrl": "https://netroamer.com/jj/"
+      "sourceUrl": "https://netroamer.com/jj/",
+      "caption": "Via Netroamer"
     },
     "connections": [
       {
         "institutionId": "spelman",
-        "label": "Graduated from Spelman College in 1928. Taught history and served as alumnae secretary from 1943 to 1976."
+        "label": "Graduated from Spelman College in 1928. Taught history and served as alumnae secretary from 1943 to 1976. [Georgia Historic Preservation Division](https://dlg.usg.edu/record/dlg_ggpd_i-ga-bn200-ph5-bp1-br4-b6-s1-belec-p-btext)"
       }
     ],
     "legacy": [
-      "Taught at Spelman and directed its alumnae work as secretary from 1943 to 1976.",
-      "Served as president of the National Alumnae Association of Spelman College from 1950 to 1954.",
-      "Returned after retirement to help prepare Spelman’s centennial. Worked with student assistant Taronda Spencer to collect publications, photographs, and artifacts that became a foundation of the Spelman College Archives. Spencer later became the college’s archivist and historian."
+      "Taught at Spelman and directed its alumnae work as secretary from 1943 to 1976. [Georgia Historic Preservation Division](https://dlg.usg.edu/record/dlg_ggpd_i-ga-bn200-ph5-bp1-br4-b6-s1-belec-p-btext)",
+      "Served as president of the National Alumnae Association of Spelman College from 1950 to 1954. [National Alumnae Association of Spelman College](https://reed-round-wfsj.squarespace.com/past-presidents)",
+      "Returned after retirement to help prepare Spelman’s centennial. Worked with student assistant Taronda Spencer to collect publications, photographs, and artifacts that became a foundation of the Spelman College Archives. Spencer later became the college’s archivist and historian. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_spencertarondaelise20130601)"
     ],
     "bio": [
-      "Earned a master’s degree in American history at the University of Chicago before building a career in teaching and historical preservation."
+      "Earned a master’s degree in American history at the University of Chicago before building a career in teaching and historical preservation. [Georgia Historic Preservation Division](https://dlg.usg.edu/record/dlg_ggpd_i-ga-bn200-ph5-bp1-br4-b6-s1-belec-p-btext)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "National Alumnae Association of Spelman College: Past presidents",
+        "title": "National Alumnae Association of Spelman College — Past Presidents — NAASC",
         "url": "https://reed-round-wfsj.squarespace.com/past-presidents"
       },
       {
-        "title": "Georgia Historic Preservation Division: Ernestine Erskine Brazeal’s teaching and historical work, April 2006",
+        "title": "Georgia Historic Preservation Division — Reflections- Georgia African American Historic Preservation Network, Vol. 6, no. 1 (Apr. 2006) — Digital Library of Georgia",
         "url": "https://dlg.usg.edu/record/dlg_ggpd_i-ga-bn200-ph5-bp1-br4-b6-s1-belec-p-btext"
       },
       {
-        "title": "Auburn Avenue Research Library: Taronda Spencer’s account of Brazeal’s archival work",
+        "title": "Auburn Avenue Research Library — A Celebration of the Life and Legacy of Taronda Elise Spencer — Digital Library of Georgia",
         "url": "https://dlg.usg.edu/record/aarl_afpc_spencertarondaelise20130601"
       },
       {
-        "title": "Atlanta University Center: Ernestine Brazeal, “The State of Spelman College,” archival manuscript description",
+        "title": "Atlanta University Center — Brazeal, Ernestine: “The State of Spelman College,” draft typescript, handwritten, undated — AUC Woodruff Library",
         "url": "https://findingaids.auctr.edu/repositories/2/archival_objects/41712"
       }
     ],
@@ -1295,45 +1337,49 @@ const PEOPLE = [
       "credit": "Irene Dobbs, Spelman College Seniors, 1929, The Campus Mirror, Vol. V, No. 8 (May 1929), page 5. Spelman College Archives, via AUC RADAR. The printed caption identifies her in the second row, fifth from left. Cropped to the identified graduate. No Copyright — United States.",
       "attributionRequired": false,
       "fit": "contain",
-      "displayWidth": 180
+      "displayWidth": 180,
+      "caption": "The Campus Mirror (1929) / Spelman College Archives; cropped"
     },
     "connections": [
       {
         "institutionId": "spelman",
-        "label": "Graduated as Spelman College’s valedictorian in 1929. Later taught French, Latin, and music in a career spanning several universities."
+        "label": "Graduated as Spelman College’s valedictorian in 1929. Later taught French, Latin, and music in a career spanning several universities. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_jacksonirenecarolyndobbs19990123)"
       }
     ],
     "legacy": [
-      "Graduated as Spelman’s valedictorian in 1929 and returned to teach French. Also sang in the college’s Glee Club during her student years.",
-      "Taught French, Latin, and music during a 50-year educational career that included Spelman, Clark College, Atlanta University, Jackson State, and North Carolina Central University.",
-      "Spent the final 19 years of her teaching career as chair of Foreign Languages at North Carolina Central University."
+      "Graduated as Spelman’s valedictorian in 1929 and returned to teach French. Also sang in the college’s Glee Club during her student years. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_jacksonirenecarolyndobbs19990123)",
+      "Taught French, Latin, and music during a 50-year educational career that included Spelman, Clark College, Atlanta University, Jackson State, and North Carolina Central University. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_jacksonirenecarolyndobbs19990123)",
+      "Spent the final 19 years of her teaching career as chair of Foreign Languages at North Carolina Central University. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_jacksonirenecarolyndobbs19990123)"
     ],
     "bio": [
-      "Pursued advanced study in France at the University of Toulouse, earning a doctorate in French before resuming her teaching in Atlanta.",
-      "Challenged the exclusion of Black residents from Atlanta’s main public library by applying for a library card in 1959. Her successful application helped open access to the previously segregated library.",
-      "Continued her work as a language scholar and educator across several historically Black institutions, combining classroom teaching with academic leadership."
+      "Pursued advanced study in France at the University of Toulouse, earning a doctorate in French before resuming her teaching in Atlanta. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_jacksonirenecarolyndobbs19990123)",
+      "Challenged the exclusion of Black residents from Atlanta’s main public library by applying for a library card in 1959. Her successful application helped open access to the previously segregated library. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_jacksonirenecarolyndobbs19990123)",
+      "Continued her work as a language scholar and educator across several historically Black institutions, combining classroom teaching with academic leadership. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_jacksonirenecarolyndobbs19990123)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Auburn Avenue Research Library: Irene Carolyn Dobbs Jackson funeral program and teaching career",
+        "title": "Auburn Avenue Research Library — In Celebration of the Life of Irene Carolyn Dobbs Jackson — Digital Library of Georgia",
         "url": "https://dlg.usg.edu/record/aarl_afpc_jacksonirenecarolyndobbs19990123"
       },
       {
-        "title": "Westside Future Fund: Irene Dobbs Jackson’s education and library integration",
+        "title": "Westside Future Fund — The Woman Behind a Family of History Makers: The Life of Dr. Irene Dobbs Jackson — 2023",
         "url": "https://www.westsidefuturefund.org/the-woman-behind-a-family-of-history-makers-the-life-of-dr-irene-dobbs-jackson/"
       },
       {
-        "title": "Georgia Tech: Auburn Avenue Research Library and Irene Dobbs Jackson",
+        "title": "Georgia Tech — Auburn Avenue Research Library",
         "url": "https://leading-edge.iac.gatech.edu/building-memories/auburn-avenue-research-library/"
       },
       {
-        "title": "Irene Dobbs Jackson: Letter from France, May 1957, with her French-teaching history",
+        "title": "Irene Dobbs Jackson — From Irene Dobbs Jackson — The Martin Luther King, Jr. Research and Education Institute",
         "url": "https://kinginstitute.stanford.edu/king-papers/documents/irene-dobbs-jackson"
       },
       {
-        "title": "Spelman College Glee Club: The Dobbs Girls, June 2017 newsletter",
+        "title": "Spelman College Glee Club — Resonance — Spelman College Glee Club Alumnae Newsletter, June 2017 — Spelman College — 2017",
         "url": "https://www.spelman.edu/_1_Docs-and-Files/academics/music/2017-06-newsletter.pdf"
+      },
+      {
+        "title": "D. L. Henderson — South-View: An African American City of the Dead — Carrelspin Press — 2018 — p. 216"
       }
     ],
     "showSources": true
@@ -1345,36 +1391,37 @@ const PEOPLE = [
     "image": {
       "url": "images/people/Louisa Georgia Jackson Williams.jpg",
       "alt": "Portrait of Louisa Georgia Jackson Williams",
-      "sourceUrl": "https://www.carlmwilliams.com/obituaries/louisa-jackson-williams"
+      "sourceUrl": "https://www.carlmwilliams.com/obituaries/louisa-jackson-williams",
+      "caption": "Via Carl M. Williams Funeral Directors"
     },
     "connections": [
       {
         "institutionId": "spelman",
-        "label": "Graduated from Spelman College in 1964 with a bachelor’s degree in psychology."
+        "label": "Graduated from Spelman College in 1964 with a bachelor’s degree in psychology. [Carl M. Williams Funeral Directors](https://www.carlmwilliams.com/obituaries/louisa-jackson-williams)"
       }
     ],
     "legacy": [
-      "Sang in the Spelman College Glee Club while studying psychology.",
-      "Maintained her connection to Spelman as an alumna and supporter of the college’s educational work."
+      "Sang in the Spelman College Glee Club while studying psychology. [Carl M. Williams Funeral Directors](https://www.carlmwilliams.com/obituaries/louisa-jackson-williams)",
+      "Maintained her connection to Spelman as an alumna and supporter of the college’s educational work. [Carl M. Williams Funeral Directors](https://www.carlmwilliams.com/obituaries/louisa-jackson-williams)"
     ],
     "bio": [
-      "Began teaching in Atlanta Public Schools after college and spent 35 years in the Atlanta, Kalamazoo, Michigan, and Downingtown, Pennsylvania, school systems.",
-      "Was selected Teacher of the Year at West Bradford Elementary School in Downingtown. Continued her classroom career until retirement in 1998.",
-      "Returned to Atlanta and participated in the Magnolia Links, supporting the organization’s community-service work.",
-      "Served on the Diaconate of First Congregational Church, where she had been an active member since childhood."
+      "Began teaching in Atlanta Public Schools after college and spent 35 years in the Atlanta, Kalamazoo, Michigan, and Downingtown, Pennsylvania, school systems. [Carl M. Williams Funeral Directors](https://www.carlmwilliams.com/obituaries/louisa-jackson-williams)",
+      "Was selected Teacher of the Year at West Bradford Elementary School in Downingtown. Continued her classroom career until retirement in 1998. [Carl M. Williams Funeral Directors](https://www.carlmwilliams.com/obituaries/louisa-jackson-williams)",
+      "Returned to Atlanta and participated in the Magnolia Links, supporting the organization’s community-service work. [Carl M. Williams Funeral Directors](https://www.carlmwilliams.com/obituaries/louisa-jackson-williams)",
+      "Served on the Diaconate of First Congregational Church, where she had been an active member since childhood. [Carl M. Williams Funeral Directors](https://www.carlmwilliams.com/obituaries/louisa-jackson-williams)"
     ],
     "burialLocation": "https://maps.app.goo.gl/YH4X5VTcG5z3pFK6A",
     "sources": [
       {
-        "title": "Carl M. Williams Funeral Directors: Louisa Georgia Jackson Williams’s education and teaching career",
+        "title": "Carl M. Williams Funeral Directors, Inc. — Louisa Georgia (Jackson) Williams Obituary — 2021",
         "url": "https://www.carlmwilliams.com/obituaries/louisa-jackson-williams"
       },
       {
-        "title": "Spelman College: 2008–2009 philanthropy report, alumnae support",
+        "title": "Spelman College — The Report on Philanthropy 2008–2009 — 2009",
         "url": "https://www.spelman.edu/_1_Docs-and-Files/giving/philanthropy-report-2008-09.pdf"
       },
       {
-        "title": "Spelman Messenger: Summer/Fall 2021, class of 1964 remembrance",
+        "title": "Spelman College — Spelman Messenger — Summer/Fall 2021 — 2021",
         "url": "https://www.spelman.edu/_1_Docs-and-Files/spelman-messenger/spelman-messenger-fall-2021.pdf"
       }
     ],
@@ -1387,38 +1434,39 @@ const PEOPLE = [
     "image": {
       "url": "images/people/Marguerite F. Simon portrait.jpg",
       "alt": "Portrait of Marguerite F. Simon",
-      "sourceUrl": "https://dlg.usg.edu/record/aarl_afpc_simonmargueritef20140503"
+      "sourceUrl": "https://dlg.usg.edu/record/aarl_afpc_simonmargueritef20140503",
+      "caption": "Auburn Avenue Research Library"
     },
     "connections": [
       {
         "institutionId": "spelman",
-        "label": "Graduated from Spelman College in 1935. Taught physical education there from 1943 to 1980."
+        "label": "Graduated from Spelman College in 1935. Taught physical education there from 1943 to 1980. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_simonmargueritef20140503)"
       }
     ],
     "legacy": [
-      "Graduated in biology in 1935. Served as class president in her sophomore and senior years, participated in the Athletic Council, and played saxophone in the campus orchestra.",
-      "Taught health and physical education at Spelman from 1943 to 1980. Her classes included tumbling, volleyball, bowling, tennis, and archery.",
-      "Advocated for student health and recreation and helped get Read Hall built. Dedicated in 1951, the building housed physical education and recreation facilities. Its gymnasium was later named in her honor.",
-      "Served as historian of the National Alumnae Association of Spelman College and continued volunteering and mentoring after retirement.",
-      "The class of 1949 established the Marguerite Simon Endowed Scholarship in 1985. Received Spelman’s Founders Spirit Award in 1988."
+      "Earned a degree in biology in 1935. Served as class president in her sophomore and senior years, served on the Athletic Council, and played saxophone in the campus orchestra. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_simonmargueritef20140503)",
+      "Taught health and physical education at Spelman from 1943 to 1980. Her classes included tumbling, volleyball, bowling, tennis, and archery. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_simonmargueritef20140503)",
+      "Advocated for student health and recreation and helped secure the construction of Read Hall. Dedicated in 1951, the building housed physical education and recreation facilities. Its gymnasium was later named in her honor. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_simonmargueritef20140503)",
+      "Served as historian of the National Alumnae Association of Spelman College and continued volunteering and mentoring after retirement. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_simonmargueritef20140503)",
+      "The class of 1949 established the Marguerite Simon Endowed Scholarship in 1985. Received Spelman’s Founders Spirit Award in 1988. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_simonmargueritef20140503)"
     ],
     "bio": [
-      "Taught in Evergreen, Alabama, Milledgeville, Georgia, and Atlanta before joining Spelman’s faculty. Earned a master’s degree in physical education at the University of Colorado.",
-      "Served First Congregational Church as a trustee, Sunday School teacher, and superintendent.",
-      "Tutored at Lena Jean Campbell Elementary School and volunteered with Community Friendship, which supported people with mental illness. Also served on the supervisory committee of the Atlanta Teachers Federal Credit Union."
+      "Taught in Evergreen, Alabama, Milledgeville, Georgia, and Atlanta before joining Spelman’s faculty. Earned a master’s degree in physical education at the University of Colorado. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_simonmargueritef20140503)",
+      "Served First Congregational Church as a trustee, Sunday School teacher, and superintendent. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_simonmargueritef20140503)",
+      "Tutored at Lena Jean Campbell Elementary School and volunteered with Community Friendship, which supported people with mental illness. Also served on the supervisory committee of the Atlanta Teachers Federal Credit Union. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_simonmargueritef20140503)"
     ],
     "burialLocation": "https://maps.app.goo.gl/mTMYnRcKbYXN3o7f9",
     "sources": [
       {
-        "title": "Auburn Avenue Research Library: Marguerite F. Simon’s teaching and community service",
+        "title": "Auburn Avenue Research Library — A Celebration of the Life and Legacy of Marguerite F. Simon — Digital Library of Georgia",
         "url": "https://dlg.usg.edu/record/aarl_afpc_simonmargueritef20140503"
       },
       {
-        "title": "Spelman College: History and Traditions, Read Hall and the Marguerite Simon Gymnasium",
+        "title": "Spelman College — Spelman College History and Traditions — 2026 Reference Guide — 2026",
         "url": "https://www.spelman.edu/_1_Docs-and-Files/alumnae/spelman-history-and-traditions-brochure.pdf"
       },
       {
-        "title": "Carl M. Williams Funeral Directors: Marguerite F. Simon remembrance",
+        "title": "Carl M. Williams Funeral Directors, Inc. — Miss Marguerite F. Simon Obituary — 2014",
         "url": "https://www.carlmwilliams.com/obituaries/marguerite-simon"
       }
     ],
@@ -1431,32 +1479,33 @@ const PEOPLE = [
     "image": {
       "url": "images/people/Vashti Elizabeth Calanthe Scott-Ellis.jpg",
       "alt": "Portrait of Vashti Elizabeth Calanthe Scott-Ellis",
-      "sourceUrl": "https://dlg.usg.edu/record/aarl_afpc_scottellisvashtielizabethcalanthe19950330"
+      "sourceUrl": "https://dlg.usg.edu/record/aarl_afpc_scottellisvashtielizabethcalanthe19950330",
+      "caption": "Auburn Avenue Research Library"
     },
     "connections": [
       {
         "institutionId": "spelman",
-        "label": "Graduated from Spelman Seminary in 1925. Received its Lincoln Medal for writing."
+        "label": "Graduated from Spelman Seminary in 1925. Received its Lincoln Medal for writing. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_scottellisvashtielizabethcalanthe19950330)"
       }
     ],
     "legacy": [
-      "Won Spelman’s Lincoln Medal for her essay on Abraham Lincoln while a student at the seminary.",
-      "With her sisters Esther and Ruth, established a writing award at Spelman in memory of their parents, Reverend William Alexander Scott and Nancy Emmeline Scott."
+      "Won Spelman’s Lincoln Medal for her essay on Abraham Lincoln while a student at the seminary. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_scottellisvashtielizabethcalanthe19950330)",
+      "With her sisters Esther and Ruth, established a writing award at Spelman in memory of their parents, Reverend William Alexander Scott and Nancy Emmeline Scott. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_scottellisvashtielizabethcalanthe19950330)"
     ],
     "bio": [
-      "Taught at Nelson Merry College in Tennessee before joining her family’s Atlanta Daily World newspaper in 1932.",
-      "Worked on the editorial staff and led proofreading. Wrote the advice column “Eleanor” and the parenting column “Majoring with Minors.”",
-      "Wrote poetry addressing segregation and community life. Her 1960 poem “Jim Crow,” dedicated to Martin Luther King Sr. and Martin Luther King Jr., challenged racial discrimination.",
-      "Established the Door of Hope in Atlanta to assist unmarried mothers. Also served as a PTA president at E. R. Carter Elementary School and assisted with Sunday School at Ebenezer Baptist Church."
+      "Taught at Nelson Merry College in Tennessee before joining her family’s Atlanta Daily World newspaper in 1932. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_scottellisvashtielizabethcalanthe19950330)",
+      "Worked on the editorial staff and led proofreading. Wrote the advice column “Eleanor” and the parenting column “Majoring with Minors.” [Odum-Hinmon](https://api.drum.lib.umd.edu/server/api/core/bitstreams/8698a0d7-449f-4e6a-9284-448a4aefae13/content)",
+      "Wrote poetry addressing segregation and community life. Her 1960 poem “Jim Crow,” dedicated to Martin Luther King Sr. and Martin Luther King Jr., challenged racial discrimination. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_scottellisvashtielizabethcalanthe19950330)",
+      "Established the Door of Hope in Atlanta to assist unmarried mothers. Also served as a PTA president at E. R. Carter Elementary School and assisted with Sunday School at Ebenezer Baptist Church. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_scottellisvashtielizabethcalanthe19950330)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Auburn Avenue Research Library: Vashti Scott-Ellis funeral program, biography, and original poems",
+        "title": "Auburn Avenue Research Library — A Homegoing Celebration for Mrs. Vashti Elizabeth Calanthe Scott-Ellis — Digital Library of Georgia",
         "url": "https://dlg.usg.edu/record/aarl_afpc_scottellisvashtielizabethcalanthe19950330"
       },
       {
-        "title": "Maria Odum-Hinmon, University of Maryland: The Cautious Crusader, research on Scott-Ellis’s editorial work",
+        "title": "Maria E. Odum-Hinmon — The Cautious Crusader: How the Atlanta Daily World Covered the Struggle for African American Rights from 1945 to 1985 — University of Maryland — 2005",
         "url": "https://api.drum.lib.umd.edu/server/api/core/bitstreams/8698a0d7-449f-4e6a-9284-448a4aefae13/content"
       }
     ],
@@ -1469,33 +1518,34 @@ const PEOPLE = [
     "image": {
       "url": "images/people/Dorothy Alexander Brooks.jpg",
       "alt": "Portrait of Dorothy Alexander Brooks",
-      "sourceUrl": "https://dlg.usg.edu/record/aarl_afpc_brooksdorothyalexander20120128"
+      "sourceUrl": "https://dlg.usg.edu/record/aarl_afpc_brooksdorothyalexander20120128",
+      "caption": "Auburn Avenue Research Library"
     },
     "connections": [
       {
         "institutionId": "spelman",
-        "label": "Graduated from Spelman College in 1962 with a degree in social science and education."
+        "label": "Graduated from Spelman College in 1962 with a degree in social science and education. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_brooksdorothyalexander20120128)"
       }
     ],
     "legacy": [
-      "Graduated from Spelman in 1962 with an undergraduate degree in social science and education. Later earned a master’s degree at Howard University.",
-      "Maintained membership in the Spelman College Alumnae Association."
+      "Graduated from Spelman in 1962 with an undergraduate degree in social science and education. Later earned a master’s degree at Howard University. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_brooksdorothyalexander20120128)",
+      "Maintained membership in the Spelman College Alumnae Association. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_brooksdorothyalexander20120128)"
     ],
     "bio": [
-      "Worked in federal government for 25 years, including service as special assistant to a regional administrator of the U.S. Department of Housing and Urban Development.",
-      "Became the first woman to direct a Fair Housing and Equal Opportunity office in Louisville, Kentucky, and later served on the board of Metro Fair Housing.",
-      "Wrote on racism and other public issues, including an article published in USA Today in 1992 following the Rodney King incident.",
-      "With her sister Alvia, established a publishing venture in 1983 to produce their father’s collection of quotations and poems, The Things I Say to Me I Say to You.",
-      "Volunteered with Friendship Baptist Church’s tutorial program, served on the Alliance Theatre board, and participated in the Atlanta Alumnae Chapter of Delta Sigma Theta and the Atlanta Chapter of Girl Friends."
+      "Worked in the federal government for 25 years, including service as special assistant to a regional administrator of the U.S. Department of Housing and Urban Development. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_brooksdorothyalexander20120128)",
+      "Became the first woman to direct a Fair Housing and Equal Opportunity office in Louisville, Kentucky, and later served on the board of Metro Fair Housing. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_brooksdorothyalexander20120128)",
+      "Wrote on racism and other public issues, including an article published in USA Today in 1992 following the Rodney King incident. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_brooksdorothyalexander20120128)",
+      "With her sister Alvia, established a publishing venture in 1983 to produce their father’s collection of quotations and poems, The Things I Say to Me I Say to You. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_brooksdorothyalexander20120128)",
+      "Volunteered with Friendship Baptist Church’s tutorial program, served on the Alliance Theatre board, and participated in the Atlanta Alumnae Chapter of Delta Sigma Theta and the Atlanta Chapter of Girl Friends. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_brooksdorothyalexander20120128)"
     ],
     "burialLocation": "https://maps.app.goo.gl/AAsqMQcgpFBsXgNk7",
     "sources": [
       {
-        "title": "Auburn Avenue Research Library: Dorothy Alexander Brooks’s federal service, writing, and community work",
+        "title": "Auburn Avenue Research Library — A Celebration of Life for Dorothy Alexander Brooks — Digital Library of Georgia",
         "url": "https://dlg.usg.edu/record/aarl_afpc_brooksdorothyalexander20120128"
       },
       {
-        "title": "Spelman College: 2015 philanthropy report, class of 1962 remembrance",
+        "title": "Spelman College — The Report on Philanthropy 2014–15 — 2015",
         "url": "https://www.spelman.edu/_1_Docs-and-Files/giving/2015_philanthropy_report.pdf"
       }
     ],
@@ -1508,42 +1558,43 @@ const PEOPLE = [
     "image": {
       "url": "images/people/Virgil Hall Hodges.jpg",
       "alt": "Portrait of Virgil Hall Hodges",
-      "sourceUrl": "https://dlg.usg.edu/record/aarl_afpc_hodgesvirgilhall20140321"
+      "sourceUrl": "https://dlg.usg.edu/record/aarl_afpc_hodgesvirgilhall20140321",
+      "caption": "Auburn Avenue Research Library"
     },
     "connections": [
       {
         "institutionId": "morris",
-        "label": "Graduated from Morris Brown College in 1958. Later served on its Board of Trustees."
+        "label": "Graduated from Morris Brown College in 1958. Later served on its Board of Trustees. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_hodgesvirgilhall20140321)"
       }
     ],
     "legacy": [
-      "Graduated magna cum laude from Morris Brown College in 1958 and played football for the college. He entered its Sports Hall of Fame in 1991.",
-      "Returned to Atlanta after his career in New York and served as a Morris Brown trustee. The college’s 2012–2013 catalog records his board membership.",
-      "Co-founded the Richard Allen Classic Group, whose work supported education and community institutions."
+      "Graduated magna cum laude from Morris Brown College in 1958 and played football for the college. He was inducted into its Sports Hall of Fame in 1991. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_hodgesvirgilhall20140321)",
+      "Returned to Atlanta after his career in New York and served as a Morris Brown trustee. The college’s 2012–2013 catalog records his board membership. [Morris Brown College](https://morrisbrown.edu/wp-content/uploads/2019/04/MBC-Catalog-2014.pdf)",
+      "Co-founded the Richard Allen Classic Group, whose work supported education and community institutions. [Congressional Record](https://www.govinfo.gov/content/pkg/CREC-2013-12-02/pdf/CREC-2013-12-02-pt1-PgE1764-3.pdf)"
     ],
     "bio": [
-      "Began teaching sociology and coaching football at Philander Smith College in 1959. He later worked with the New York City Youth Board and directed the Coney Island Family Center, an antipoverty agency.",
-      "Led drug rehabilitation centers at Mount Morris and Arthur Kill before moving into statewide employment and job-training administration.",
-      "Served as deputy commissioner of the New York State Department of Labor from 1981 to 1991, overseeing unemployment insurance, employment services, and workforce training.",
-      "Directed the New York State Martin Luther King Jr. Commission and Institute for Nonviolence. In Atlanta, he also served on the King Center’s advisory board and South-View Cemetery Association’s board.",
-      "With his wife Verna, established a scholarship in their daughter Ruth-Ercile’s memory and helped recipients meet professional mentors."
+      "Began teaching sociology and coaching football at Philander Smith College in 1959. He later worked with the New York City Youth Board and directed the Coney Island Family Center, an antipoverty agency. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_hodgesvirgilhall20140321)",
+      "Led drug rehabilitation centers at Mount Morris and Arthur Kill before moving into statewide employment and job-training administration. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_hodgesvirgilhall20140321)",
+      "Served as deputy commissioner of the New York State Department of Labor from 1981 to 1991, overseeing unemployment insurance, employment services, and workforce training. [Congressional Record](https://www.govinfo.gov/content/pkg/CREC-2013-12-02/pdf/CREC-2013-12-02-pt1-PgE1764-3.pdf)",
+      "Directed the New York State Martin Luther King Jr. Commission and Institute for Nonviolence. In Atlanta, he also served on the King Center’s advisory board and South-View Cemetery Association’s board. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_hodgesvirgilhall20140321)",
+      "With his wife Verna, established a scholarship in their daughter Ruth-Ercile’s memory and helped recipients meet professional mentors. [Auburn Avenue Research Library](https://dlg.usg.edu/record/aarl_afpc_hodgesvirgilhall20140321)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Auburn Avenue Research Library: Virgil Hall Hodges funeral program",
+        "title": "Auburn Avenue Research Library — A Loving Farewell in Tribute to Virgil Hall Hodges, He Enjoyed His Life... He Served Others... He Loved Deeply — Digital Library of Georgia",
         "url": "https://dlg.usg.edu/record/aarl_afpc_hodgesvirgilhall20140321"
       },
       {
-        "title": "Morris Brown College: 2012–2013 Board of Trustees",
+        "title": "Morris Brown College — MBC Catalog 2013–2014, Volume 57 — 2013",
         "url": "https://morrisbrown.edu/wp-content/uploads/2019/04/MBC-Catalog-2014.pdf"
       },
       {
-        "title": "Congressional Record: Recognizing Virgil Hall Hodges, December 2, 2013",
+        "title": "Congressional Record — Recognizing Virgil Hall Hodges — p. E1766 — 2013",
         "url": "https://www.govinfo.gov/content/pkg/CREC-2013-12-02/pdf/CREC-2013-12-02-pt1-PgE1764-3.pdf"
       },
       {
-        "title": "The Atlanta Journal-Constitution: Virgil Hall Hodges remembrance",
+        "title": "The Atlanta Journal-Constitution — Virgil Hall Hodges, 77: Former football coach and executive was a “connector of people” — 2014",
         "url": "https://www.ajc.com/news/local-obituaries/virgil-hall-hodges-former-football-coach-and-executive-was-connector-people/GWhggzxmldCjAzmL23WD6K/"
       }
     ],
@@ -1556,37 +1607,38 @@ const PEOPLE = [
     "image": {
       "url": "images/people/Rudolph Smith.jpg",
       "alt": "Portrait of Rudolph Smith",
-      "sourceUrl": "https://www.ajc.com/news/obituaries/smith-rudolph/PDL5ESLTFNDPXBFIEBASXMT3RA/"
+      "sourceUrl": "https://www.ajc.com/news/obituaries/smith-rudolph/PDL5ESLTFNDPXBFIEBASXMT3RA/",
+      "caption": "Via The Atlanta Journal-Constitution"
     },
     "connections": [
       {
         "institutionId": "morris",
-        "label": "Graduated magna cum laude from Morris Brown College in 1961."
+        "label": "Graduated magna cum laude from Morris Brown College in 1961. [The Atlanta Journal-Constitution](https://www.ajc.com/news/obituaries/smith-rudolph/PDL5ESLTFNDPXBFIEBASXMT3RA/)"
       }
     ],
     "legacy": [
-      "Graduated from Morris Brown College in 1961 and earned a Master of Divinity from the Interdenominational Theological Seminary in 1964.",
-      "The Richardson Ecumenical Fellowship at the Interdenominational Theological Center established a scholarship bearing his name."
+      "Graduated from Morris Brown College in 1961 and earned a Master of Divinity from the Interdenominational Theological Seminary in 1964. [The Atlanta Journal-Constitution](https://www.ajc.com/news/obituaries/smith-rudolph/PDL5ESLTFNDPXBFIEBASXMT3RA/)",
+      "The Richardson Ecumenical Fellowship at the Interdenominational Theological Center established a scholarship bearing his name. [The Atlanta Journal-Constitution](https://www.ajc.com/news/obituaries/smith-rudolph/PDL5ESLTFNDPXBFIEBASXMT3RA/)"
     ],
     "bio": [
-      "Founded Community Church of God in southwest Atlanta in 1966 and led the congregation for 32 years. The church moved to Cascade Avenue in 1970 and dedicated a new sanctuary in 1980.",
-      "During his pastorate, the church opened a food pantry in 1983 and acquired the neighboring building that became VICARS, Volunteers in Community and Related Services.",
-      "Helped found Atlanta’s Concerned Black Clergy and worked in local, statewide, and national Church of God leadership.",
-      "Directed the National Association of the Church of God’s In-Service Training Institute for 20 years and taught in the program for more than four decades.",
-      "Wrote People of Color in the Bible and Stewardship More than Money, along with contributions to Christian journals and magazines."
+      "Founded Community Church of God in southwest Atlanta in 1966 and led the congregation for 32 years. The church moved to Cascade Avenue in 1970 and dedicated a new sanctuary in 1980. [Community Church](https://ccogatl.org/history/)",
+      "During his pastorate, the church opened a food pantry in 1983 and acquired the neighboring building that became VICARS, Volunteers in Community and Related Services. [Community Church](https://ccogatl.org/history/)",
+      "Helped found Atlanta’s Concerned Black Clergy and worked in local, statewide, and national Church of God leadership. [The Atlanta Journal-Constitution](https://www.ajc.com/news/obituaries/smith-rudolph/PDL5ESLTFNDPXBFIEBASXMT3RA/)",
+      "Directed the National Association of the Church of God’s In-Service Training Institute for 20 years and taught in the program for more than four decades. [The Atlanta Journal-Constitution](https://www.ajc.com/news/obituaries/smith-rudolph/PDL5ESLTFNDPXBFIEBASXMT3RA/)",
+      "Wrote People of Color in the Bible and Stewardship More than Money, along with contributions to Christian journals and magazines. [The Atlanta Journal-Constitution](https://www.ajc.com/news/obituaries/smith-rudolph/PDL5ESLTFNDPXBFIEBASXMT3RA/)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "The Atlanta Journal-Constitution: Rudolph Smith obituary",
+        "title": "The Atlanta Journal-Constitution — Smith, Rudolph — 2021",
         "url": "https://www.ajc.com/news/obituaries/smith-rudolph/PDL5ESLTFNDPXBFIEBASXMT3RA/"
       },
       {
-        "title": "Community Church: History of the congregation and its outreach",
+        "title": "Community Church — History — 2022",
         "url": "https://ccogatl.org/history/"
       },
       {
-        "title": "Rudolph Smith: Stewardship — More Than Money (2013), book and author information",
+        "title": "Rudolph Smith — Stewardship: More Than Money — Xulon Press — 2013",
         "url": "https://www.booktopia.com.au/stewardship-rudolph-smith/book/9781628393491.html"
       }
     ],
@@ -1599,28 +1651,29 @@ const PEOPLE = [
     "image": {
       "url": "images/people/Celestine Camp Patty.jpg",
       "alt": "Portrait of Celestine Camp Patty",
-      "sourceUrl": "https://www.carlmwilliams.com/obituaries/celestine-patty"
+      "sourceUrl": "https://www.carlmwilliams.com/obituaries/celestine-patty",
+      "caption": "Via Carl M. Williams Funeral Directors"
     },
     "connections": [
       {
         "institutionId": "morris",
-        "label": "Graduated from Morris Brown College in 1972 with a bachelor’s degree in interior design."
+        "label": "Graduated from Morris Brown College in 1972 with a bachelor’s degree in interior design. [Carl M. Williams Funeral Directors](https://www.carlmwilliams.com/obituaries/celestine-patty)"
       }
     ],
     "legacy": [
-      "Studied interior design at Morris Brown College and graduated in 1972.",
-      "Performed with the Morris Brown Marching Wolverines from 1969 to 1972."
+      "Studied interior design at Morris Brown College and graduated in 1972. [Carl M. Williams Funeral Directors](https://www.carlmwilliams.com/obituaries/celestine-patty)",
+      "Performed with the Morris Brown Marching Wolverines from 1969 to 1972. [Carl M. Williams Funeral Directors](https://www.carlmwilliams.com/obituaries/celestine-patty)"
     ],
     "bio": [
-      "Worked as a designer and window dresser for Rich’s downtown department store and Sears and Roebuck. She later spent more than 15 years with New York Life Insurance Company.",
-      "Contributed to Atlanta’s musical life as a member of the Atlanta Jazz Chorus from its beginning and as an alto singer at First Congregational Church.",
-      "Performed with the church’s Chancel Choir, Voices of Faith, and Bell Ringers, and served as its Music Ministry librarian.",
-      "Served on the Church Council and worked for almost 15 years as the congregation’s sexton, first part time and later full time."
+      "Worked as a designer and window dresser for Rich’s downtown department store and Sears and Roebuck. She later spent more than 15 years with New York Life Insurance Company. [Carl M. Williams Funeral Directors](https://www.carlmwilliams.com/obituaries/celestine-patty)",
+      "Contributed to Atlanta’s musical life as a member of the Atlanta Jazz Chorus from its beginning and as an alto singer at First Congregational Church. [Carl M. Williams Funeral Directors](https://www.carlmwilliams.com/obituaries/celestine-patty)",
+      "Performed with the church’s Chancel Choir, Voices of Faith, and Bell Ringers, and served as its Music Ministry librarian. [Carl M. Williams Funeral Directors](https://www.carlmwilliams.com/obituaries/celestine-patty)",
+      "Served on the Church Council and worked for almost 15 years as the congregation’s sexton, first part time and later full time. [Carl M. Williams Funeral Directors](https://www.carlmwilliams.com/obituaries/celestine-patty)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Carl M. Williams Funeral Directors: Celestine Camp Patty obituary",
+        "title": "Carl M. Williams Funeral Directors, Inc. — Mrs. Celestine (Camp) Patty Obituary — 2015",
         "url": "https://www.carlmwilliams.com/obituaries/celestine-patty"
       }
     ],
@@ -1635,40 +1688,41 @@ const PEOPLE = [
       "alt": "Portrait of Hank Aaron",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hank_Aaron_1974.jpg",
       "license": "Public domain",
-      "attributionRequired": false
+      "attributionRequired": false,
+      "caption": "Wikimedia Commons"
     },
     "connections": [
       {
         "institutionId": "medicine",
-        "label": "Supported Morehouse School of Medicine with a $3 million gift alongside Billye Aaron in 2015."
+        "label": "Supported Morehouse School of Medicine with a $3 million gift alongside Billye Aaron in 2015. [Morehouse School of Medicine](https://www.msm.edu/RSSFeedArticles/September2015/HankBillyeAaronStudentPavilion.php)"
       }
     ],
     "legacy": [
-      "Hank and Billye Aaron announced a $3 million gift in September 2015 to expand the Hugh Gloster Medical Education Building and create the Billye Suber Aaron Student Pavilion.",
-      "The gift supported the medical school’s academic facilities expansion, providing space for the education of future physicians and other health professionals."
+      "Hank and Billye Aaron announced a $3 million gift in September 2015 to expand the Hugh Gloster Medical Education Building and create the Billye Suber Aaron Student Pavilion. [Morehouse School of Medicine](https://www.msm.edu/RSSFeedArticles/September2015/HankBillyeAaronStudentPavilion.php)",
+      "The gift supported the medical school’s academic facilities expansion, providing space for the education of future physicians and other health professionals. [Morehouse School of Medicine](https://www.msm.edu/RSSFeedArticles/September2015/HankBillyeAaronStudentPavilion.php)"
     ],
     "bio": [
-      "Built a Hall of Fame baseball career with the Milwaukee and Atlanta Braves and the Milwaukee Brewers. In 1974, he surpassed Babe Ruth’s career home-run record despite racist threats and harassment.",
-      "With Billye Aaron, founded the Hank Aaron Chasing the Dream Foundation to help young people pursue education and develop their talents through grants and scholarships.",
-      "The foundation supported children’s instruction and college education, including students attending historically Black colleges and universities.",
-      "Used his public standing to advocate for civil rights and support the NAACP. He received the Presidential Medal of Freedom in 2002 for his achievements and humanitarian work."
+      "Built a Hall of Fame baseball career with the Milwaukee and Atlanta Braves and the Milwaukee Brewers. In 1974, he surpassed Babe Ruth’s career home-run record despite racist threats and harassment. [National Baseball Hall of Fame](https://baseballhall.org/discover-more/stories/support/hank-aaron-continues-legacy-through-giving)",
+      "With Billye Aaron, founded the Hank Aaron Chasing the Dream Foundation to help young people pursue education and develop their talents through grants and scholarships. [National Baseball Hall of Fame](https://baseballhall.org/discover-more/stories/support/hank-aaron-continues-legacy-through-giving)",
+      "The foundation supported children’s instruction and college education, including students attending historically Black colleges and universities. [National Baseball Hall of Fame](https://baseballhall.org/discover-more/stories/support/hank-aaron-continues-legacy-through-giving)",
+      "Used his public standing to advocate for civil rights and support the NAACP. He received the Presidential Medal of Freedom in 2002 for his achievements and humanitarian work. [National Baseball Hall of Fame](https://baseballhall.org/discover/shortstops-hank-aaron-presidential-medal-of-freedom)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Morehouse School of Medicine: Hank and Billye Aaron’s $3 million gift",
+        "title": "Morehouse School of Medicine — Hank and Billye Aaron Announce $3 Million Gift to Morehouse School of Medicine",
         "url": "https://www.msm.edu/RSSFeedArticles/September2015/HankBillyeAaronStudentPavilion.php"
       },
       {
-        "title": "National Baseball Hall of Fame: Hank’s Giving",
+        "title": "National Baseball Hall of Fame — Hank’s Giving: Henry Aaron’s Legacy Continues off the Field",
         "url": "https://baseballhall.org/discover-more/stories/support/hank-aaron-continues-legacy-through-giving"
       },
       {
-        "title": "National Baseball Hall of Fame: Hank’s Honor",
+        "title": "National Baseball Hall of Fame — #Shortstops: Hank’s Honor",
         "url": "https://baseballhall.org/discover/shortstops-hank-aaron-presidential-medal-of-freedom"
       },
       {
-        "title": "DeKalb History Center: South-View Cemetery tour",
+        "title": "DeKalb History Center — DeKalb Traveler: South-View Cemetery",
         "url": "https://dekalbhistory.org/programs/dekalb-traveler-south-view-cemetery/"
       }
     ],
@@ -1683,42 +1737,43 @@ const PEOPLE = [
       "alt": "Portrait of John Lewis",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Lewis-2006_(cropped).jpg",
       "license": "Public domain",
-      "attributionRequired": false
+      "attributionRequired": false,
+      "caption": "Wikimedia Commons"
     },
     "connections": [
       {
         "institutionId": "medicine",
-        "label": "Delivered Morehouse School of Medicine’s 2017 commencement address and advocated for affordable healthcare."
+        "label": "Delivered Morehouse School of Medicine’s 2017 commencement address and advocated for affordable health care. [Morehouse School of Medicine](https://www.msm.edu/RSSFeedArticles/May2017/commencementscholarshipgift.php)"
       }
     ],
     "legacy": [
-      "Addressed Morehouse School of Medicine’s graduating class on May 20, 2017. He spoke about growing up without access to preventive care and urged graduates to help people in need.",
-      "Called affordable healthcare a right and encouraged the school’s future health professionals to serve their communities.",
-      "Sent a welcome message to incoming graduate students in 2020, emphasizing the need for healthcare leaders who would work for equality and diversity."
+      "Addressed Morehouse School of Medicine’s graduating class on May 20, 2017. He spoke about growing up without access to preventive care and urged graduates to help people in need. [Morehouse School of Medicine](https://www.msm.edu/RSSFeedArticles/May2017/commencementscholarshipgift.php)",
+      "Called affordable health care a right and encouraged the school’s future health professionals to serve their communities. [Morehouse School of Medicine](https://www.msm.edu/RSSFeedArticles/May2017/commencementscholarshipgift.php)",
+      "Sent a welcome message to incoming graduate students in 2020, emphasizing the need for health care leaders who would work for equality and diversity. [Morehouse School of Medicine](https://web.msm.edu/Education/GEBS/documents/GEBS_OrientationProgram_20_r8.pdf)"
     ],
     "bio": [
-      "Helped organize Nashville’s student sit-ins and joined the 1961 Freedom Rides challenging segregated interstate travel.",
-      "Chaired the Student Nonviolent Coordinating Committee from 1963 to 1966 and spoke at the 1963 March on Washington.",
-      "Helped lead the March 7, 1965 voting-rights march in Selma, where state troopers attacked peaceful demonstrators on the Edmund Pettus Bridge. The violence drew national attention to the campaign for voting rights.",
-      "Directed the Voter Education Project, working to register voters across the South, before serving on the Atlanta City Council and representing Georgia’s Fifth District in Congress from 1987 until 2020.",
-      "As a member of Congress, continued advocating for voting rights, civil rights, and underserved communities."
+      "Helped organize Nashville’s student sit-ins and joined the 1961 Freedom Rides challenging segregated interstate travel. [SNCC Digital Gateway](https://snccdigital.org/people/john-lewis/)",
+      "Chaired the Student Nonviolent Coordinating Committee from 1963 to 1966 and spoke at the 1963 March on Washington. [SNCC Digital Gateway](https://snccdigital.org/people/john-lewis/)",
+      "Helped lead the March 7, 1965 voting-rights march in Selma, where state troopers attacked peaceful demonstrators on the Edmund Pettus Bridge. The violence drew national attention to the campaign for voting rights. [SNCC Digital Gateway](https://snccdigital.org/people/john-lewis/)",
+      "Directed the Voter Education Project, working to register voters across the South, before serving on the Atlanta City Council and representing Georgia’s Fifth District in Congress from 1987 until 2020. [U.S. House of Representatives](https://history.house.gov/People/Detail/16948)",
+      "As a member of Congress, continued advocating for voting rights, civil rights, and underserved communities. [U.S. House of Representatives](https://history.house.gov/People/Detail/16948)"
     ],
     "burialLocation": "",
     "sources": [
       {
-        "title": "Morehouse School of Medicine: Class of 2017 commencement and John Lewis’s address",
+        "title": "Morehouse School of Medicine — MSM Surprises Class of 2017 with Gift of More Than $647,000 to Help Lower Debt",
         "url": "https://www.msm.edu/RSSFeedArticles/May2017/commencementscholarshipgift.php"
       },
       {
-        "title": "Morehouse School of Medicine: 2020 graduate orientation program, welcome from John Lewis",
+        "title": "Morehouse School of Medicine — GEBS New Student Orientation 2020 — 2020",
         "url": "https://web.msm.edu/Education/GEBS/documents/GEBS_OrientationProgram_20_r8.pdf"
       },
       {
-        "title": "U.S. House of Representatives: John R. Lewis biography and congressional service",
+        "title": "U.S. House of Representatives — LEWIS, John R.",
         "url": "https://history.house.gov/People/Detail/16948"
       },
       {
-        "title": "SNCC Digital Gateway: John Lewis",
+        "title": "SNCC Digital Gateway — John Lewis — 2016",
         "url": "https://snccdigital.org/people/john-lewis/"
       }
     ],

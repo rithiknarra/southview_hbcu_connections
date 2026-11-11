@@ -207,7 +207,7 @@ body{margin:0;background:#fff}
 .sv-profile-sources a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
 
 /* One compact source link, aligned with the portrait edge. */
-.sv-photo-credit{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left}
+.sv-photo-credit{display:block;text-align:left}
 .sv-photo-source{font-weight:600}
 .sv-photo-credit a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 
@@ -237,3 +237,8 @@ body{margin:0;background:#fff}
 @media(max-width:600px){.sv-search{padding:20px 16px}}
 
 .sv-search-result img.sv-search-photo-contain{object-fit:contain;object-position:center}
+
+.sv-credit-terms{display:inline-block;white-space:nowrap}
+.sv-profile-no-photo{grid-template-columns:minmax(0,1fr)}
+.sv-profile-no-photo .sv-profile-copy{grid-column:1}
+.sv-portrait[hidden]{display:none}

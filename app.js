@@ -64,8 +64,19 @@ class OverlayManager{
  closeProfile(){this.profile.hidden=true;this.backdrop.hidden=true;this.timeline.inert=false;if(this.timeline.hidden){document.body.style.overflow=this.oldOverflow||'';$('#school-browser').inert=false;}if(this.profileTrigger?.isConnected)this.profileTrigger.focus({preventScroll:true});else if(this.timeline.hidden)$('#people-query').focus({preventScroll:true});}
 }
 const profileItems=value=>(Array.isArray(value)?value:[value]).filter(item=>item!=null&&String(item).trim());
+// Citation links are the only markup accepted in sheet-authored prose.
+const citedTextMarkup=value=>{
+ const text=String(value??'');let html='',offset=0;
+ for(const match of text.matchAll(/\[([^\]\n]+)\]\((https?:\/\/[^\s<>]+)\)/g)){
+  let url;try{url=new URL(match[2]);}catch{continue;}
+  if(!['http:','https:'].includes(url.protocol)||url.username||url.password||/(^|\.)wikipedia\.org$/i.test(url.hostname))continue;
+  html+=esc(text.slice(offset,match.index))+`<a class="sv-inline-citation" href="${esc(url.href)}" target="_blank" rel="noopener noreferrer">(${esc(match[1])})<span class="sv-sr"> (opens in a new tab)</span></a>`;
+  offset=match.index+match[0].length;
+ }
+ return html+esc(text.slice(offset));
+};
 // Sections without any bullets are left out entirely.
-const profileSection=(title,value)=>{const items=profileItems(value);return items.length?`<h3>${title}</h3><ul class="sv-profile-list">${items.map(item=>`<li>${esc(item)}</li>`).join('')}</ul>`:'';};
+const profileSection=(title,value)=>{const items=profileItems(value);return items.length?`<h3>${title}</h3><ul class="sv-profile-list">${items.map(item=>`<li>${citedTextMarkup(item)}</li>`).join('')}</ul>`:'';};
 // User-provided exact gravestone map links are optional; hide the link when unknown.
 const burialLocationMarkup = value => {
  let url = '';
@@ -79,15 +90,22 @@ const burialLocationMarkup = value => {
 };
 // The first sentence of a school description, or null when the description is a single sentence.
 const firstSentence=text=>{const match=String(text).match(/^[\s\S]*?[.!?](?=\s+\S)/);return match?match[0]:null;};
-// Keep portrait captions compact; detailed credits remain available on the source link.
+// Show the image credit beside its source; retain detailed provenance accessibly.
 const portraitStyle = image => Number.isFinite(image?.displayWidth) ? ` style="--portrait-width:${Math.max(80,Math.min(280,image.displayWidth))}px"` : "";
 const photoCreditMarkup = image => {
  if(!image)return '';
  let source;
  try{const u=new URL(image.sourceUrl);if(['https:','http:'].includes(u.protocol))source=u.href;}catch{ /* Missing or invalid source. */ }
  if(!source)return '';
- const credit=image.attributionRequired?[image.credit,image.license,image.licenseUrl].filter(Boolean).join(' · '):'';
- return `<figcaption class="sv-photo-credit"><a class="sv-photo-source" href="${esc(source)}"${credit?` title="${esc(credit)}"`:''} target="_blank" rel="noopener noreferrer">Photo source<span class="sv-sr"> (opens in a new tab)${credit?` — ${esc(credit)}`:''}</span></a></figcaption>`;
+ const credit=[image.credit,image.license].filter(Boolean).join(' · ');
+ const sourceHost=new URL(source).hostname.replace(/^www\./,'');
+ const collectionNames={'commons.wikimedia.org':'Wikimedia Commons','dlg.usg.edu':'Digital Library of Georgia','radar.auctr.edu':'AUC Woodruff Library','carlmwilliams.com':'Carl M. Williams Funeral Directors','loc.gov':'Library of Congress','tile.loc.gov':'Library of Congress','thehistorymakers.org':'The HistoryMakers','ajc.com':'The Atlanta Journal-Constitution'};
+ const caption=String(image.caption||image.credit||`Via ${collectionNames[sourceHost]||sourceHost}`).trim();
+ let license='';
+ if(image.attributionRequired&&image.license&&image.licenseUrl){
+  try{const u=new URL(image.licenseUrl);if(['http:','https:'].includes(u.protocol))license=` <span class="sv-credit-terms"><span aria-hidden="true">·</span> <a href="${esc(u.href)}" target="_blank" rel="noopener noreferrer">${esc(image.license)}<span class="sv-sr"> (opens in a new tab)</span></a></span>`;}catch{ /* Invalid license URL. */ }
+ }
+ return `<figcaption class="sv-photo-credit"><a class="sv-photo-source" href="${esc(source)}"${credit?` title="${esc(credit)}"`:''} target="_blank" rel="noopener noreferrer">${caption==='Photo source'?caption:`Photo: ${esc(caption)}`}<span class="sv-sr"> (opens in a new tab)</span></a>${license}</figcaption>`;
 };
 // Researched profiles opt into a visible, accessible reference list.
 const profileSourcesMarkup = person => {
@@ -110,7 +128,7 @@ class ProfileCard{
  open(id,route={}){const p=PEOPLE.find(p=>p.id===id);if(p)this.render(p,{personId:id,...route});}
  openEvent(entry,school){this.render({name:entry.title,years:entry.displayDate||String(entry.sortYear),connections:[{institutionId:school.id,label:'Institution event'}],bio:entry.summary||'',legacy:entry.details||'',image:entry.image||null,event:true},{entryId:entry.id});}
  // The portrait and its source stay inside the school-color band beside the profile heading.
- render(p,route){const image=p.image&&safeURL(p.image.url);const connection=(p.connections||[]).map(c=>c.label).filter(Boolean).join(' ');$('#profile-content').innerHTML=`<div class="sv-profile-band"><div class="sv-wrap sv-profile-band-in"><figure class="sv-portrait"${portraitStyle(p.image)}><div class="sv-frame"><div class="sv-placeholder" ${image?'hidden':''}><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="29" r="17"/><path d="M15 90C15 42 85 42 85 90"/></svg><span>${p.event?'No event image available':'No portrait available'}</span></div>${image?`<img class="sv-photo${p.image.fit==='contain'?' sv-photo-contain':''}" src="${esc(image)}" alt="${esc(p.image.alt||p.name)}">`:''}</div>${image?photoCreditMarkup(p.image):''}</figure><div class="sv-profile-who"><h2 id="profile-title">${esc(p.name)}</h2>${p.years?`<p class="sv-life-dates">${esc(p.years)}</p>`:''}${connection?`<p class="sv-profile-connection">${esc(connection)}</p>`:''}</div></div></div><div class="sv-wrap sv-profile-body"><div class="sv-profile-copy">${p.burialNote?`<aside class="sv-burial-note" aria-label="Burial history"><strong>Burial history</strong><p>${esc(p.burialNote)}</p></aside>`:''}${profileSection('Connection and Legacy',p.legacy)}${profileSection('Biography',p.bio)}${p.event?'':burialLocationMarkup(p.burialLocation)}${p.event?'':profileSourcesMarkup(p)}</div></div>`;const img=$('#profile-content img');if(img)img.onerror=()=>{img.hidden=true;$('#profile-content .sv-placeholder').hidden=false;};this.manager.openProfile(route);}
+ render(p,route){const image=p.image&&safeURL(p.image.url);const connection=(p.connections||[]).map(c=>c.label).filter(Boolean).join(' ');$('#profile-content').innerHTML=`<div class="sv-profile-band"><div class="sv-wrap sv-profile-band-in${image?'':' sv-profile-no-photo'}"><figure ${image?'':'hidden'} class="sv-portrait"${portraitStyle(p.image)}><div class="sv-frame"><div class="sv-placeholder" ${image?'hidden':''}><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="29" r="17"/><path d="M15 90C15 42 85 42 85 90"/></svg><span>${p.event?'Event image':'Portrait photograph'}</span></div>${image?`<img class="sv-photo${p.image.fit==='contain'?' sv-photo-contain':''}" src="${esc(image)}" alt="${esc(p.image.alt||p.name)}">`:''}</div>${image?photoCreditMarkup(p.image):''}</figure><div class="sv-profile-who"><h2 id="profile-title">${esc(p.name)}</h2>${p.years?`<p class="sv-life-dates">${esc(p.years)}</p>`:''}${connection?`<p class="sv-profile-connection">${citedTextMarkup(connection)}</p>`:''}</div></div></div><div class="sv-wrap sv-profile-body${image?'':' sv-profile-no-photo'}"><div class="sv-profile-copy">${p.burialNote?`<aside class="sv-burial-note" aria-label="Burial history"><strong>Burial history</strong><p>${esc(p.burialNote)}</p></aside>`:''}${profileSection('Connection and Legacy',p.legacy)}${profileSection('Biography',p.bio)}${p.event?'':burialLocationMarkup(p.burialLocation)}${p.event?'':profileSourcesMarkup(p)}</div></div>`;const img=$('#profile-content img');if(img)img.onerror=()=>{$('#profile-content .sv-portrait').hidden=true;$('#profile-content .sv-profile-band-in').classList.add('sv-profile-no-photo');$('#profile-content .sv-profile-body').classList.add('sv-profile-no-photo');};this.manager.openProfile(route);}
 }
 class InstitutionTimeline{
  constructor(manager,profile,store){this.manager=manager;this.profile=profile;this.store=store;this.container=$('#timeline-entries');this.container.onclick=e=>{const b=e.target.closest('[data-entry]');if(b){const entry=this.store.getEntries(this.currentId).find(e=>e.id===b.dataset.entry);if(entry?.personId)this.profile.open(entry.personId);else if(entry)this.profile.openEvent(entry,INSTITUTIONS.find(i=>i.id===this.currentId));}};this.container.onscroll=()=>this.controls();$('#timeline-prev').onclick=()=>this.scroll(-1);$('#timeline-next').onclick=()=>this.scroll(1);this.lastSize='';const observer=new ResizeObserver(()=>{if(!this.currentId||this.manager.timeline.hidden)return;const size=this.container.clientWidth+':'+this.availableHeight();if(this.container.clientWidth&&size!==this.lastSize){this.lastSize=size;this.render();}this.controls();});[this.container,this.manager.timeline,$('.sv-hero'),$('.sv-band-head')].forEach(element=>observer.observe(element));document.fonts?.ready.then(()=>{if(this.currentId&&!this.manager.timeline.hidden)this.render();});this.store.subscribe(id=>{if(this.currentId&&(!id||id===this.currentId))this.render();});}

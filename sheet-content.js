@@ -81,8 +81,8 @@
         return error(`Use a four-digit year from ${school.timelineStart ?? school.founded} through ${yearBefore - 1}.`);
       const name = singleLine(get('Name')), connection = singleLine(get('College connection'));
       const bio = bullets(get('Biography')), legacy = bullets(get('Institutional Connection and Legacy'));
-      const photoText = get('Photo'), image = photoURL(photoText), sourceId = singleLine(get('Entry ID'));
-      if (photoText && !image) return error('Photo must be a complete http or https link, or left blank.');
+      const image = photoURL(get('Photo')), sourceId = singleLine(get('Entry ID'));
+      if (get('Photo') && !image) return error('Photo must be a complete http or https link, or left blank.');
       const photoSourceText = get('Photo source');
       const photoSource = publicURL(photoSourceText);
       if (photoSourceText && !photoSource) return error('Photo source must be a complete http or https link, or left blank.');
@@ -230,7 +230,7 @@
             const original = basePeople.find(p => p.id === originalId || (key(p.name) === key(person.name) &&
               p.connections.some(c => c.institutionId === person.connections[0].institutionId)));
             if (person.image && original?.image?.license) person.image = structuredClone(original.image);
-            try { if (person.image) await verifyImage(person.image.url); accepted.add(person.id); }
+            try { if (person.image?.url) await verifyImage(person.image.url); accepted.add(person.id); }
             catch (error) { snapshot.errors.push({ name: person.name, message: error.message }); }
           }
         }

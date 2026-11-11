@@ -16,15 +16,15 @@ test('all Clark Atlanta cards have substantive bullets and non-Wikipedia referen
   assert(person.legacy.length>0,person.name);
   assert(!/remains unverified|His timeline date|All-Star selection|70,000 votes/i.test([...person.bio,...person.legacy].join(' ')),person.name);
   assert(person.sources.length>0,person.name);
-  assert.equal(new Set(person.sources.map(s=>s.url)).size,person.sources.length,person.name);
+  assert.equal(new Set(person.sources.map(s=>s.url||s.title)).size,person.sources.length,person.name);
   for(const source of person.sources){
-   assert(source.title);const url=new URL(source.url);
+   assert(source.title);if(!source.url)continue;const url=new URL(source.url);
    assert(['https:','http:'].includes(url.protocol));
    assert(!/(^|\.)wikipedia\.org$/i.test(url.hostname));
   }
   const html=profileSourcesMarkup(person);
   assert.equal((html.match(/<li>/g)||[]).length,person.sources.length,person.name);
-  assert.equal((html.match(/rel="noopener noreferrer"/g)||[]).length,person.sources.length);
+  assert.equal((html.match(/rel="noopener noreferrer"/g)||[]).length,person.sources.filter(s=>s.url).length);
  }
 });
 
@@ -46,22 +46,23 @@ test('every bundled portrait has a source caption, including portraits without m
  for(const person of PEOPLE){
   const html=photoCreditMarkup(person.image);
   assert(html.includes('class="sv-photo-source"'),person.name);
-  assert(html.includes('Photo source'),person.name);
+  assert(html.includes('Photo: '),person.name);
+  assert(person.image.caption,person.name);
   assert(!html.includes('sv-photo-attribution'),person.name);
   assert(!html.includes('sv-photo-license'),person.name);
  }
 });
 
-test('portrait captions show one source link with required credits available accessibly',()=>{
+test('portrait captions show visible escaped credits and linked required licenses',()=>{
  const html=photoCreditMarkup({sourceUrl:'https://example.org/portrait',credit:'<Photo & Archive>',license:'CC BY',licenseUrl:'https://example.org/license',attributionRequired:true});
- assert.equal((html.match(/<a /g)||[]).length,1);
- assert(html.includes('title="&lt;Photo &amp; Archive&gt; · CC BY · https://example.org/license"'));
- assert(html.includes('Photo source<span class="sv-sr">'));
+ assert.equal((html.match(/<a /g)||[]).length,2);
+ assert(html.includes('title="&lt;Photo &amp; Archive&gt; · CC BY"'));
+ assert(html.includes('Photo: &lt;Photo &amp; Archive&gt;'));
  assert(!html.includes('<Photo & Archive>'));
  assert(!photoCreditMarkup({sourceUrl:'javascript:alert(1)'}));
  assert(!photoCreditMarkup({sourceUrl:'file:///tmp/photo'}));
  assert.equal(photoCreditMarkup({}),'');
- assert(!photoCreditMarkup({sourceUrl:'https://example.org/photo',license:'Public domain'}).includes('Public domain'));
+ assert(!photoCreditMarkup({sourceUrl:'https://example.org/photo',license:'Public domain'}).includes('>Public domain<'));
 });
 
 test('all published cards expose their references and resolve to complete local records',()=>{
@@ -71,11 +72,12 @@ test('all published cards expose their references and resolve to complete local 
  for(const person of PEOPLE){
   assert(person.bio.length&&person.legacy.length,person.name);
   assert.equal(new Set([...person.bio,...person.legacy]).size,person.bio.length+person.legacy.length,person.name);
-  assert.equal(new Set(person.sources.map(s=>s.url)).size,person.sources.length,person.name);
+  assert.equal(new Set(person.sources.map(s=>s.url||s.title)).size,person.sources.length,person.name);
   assert(person.sources.length>0,person.name);
   assert.equal((profileSourcesMarkup(person).match(/<li>/g)||[]).length,person.sources.length,person.name);
   for(const source of person.sources){
    assert(source.title,person.name);
+   if(!source.url)continue;
    const url=new URL(source.url);assert(['http:','https:'].includes(url.protocol));
    assert(!/(^|\.)wikipedia\.org$/i.test(url.hostname),person.name);
   }
@@ -102,4 +104,17 @@ test('print references display as escaped text alongside linked web sources', ()
  assert.equal((html.match(/<li>/g) || []).length, 3);
  assert.equal((html.match(/<a /g) || []).length, 1);
  assert(!html.includes('worldcat'));
+});
+
+
+test('inline citations escape prose and accept only safe web sources',()=>{
+ const scope={URL};vm.createContext(scope);
+ vm.runInContext(app.slice(app.indexOf('const esc='),app.indexOf('const safeURL='))+'\n'+app.slice(app.indexOf('const profileItems='),app.indexOf('// User-provided exact gravestone'))+'\nthis.render=citedTextMarkup;this.section=profileSection;',scope);
+ const html=scope.render('Taught in 1930. [Archive](https://example.org/item?a=1&b=2) <script>bad</script>');
+ assert(html.includes('>(Archive)</a>')||html.includes('>(Archive)<span'));
+ assert(html.includes('a=1&amp;b=2'));assert(!html.includes('<script>'));
+ assert(!scope.render('[bad](javascript:alert(1))').includes('<a '));
+ assert(!scope.render('[bad](https://user:password@example.org/)').includes('<a '));
+ assert(!scope.render('[wiki](https://en.wikipedia.org/wiki/Test)').includes('<a '));
+ assert.equal((scope.section('Biography',['First. [A](https://a.example/)','Second. [B](https://b.example/)']).match(/sv-inline-citation/g)||[]).length,2);
 });
