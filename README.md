@@ -28,13 +28,15 @@ Routine profile updates happen through Google Forms and Google Sheets, without e
 
 The form accepts a portrait upload. **Photo** stores the image link; optional **Photo source** stores the original webpage and appears beneath the portrait. Images must be accessible to website visitors—publishing the spreadsheet does not change private image permissions. Required photo credits and burial-history notes need maintainer assistance because the adapter has no dedicated spreadsheet fields for them.
 
+The **Photo** cell may be blank. The profile and timeline entry will still appear, and the profile will show "No portrait available." A supplied photo must have a valid, publicly accessible link.
+
 Use separate lines for biography and legacy points. In **Sources**, enter one reference per line. For web sources, use a full URL, optionally as `Source title | https://example.org/page`. For books and other print sources, enter a plain-text citation with the relevant page numbers; no URL is required. Available non-Wikipedia references appear on profiles. Leave **Burial Location** blank unless an exact South-View gravestone location is confirmed.
 
 ### Publication behavior and limits
 
 - With a live feed configured, the published spreadsheet controls visibility. Unpublished records are not restored from bundled data. Bundled records may supply optional metadata for matching published people.
 - A failed refresh retains the current page’s last successfully loaded records. A fresh page with an unavailable feed shows an error and no profiles. Without a configured live feed, bundled profiles remain available offline.
-- Invalid records and profiles whose portraits cannot load are rejected. The page reports a partial-load message; detailed errors are available in the browser console. Validation messages are not written back to the sheet.
+- Invalid records and profiles whose supplied portraits cannot load are rejected. Profiles with a blank Photo cell remain visible. The page reports a partial-load message; detailed errors are available in the browser console. Validation messages are not written back to the sheet.
 - The current feed accepts four-digit timeline years **through 2025**, within the selected school’s timeline range. Later years require updating `yearBefore` in `content-config.js`. Approximate display dates such as “By 1953” are supported in bundled data, but not by the current spreadsheet adapter.
 
 ## Historical content and attribution
@@ -86,7 +88,7 @@ After content updates, check search results, the relevant timeline, profile text
 
 | Issue | First checks |
 | --- | --- |
-| A profile is missing | Published, required fields, school name, allowed year, and public portrait access. |
+| A profile is missing | Published, required fields, school name, allowed year, and the latest website code deployed. If a photo is supplied, check public portrait access. |
 | An edit has not appeared | Correct input row, time for Google’s update, and a refreshed page. |
 | A person remains after unpublishing | Other published school rows in either input tab; latest website code deployed. |
 | Profiles cannot load | Internet connection and feed address; maintainers can inspect `window.southViewContent.status` and browser-console errors. |

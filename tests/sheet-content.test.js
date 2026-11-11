@@ -24,6 +24,28 @@ test('optional photo source may be blank or absent in an older feed', () => {
  }
 });
 
+test('a published person can have no photo', async () => {
+ const row = values.map((v, i) => i === 7 || i === 11 ? '' : v);
+ const parsed = readContent(csv([row]), institutions);
+ assert.equal(parsed.errors.length, 0);
+ assert.equal(parsed.people[0].image, null);
+ const store = { institutions, people: [], timelines: [], notify() {} };
+ const adapter = install(store, { csvUrl: 'https://example.org/feed.csv' }, {
+  fetch: async () => ({ ok: true, text: async () => csv([row]) }),
+  checkImage: async () => { throw new Error('No photo should be checked.'); }
+ });
+ assert.equal((await adapter.refresh()).state, 'ready');
+ assert.equal(store.people[0].image, null);
+ assert.equal(store.timelines[0].entries[0].personId, store.people[0].id);
+});
+
+test('an invalid photo link still rejects the profile', () => {
+ const row = values.map((v, i) => i === 7 ? 'not a link' : v);
+ const result = readContent(csv([row]), institutions);
+ assert.equal(result.people.length, 0);
+ assert.match(result.errors[0].message, /Photo must be/);
+});
+
 test('invalid supplied photo sources reject the complete record', () => {
  for (const invalid of ['javascript:alert(1)','not a link','https://user:secret@example.org/photo']) {
   const row=values.map((v,i)=>i===11?invalid:v);
@@ -136,6 +158,21 @@ test('published sheet cannot replace a reviewed portrait while retaining its lic
  assert.deepEqual(checked,[image.url]);
  assert.deepEqual(store.people[0].image,image);
  assert.deepEqual(store.people[0].bio,['Served the community.']);
+});
+
+test('a blank photo removes a bundled portrait without losing the published profile', async () => {
+ const image={url:'images/reviewed.jpg',alt:'Example Person',license:'CC BY 4.0'};
+ const original={id:'reviewed-person',name:'Example Person',image,connections:[{institutionId:'spelman'}]};
+ const row=values.map((value,i)=>i===7||i===11?'':i===9?'reviewed-person':value);
+ const store={institutions,people:[original],timelines:[],notify(){}};
+ const adapter=install(store,{csvUrl:'https://example.org/feed.csv',sheetOwnsProfiles:true},{
+  fetch:async()=>({ok:true,text:async()=>csv([row])}),
+  checkImage:async()=>{throw new Error('A blank photo must not be checked.');}
+ });
+ assert.equal((await adapter.refresh()).state,'ready');
+ assert.equal(store.people[0].id,original.id);
+ assert.equal(store.people[0].image,null);
+ assert.equal(store.timelines[0].entries[0].personId,original.id);
 });
 
 

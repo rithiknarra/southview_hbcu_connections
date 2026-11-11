@@ -81,7 +81,8 @@
         return error(`Use a four-digit year from ${school.timelineStart ?? school.founded} through ${yearBefore - 1}.`);
       const name = singleLine(get('Name')), connection = singleLine(get('College connection'));
       const bio = bullets(get('Biography')), legacy = bullets(get('Institutional Connection and Legacy'));
-      const image = photoURL(get('Photo')), sourceId = singleLine(get('Entry ID'));
+      const photoText = get('Photo'), image = photoURL(photoText), sourceId = singleLine(get('Entry ID'));
+      if (photoText && !image) return error('Photo must be a complete http or https link, or left blank.');
       const photoSourceText = get('Photo source');
       const photoSource = publicURL(photoSourceText);
       if (photoSourceText && !photoSource) return error('Photo source must be a complete http or https link, or left blank.');
@@ -89,8 +90,8 @@
       const burialText = get('Burial Location');
       const burialLocation = publicURL(burialText);
       if (burialText && !burialLocation) return error('Burial Location must be a complete http or https map link, or left blank.');
-      if (!name || !connection || !bio.length || !legacy.length || !image || !sourceId)
-        return error('Name, college connection, legacy, biography, photo, and entry ID are required.');
+      if (!name || !connection || !bio.length || !legacy.length || !sourceId)
+        return error('Name, college connection, legacy, biography, and entry ID are required.');
       if (name.length > 200 || connection.length > 2000 || bio.join('').length > 50000 || legacy.join('').length > 50000)
         return error('Content is too long. Shorten the name, connection, or biography sections.');
       const identity = `${school.id}:${key(name)}`;
@@ -114,13 +115,13 @@
       people.push({ id, name, years: singleLine(get('Life dates')), bio, legacy, sources, showSources: true,
         ...(hasBurialLocation ? { burialLocation } : {}),
         connections: [{ institutionId: school.id, label: connection }],
-        image: { url: image, sourceUrl: photoSource, alt: `Portrait of ${name}` } });
+        image: image ? { url: image, sourceUrl: photoSource, alt: `Portrait of ${name}` } : null });
       timelines.push({ institutionId: school.id, entries: [{ id, personId: id, sortYear: year, displayDate: yearText }] });
     });
     return { people, timelines, errors };
   }
 
-  // Load every required portrait before exposing any part of its person record.
+  // Check supplied portraits before exposing their person records.
   function checkImage(url, timeoutMs = 15000) {
     return new Promise((resolve, reject) => {
       const img = new root.Image();
@@ -170,7 +171,7 @@
             if (!connections.some(item => item.institutionId === connection.institutionId)) connections.push(connection);
           }
           merged = { ...original, ...person, id: original.id, connections,
-            image: { ...original.image, ...person.image, alt: original.image?.alt || person.image.alt } };
+            image: person.image ? { ...original.image, ...person.image, alt: original.image?.alt || person.image.alt } : null };
           people[existing] = merged;
         } else {
           people.push(merged);
@@ -228,8 +229,8 @@
             const originalId = person.id.slice('sheet:'.length);
             const original = basePeople.find(p => p.id === originalId || (key(p.name) === key(person.name) &&
               p.connections.some(c => c.institutionId === person.connections[0].institutionId)));
-            if (original?.image?.license) person.image = structuredClone(original.image);
-            try { await verifyImage(person.image.url); accepted.add(person.id); }
+            if (person.image && original?.image?.license) person.image = structuredClone(original.image);
+            try { if (person.image) await verifyImage(person.image.url); accepted.add(person.id); }
             catch (error) { snapshot.errors.push({ name: person.name, message: error.message }); }
           }
         }
