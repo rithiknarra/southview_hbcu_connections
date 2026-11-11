@@ -139,7 +139,7 @@ body{margin:0;background:#fff}
 .sv-profile-band{background:var(--school-color);color:#fff}
 .sv-profile-band-in,.sv-profile-body{display:grid;grid-template-columns:280px minmax(0,1fr);gap:clamp(32px,5vw,72px)}
 .sv-profile-band-in{align-items:start;padding-block:40px}
-.sv-portrait{width:100%;min-width:0;margin:0;align-self:start}
+.sv-portrait{width:100%;max-width:var(--portrait-width,100%);min-width:0;margin:0;align-self:start}
 .sv-frame{width:100%;overflow:hidden;border:1px solid var(--school-rule);background:var(--wash)}
 .sv-profile-who{min-width:0;padding:0;align-self:start;text-align:left}
 .sv-feature .sv-profile-band h2{color:#fff}
@@ -147,7 +147,7 @@ body{margin:0;background:#fff}
 .sv-profile-band .sv-profile-connection{max-width:60ch;margin:18px 0 0;padding:0;border:0;color:var(--on-school-text)}
 .sv-profile-body .sv-profile-copy{grid-column:2;padding:8px 0 64px}
 .sv-feature .sv-profile-copy>h3:first-child{margin-top:32px}
-.sv-profile .sv-photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top}
+.sv-profile .sv-photo{display:block;width:100%;aspect-ratio:4/5;object-fit:contain;object-position:center}
 .sv-profile .sv-placeholder{background:var(--wash);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;aspect-ratio:4/5;color:#84877e;font:15px SV EB Garamond,Georgia,serif}
 .sv-placeholder svg{width:90px;height:90px;fill:none;stroke:#969c8e;stroke-width:1}
 .sv-photo-credit{margin:0;padding:12px 0 0;background:transparent;font:12px/1.5 SV Manrope,Manrope,sans-serif;color:var(--on-school-soft);overflow-wrap:anywhere}
@@ -170,7 +170,7 @@ body{margin:0;background:#fff}
  .sv-band-tools span{display:none}
  .sv-profile-band-in,.sv-profile-body{grid-template-columns:minmax(0,1fr);gap:20px}
  .sv-profile-band-in{padding-block:28px}
- .sv-portrait{max-width:200px;margin-bottom:0}
+ .sv-portrait{max-width:min(200px,var(--portrait-width,200px));margin-bottom:0}
  .sv-profile-who{padding:0}
  .sv-profile-body .sv-profile-copy{grid-column:1;padding-bottom:40px}
  .sv-profile-list{font-size:18px}
@@ -224,7 +224,7 @@ body{margin:0;background:#fff}
 .sv-search-results{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-height:480px;overflow-y:auto}
 .sv-search-result{display:flex;align-items:center;gap:14px;width:100%;height:100%;padding:12px;text-align:left;border:1px solid #d4d3c9;border-left:3px solid var(--result-color,var(--gold));border-radius:3px;background:#fff;color:var(--ink);cursor:pointer}
 .sv-search-result:hover{background:#f6f5ef;border-color:var(--gold)}
-.sv-search-result img{width:52px;height:64px;object-fit:cover;object-position:top;flex-shrink:0}
+.sv-search-result img{width:52px;height:64px;object-fit:contain;object-position:center;flex-shrink:0}
 .sv-search-result>span{min-width:0}
 .sv-search-result strong{display:block;font:700 24px/1.15 SV Cormorant,Georgia,serif;overflow-wrap:anywhere}
 .sv-search-colleges{display:block;margin-top:5px;font:12px/1.5 SV Manrope,Manrope,sans-serif;color:var(--muted)}
@@ -235,3 +235,5 @@ body{margin:0;background:#fff}
 .sv-search #people-clear{background:#715821;border-color:#715821;color:#fff;font-weight:600}
 .sv-search #people-clear:hover{background:#58441a}
 @media(max-width:600px){.sv-search{padding:20px 16px}}
+
+.sv-search-result img.sv-search-photo-contain{object-fit:contain;object-position:center}

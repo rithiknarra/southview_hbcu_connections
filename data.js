@@ -62,7 +62,12 @@ const PEOPLE = [
     "image": {
       "url": "images/people/Ruby Doris Smith-Robinson.jpg",
       "alt": "Portrait of Ruby Doris Smith-Robinson",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ruby_Doris_Smith-Robinson.jpg"
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ruby_Doris_Smith-Robinson.jpg",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "credit": "Ruby Doris Smith-Robinson. Author credited as dadewumi on Wikimedia Commons; CC BY 3.0. Displayed at website sizes.",
+      "attributionRequired": true,
+      "fit": "contain"
     },
     "connections": [
       {
@@ -103,9 +108,14 @@ const PEOPLE = [
     "id": "Ludie-Clay-Andrews",
     "name": "Ludie Clay Andrews",
     "image": {
-      "url": "images/people/Ludie Clay Andrews.jpg",
+      "url": "images/people/Ludie Clay Andrews - Pathfinders 1929.jpg",
       "alt": "Portrait of Ludie Clay Andrews",
-      "sourceUrl": "https://www.southviewpreservation.com/historyintheneighborhood"
+      "sourceUrl": "https://alembicrarebooks.com/blogs/alembic-rare-books-blog/pioneering-black-nurses-the-great-influenza",
+      "license": "Public domain in the United States (published 1929)",
+      "licenseUrl": "https://catalog.hathitrust.org/Record/000019745",
+      "credit": "Ludie A. Andrews, R.N., illustration in Adah B. Thoms, Pathfinders: A History of the Progress of Colored Graduate Nurses (New York: Kay Printing House, 1929). Public domain in the United States. Reproduction from the 1929 volume shown by Alembic Rare Books; cropped to the printed portrait, with no retouching.",
+      "attributionRequired": false,
+      "fit": "contain"
     },
     "years": "Died January 1969",
     "connections": [
@@ -152,9 +162,13 @@ const PEOPLE = [
     "name": "Samuel Archer",
     "years": "December 23, 1870 - January 15, 1941",
     "image": {
-      "url": "images/people/Samuel Archer.jpg",
+      "url": "images/people/Samuel Archer - AUC family portrait crop.jpg",
       "alt": "Portrait of Samuel Archer",
-      "sourceUrl": "https://morehouseathletics.com/honors/den-of-honor/dr-samuel-h-archer/13"
+      "sourceUrl": "https://radar.auctr.edu/node/78603",
+      "license": "Public domain in the United States (NoC-US)",
+      "licenseUrl": "https://rightsstatements.org/vocab/NoC-US/1.0/",
+      "credit": "Samuel Archer Family, circa 1920. Morehouse College Photographs, Atlanta University Center Robert W. Woodruff Library. Cropped; seated man identified by the site owner.",
+      "fit": "contain"
     },
     "connections": [
       {
@@ -256,11 +270,13 @@ const PEOPLE = [
     "name": "William Holmes Borders",
     "years": "February 24, 1905 - November 23, 1993",
     "image": {
-      "url": "images/people/William Holmes Borders.jpg",
+      "url": "images/people/William Holmes Borders - Atlanta Daily World 1962.jpg",
       "alt": "Portrait of William Holmes Borders",
-      "sourceUrl": "https://www.georgiaencyclopedia.org/articles/arts-culture/william-holmes-borders-1905-1993/",
-      "credit": "Courtesy of Wheat Street Baptist Church; Estate of the Reverend William Holmes Borders Sr.",
-      "attributionRequired": true,
+      "sourceUrl": "https://www.loc.gov/item/sn82015425/1962-03-07/ed-1/",
+      "credit": "William Holmes Borders, Atlanta Daily World, March 7, 1962, front page. Library of Congress, Chronicling America. Portrait cropped from the newspaper scan. Library of Congress describes these newspapers as public domain or having no known copyright restrictions; no separate photo credit appears beside this portrait.",
+      "license": "Public domain or no known copyright restrictions (Library of Congress assessment)",
+      "licenseUrl": "https://www.loc.gov/item/sn82015425/?st=calendar#rights-and-access",
+      "attributionRequired": false,
       "fit": "contain"
     },
     "connections": [
@@ -451,11 +467,14 @@ const PEOPLE = [
     "name": "Grace Towns Hamilton",
     "years": "February 10, 1907 - June 17, 1992",
     "image": {
-      "url": "images/people/Grace Town Hamilton.jpg",
-      "alt": "Portrait of Grace Towns Hamilton seated between the American and Georgia flags",
-      "credit": "Grace Towns Hamilton Papers. Archives Research Center, Atlanta University Center, Robert W. Woodruff Library.",
+      "url": "images/people/Grace Towns Hamilton - Boyd Lewis 1972.jpg",
+      "alt": "Grace Towns Hamilton at right in the Georgia General Assembly, 1972",
+      "credit": "Photograph by Boyd Lewis, 1972. Boyd Lewis photographs, Kenan Research Center, Atlanta History Center. CC BY-NC-ND 4.0. Image unchanged.",
       "attributionRequired": true,
-      "sourceUrl": "https://dlg.usg.edu/record/auu_gthamilton_auc-152-0054"
+      "sourceUrl": "https://dlg.usg.edu/record/geh_byd_3504",
+      "license": "CC BY-NC-ND 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "fit": "contain"
     },
     "connections": [
       {
@@ -497,9 +516,14 @@ const PEOPLE = [
     "name": "Freddye Scarborough Henderson",
     "years": "February 18, 1917 - January 19, 2007",
     "image": {
-      "url": "images/people/Freddye Scarborough Henderson.png",
-      "alt": "Portrait of Freddye Scarborough Henderson",
-      "sourceUrl": "https://www.southviewpreservation.com/freddyehenderson"
+      "url": "images/people/Freddye Scarborough Henderson - Atlanta Daily World 1951.jpg",
+      "alt": "Freddye Scarborough Henderson in a 1951 newspaper photograph",
+      "sourceUrl": "https://georgialibraries.omeka.net/s/aarl-freddye/item/3445",
+      "license": "Public domain or no known copyright restrictions (Library of Congress newspaper assessment)",
+      "licenseUrl": "https://www.loc.gov/item/sn82015425/?st=calendar#rights-and-access",
+      "credit": "Freddye Scarborough Henderson, Atlanta Daily World, National Edition, May 19, 1951, World Mother of 1951 photograph. Freddye Scarborough Henderson Family Papers, Auburn Avenue Research Library, via Georgia Public Library Service. Cropped to the mother explicitly identified in the caption. Library of Congress describes Chronicling America newspapers as public domain or having no known copyright restrictions, with a caveat for third-party material; no separate photo credit appears beside this image.",
+      "attributionRequired": false,
+      "fit": "contain"
     },
     "connections": [
       {
@@ -631,11 +655,14 @@ const PEOPLE = [
     "name": "Jesse B. Blayton",
     "years": "December 6, 1897 - September 7, 1977",
     "image": {
-      "url": "images/people/Jesse B. Blayton.png",
+      "url": "images/people/Jesse B. Blayton - AUC circa 1925.jpg",
       "alt": "Portrait of Jesse B. Blayton",
       "credit": "Atlanta University Photographs. Archives Research Center, Atlanta University Center, Robert W. Woodruff Library.",
-      "attributionRequired": true,
-      "sourceUrl": "https://dlg.usg.edu/record/auu_auc-001_auc-001-1114"
+      "attributionRequired": false,
+      "sourceUrl": "https://radar.auctr.edu/node/77569",
+      "license": "Public domain in the United States (NoC-US)",
+      "licenseUrl": "https://rightsstatements.org/vocab/NoC-US/1.0/",
+      "fit": "contain"
     },
     "connections": [
       {
@@ -1155,9 +1182,14 @@ const PEOPLE = [
     "name": "Asa G. Yancey Sr.",
     "years": "August 19, 1916 – March 9, 2013",
     "image": {
-      "url": "images/people/Asa G. Yancey Sr..jpg",
+      "url": "images/people/Asa G. Yancey Sr. - CC BY-NC.jpg",
       "alt": "Portrait of Asa G. Yancey Sr.",
-      "sourceUrl": "https://med.emory.edu/departments/surgery/education/general-surgery-residency/asa-yancey-bio.html"
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11429006/#F1",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "attributionRequired": true,
+      "credit": "Dr. Asa Yancey, Figure 1 in Xu TO, Levitt MA, Feng C., Controversies in Hirschsprung surgery (2024), doi:10.1136/wjps-2024-000887. CC BY-NC 4.0. Image unchanged.",
+      "fit": "contain"
     },
     "connections": [
       {
@@ -1255,9 +1287,15 @@ const PEOPLE = [
     "name": "Irene Carolyn Dobbs Jackson",
     "years": "February 16, 1908 – January 19, 1999",
     "image": {
-      "url": "images/people/Irene Carolyn Dobbs Jackson.jpg",
+      "url": "images/people/Irene Carolyn Dobbs Jackson - Campus Mirror 1929.jpg",
       "alt": "Portrait of Irene Carolyn Dobbs Jackson",
-      "sourceUrl": "https://dlg.usg.edu/record/aarl_afpc_jacksonirenecarolyndobbs19990123"
+      "sourceUrl": "https://radar.auctr.edu/campus-mirror-vol-v-no-8-may-1929",
+      "license": "Public domain in the United States (NoC-US)",
+      "licenseUrl": "https://rightsstatements.org/vocab/NoC-US/1.0/",
+      "credit": "Irene Dobbs, Spelman College Seniors, 1929, The Campus Mirror, Vol. V, No. 8 (May 1929), page 5. Spelman College Archives, via AUC RADAR. The printed caption identifies her in the second row, fifth from left. Cropped to the identified graduate. No Copyright — United States.",
+      "attributionRequired": false,
+      "fit": "contain",
+      "displayWidth": 180
     },
     "connections": [
       {

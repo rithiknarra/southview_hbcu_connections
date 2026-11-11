@@ -50,9 +50,9 @@ test('unpublishing an existing profile removes its bundled version and timeline 
  let feed=csv([values]);
  const store={institutions,people:[original],timelines:[{institutionId:'spelman',entries:[{id:'bundled-entry',personId:original.id}]}],notify(){}};
  const adapter=install(store,{csvUrl:'https://example.org/feed.csv'},{fetch:async()=>({ok:true,text:async()=>feed}),checkImage:async()=>{}});
- await adapter.refresh();assert.equal(store.people.length,1);assert.equal(store.people[0].id,'sheet:test-person');
+ await adapter.refresh();assert.equal(store.people.length,1);assert.equal(store.people[0].id,'bundled-person');
  feed=csv([]);await adapter.refresh();assert.equal(store.people.length,0);assert.equal(store.timelines.length,0);
- feed=csv([values]);await adapter.refresh();assert.equal(store.people[0].id,'sheet:test-person');assert.equal(store.timelines[0].entries.length,1);
+ feed=csv([values]);await adapter.refresh();assert.equal(store.people[0].id,'bundled-person');assert.equal(store.timelines[0].entries.length,1);
 });
 
 test('live content hides bundles before loading and does not restore them on a failed first load', async () => {
@@ -120,4 +120,91 @@ test('malformed and unsafe source links cannot pass as unlinked citations', () =
   assert.equal(result.people.length, 0, source);
   assert.equal(result.errors.length, 1, source);
  }
+});
+
+test('published sheet cannot replace a reviewed portrait while retaining its license', async () => {
+ const image={url:'images/reviewed.jpg',alt:'Example Person',sourceUrl:'https://archive.example/item',license:'CC BY 4.0',credit:'Archive photographer',fit:'contain'};
+ const original={id:'reviewed-person',name:'Example Person',image,connections:[{institutionId:'spelman'}]};
+ const store={institutions,people:[original],timelines:[],notify(){}};
+ const checked=[];
+ const adapter=install(store,{csvUrl:'https://example.org/feed.csv',sheetOwnsProfiles:true},{
+  fetch:async()=>({ok:true,text:async()=>csv([values])}),
+  checkImage:async url=>{checked.push(url);if(url!==image.url)throw new Error('Stale sheet image');}
+ });
+ const result=await adapter.refresh();
+ assert.equal(result.state,'ready');
+ assert.deepEqual(checked,[image.url]);
+ assert.deepEqual(store.people[0].image,image);
+ assert.deepEqual(store.people[0].bio,['Served the community.']);
+});
+
+
+test('importing every existing profile preserves all wording, portrait metadata, and college timelines', async () => {
+ const fs=require('node:fs');
+ const source=fs.readFileSync('data.js','utf8');
+ const people=JSON.parse(source.match(/const PEOPLE = (\[.*?\]);/s)[1]);
+ const institutions=JSON.parse(source.match(/const INSTITUTIONS = (\[.*?\]);/s)[1]);
+ const timelines=JSON.parse(source.match(/const TIMELINES = (\[.*?\]);/s)[1]);
+ const rows=people.map(person=>{
+  const connection=person.connections[0];
+  const school=institutions.find(s=>s.id===connection.institutionId);
+  const entry=timelines.find(t=>t.institutionId===school.id).entries.find(e=>e.personId===person.id);
+  return [school.name,entry.sortYear,person.name,person.years,connection.label,
+   person.legacy.join('\n'),person.bio.join('\n'),`https://example.org/${encodeURIComponent(person.image.url)}`,
+   person.sources.map(s=>`${s.title} | ${s.url}`).join('\n'),person.id,person.burialLocation||'',person.image.sourceUrl];
+ });
+ const store={people:structuredClone(people),institutions,timelines:structuredClone(timelines),notify(){}};
+ let currentRows=rows;
+ const adapter=install(store,{csvUrl:'https://example.org/feed.csv',yearBefore:2026,sheetOwnsProfiles:true},{fetch:async()=>({ok:true,text:async()=>csv(currentRows)}),checkImage:async()=>{}});
+ assert.equal(store.people.length,0,'bundled people must not flash before publication is known');
+ const result=await adapter.refresh();
+ assert.equal(result.state,'ready');assert.equal(result.added,people.length);
+ assert.equal(store.people.length,people.length);
+ assert.deepEqual(store.timelines,timelines);
+ for(const original of people){
+  const imported=store.people.find(p=>p.id===original.id);
+  const expected={...original,image:original.image.license ? original.image : {...original.image,url:`https://example.org/${encodeURIComponent(original.image.url)}`}};
+  assert.deepEqual(imported,expected,original.name);
+ }
+ // An edit to one shared card must apply everywhere it appears without dropping another college.
+ rows.find(r=>r[2]==='Asa G. Yancey Sr.')[6]='Updated shared biography.';
+ const edited=await adapter.refresh();assert.equal(edited.state,'ready');
+ const yancey=store.people.find(p=>p.id==='asa-g-yancey-sr');
+ assert.deepEqual(yancey.bio,['Updated shared biography.']);assert.equal(yancey.connections.length,2);
+ assert.equal(store.timelines.find(t=>t.institutionId==='medicine').entries.filter(e=>e.personId===yancey.id).length,1);
+ // Removing a shared person from the published feed hides every appearance.
+ currentRows=rows.filter(row=>row[9]!==yancey.id);
+ await adapter.refresh();
+ assert.equal(store.people.some(person=>person.id===yancey.id),false);
+ assert.equal(store.timelines.some(t=>t.entries.some(e=>e.personId===yancey.id)),false);
+ // Rechecking Published restores one shared card and both original timeline entries.
+ currentRows=rows;
+ await adapter.refresh();
+ assert.equal(store.people.filter(person=>person.id===yancey.id).length,1);
+ assert.equal(store.people.find(person=>person.id===yancey.id).connections.length,2);
+ assert.equal(store.timelines.flatMap(t=>t.entries).filter(e=>e.personId===yancey.id).length,2);
+});
+
+test('sheet ownership hides deleted and invalid records without resurrecting bundled profiles', async () => {
+ const original={id:'bundled-person',name:'Example Person',bio:['Original biography'],connections:[{institutionId:'spelman'}]};
+ const event={id:'school-event',sortYear:1900,title:'School event'};
+ let feed=csv([values]),fail=false,brokenPhoto=false;
+ const store={institutions,people:[original],timelines:[{institutionId:'spelman',entries:[event,{id:'bundled-entry',personId:original.id,sortYear:1964}]}],notify(){}};
+ const adapter=install(store,{csvUrl:'https://example.org/feed.csv',sheetOwnsProfiles:true},{
+  fetch:async()=>{if(fail)throw new Error('Feed unavailable');return {ok:true,text:async()=>feed};},
+  checkImage:async()=>{if(brokenPhoto)throw new Error('Broken portrait');}
+ });
+ assert.deepEqual(store.people,[]);
+ assert.deepEqual(store.timelines[0].entries,[event]);
+ fail=true;await adapter.refresh();assert.deepEqual(store.people,[],'initial failure must not expose unpublished bundled people');
+ fail=false;await adapter.refresh();assert.equal(store.people.length,1);
+ feed=csv([]);await adapter.refresh();assert.deepEqual(store.people,[]);assert.deepEqual(store.timelines[0].entries,[event]);
+ fail=true;await adapter.refresh();assert.deepEqual(store.people,[],'failed refresh must keep hidden people hidden');
+ fail=false;feed=csv([values]);brokenPhoto=true;await adapter.refresh();assert.deepEqual(store.people,[]);
+ brokenPhoto=false;await adapter.refresh();assert.equal(store.people.length,1);
+ // The original row identity continues to match if an editor corrects the name.
+ const renamed=values.map((value,i)=>i===2?'Corrected Person':i===9?'bundled-person':value);
+ feed=csv([renamed]);await adapter.refresh();
+ assert.equal(store.people.length,1);assert.equal(store.people[0].id,original.id);assert.equal(store.people[0].name,'Corrected Person');
+ fail=true;await adapter.refresh();assert.equal(store.people[0].name,'Corrected Person','a failed refresh retains the last valid snapshot');
 });

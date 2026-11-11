@@ -135,40 +135,75 @@
 
   function install(store, config, options = {}) {
     if (!config?.csvUrl) return { refresh: async () => ({ configured: false }) };
-    // Bundled records supply optional metadata only, never publication decisions.
-    const basePeople = structuredClone(store.people);
+    config = { ...config, sheetOwnsProfiles: config.sheetOwnsProfiles !== false };
+    const basePeople = structuredClone(store.people), baseTimelines = structuredClone(store.timelines);
     const fetcher = options.fetch || root.fetch.bind(root);
     const verifyImage = options.checkImage || (url => checkImage(url, config.timeoutMs));
     let inFlight;
     const status = { state: 'loading', errors: [], updatedAt: null };
 
-    // A configured live feed owns visibility, including after a page reload.
-    // Do not expose unpublished bundled records while loading or on an outage.
-    store.people.splice(0, store.people.length);
-    store.timelines.splice(0, store.timelines.length);
-    store.notify(null);
+    // In sheet-managed mode, do not briefly expose bundled people before the feed
+    // loads, or resurrect unpublished people if the first request fails.
+    if (config.sheetOwnsProfiles) {
+      store.people.splice(0);
+      store.timelines.forEach(t => { t.entries = t.entries.filter(e => !e.personId); });
+      store.timelines.splice(0, store.timelines.length, ...store.timelines.filter(t => t.entries.length));
+      store.notify(null);
+    }
 
     function apply(snapshot) {
-      const people = [], timelines = [];
+      const people = structuredClone(basePeople), timelines = structuredClone(baseTimelines);
+      const personIds = new Map();
       for (const person of snapshot.people) {
         let merged = person;
-        // Retain optional metadata only for people explicitly present in the feed.
-        const existing = basePeople.find(p => key(p.name) === key(person.name) &&
-          p.connections.some(c => c.institutionId === person.connections[0].institutionId));
-        if (existing) {
-          // Preserve optional fields maintained outside this feed, such as burialLocation.
-          merged = { ...structuredClone(existing), ...person };
+        // A submitted version of a bundled example replaces its original, without duplicate names.
+        const originalId = person.id.slice('sheet:'.length);
+        const existing = people.findIndex(p => p.id === originalId || (key(p.name) === key(person.name) &&
+          p.connections.some(c => c.institutionId === person.connections[0].institutionId)));
+        if (existing >= 0) {
+          const original = people[existing];
+          // Editing a shared profile must preserve its other college connections,
+          // portrait treatment, attribution, and stable profile/timeline identifiers.
+          const connections = original.connections.map(connection =>
+            person.connections.find(item => item.institutionId === connection.institutionId) || connection);
+          for (const connection of person.connections) {
+            if (!connections.some(item => item.institutionId === connection.institutionId)) connections.push(connection);
+          }
+          merged = { ...original, ...person, id: original.id, connections,
+            image: { ...original.image, ...person.image, alt: original.image?.alt || person.image.alt } };
+          people[existing] = merged;
+        } else {
+          people.push(merged);
         }
-        people.push(merged);
+        personIds.set(person.id, merged.id);
       }
       snapshot.timelines.forEach(t => {
         let target = timelines.find(item => item.institutionId === t.institutionId);
         if (!target) { target = { institutionId: t.institutionId, entries: [] }; timelines.push(target); }
-        target.entries.push(...t.entries);
+        for (const entry of t.entries) {
+          const personId = personIds.get(entry.personId) || entry.personId;
+          const existing = target.entries.findIndex(item => item.personId === personId);
+          if (existing >= 0) {
+            const original = target.entries[existing];
+            target.entries[existing] = { ...original, ...entry, id: original.id, personId,
+              displayDate: original.sortYear === entry.sortYear ? original.displayDate : entry.displayDate };
+          } else {
+            target.entries.push({ ...entry, personId });
+          }
+        }
       });
+      if (config.sheetOwnsProfiles) {
+        const publishedIds = new Set(personIds.values());
+        for (let i = people.length - 1; i >= 0; i--) {
+          if (!publishedIds.has(people[i].id)) people.splice(i, 1);
+        }
+        timelines.forEach(t => {
+          t.entries = t.entries.filter(e => !e.personId || publishedIds.has(e.personId));
+        });
+      }
       // Keep the arrays used by ProfileCard and InstitutionTimeline intact.
       store.people.splice(0, store.people.length, ...people);
-      store.timelines.splice(0, store.timelines.length, ...timelines);
+      store.timelines.splice(0, store.timelines.length, ...timelines.filter(t => t.entries.length));
       store.notify(null);
     }
 
@@ -188,6 +223,12 @@
         async function worker() {
           while (next < snapshot.people.length) {
             const person = snapshot.people[next++];
+            // Rights-reviewed assets must travel with their own source and credit.
+            // A stale sheet photo must never inherit a different image's license.
+            const originalId = person.id.slice('sheet:'.length);
+            const original = basePeople.find(p => p.id === originalId || (key(p.name) === key(person.name) &&
+              p.connections.some(c => c.institutionId === person.connections[0].institutionId)));
+            if (original?.image?.license) person.image = structuredClone(original.image);
             try { await verifyImage(person.image.url); accepted.add(person.id); }
             catch (error) { snapshot.errors.push({ name: person.name, message: error.message }); }
           }

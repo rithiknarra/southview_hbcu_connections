@@ -99,3 +99,5 @@ node --test tests/*.test.js
 ```
 
 Save dated backups before changing spreadsheet formulas or hosting settings. Keep account ownership and support contacts in the handoff guide. When reporting an issue, include the affected profile or school, the expected result, and a screenshot; do not share passwords.
+
+Rights-reviewed bundled portraits retain their image, source, license, and credit when the sheet contains an older photo. Updating one of those portraits requires maintainer review of its rights metadata.
