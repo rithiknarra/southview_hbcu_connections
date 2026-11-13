@@ -12,7 +12,7 @@ test('search matches names with multiple words, punctuation, and accents',()=>{
  assert.equal(findPeople(PEOPLE,INSTITUTIONS,'no such person').length,0);
 });
 test('multi-college people appear once and can be found through either college',()=>{
- for(const college of ['clark','spelman']){
+ for(const college of ['atlanta','spelman']){
   const found=findPeople(PEOPLE,INSTITUTIONS,'usher',college);
   assert.equal(found.length,1);assert.equal(found[0].id,'bazoline-estelle-usher');
  }
@@ -21,6 +21,7 @@ test('multi-college people appear once and can be found through either college',
 });
 test('a college filter can browse people without a name and excludes events',()=>{
  const found=findPeople(PEOPLE,INSTITUTIONS,'','clark');
- assert.equal(found.length,10);
+ assert.equal(found.length,3);
+ assert.equal(findPeople(PEOPLE,INSTITUTIONS,'','atlanta').length,7);
  assert.equal(findPeople([{name:'Campus event',event:true,connections:[{institutionId:'clark'}]}],INSTITUTIONS,'campus').length,0);
 });

@@ -7,8 +7,8 @@ const context={URL};vm.createContext(context);
 vm.runInContext(fs.readFileSync('data.js','utf8')+'\n'+app.slice(app.indexOf('const esc='),app.indexOf('const safeURL='))+'\n'+app.slice(app.indexOf('const photoCreditMarkup'),app.indexOf('class ProfileCard'))+'\nglobalThis.data={PEOPLE,TIMELINES,profileSourcesMarkup,photoCreditMarkup};',context);
 const {PEOPLE,TIMELINES,profileSourcesMarkup,photoCreditMarkup}=context.data;
 
-test('all Clark Atlanta cards have substantive bullets and non-Wikipedia references',()=>{
- const entries=TIMELINES.find(t=>t.institutionId==='clark').entries;
+test('all Atlanta and Clark Atlanta cards have substantive bullets and non-Wikipedia references',()=>{
+ const entries=TIMELINES.filter(t=>['atlanta','clark'].includes(t.institutionId)).flatMap(t=>t.entries);
  assert.equal(entries.length,10);
  for(const entry of entries){
   const person=PEOPLE.find(p=>p.id===entry.personId);

@@ -50,8 +50,8 @@ test('same-year profiles stay distinct and the date scale remains ordered',()=>{
 });
 
 
-test('Clark predecessor label never intersects Adrienne’s date divider',()=>{
- const timeline=TIMELINES.find(t=>t.institutionId==='clark');
+test('Atlanta University label never intersects Adrienne’s date divider',()=>{
+ const timeline=TIMELINES.find(t=>t.institutionId==='atlanta');
  for(const width of [320,390,768,1024,1440,1920]) {
   const layout=timelineLayout(timeline.entries,1865,2026,width,e=>PEOPLE.find(p=>p.id===e.personId).name);
   const adrienne=layout.positioned.find(p=>p.entry.personId==='adrienne-mcneil-herndon');
@@ -59,4 +59,14 @@ test('Clark predecessor label never intersects Adrienne’s date divider',()=>{
   const last=layout.positioned.at(-1);
   assert(last.x+last.labelWidth/2 < layout.width-layout.padding-120-28);
  }
+});
+
+test('Atlanta University and Clark predecessors have separate timelines',()=>{
+ const atlanta=TIMELINES.find(t=>t.institutionId==='atlanta');
+ const clark=TIMELINES.find(t=>t.institutionId==='clark');
+ assert.equal(INSTITUTIONS.find(s=>s.id==='clark').timelineStart,1869);
+ assert(atlanta.entries.some(e=>e.personId==='adrienne-mcneil-herndon'));
+ assert(!clark.entries.some(e=>e.personId==='adrienne-mcneil-herndon'));
+ assert(clark.entries.some(e=>e.personId==='ariel-serena-hedges-bowen'));
+ assert(!atlanta.entries.some(e=>e.personId==='ariel-serena-hedges-bowen'));
 });

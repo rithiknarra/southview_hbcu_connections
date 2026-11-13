@@ -26,6 +26,7 @@ body{margin:0;background:#fff}
 .sv-school-image img { display: block; width: 100%; height: 100%; max-width: 230px; object-fit: contain; }
 .sv-school-card[data-school="medicine"] .sv-school-image { background: #003b5c; padding: 20px; border-radius: 2px; }
 .sv-school-image-fallback { font: 28px/1.15 SV Cormorant, Georgia, serif; color: var(--ink); }
+.sv-school-card[data-school="atlanta"] .sv-school-image-fallback{font-size:64px;font-weight:700;letter-spacing:-.05em;color:#6d365c}
 .sv-school-name { font: 700 29px/1.12 SV Cormorant, Georgia, serif; margin-bottom: 26px; max-width: 260px; }
 .sv-school-card[data-school="clark"] { container-type: inline-size; }
 .sv-school-card[data-school="clark"] .sv-school-name { max-width: none; white-space: nowrap; font-size: min(29px, 9cqw); }
@@ -75,9 +76,12 @@ body{margin:0;background:#fff}
 .sv-crest{--crest-size:120px;--crest-inset:.1;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);place-items:center;width:var(--crest-size);height:var(--crest-size);padding:calc(var(--crest-size)*var(--crest-inset));border:1px solid var(--school-rule);background:#fff}
 /* Wider wordmarks need more horizontal room; scale the insets with the logo box. */
 .sv-crest[data-school="morehouse"],.sv-crest[data-school="clark"]{--crest-inset:.05}
+.sv-crest[data-school="atlanta"]{--crest-inset:0}
 .sv-crest[data-school="morris"]{--crest-inset:.08}
 .sv-crest[data-school="medicine"]{--crest-inset:.06;background:#003b5c;border-color:#ffffff59}
 .sv-crest img{display:block;min-width:0;min-height:0;width:100%;height:100%;object-fit:contain}
+.sv-crest-name{font:700 17px/1.05 SV Cormorant,Georgia,serif;text-align:center;color:#6d365c}
+.sv-crest[data-school="atlanta"] .sv-crest-name{font-size:48px;letter-spacing:-.05em}
 .sv-school-intro{min-width:0}
 .sv-feature .sv-timeline h2{color:#fff;text-align:center;font-size:clamp(38px,4.6vw,62px);font-weight:700;line-height:1.02;text-wrap:balance}
 .sv-founded{margin:14px 0 0;font:500 13px/1.4 SV Manrope,Manrope,sans-serif;color:var(--on-school-soft);font-variant-numeric:tabular-nums}

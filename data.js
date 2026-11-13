@@ -1,6 +1,6 @@
 /* College profiles and historical connections. Source metadata is retained internally.
-   Clark Atlanta University was founded in 1988; its timeline includes explicitly labeled
-   Atlanta University (1865) and Clark University/College (1869) predecessor connections.
+   Atlanta University (1865) has its own timeline. Clark University/College
+   connections remain with Clark Atlanta University, founded in 1988.
    Dates prefixed with "By" or "c." are bounds or approximations, not asserted graduation dates.
    Missing image values await user-supplied portraits; see RESEARCH.md.
    Image credits appear beneath each available portrait. */
@@ -24,15 +24,25 @@ const INSTITUTIONS = [
     "name": "Morehouse College"
   },
   {
+    "id": "atlanta",
+    "image": "images/schools/atlanta-university-emblem.jpg",
+    "shortMark": "AU",
+    "founded": 1865,
+    "color": "#6d365c",
+    "foundingNote": "Atlanta University was founded in 1865 to educate formerly enslaved people. It became a center for graduate education and research. In 1988, Atlanta University merged with Clark College to form Clark Atlanta University. This timeline follows its students, faculty, and other connected people, including later milestones in their lives.",
+    "foundingSource": "https://www.cau.edu/about/history",
+    "name": "Atlanta University"
+  },
+  {
     "id": "clark",
     "image": "images/schools/clark.svg",
     "founded": 1988,
     "color": "#9b1b30",
-    "foundingNote": "Clark Atlanta University is a historically Black university located in Atlanta, Georgia. Established in 1988, it carries forward a rich legacy of Black higher education. Through teaching, research, and service, Clark Atlanta prepares students to become leaders, advance knowledge, and help address challenges in their communities and beyond.",
+    "foundingNote": "Clark Atlanta University was established in 1988 through the merger of Atlanta University and Clark College. This timeline includes people connected to Clark College and its earlier name, Clark University. Explore Atlanta University separately for its students and faculty.",
     "foundingSource": "https://www.cau.edu/about/history",
     "name": "Clark Atlanta University",
-    "timelineStart": 1865,
-    "timelineStartLabel": "Predecessors"
+    "timelineStart": 1869,
+    "timelineStartLabel": "Clark College"
   },
   {
     "id": "morris",
@@ -234,7 +244,7 @@ const PEOPLE = [
     },
     "connections": [
       {
-        "institutionId": "clark",
+        "institutionId": "atlanta",
         "label": "Joined Atlanta University in 1957 and served as a dean and researcher. [Huff](https://www.georgiaencyclopedia.org/articles/education/horace-mann-bond-1904-1972/)"
       }
     ],
@@ -490,7 +500,7 @@ const PEOPLE = [
     },
     "connections": [
       {
-        "institutionId": "clark",
+        "institutionId": "atlanta",
         "label": "Earned a bachelor's degree from Atlanta University in 1927 and later taught at Clark College. [Spritzer and Bergmark](https://www.georgiaencyclopedia.org/articles/history-archaeology/grace-towns-hamilton-1907-1992)"
       }
     ],
@@ -586,7 +596,7 @@ const PEOPLE = [
     },
     "connections": [
       {
-        "institutionId": "clark",
+        "institutionId": "atlanta",
         "label": "Graduated from Atlanta University's Normal Department in 1890 and later taught at the university. [National Park Service](https://npgallery.nps.gov/pdfhost/docs/NHLS/Text/00000261.pdf)"
       }
     ],
@@ -689,7 +699,7 @@ const PEOPLE = [
         "label": "Taught accounting at Morehouse College from 1925 to 1930. [Hope](https://www.sbana.org/wp-content/uploads/2019/02/Opportunity-Journal-of-Negro-Life-Volume-9_November1931-Trained-Men-for-Negro-Business-by-John-Hope.pdf#page=7)"
       },
       {
-        "institutionId": "clark",
+        "institutionId": "atlanta",
         "label": "Began teaching accounting at Atlanta University in 1930."
       }
     ],
@@ -738,7 +748,7 @@ const PEOPLE = [
     },
     "connections": [
       {
-        "institutionId": "clark",
+        "institutionId": "atlanta",
         "label": "Became dean of Atlanta University's School of Library Service in 1945 and served until 1981. [Atlanta University Center / Digital Library of Georgia](https://dlg.usg.edu/record/auu_auc-115)"
       }
     ],
@@ -1074,7 +1084,7 @@ const PEOPLE = [
     },
     "connections": [
       {
-        "institutionId": "clark",
+        "institutionId": "atlanta",
         "label": "Atlanta University alumna. [Georgia Historic Preservation Division](https://dca.georgia.gov/document/newsletters/april-2016-reflectionspdf/download)"
       },
       {
@@ -1128,7 +1138,7 @@ const PEOPLE = [
     },
     "connections": [
       {
-        "institutionId": "clark",
+        "institutionId": "atlanta",
         "label": "Graduated from Atlanta University in 1883 with training in education. [Richings](https://www.gutenberg.org/cache/epub/64338/pg64338-images.html#Page_239)"
       }
     ],
@@ -1945,49 +1955,68 @@ const TIMELINES = [
     ]
   },
   {
-    "institutionId": "clark",
+    "institutionId": "atlanta",
     "entries": [
       {
-        "id": "horace-mann-bond-clark",
+        "id": "horace-mann-bond-atlanta",
         "personId": "horace-mann-bond",
         "sortYear": 1957,
         "displayDate": "1957",
         "title": "Horace Mann Bond"
       },
       {
-        "id": "ariel-serena-hedges-bowen-clark",
-        "personId": "ariel-serena-hedges-bowen",
-        "sortYear": 1895,
-        "displayDate": "1895",
-        "title": "Ariel Serena Hedges Bowen"
-      },
-      {
-        "id": "grace-towns-hamilton-clark",
+        "id": "grace-towns-hamilton-atlanta",
         "personId": "grace-towns-hamilton",
         "sortYear": 1927,
         "displayDate": "1927",
         "title": "Grace Towns Hamilton"
       },
       {
-        "id": "adrienne-mcneil-herndon-clark",
+        "id": "adrienne-mcneil-herndon-atlanta",
         "personId": "adrienne-mcneil-herndon",
         "sortYear": 1890,
         "displayDate": "1890",
         "title": "Adrienne McNeil Herndon"
       },
       {
-        "id": "jesse-b-blayton-clark",
+        "id": "jesse-b-blayton-atlanta",
         "personId": "jesse-b-blayton",
         "sortYear": 1930,
         "displayDate": "1930",
         "title": "Jesse B. Blayton"
       },
       {
-        "id": "virginia-lacy-jones-clark",
+        "id": "virginia-lacy-jones-atlanta",
         "personId": "virginia-lacy-jones",
         "sortYear": 1945,
         "displayDate": "1945",
         "title": "Virginia Lacy Jones"
+      },
+      {
+        "id": "bazoline-estelle-usher-atlanta",
+        "personId": "bazoline-estelle-usher",
+        "sortYear": 1906,
+        "displayDate": "1906",
+        "title": "Bazoline Estelle Usher"
+      },
+      {
+        "id": "dinah-watts-pace-atlanta",
+        "personId": "dinah-watts-pace",
+        "sortYear": 1883,
+        "displayDate": "1883",
+        "title": "Dinah Watts Pace"
+      }
+    ]
+  },
+  {
+    "institutionId": "clark",
+    "entries": [
+      {
+        "id": "ariel-serena-hedges-bowen-clark",
+        "personId": "ariel-serena-hedges-bowen",
+        "sortYear": 1895,
+        "displayDate": "1895",
+        "title": "Ariel Serena Hedges Bowen"
       },
       {
         "id": "duke-pearson-clark",
@@ -2002,20 +2031,6 @@ const TIMELINES = [
         "sortYear": 1937,
         "displayDate": "1937",
         "title": "Donald Reeves"
-      },
-      {
-        "id": "bazoline-estelle-usher-clark",
-        "personId": "bazoline-estelle-usher",
-        "sortYear": 1906,
-        "displayDate": "1906",
-        "title": "Bazoline Estelle Usher"
-      },
-      {
-        "id": "dinah-watts-pace-clark",
-        "personId": "dinah-watts-pace",
-        "sortYear": 1883,
-        "displayDate": "1883",
-        "title": "Dinah Watts Pace"
       }
     ]
   },

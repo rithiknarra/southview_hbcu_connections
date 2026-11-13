@@ -2,7 +2,7 @@
 
 An interactive website connecting people associated with South-View Cemetery to Atlanta’s historically Black colleges and universities. Built for the South-View Foundation, it brings together school timelines, portraits, biographies, and supporting references.
 
-Visitors can explore Morehouse College, Spelman College, Morris Brown College, Morehouse School of Medicine, and Clark Atlanta University, or search by name and filter by college. The site supports mobile layouts, keyboard navigation, and reduced-motion preferences.
+Visitors can explore Morehouse College, Spelman College, Morris Brown College, Morehouse School of Medicine, Atlanta University, and Clark Atlanta University, or search by name and filter by college. The site supports mobile layouts, keyboard navigation, and reduced-motion preferences.
 
 ## Key links
 
@@ -43,7 +43,7 @@ Use separate lines for biography and legacy points. In **Sources**, enter one re
 
 Connections include graduates, faculty, academic leaders, and documented institutional namesakes. Morehouse School of Medicine also includes documented donors and speakers. Describe the verified relationship accurately, and label historical training programs and uncertain dates clearly.
 
-Clark Atlanta University’s timeline starts in 1865 for predecessor history while retaining its 1988 founding date. Morehouse School of Medicine’s timeline starts in 1975, with independence in 1981 noted separately.
+Atlanta University has its own timeline, beginning with its 1865 founding. Clark Atlanta University retains its 1988 founding date, with its timeline starting in 1869 for Clark University and Clark College predecessor history. Morehouse School of Medicine’s timeline starts in 1975, with independence in 1981 noted separately.
 
 Confirm South-View burial connections, use supporting sources, and retain required image attribution. School logo sources are listed in [images/schools/SOURCES.md](images/schools/SOURCES.md). Bundled font licenses are in `fonts/OFL-*.txt`.
 
