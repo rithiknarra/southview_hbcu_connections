@@ -32,6 +32,8 @@ The **Photo** cell may be blank. The profile and timeline entry will still appea
 
 Use separate lines for biography and legacy points. In **Sources**, enter one reference per line. For web sources, use a full URL, optionally as `Source title | https://example.org/page`. For books and other print sources, enter a plain-text citation with the relevant page numbers; no URL is required. Available non-Wikipedia references appear on profiles. Leave **Burial Location** blank unless an exact South-View gravestone location is confirmed.
 
+In **Event Connections**, enter one direct historical-map connection per line as `Event Name | https://south-view-historical-map.vercel.app/?select=event-slug`. The website displays each as a separate “Connection to Event Name” link immediately above the gravestone-location link. Keep multiple links for one person in the same cell; on **Form Responses**, staff may fill this field after a form submission.
+
 ### Publication behavior and limits
 
 - With a live feed configured, the published spreadsheet controls visibility. Unpublished records are not restored from bundled data. Bundled records may supply optional metadata for matching published people.
@@ -80,7 +82,7 @@ The hosted page can be embedded in Wix or another site using an iframe with a de
 
 School settings are defined in `INSTITUTIONS` in `data.js`; keep school IDs stable when editing descriptions, logos, names, or colors. Cards are sorted by founding year. Check spreadsheet photo links before removing hosted portraits.
 
-The live connection uses a published, read-only CSV address in `content-config.js`. If replacing the spreadsheet, update this address and preserve the expected column headings. Never store Google credentials in project files.
+The live connection uses a public, read-only CSV address in `content-config.js`. If replacing the spreadsheet, update this address and preserve the expected column headings. Never store Google credentials in project files.
 
 ## Verification and troubleshooting
 

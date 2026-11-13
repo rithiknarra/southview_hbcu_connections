@@ -56,6 +56,21 @@ test('invalid supplied photo sources reject the complete record', () => {
  }
 });
 
+test('one sheet cell supplies multiple event links without duplicating the person', () => {
+ const columns=[...headers,'Event Connections'];
+ const row=[...values,'The Original 33 Expelled | https://south-view-historical-map.vercel.app/?select=the-original-33-expelled\nReconstruction Era | https://south-view-historical-map.vercel.app/?select=reconstruction-era'];
+ const result=readContent(csv([row],columns),institutions);
+ assert.equal(result.errors.length,0);
+ assert.equal(result.people.length,1);
+ assert.deepEqual(result.people[0].eventConnections.map(item=>item.name),['The Original 33 Expelled','Reconstruction Era']);
+});
+
+test('unsafe event links cannot publish a profile', () => {
+ const result=readContent(csv([[...values,'Reconstruction Era | javascript:alert(1)']],[...headers,'Event Connections']),institutions);
+ assert.equal(result.people.length,0);
+ assert.match(result.errors[0].message,/Event Connections/);
+});
+
 test('publishing adds a complete person and unpublishing removes the person and timeline entry', async () => {
  let feed=csv([values]);
  const store={institutions,people:[],timelines:[{institutionId:'spelman',entries:[]}],notify(){}};

@@ -1,6 +1,6 @@
-/* Public, read-only Website tab. Never put Google credentials in this file. */
+/* Public, read-only Final Website tab. Never put Google credentials in this file. */
 window.SOUTHVIEW_CONTENT_CONFIG = {
-  csvUrl: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSmEpR1VfrAN7va1S25dJK54Ez-hbWR3lxLxFGzKSj8FRRCA_Dae29lpFyOS0aPgpGZ4bkTZGfmGYf8/pub?gid=889242017&single=true&output=csv',
+  csvUrl: 'https://docs.google.com/spreadsheets/d/1L8A5vvuU3bUk8sq8bk_3koTH5QejEJ-VgaYrUnA-HDo/gviz/tq?tqx=out:csv&headers=1&sheet=Final%20Website',
   yearBefore: 2026,
   // All profiles are maintained in the sheet; unchecked or deleted rows stay off the site.
   sheetOwnsProfiles: true,

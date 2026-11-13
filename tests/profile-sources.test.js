@@ -4,8 +4,16 @@ const fs=require('node:fs');
 const vm=require('node:vm');
 const app=fs.readFileSync('app.js','utf8');
 const context={URL};vm.createContext(context);
-vm.runInContext(fs.readFileSync('data.js','utf8')+'\n'+app.slice(app.indexOf('const esc='),app.indexOf('const safeURL='))+'\n'+app.slice(app.indexOf('const photoCreditMarkup'),app.indexOf('class ProfileCard'))+'\nglobalThis.data={PEOPLE,TIMELINES,profileSourcesMarkup,photoCreditMarkup};',context);
-const {PEOPLE,TIMELINES,profileSourcesMarkup,photoCreditMarkup}=context.data;
+vm.runInContext(fs.readFileSync('data.js','utf8')+'\n'+app.slice(app.indexOf('const esc='),app.indexOf('const safeURL='))+'\n'+app.slice(app.indexOf('const burialLocationMarkup'),app.indexOf('const firstSentence'))+'\n'+app.slice(app.indexOf('const photoCreditMarkup'),app.indexOf('class ProfileCard'))+'\nglobalThis.data={PEOPLE,TIMELINES,profileSourcesMarkup,photoCreditMarkup,profileLinksMarkup};',context);
+const {PEOPLE,TIMELINES,profileSourcesMarkup,photoCreditMarkup,profileLinksMarkup}=context.data;
+
+test('event links appear on separate lines above the grave link',()=>{
+ const html=profileLinksMarkup({eventConnections:[{name:'Reconstruction Era',url:'https://example.org/reconstruction'},{name:'The Original 33 Expelled',url:'https://example.org/original-33'}],burialLocation:'https://example.org/grave'});
+ assert.equal((html.match(/class="sv-burial-location"/g)||[]).length,3);
+ assert(html.indexOf('Connection to Reconstruction Era')<html.indexOf('Connection to The Original 33 Expelled'));
+ assert(html.indexOf('Connection to The Original 33 Expelled')<html.indexOf('View gravestone location'));
+ assert(!profileLinksMarkup({eventConnections:[{name:'Unsafe',url:'javascript:alert(1)'}],burialLocation:''}));
+});
 
 test('all Atlanta and Clark Atlanta cards have substantive bullets and non-Wikipedia references',()=>{
  const entries=TIMELINES.filter(t=>['atlanta','clark'].includes(t.institutionId)).flatMap(t=>t.entries);

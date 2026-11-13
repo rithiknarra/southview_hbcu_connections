@@ -164,6 +164,9 @@ body{margin:0;background:#fff}
 .sv-profile-list li::marker{color:var(--gold)}
 .sv-burial-location{margin:28px 0 0;font:600 15px/1.5 SV Manrope,Manrope,sans-serif}
 .sv-burial-location a{text-underline-offset:4px;text-decoration-color:var(--gold)}
+.sv-location-links{margin-top:28px}
+.sv-location-links .sv-burial-location{margin:0}
+.sv-location-links .sv-burial-location+.sv-burial-location{margin-top:10px}
 
 @media(max-width:760px){
  .sv-wrap{padding-left:16px;padding-right:16px}
