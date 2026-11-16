@@ -42,3 +42,21 @@ test('shared links resolve published profiles after content loads and create a l
   assert.equal(new URL(context.location.href).searchParams.has('person'),false);
  }
 });
+
+test('sheet profiles use clean URLs and old prefixed URLs resolve to the same profile',()=>{
+ const {profileURL}=setup();
+ assert.equal(profileURL('https://example.org/','sheet:dennis-taylor-hubert'),'https://example.org/?person=dennis-taylor-hubert');
+ for(const id of ['dennis-taylor-hubert','sheet:dennis-taylor-hubert']){
+  const {context}=setup();
+  const opened=[];
+  context.initialPersonId=id;
+  context.historyStore={people:[{id:'sheet:dennis-taylor-hubert',connections:[{institutionId:'school'}]}]};
+  context.INSTITUTIONS=[{id:'school'}];
+  context.profileCard={open:(...args)=>opened.push(args)};
+  context.history.replaceState=function(state,unused,url){this.state=state;context.location.href=url;};
+  const start=app.indexOf(' if(initialPersonId){');
+  vm.runInContext(app.slice(start,app.indexOf(" $('#southview-hbcu').dataset",start)),context);
+  assert.equal(opened.length,1);
+  assert.equal(opened[0][0],'sheet:dennis-taylor-hubert');
+ }
+});

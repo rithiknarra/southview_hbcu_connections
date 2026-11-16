@@ -4,7 +4,7 @@ An interactive website connecting people associated with South-View Cemetery to 
 
 Visitors can explore Morehouse College, Spelman College, Morris Brown College, Morehouse School of Medicine, Atlanta University, and Clark Atlanta University, or search by name and filter by college. The site supports mobile layouts, keyboard navigation, and reduced-motion preferences.
 
-Opening a person’s profile adds `?person=<profile-id>` to the URL. Copy the address bar to share a direct link; opening or refreshing that link loads the published profile automatically.
+Opening a person’s profile adds `?person=<profile-id>` to the URL. Profile URLs omit the internal `sheet:` prefix, and older links with that prefix still work. Copy the address bar to share a direct link; opening or refreshing that link loads the published profile automatically.
 
 ## Key links
 

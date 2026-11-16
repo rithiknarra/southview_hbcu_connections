@@ -55,7 +55,7 @@ function timelineLayout(entries,start,currentYear,width,labelFor,availableHeight
  return {start,end,width:canvasWidth,padding,span:canvasWidth-padding*2,baseline,height,laneStep,fontSize,positioned,xForYear,endpointSpace};
 }
 // Keep unrelated query parameters and fragments when navigating profiles.
-const profileURL=(href,personId)=>{const url=new URL(href);if(personId)url.searchParams.set('person',personId);else url.searchParams.delete('person');return url.href;};
+const profileURL=(href,personId)=>{const url=new URL(href);if(personId)url.searchParams.set('person',personId.replace(/^sheet:/,''));else url.searchParams.delete('person');return url.href;};
 class OverlayManager{
  constructor(){this.timeline=$('#timeline-overlay');this.profile=$('#profile-overlay');this.backdrop=$('#profile-backdrop');history.replaceState({...history.state,southView:null},'');$('#back-to-schools').onclick=()=>this.back();$('#back-to-timeline').onclick=()=>this.back();this.backdrop.onclick=()=>this.back();document.addEventListener('keydown',e=>{const panel=!this.profile.hidden?this.profile:!this.timeline.hidden?this.timeline:null;if(!panel)return;if(e.key==='Escape'){e.preventDefault();this.back();}if(e.key==='Tab'){const items=[...panel.querySelectorAll('button:not(:disabled),a[href],[tabindex="0"]')];const first=items[0],last=items.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});}
  navigate(route){if(!this.restoring)history.pushState({...history.state,southView:route},'',profileURL(location.href,route?.personId));}
@@ -223,7 +223,7 @@ if(window.SOUTHVIEW_CONTENT_CONFIG?.csvUrl){contentStatus.hidden=false;contentSt
 window.southViewContent.refresh().then(result=>{
  // Resolve shared links only after published spreadsheet profiles have loaded.
  if(initialPersonId){
-  const person=historyStore.people.find(person=>person.id===initialPersonId);
+  const person=historyStore.people.find(person=>person.id===initialPersonId)||historyStore.people.find(person=>person.id===`sheet:${initialPersonId}`);
   const schoolId=person?.connections?.find(connection=>INSTITUTIONS.some(school=>school.id===connection.institutionId))?.institutionId;
   history.replaceState({...history.state,southView:null},'',profileURL(location.href,null));
   if(schoolId)profileCard.open(person.id,{fromSearch:true,schoolId});
