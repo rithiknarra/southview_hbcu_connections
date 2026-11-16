@@ -54,9 +54,11 @@ function timelineLayout(entries,start,currentYear,width,labelFor,availableHeight
  const height=Math.max(naturalHeight,availableHeight),baseline=top+(height-naturalHeight)/2;
  return {start,end,width:canvasWidth,padding,span:canvasWidth-padding*2,baseline,height,laneStep,fontSize,positioned,xForYear,endpointSpace};
 }
+// Keep unrelated query parameters and fragments when navigating profiles.
+const profileURL=(href,personId)=>{const url=new URL(href);if(personId)url.searchParams.set('person',personId);else url.searchParams.delete('person');return url.href;};
 class OverlayManager{
  constructor(){this.timeline=$('#timeline-overlay');this.profile=$('#profile-overlay');this.backdrop=$('#profile-backdrop');history.replaceState({...history.state,southView:null},'');$('#back-to-schools').onclick=()=>this.back();$('#back-to-timeline').onclick=()=>this.back();this.backdrop.onclick=()=>this.back();document.addEventListener('keydown',e=>{const panel=!this.profile.hidden?this.profile:!this.timeline.hidden?this.timeline:null;if(!panel)return;if(e.key==='Escape'){e.preventDefault();this.back();}if(e.key==='Tab'){const items=[...panel.querySelectorAll('button:not(:disabled),a[href],[tabindex="0"]')];const first=items[0],last=items.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});}
- navigate(route){if(!this.restoring)history.pushState({...history.state,southView:route},'');}
+ navigate(route){if(!this.restoring)history.pushState({...history.state,southView:route},'',profileURL(location.href,route?.personId));}
  back(){history.back();}
  openTimeline(schoolId){this.schoolId=schoolId;const color=schoolColor(INSTITUTIONS.find(s=>s.id===schoolId));[this.timeline,this.profile].forEach(panel=>color?panel.style.setProperty('--school-color',color):panel.style.removeProperty('--school-color'));this.navigate({schoolId});if(this.timeline.hidden){this.trigger=document.activeElement;this.oldOverflow=document.body.style.overflow;}this.timeline.hidden=false;document.body.style.overflow='hidden';$('#school-browser').inert=true;$('#back-to-schools').focus({preventScroll:true});}
  closeTimeline(){if(!this.profile.hidden)this.closeProfile();this.timeline.hidden=true;document.body.style.overflow=this.oldOverflow||'';$('#school-browser').inert=false;if(this.trigger?.isConnected)this.trigger.focus({preventScroll:true});}
@@ -199,6 +201,7 @@ class SchoolPicker {
   });
  }
 }
+const initialPersonId=new URL(location.href).searchParams.get('person');
 const overlayManager=new OverlayManager();
 const profileCard=new ProfileCard(overlayManager);
 const historyStore=new HistoryStore(INSTITUTIONS,PEOPLE,TIMELINES);
@@ -211,13 +214,20 @@ historyStore.subscribe(()=>{
  if(route?.personId&&!historyStore.people.some(person=>person.id===route.personId)){
   overlayManager.closeProfile();
   $('#profile-content').replaceChildren();
-  history.replaceState({...history.state,southView:route.fromSearch?null:{schoolId:route.schoolId}},'');
+  history.replaceState({...history.state,southView:route.fromSearch?null:{schoolId:route.schoolId}},'',profileURL(location.href,null));
  }
 });
 window.southViewContent=SouthViewContent.install(historyStore,window.SOUTHVIEW_CONTENT_CONFIG);
 const contentStatus=$('#content-status');
 if(window.SOUTHVIEW_CONTENT_CONFIG?.csvUrl){contentStatus.hidden=false;contentStatus.textContent='Loading profiles…';}
 window.southViewContent.refresh().then(result=>{
+ // Resolve shared links only after published spreadsheet profiles have loaded.
+ if(initialPersonId){
+  const person=historyStore.people.find(person=>person.id===initialPersonId);
+  const schoolId=person?.connections?.find(connection=>INSTITUTIONS.some(school=>school.id===connection.institutionId))?.institutionId;
+  history.replaceState({...history.state,southView:null},'',profileURL(location.href,null));
+  if(schoolId)profileCard.open(person.id,{fromSearch:true,schoolId});
+ }
  $('#southview-hbcu').dataset.contentStatus=result.state;
  contentStatus.hidden=result.state!=='error'&&result.state!=='partial';
  contentStatus.textContent=result.state==='error'?'Profiles could not be loaded. Please reload the page to try again.':result.state==='partial'?'Some profiles could not be loaded. Please try again later.':'';
