@@ -248,3 +248,23 @@ body{margin:0;background:#fff}
 .sv-profile-no-photo{grid-template-columns:minmax(0,1fr)}
 .sv-profile-no-photo .sv-profile-copy{grid-column:1}
 .sv-portrait[hidden]{display:none}
+
+/* Alberta-only shared-profile preview. */
+.sv-shared-connections{margin:0 0 28px}
+.sv-shared-connection+ .sv-shared-connection{margin-top:24px;padding-top:24px;border-top:1px solid #deded7}
+.sv-shared-connection h4{font:600 23px/1.3 SV Cormorant,Georgia,serif;margin:0 0 8px;color:var(--ink)}
+.sv-shared-connection .sv-profile-list{margin-top:8px}
+
+
+.sv-shared-header-connections{margin-top:24px}
+.sv-shared-header-connection+ .sv-shared-header-connection{margin-top:22px}
+.sv-shared-header-connection h4{font:600 16px/1.6 SV Manrope,Manrope,sans-serif;margin:0 0 4px;color:inherit}
+.sv-profile-band .sv-shared-header-connection .sv-profile-connection{margin:0}
+
+/* Natural-height college panels keep the biography directly below the active bullets. */
+.sv-connection-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 22px}
+.sv-connection-tabs [role="tab"]{border:1px solid #dcded7;border-radius:999px;padding:9px 18px;background:#fff;color:var(--ink);font:500 14px/1.5 SV Manrope,Manrope,sans-serif;white-space:normal;text-align:center;max-width:100%;min-height:44px}
+.sv-connection-tabs [role="tab"][aria-selected="true"]{background:var(--school-color,#4a2c6d);border-color:var(--school-color,#4a2c6d);color:#fff}
+.sv-connection-tabs [role="tab"]:hover{border-color:var(--school-color,#4a2c6d)}
+.sv-shared-connections [role="tabpanel"]{height:auto;min-width:0;overflow-wrap:anywhere}
+@media(max-width:380px){.sv-connection-tabs{gap:8px}.sv-connection-tabs [role="tab"]{padding:8px 12px;font-size:13px}}
