@@ -115,6 +115,7 @@ test('print references display as escaped text alongside linked web sources', ()
  assert.equal((html.match(/<li>/g) || []).length, 3);
  assert.equal((html.match(/<a /g) || []).length, 1);
  assert(!html.includes('worldcat'));
+ assert(profileSourcesMarkup({showSources:true,sources:[{title:'Henderson — *South-View* — 2018'}]}).includes('<em>South-View</em>'));
 });
 
 
@@ -124,6 +125,11 @@ test('inline citations escape prose and accept only safe web sources',()=>{
  const html=scope.render('Taught in 1930. [Archive](https://example.org/item?a=1&b=2) <script>bad</script>');
  assert(html.includes('>(Archive)</a>')||html.includes('>(Archive)<span'));
  assert(html.includes('a=1&amp;b=2'));assert(!html.includes('<script>'));
+ const wrapped=scope.render('Taught in 1930. ([Archive](https://example.org/item))');
+ assert.equal(wrapped.replace(/<span class="sv-sr">[^<]*<\/span>/g,'').replace(/<[^>]+>/g,''),'Taught in 1930. (Archive)');
+ const richings=scope.render('Graduated in 1883. ([Richings](https://example.org/item))');
+ assert.equal(richings.replace(/<span class="sv-sr">[^<]*<\/span>/g,'').replace(/<[^>]+>/g,''),'Graduated in 1883. (Richings)');
+ assert(scope.render('A fact. (Henderson, *South-View*, 241)').includes('<em>South-View</em>'));
  assert(!scope.render('[bad](javascript:alert(1))').includes('<a '));
  assert(!scope.render('[bad](https://user:password@example.org/)').includes('<a '));
  assert(!scope.render('[wiki](https://en.wikipedia.org/wiki/Test)').includes('<a '));

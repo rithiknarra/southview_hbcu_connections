@@ -66,16 +66,18 @@ class OverlayManager{
  closeProfile(){this.profile.hidden=true;this.backdrop.hidden=true;this.timeline.inert=false;if(this.timeline.hidden){document.body.style.overflow=this.oldOverflow||'';$('#school-browser').inert=false;}if(this.profileTrigger?.isConnected)this.profileTrigger.focus({preventScroll:true});else if(this.timeline.hidden)$('#people-query').focus({preventScroll:true});}
 }
 const profileItems=value=>(Array.isArray(value)?value:[value]).filter(item=>item!=null&&String(item).trim());
+const italicTextMarkup=value=>esc(value).replace(/\*([^*\n]+)\*/g,'<em>$1</em>');
 // Citation links are the only markup accepted in sheet-authored prose.
 const citedTextMarkup=value=>{
  const text=String(value??'');let html='',offset=0;
- for(const match of text.matchAll(/\[([^\]\n]+)\]\((https?:\/\/[^\s<>]+)\)/g)){
+ for(const match of text.matchAll(/\[([^\]\n]+)\]\((https?:\/\/[^\s<>()]+)\)/g)){
   let url;try{url=new URL(match[2]);}catch{continue;}
   if(!['http:','https:'].includes(url.protocol)||url.username||url.password||/(^|\.)wikipedia\.org$/i.test(url.hostname))continue;
-  html+=esc(text.slice(offset,match.index))+`<a class="sv-inline-citation" href="${esc(url.href)}" target="_blank" rel="noopener noreferrer">(${esc(match[1])})<span class="sv-sr"> (opens in a new tab)</span></a>`;
+  const wrapped=text[match.index-1]==='('&&text[match.index+match[0].length]===')';
+  html+=italicTextMarkup(text.slice(offset,match.index))+`<a class="sv-inline-citation" href="${esc(url.href)}" target="_blank" rel="noopener noreferrer">${wrapped?esc(match[1]):`(${esc(match[1])})`}<span class="sv-sr"> (opens in a new tab)</span></a>`;
   offset=match.index+match[0].length;
  }
- return html+esc(text.slice(offset));
+ return html+italicTextMarkup(text.slice(offset));
 };
 // Sections without any bullets are left out entirely.
 const profileSection=(title,value)=>{const items=profileItems(value);return items.length?`<h3>${title}</h3><ul class="sv-profile-list">${items.map(item=>`<li>${citedTextMarkup(item)}</li>`).join('')}</ul>`:'';};
@@ -127,12 +129,12 @@ const profileSourcesMarkup = person => {
  const sources=(person.sources||[]).flatMap(source=>{
   if(!source.url){
    const title=String(source.title||'').trim();
-   return title?[`<li>${esc(title)}</li>`]:[];
+   return title?[`<li>${italicTextMarkup(title)}</li>`]:[];
   }
   try{
    const url=new URL(source.url);
    if(!['https:','http:'].includes(url.protocol)||/(^|\.)wikipedia\.org$/i.test(url.hostname))return [];
-   return [`<li><a href="${esc(url.href)}" target="_blank" rel="noopener noreferrer">${esc(source.title||url.hostname)}<span class="sv-sr"> (opens in a new tab)</span></a></li>`];
+   return [`<li><a href="${esc(url.href)}" target="_blank" rel="noopener noreferrer">${italicTextMarkup(source.title||url.hostname)}<span class="sv-sr"> (opens in a new tab)</span></a></li>`];
   }catch{return [];}
  });
  return sources.length?`<section class="sv-profile-sources" aria-label="Sources"><h3>Sources</h3><ol>${sources.join('')}</ol></section>`:'';
