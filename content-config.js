@@ -5,6 +5,17 @@ window.SOUTHVIEW_CONTENT_CONFIG = {
   // All profiles are maintained in the sheet; unchecked or deleted rows stay off the site.
   sheetOwnsProfiles: true,
   reviewedPortraits: {
+    'evelyn jones frazier': {
+      url: 'images/people/Evelyn Jones Frazier - Atlanta Inquirer 1962.png',
+      alt: 'Evelyn Jones Frazier holding her award plaque, 1962',
+      sourceUrl: 'https://gahistoricnewspapers.galileo.usg.edu/lccn/sn88063050/1962-01-27/ed-1/seq-5/',
+      license: 'No known copyright restrictions (Library of Congress)',
+      licenseUrl: 'https://www.loc.gov/item/sn88063050/',
+      credit: 'Dodson / The Atlanta Inquirer, January 27, 1962, p. 5. Georgia Historic Newspapers, University of Georgia. AI-assisted crop.',
+      caption: 'Dodson / The Atlanta Inquirer, 1962',
+      attributionRequired: false,
+      fit: 'contain'
+    },
     'john henry lewis': {
       url: 'images/people/John Henry Lewis - AUC circa 1925.png',
       alt: 'John Henry Lewis, front-center in a Morris Brown faculty portrait, circa 1925',

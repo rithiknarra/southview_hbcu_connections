@@ -1,3 +1,11 @@
+## Evelyn Jones Frazier replacement — November 16, 2026
+
+- The Atlanta Inquirer, January 27, 1962, p. 5 explicitly identifies Evelyn Frazier, co-owner of Frazier’s Cafe, holding her Bronze Woman of 1961 award. Photograph by Dodson.
+- Original source page: https://gahistoricnewspapers.galileo.usg.edu/lccn/sn88063050/1962-01-27/ed-1/seq-5/
+- Library of Congress title rights statement: https://www.loc.gov/item/sn88063050/ . No known copyright restrictions; this is not an explicit blanket license for third-party material.
+- Local asset: `images/people/Evelyn Jones Frazier - Atlanta Inquirer 1962.png`. AI-assisted crop of the newspaper image, not a verified pixel-exact extraction. Credit: Dodson / The Atlanta Inquirer, January 27, 1962, p. 5. Digitized by University of Georgia, Georgia Historic Newspapers.
+- Published through the existing GitHub image host for the live spreadsheet; no Netlify deployment required.
+
 # Content and picture sources
 
 ## John Henry Lewis replacement — November 16, 2026
