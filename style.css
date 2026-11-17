@@ -167,6 +167,7 @@ body{margin:0;background:#fff}
 .sv-location-links{margin-top:28px}
 .sv-event-card{padding:24px 26px;border:1px solid var(--rule);border-radius:18px;background:var(--wash);overflow-wrap:anywhere}
 .sv-event-eyebrow{font:700 11px/1.5 SV Manrope,Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.sv-related-events>.sv-event-eyebrow{display:block;margin-bottom:14px}
 .sv-feature .sv-event-card h3{margin:8px 0 10px;font:600 26px/1.2 SV EB Garamond,Georgia,serif;color:var(--ink)}
 .sv-event-card p{margin:0;font:19px/1.55 SV EB Garamond,Georgia,serif;color:var(--muted)}
 .sv-event-card a{display:inline-block;margin-top:18px;font:600 13px/1.5 SV Manrope,Manrope,sans-serif;color:var(--ink);text-underline-offset:5px;text-decoration-color:var(--gold)}
@@ -285,3 +286,47 @@ body{margin:0;background:#fff}
 .sv-connection-tabs [role="tab"]:hover{border-color:var(--school-color,#4a2c6d)}
 .sv-shared-connections [role="tabpanel"]{height:auto;min-width:0;overflow-wrap:anywhere}
 @media(max-width:380px){.sv-connection-tabs{gap:8px}.sv-connection-tabs [role="tab"]{padding:8px 12px;font-size:13px}}
+
+/* Theme controls stay within each panel's keyboard focus boundary. */
+:root{color-scheme:light}
+.sv-home-heading{position:relative}
+.sv-home-heading h1{padding-right:58px}
+.sv-feature .sv-theme-toggle{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:44px;height:44px;padding:0;border:1px solid #dcded7;border-radius:50%;background:transparent;color:inherit;cursor:pointer}
+.sv-home-heading .sv-theme-toggle{position:absolute;top:0;right:0}
+.sv-bar-actions{display:flex;align-items:center;gap:18px}
+.sv-bar .sv-theme-toggle{border-color:var(--school-rule)}
+.sv-feature .sv-theme-toggle:hover{background:#88888818}
+.sv-theme-sun{display:none}
+html[data-theme="dark"]{color-scheme:dark;background:#161918}
+html[data-theme="dark"] body{background:#161918}
+html[data-theme="dark"] .sv-feature,html[data-theme="dark"] .sv-feature .sv-panel{--ink:#eeeee7;--muted:#c0c5bd;--gold:#c4af76;--wash:#202522;--rule:#414940;--soft:#adb5a7}
+html[data-theme="dark"] .sv-feature .sv-panel{background:#161918}
+html[data-theme="dark"] .sv-schools{background:#202522;box-shadow:0 0 0 100vmax #202522,0 -1px 0 100vmax #414940}
+html[data-theme="dark"] .sv-feature .sv-school-card{background:#272d29;border-color:#414940;border-top-color:var(--school-color,var(--gold))}
+html[data-theme="dark"] .sv-school-image{background:#fff;border-radius:4px;padding:12px}
+html[data-theme="dark"] .sv-school-image-fallback{color:#1a1d1a}
+html[data-theme="dark"] .sv-school-card[data-school="medicine"] .sv-school-image{background:#003b5c;padding:20px}
+html[data-theme="dark"] .sv-school-action{border-color:var(--rule)}
+html[data-theme="dark"] .sv-school-card:hover .sv-school-action>span{color:var(--gold)}
+html[data-theme="dark"] .sv-search{background:#242820;border-color:#55533f;border-top-color:var(--gold)}
+html[data-theme="dark"] .sv-search :is(input,select),html[data-theme="dark"] .sv-search-result,html[data-theme="dark"] .sv-feature .sv-band-tools button,html[data-theme="dark"] .sv-burial-location .sv-grave-link{background:#272d29;border-color:var(--rule)}
+html[data-theme="dark"] .sv-search-result:hover,html[data-theme="dark"] .sv-burial-location .sv-grave-link:hover{background:#323a33;border-color:var(--gold)}
+html[data-theme="dark"] .sv-search input::placeholder{color:#a6aea2}
+html[data-theme="dark"] .sv-search-result{border-left-color:var(--result-color,var(--gold))}
+html[data-theme="dark"] :is(.sv-bar,.sv-hero,.sv-profile-band){background:color-mix(in srgb,var(--school-color) 80%,#101211)}
+html[data-theme="dark"] .sv-time-axis,html[data-theme="dark"] .sv-entry-dot,html[data-theme="dark"] .sv-origin i,html[data-theme="dark"] .sv-present i{background:#dddeda}
+html[data-theme="dark"] .sv-origin i,html[data-theme="dark"] .sv-present i{box-shadow:0 0 0 1px #dddeda}
+html[data-theme="dark"] :is(.sv-origin span,.sv-present span,.sv-year-tick span,.sv-timeline-empty){color:var(--soft)}
+html[data-theme="dark"] .sv-entry-stem{background:#87917f}
+html[data-theme="dark"] .sv-year-tick{border-color:#dddeda}
+html[data-theme="dark"] .sv-time-entry button:hover{background:#343b30;color:#ead9a6}
+html[data-theme="dark"] .sv-connection-tabs [role="tab"]{background:#272d29;border-color:var(--rule)}
+html[data-theme="dark"] .sv-connection-tabs [role="tab"][aria-selected="true"]{background:var(--school-color,#4a2c6d);border-color:var(--gold);color:#fff}
+html[data-theme="dark"] .sv-connection-tabs [role="tab"]:hover{border-color:var(--gold)}
+html[data-theme="dark"] :is(.sv-grave-pin,.sv-event-card a:hover,.sv-profile-sources a:hover){color:var(--gold)}
+html[data-theme="dark"] .sv-theme-moon{display:none}
+html[data-theme="dark"] .sv-theme-sun{display:block}
+html[data-theme="dark"] .sv-feature .sv-theme-toggle{border-color:var(--rule)}
+html[data-theme="dark"] .sv-bar .sv-theme-toggle{border-color:var(--school-rule)}
+html[data-theme="dark"] .sv-feature :is(button,a,[tabindex]):focus-visible{outline-color:#dfc58a}
+@media(max-width:480px){.sv-bar-actions{gap:10px}.sv-history{font-size:11px}.sv-home-heading h1{padding-right:54px}.sv-bar .sv-theme-toggle{width:40px;height:40px;min-width:40px}}
