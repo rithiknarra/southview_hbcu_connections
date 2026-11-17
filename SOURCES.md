@@ -4,7 +4,7 @@
 
 - Source: https://radar.auctr.edu/faculty-john-h-lewis-circa-1925 . Item auc.067.0361, Morris Brown College Photographs, Atlanta University Center Robert W. Woodruff Library.
 - The archive identifies president John H. Lewis as front center and explicitly states **No Copyright — United States**: https://rightsstatements.org/vocab/NoC-US/1.0/ .
-- Local replacement: `images/people/John Henry Lewis - AUC circa 1925.png`, an AI-assisted crop of the user-supplied group image, not a verified pixel-exact extraction. The website configuration pairs the replacement with the original archive page. Prepared locally; not yet published.
+- Local replacement: `images/people/John Henry Lewis - AUC circa 1925.png`, an AI-assisted crop of the user-supplied group image, not a verified pixel-exact extraction. The website configuration pairs the replacement with the original archive page. The image is published in the existing GitHub repository and the live spreadsheet Photo/Photo source fields point to the replacement and archive page.
 
 ## Bowden portrait replacement — November 16, 2026
 
@@ -13,7 +13,7 @@
 - Original 1925 published portrait: public domain in the United States. Reference: https://www.copyright.gov/what-is-copyright/
 - Prepared file: `images/people/Henry James Charles Bowden - Morehouse Tiger 1925.png`.
 - The crop was produced using the built-in image editing tool with instructions to isolate the top-right portrait and preserve the historical scan. It is an AI-assisted crop, not a verified pixel-exact archival extraction.
-- The asset ledger and website configuration record this replacement. The reviewed portrait override keeps this image paired with its own source and credit when the spreadsheet feed loads; clearing the optional photo still removes it. This local change must be published before the live site uses it.
+- The asset ledger and website configuration record this replacement. The reviewed portrait override keeps this image paired with its own source and credit when the spreadsheet feed loads; clearing the optional photo still removes it. Both Photo and Photo source fields are updated in the live spreadsheet feed; the image is hosted at the pinned GitHub commit so a Netlify build is not required.
 
 ## Portrait replacement — November 11, 2026
 
