@@ -172,80 +172,28 @@
 
   function install(store, config, options = {}) {
     if (!config?.csvUrl) return { refresh: async () => ({ configured: false }) };
-    config = { ...config, sheetOwnsProfiles: config.sheetOwnsProfiles !== false };
-    const basePeople = structuredClone(store.people), baseTimelines = structuredClone(store.timelines);
+    // Preserve school events; the spreadsheet is the only source of people.
+    const eventTimelines = structuredClone(store.timelines).map(timeline => ({
+      ...timeline, entries: timeline.entries.filter(entry => !entry.personId)
+    })).filter(timeline => timeline.entries.length);
     const fetcher = options.fetch || root.fetch.bind(root);
     const verifyImage = options.checkImage || (url => checkImage(url, config.timeoutMs));
     let inFlight;
     const status = { state: 'loading', errors: [], updatedAt: null };
 
-    // In sheet-managed mode, do not briefly expose bundled people before the feed
-    // loads, or resurrect unpublished people if the first request fails.
-    if (config.sheetOwnsProfiles) {
-      store.people.splice(0);
-      store.timelines.forEach(t => { t.entries = t.entries.filter(e => !e.personId); });
-      store.timelines.splice(0, store.timelines.length, ...store.timelines.filter(t => t.entries.length));
-      store.notify(null);
-    }
+    store.people.splice(0);
+    store.timelines.splice(0, store.timelines.length, ...structuredClone(eventTimelines));
+    store.notify(null);
 
     function apply(snapshot) {
-      const people = structuredClone(basePeople), timelines = structuredClone(baseTimelines);
-      const personIds = new Map();
-      for (const person of snapshot.people) {
-        let merged = person;
-        // A submitted version of a bundled example replaces its original, without duplicate names.
-        const originalId = person.id.slice('sheet:'.length);
-        const existing = people.findIndex(p => p.id === originalId || (key(p.name) === key(person.name) &&
-          p.connections.some(c => c.institutionId === person.connections[0].institutionId)));
-        if (existing >= 0) {
-          const original = people[existing];
-          // Editing a shared profile must preserve its other college connections,
-          // portrait treatment, attribution, and stable profile/timeline identifiers.
-          const connections = person.connections.some(connection => connection.legacy) ? [...person.connections] : original.connections.map(connection =>
-            person.connections.find(item => item.institutionId === connection.institutionId) || connection);
-          for (const connection of person.connections) {
-            if (!connections.some(item => item.institutionId === connection.institutionId)) connections.push(connection);
-          }
-          const eventConnections = person.eventConnections ?? original.eventConnections ?? [];
-          merged = { ...original, ...person, id: original.id, connections,
-            ...(person.eventConnections !== undefined || original.eventConnections !== undefined ? { eventConnections } : {}),
-            image: person.image ? { ...original.image, ...person.image, alt: original.image?.alt || person.image.alt } : null };
-          people[existing] = merged;
-        } else {
-          people.push(merged);
-        }
-        personIds.set(person.id, merged.id);
-        if (person.connections.some(connection => connection.legacy)) {
-          const schools = new Set(person.connections.map(connection => connection.institutionId));
-          timelines.forEach(timeline => { if (!schools.has(timeline.institutionId)) timeline.entries = timeline.entries.filter(entry => entry.personId !== merged.id); });
-        }
-      }
-      snapshot.timelines.forEach(t => {
-        let target = timelines.find(item => item.institutionId === t.institutionId);
-        if (!target) { target = { institutionId: t.institutionId, entries: [] }; timelines.push(target); }
-        for (const entry of t.entries) {
-          const personId = personIds.get(entry.personId) || entry.personId;
-          const existing = target.entries.findIndex(item => item.personId === personId);
-          if (existing >= 0) {
-            const original = target.entries[existing];
-            target.entries[existing] = { ...original, ...entry, id: original.id, personId,
-              displayDate: original.sortYear === entry.sortYear ? original.displayDate : entry.displayDate };
-          } else {
-            target.entries.push({ ...entry, personId });
-          }
-        }
-      });
-      if (config.sheetOwnsProfiles) {
-        const publishedIds = new Set(personIds.values());
-        for (let i = people.length - 1; i >= 0; i--) {
-          if (!publishedIds.has(people[i].id)) people.splice(i, 1);
-        }
-        timelines.forEach(t => {
-          t.entries = t.entries.filter(e => !e.personId || publishedIds.has(e.personId));
-        });
+      const timelines = structuredClone(eventTimelines);
+      for (const timeline of snapshot.timelines) {
+        let target = timelines.find(item => item.institutionId === timeline.institutionId);
+        if (!target) { target = { institutionId: timeline.institutionId, entries: [] }; timelines.push(target); }
+        target.entries.push(...timeline.entries);
       }
       // Keep the arrays used by ProfileCard and InstitutionTimeline intact.
-      store.people.splice(0, store.people.length, ...people);
+      store.people.splice(0, store.people.length, ...snapshot.people);
       store.timelines.splice(0, store.timelines.length, ...timelines.filter(t => t.entries.length));
       store.notify(null);
     }
@@ -266,16 +214,6 @@
         async function worker() {
           while (next < snapshot.people.length) {
             const person = snapshot.people[next++];
-            // Rights-reviewed assets must travel with their own source and credit.
-            // A stale sheet photo must never inherit a different image's license.
-            const originalId = person.id.slice('sheet:'.length);
-            const original = basePeople.find(p => p.id === originalId || (key(p.name) === key(person.name) &&
-              p.connections.some(c => c.institutionId === person.connections[0].institutionId)));
-            const sheetPhotoCredit = person.image && (person.image.caption !== undefined || !person.image.sourceUrl) ? { caption: person.image.caption || '', sourceUrl: person.image.sourceUrl } : null;
-            if (person.image && original?.image?.license) person.image = structuredClone(original.image);
-            const reviewedPortrait = config.reviewedPortraits?.[key(person.name)];
-            if (person.image && reviewedPortrait) person.image = structuredClone(reviewedPortrait);
-            if (person.image && sheetPhotoCredit) Object.assign(person.image, sheetPhotoCredit);
             try { if (person.image?.url) await verifyImage(person.image.url); accepted.add(person.id); }
             catch (error) { snapshot.errors.push({ name: person.name, message: error.message }); }
           }

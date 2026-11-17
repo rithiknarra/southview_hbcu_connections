@@ -229,6 +229,8 @@ class SchoolPicker {
 const initialPersonId=new URL(location.href).searchParams.get('person');
 const overlayManager=new OverlayManager();
 const profileCard=new ProfileCard(overlayManager);
+const PEOPLE=[];
+const TIMELINES=[];
 const historyStore=new HistoryStore(INSTITUTIONS,PEOPLE,TIMELINES);
 const institutionTimeline=new InstitutionTimeline(overlayManager,profileCard,historyStore);
 window.southViewHistory=historyStore;
