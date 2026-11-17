@@ -85,7 +85,7 @@
       if (get('Photo') && !image) return error('Photo must be a complete http or https link, or left blank.');
       const photoSourceText = get('Photo source');
       const photoLines = clean(photoSourceText).split('\n').map(line => line.trim());
-      const photoCaption = photoLines.length === 2 ? photoLines[0] : undefined;
+      const photoCaption = photoLines.length === 2 ? photoLines[0] : (headers.includes('photo credit') ? singleLine(get('Photo credit')) : undefined);
       const photoSource = publicURL(photoLines.length === 2 ? photoLines[1] : photoSourceText);
       if (photoLines.length > 1 && (photoLines.length !== 2 || !photoCaption || photoCaption.length > 500 || !/^https:\/\//i.test(photoLines[1])))
         return error('Photo source: use the photographer or organization on line 1 and a complete https:// source link on line 2.');
