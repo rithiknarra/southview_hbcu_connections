@@ -162,6 +162,7 @@ body{margin:0;background:#fff}
 .sv-profile-list{margin:0;padding-left:1.1em;font:19px/1.6 SV EB Garamond,Georgia,serif;color:var(--muted)}
 .sv-profile-list li+li{margin-top:8px}
 .sv-profile-list li::marker{color:var(--gold)}
+.sv-inline-citation{text-decoration:underline;text-decoration-skip-ink:none}
 .sv-burial-location{margin:28px 0 0;font:600 15px/1.5 SV Manrope,Manrope,sans-serif}
 .sv-burial-location a{text-underline-offset:4px;text-decoration-color:var(--gold)}
 .sv-location-links{margin-top:28px}
