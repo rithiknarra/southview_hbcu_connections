@@ -268,6 +268,8 @@
             const original = basePeople.find(p => p.id === originalId || (key(p.name) === key(person.name) &&
               p.connections.some(c => c.institutionId === person.connections[0].institutionId)));
             if (person.image && original?.image?.license) person.image = structuredClone(original.image);
+            const reviewedPortrait = config.reviewedPortraits?.[key(person.name)];
+            if (person.image && reviewedPortrait) person.image = structuredClone(reviewedPortrait);
             try { if (person.image?.url) await verifyImage(person.image.url); accepted.add(person.id); }
             catch (error) { snapshot.errors.push({ name: person.name, message: error.message }); }
           }

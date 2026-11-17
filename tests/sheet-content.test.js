@@ -190,6 +190,22 @@ test('a blank photo removes a bundled portrait without losing the published prof
  assert.equal(store.timelines[0].entries[0].personId,original.id);
 });
 
+test('a reviewed feed-only portrait keeps its own source and respects removing an optional photo', async () => {
+ const image={url:'images/replacement.png',sourceUrl:'https://archive.example/yearbook',license:'Public domain',caption:'Yearbook, 1925'};
+ const store={institutions,people:[],timelines:[],notify(){}};
+ let row=[...values]; const checked=[];
+ const adapter=install(store,{csvUrl:'https://example.org/feed.csv',reviewedPortraits:{'example person':image}},{
+  fetch:async()=>({ok:true,text:async()=>csv([row])}),checkImage:async url=>checked.push(url)
+ });
+ await adapter.refresh();
+ assert.deepEqual(store.people[0].image,image);
+ assert.deepEqual(checked,[image.url]);
+ assert.deepEqual(store.people[0].bio,['Served the community.']);
+ row[7]=''; await adapter.refresh();
+ assert.equal(store.people[0].image,null);
+ assert.deepEqual(checked,[image.url]);
+});
+
 
 test('importing every existing profile preserves all wording, portrait metadata, and college timelines', async () => {
  const fs=require('node:fs');

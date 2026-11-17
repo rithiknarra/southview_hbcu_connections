@@ -1,5 +1,20 @@
 # Content and picture sources
 
+## John Henry Lewis replacement — November 16, 2026
+
+- Source: https://radar.auctr.edu/faculty-john-h-lewis-circa-1925 . Item auc.067.0361, Morris Brown College Photographs, Atlanta University Center Robert W. Woodruff Library.
+- The archive identifies president John H. Lewis as front center and explicitly states **No Copyright — United States**: https://rightsstatements.org/vocab/NoC-US/1.0/ .
+- Local replacement: `images/people/John Henry Lewis - AUC circa 1925.png`, an AI-assisted crop of the user-supplied group image, not a verified pixel-exact extraction. The website configuration pairs the replacement with the original archive page. Prepared locally; not yet published.
+
+## Bowden portrait replacement — November 16, 2026
+
+- Henry James Charles Bowden is the fourth portrait in the upper row of the right-hand page headed *The Morehouse Tiger 1925*. His full name, ministry studies, Brunswick, Georgia, and Alpha Phi Alpha membership appear in the corresponding fourth entry.
+- Source reproduction: https://static1.squarespace.com/static/540a843be4b0387389f2bc62/t/624694ee5873035a2568d5e7/1648792827403/PoloRLExclusivelyforMorehouseAndSpelmanColleges.pdf#page=8
+- Original 1925 published portrait: public domain in the United States. Reference: https://www.copyright.gov/what-is-copyright/
+- Prepared file: `images/people/Henry James Charles Bowden - Morehouse Tiger 1925.png`.
+- The crop was produced using the built-in image editing tool with instructions to isolate the top-right portrait and preserve the historical scan. It is an AI-assisted crop, not a verified pixel-exact archival extraction.
+- The asset ledger and website configuration record this replacement. The reviewed portrait override keeps this image paired with its own source and credit when the spreadsheet feed loads; clearing the optional photo still removes it. This local change must be published before the live site uses it.
+
 ## Portrait replacement — November 11, 2026
 
 - **Irene Carolyn Dobbs Jackson**: replaced with a crop from *The Campus Mirror*, Vol. V, No. 8 (May 1929), page 5, “Spelman College Seniors, ’29.” Source and item-level **NO COPYRIGHT — UNITED STATES** statement: https://radar.auctr.edu/campus-mirror-vol-v-no-8-may-1929 . Handle: http://hdl.handle.net/20.500.12322/sc.001.mirror:1929.05 . Identity is based on the printed key, which explicitly says “Standing, left to right” and lists Irene Dobbs fifth in the second row (after Gaston Bradford, Naomi Smith, Retha Jackson, and Estelle Bailey; before Willie Barnett). No face comparison was used. The separate six-graduate appointment-office photo was not used because its names list has no explicit directional key. The 1970 individually identified portrait was not used because it permits educational use only. The original newspaper scan was inspected at full resolution; the crop excludes other people's faces and is displayed at 180px wide to avoid enlargement beyond its available detail. Asset: `images/people/Irene Carolyn Dobbs Jackson - Campus Mirror 1929.jpg`. Original asset retained unused.
