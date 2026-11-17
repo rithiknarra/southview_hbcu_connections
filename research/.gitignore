@@ -1,0 +1,12 @@
+# Local research intermediates and downloaded source material
+book-extracted.json
+*.html
+portrait-candidates.json
+portrait-validation.json
+portraits/
+sheet-current.json
+sheet-backup-*.xlsx
+existing-profiles-*.csv
+site-deploy*/
+netlify-cli-tools/
+live-check*/

@@ -1,0 +1,45 @@
+{
+  "status": "WRITTEN_AND_VERIFIED",
+  "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1L8A5vvuU3bUk8sq8bk_3koTH5QejEJ-VgaYrUnA-HDo/edit",
+  "newDraftRows": 30,
+  "range": "'Existing Profiles'!A37:M66",
+  "sourceUpdates": 5,
+  "newRowsPublished": false,
+  "formulaPreserved": true,
+  "errors": [],
+  "formatting_check": {
+    "status": "VERIFIED",
+    "new_rows": 30,
+    "book_citations": 35,
+    "font": "Arial 10",
+    "row_height_pixels": 21,
+    "wrap": "OVERFLOW_CELL, matching originals",
+    "publication_checkboxes": "Native BOOLEAN; new rows remain false",
+    "encoding": "Corrected import mojibake; no garbled text remains in new rows or notes",
+    "formula_preserved": true,
+    "verification_method": "Live Google Sheets cell and dimension metadata"
+  },
+  "writing_review": {
+    "status": "WRITTEN_AND_VERIFIED",
+    "range": "Existing Profiles!F37:G66",
+    "profiles": 30,
+    "cells": 60,
+    "style": "Specific action-led points on separate lines; credentials and institutional roles separated from broader biography",
+    "other_fields_preserved": true
+  },
+  "sheet_notes": {
+    "status": "REMOVED_AND_VERIFIED",
+    "removed": 124,
+    "remaining": 0,
+    "threaded_comments": 0,
+    "important_information": "Moved to biography, connection/legacy and source fields",
+    "publication_status_unchanged": true
+  },
+  "unlinked_book_citations": {
+    "website_support": "Deployed and verified on live site",
+    "github_commit": "1ec313c",
+    "sheet_citations_updated": 35,
+    "sheet_readback_verified": true,
+    "live_feed_status": "Google published CSV still caching earlier linked citations; propagation pending"
+  }
+}

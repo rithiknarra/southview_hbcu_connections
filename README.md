@@ -4,19 +4,110 @@ An interactive website connecting people associated with South-View Cemetery to 
 
 Visitors can explore Morehouse College, Spelman College, Morris Brown College, Morehouse School of Medicine, Atlanta University, and Clark Atlanta University, or search by name and filter by college. The site supports mobile layouts, keyboard navigation, and reduced-motion preferences.
 
+Opening a person’s profile adds `?person=<profile-id>` to the URL. Profile URLs omit the internal `sheet:` prefix, and older links with that prefix still work. Copy the address bar to share a direct link; opening or refreshing that link loads the published profile automatically.
+
 ## Key links
 
 - [Visit the website](https://southview-hbcu-connections.netlify.app/)
 - [Open the content spreadsheet](https://docs.google.com/spreadsheets/d/1L8A5vvuU3bUk8sq8bk_3koTH5QejEJ-VgaYrUnA-HDo/edit) — editing requires an authorized Google account.
 - [Add a Person form](https://docs.google.com/forms/d/e/1FAIpQLSdKrniEZMaU0MyBf-WwBQU4qLjea9jDq3xMqhyVrKjxc7lkYg/viewform)
-- [Instruction Guide](https://docs.google.com/document/d/1zNDXFRtRPD7p-IyUtC-XdgvXmG_AUJtah_wV5csTllI/edit?tab=t.0#heading=h.hxyu0ehoxj8k)
+
+For detailed staff instructions and screenshots, refer to the separate **South-View HBCU Connections Website Maintenance and Content Guide** supplied with the project handoff. This README covers the project overview, content workflow, and essentials for maintaining the website files.
 
 ## Managing content
+
+Routine profile updates happen through Google Forms and Google Sheets, without editing website code.
 
 | Task | Where to work |
 | --- | --- |
 | Add a person | Submit the form, then review and publish the row in **Form Responses**. |
 | Edit a person originally included on the site | Edit their row in **Existing Profiles**. |
 | Edit a later form submission | Edit their original row in **Form Responses**. |
-| Hide or restore a record | Uncheck or check **Published** in **Existing Profiles** or **Form Responses**. |
+| Hide or restore a record | Uncheck or check **Published** in Existing Profiles column S or Form Responses column U. |
 | Change school information or website design | Ask the website maintainer to update the project files. |
+
+**Validation** in Existing Profiles column T and Form Responses column V updates automatically. Fix the named fields before checking **Published**. Valid rows say “All fields valid, ready to publish”; empty rows stay blank. Validation checks required fields, college/year rules, link formatting, content lengths, and duplicate records. Use the optional Secondary College, Timeline year for Secondary College, Secondary College connection, and Secondary Institutional Connection and Legacy fields on the same row for a second college. Fill all four together, or select No secondary college and leave its details blank. Each college gets its own timeline date and legacy bullets; biography, portrait, sources, and profile URL are shared. Different colleges for the same person are valid connections. It does not check image accessibility or historical accuracy. Do not edit the Validation formulas. **Event Connections** is in Existing Profiles column M and Form Responses column R.
+
+**Final Website** automatically combines published rows from both input tabs. Do not edit its generated cells. Keep column headings, Entry IDs, and formulas unchanged. For a shared profile, unchecking Published hides both college appearances. Retired duplicate rows should stay unpublished. Allow a few minutes for updates, then refresh the website.
+
+The form accepts an optional portrait upload. **Photo** stores the image link; **Photo source** stores the original webpage and appears beneath the portrait as a credit. A blank Photo displays the profile without an image, placeholder, or reserved picture area. Images must be accessible to website visitors—publishing the spreadsheet does not change private image permissions. Detailed photographer and license credits need maintainer assistance.
+
+The **Photo** cell may be blank. The profile and timeline entry will still appear, with no portrait area on the profile. A supplied photo must have a valid, publicly accessible link.
+
+Use separate lines for biography and legacy points. In **Sources**, enter one reference per line. For web sources, use a full URL, optionally as `Source title | https://example.org/page`. For books and other print sources, enter a plain-text citation with the relevant page numbers; no URL is required. Available non-Wikipedia references appear on profiles. Leave **Burial Location** blank unless an exact South-View gravestone location is confirmed.
+
+In **Event Connections**, enter one direct historical-map connection per line as `Event Name | https://south-view-historical-map.vercel.app/?select=event-slug`. In **Event Connection Descriptions** (Existing Profiles column N; Form Responses column S), enter one connection sentence per line in the same order as the events. Every event needs a sentence, with a maximum of 2,000 characters each. The website shows a rounded event card above the gravestone-location link; multiple events use pill selectors that switch the title, sentence, and external link together. Keep multiple links for one person in the same cell; on **Form Responses**, staff may fill this field after a form submission.
+
+### Publication behavior and limits
+
+- With a live feed configured, the published spreadsheet controls visibility. Unpublished records are not restored from bundled data. Bundled records may supply optional metadata for matching published people.
+- A failed refresh retains the current page’s last successfully loaded records. A fresh page with an unavailable feed shows an error and no profiles. Without a configured live feed, bundled profiles remain available offline.
+- Invalid records and profiles whose supplied portraits cannot load are rejected. Profiles with a blank Photo cell remain visible. The website keeps row-level validation warnings out of the visitor interface; detailed errors remain available in the browser console. Editors should check the spreadsheet’s Validation column. Validation messages are not written back to the sheet.
+- The current feed accepts four-digit timeline years **through 2025**, within the selected school’s timeline range. Later years require updating `yearBefore` in `content-config.js`. Approximate display dates such as “By 1953” are supported in bundled data, but not by the current spreadsheet adapter.
+
+## Historical content and attribution
+
+Connections include graduates, faculty, academic leaders, and documented institutional namesakes. Morehouse School of Medicine also includes documented donors and speakers. Describe the verified relationship accurately, and label historical training programs and uncertain dates clearly.
+
+Atlanta University has its own timeline, beginning with its 1865 founding. Clark Atlanta University retains its 1988 founding date, with its timeline starting in 1869 for Clark University and Clark College predecessor history. Morehouse School of Medicine’s timeline starts in 1975, with independence in 1981 noted separately.
+
+Confirm South-View burial connections, use supporting sources, and retain required image attribution. School logo sources are listed in [images/schools/SOURCES.md](images/schools/SOURCES.md). Bundled font licenses are in `fonts/OFL-*.txt`.
+
+## Running and hosting
+
+The website uses plain HTML, CSS, and JavaScript. No build step, package installation, or API key is required to run it. Live spreadsheet content requires an internet connection and an HTTP or HTTPS page.
+
+For a local preview, install Python 3 if needed, open a terminal in the repository folder, and run:
+
+```sh
+python3 -m http.server 8000
+```
+
+Open `http://localhost:8000`. Stop the server with Ctrl+C.
+
+For hosting, publish the website files together with `index.html` at the site root. Include all scripts, `style.css`, `images/`, and `fonts/`. Local code edits do not change the live site until deployed. Update asset version query strings in `index.html` when needed to avoid stale browser caches.
+
+The hosted page can be embedded in Wix or another site using an iframe with a descriptive title, full width, and enough height for mobile content. Timeline and profile overlays fill the iframe, not the surrounding parent page.
+
+## Project files
+
+| File or folder | Purpose |
+| --- | --- |
+| `index.html` | Page structure, introductory text, search controls, and overlay containers. |
+| `app.js` | Search, school selection, timelines, profile display, and navigation. |
+| `data.js` | School settings, bundled historical records, and timeline entries. |
+| `content-config.js` | Published CSV address, year cutoff, and loading timeout. |
+| `sheet-content.js` | Spreadsheet parsing, validation, and publication behavior. |
+| `style.css` | Fonts, colors, responsive layout, and interaction styles. |
+| `images/people/` | Bundled portraits; spreadsheet records may also link to these hosted files. |
+| `images/schools/` | School logos and their source list. |
+| `fonts/` | Bundled fonts and licenses. |
+| `tests/` | Checks for publishing, search, source display, and timeline layout. |
+
+School settings are defined in `INSTITUTIONS` in `data.js`; keep school IDs stable when editing descriptions, logos, names, or colors. Cards are sorted by founding year. Check spreadsheet photo links before removing hosted portraits.
+
+The live connection uses a public, read-only CSV address in `content-config.js`. If replacing the spreadsheet, update this address and preserve the expected column headings. Never store Google credentials in project files.
+
+## Verification and troubleshooting
+
+After content updates, check search results, the relevant timeline, profile text, portraits, sources, and map links. After code changes, also check mobile layout, keyboard navigation, and back buttons.
+
+| Issue | First checks |
+| --- | --- |
+| A profile is missing | Published, required fields, school name, allowed year, and the latest website code deployed. If a photo is supplied, check public portrait access. |
+| An edit has not appeared | Correct input row, time for Google’s update, and a refreshed page. |
+| A person remains after unpublishing | Other published school rows in either input tab; latest website code deployed. |
+| Profiles cannot load | Internet connection and feed address; maintainers can inspect `window.southViewContent.status` and browser-console errors. |
+| An embedded page is cut off | Iframe height and mobile presentation. |
+
+With Node.js installed, run automated checks from the repository folder:
+
+```sh
+node --test tests/*.test.js
+```
+
+Save dated backups before changing spreadsheet formulas or hosting settings. Keep account ownership and support contacts in the handoff guide. When reporting an issue, include the affected profile or school, the expected result, and a screenshot; do not share passwords.
+
+Rights-reviewed bundled portraits retain their image, source, license, and credit when the sheet contains an older photo. Updating one of those portraits requires maintainer review of its rights metadata.
+
+For a citation beside a claim, end the relevant college-connection sentence or biography/legacy bullet with `[Source name](https://example.org/page)`. The site displays it as a linked `(Source name)`. Add the full reference once in **Sources**, using author or organization, title, publisher/site, and year when known, followed by `| URL`. For a print source, include the author, title, publisher, year, and relevant pages without inventing a web address. In the prose, use a plain parenthetical book citation with its page number. HTML is not accepted in sheet text.

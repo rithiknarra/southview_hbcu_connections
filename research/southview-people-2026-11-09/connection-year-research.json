@@ -1,0 +1,60 @@
+{
+  "checked": "2026-11-09",
+  "scope": "School connection year for the 12 profiles that previously had blank timeline years",
+  "updated": [
+    {
+      "id": "nellie-harriet-watts-a",
+      "year": 1910,
+      "connection": "Atlanta University graduate, 1910; Detroit educator and concert promoter.",
+      "legacy": "Graduated from Atlanta University?s college course in 1910 and continued her education at Detroit Teachers College.",
+      "citation": "Atlanta University: General Catalogue, 1867?1918, graduate list and Nellie Harriet Watts entry, College 1910 | https://archive.org/details/catalogueofatla6718atla",
+      "originalRow": 55,
+      "sources": "D. L. Henderson: South-View: An African American City of the Dead (2018), p. 249\nDetroit Historical Society: program documenting 1971 presentation of Watts portrait | https://www.detroithistorical.org/learn/online-research/collection/archive/program-193\nAtlanta University: General Catalogue, 1867?1918, graduate list and Nellie Harriet Watts entry, College 1910 | https://archive.org/details/catalogueofatla6718atla"
+    },
+    {
+      "id": "harold-irvin-bearden-m",
+      "year": 1977,
+      "connection": "Morris Brown College and Turner Theological Seminary graduate; documented as Morris Brown?s board chair in 1977.",
+      "legacy": "Graduated from Morris Brown College and Turner Theological Seminary.\nChaired Morris Brown?s board of trustees and helped the college work toward accreditation.\nWas identified as Morris Brown?s board chair in a report published February 4, 1977.",
+      "citation": "American Jewish Archives, Marc H. Tanenbaum Collection: February 4, 1977 report identifying Bearden as Morris Brown board chair, PDF p. 82 | https://collections.americanjewisharchives.org/ms/ms0603/ms0603.013.011.pdf#page=82",
+      "originalRow": 57,
+      "sources": "D. L. Henderson: South-View: An African American City of the Dead (2018), p. 173\nBig Bethel AME Church: history | https://www.bigbethelame.org/history\nAUC Woodruff Library: Bishop H.I. Bearden photograph, circa 1978 | https://dlg.usg.edu/record/auu_auc-047_auc-066-0206\nAmerican Jewish Archives, Marc H. Tanenbaum Collection: February 4, 1977 report identifying Bearden as Morris Brown board chair, PDF p. 82 | https://collections.americanjewisharchives.org/ms/ms0603/ms0603.013.011.pdf#page=82"
+    },
+    {
+      "id": "cora-b-finley-s",
+      "year": 1894,
+      "connection": "Spelman Seminary Academic Department graduate, 1894; later earned an advanced degree at Atlanta University.",
+      "legacy": "Graduated from Spelman Seminary?s Academic Department in 1894 and became its first alumna to earn an advanced degree at Atlanta University.\nServed as principal of Atlanta?s Yonge Street School and later led the education department at Alabama State University.",
+      "citation": "Spelman Seminary: 1894?1895 catalogue, Academic Department graduates, class of 1894, p. 28 | https://archive.org/details/annualcircularca1894spel",
+      "originalRow": 64,
+      "sources": "D. L. Henderson: South-View: An African American City of the Dead (2018), pp. 197-198\nSpelman Archives: Harriet Giles papers, correspondence involving Cora Finley | https://www.spelman.edu/_1_Docs-and-Files/archives/finding-aids/harriet-giles-papers.pdf\nSpelman Seminary: 1894?1895 catalogue, Academic Department graduates, class of 1894, p. 28 | https://archive.org/details/annualcircularca1894spel"
+    },
+    {
+      "id": "estelle-b-ivey-s",
+      "year": 1904,
+      "connection": "Spelman Seminary nursing graduate, 1904; Ivey Brothers Funeral Home business officer.",
+      "legacy": "Graduated from Spelman Seminary?s Nurse Training Department at MacVicar Hospital in 1904.\nWas listed in Spelman?s graduate register as Estella B. M. Ivy.",
+      "citation": "Spelman Seminary: 1914?1915 catalogue, Nurse Training Department graduates, class of 1904, p. 63 | https://archive.org/details/annualcircularca1914spel/page/63/mode/1up",
+      "originalRow": 65,
+      "sources": "D. L. Henderson: South-View: An African American City of the Dead (2018), p. 215\nSpelman Seminary: 1914?1915 catalogue, Nurse Training Department graduates, class of 1904, p. 63 | https://archive.org/details/annualcircularca1914spel/page/63/mode/1up"
+    }
+  ],
+  "unresolved": {
+    "Minnie Dyer": "Atlanta University normal graduation is documented in 1908, but the row is for Morris Brown and its connection year remains unverified.",
+    "Hilliard D. Canady": "Found Clark University attendance in an 1879?1881 catalog; no dated Morris Brown attendance established.",
+    "Cornelius King": "Morris Brown trustee service established, year not established.",
+    "John Wesley Edward Linder": "Morris Brown graduation established, year not established.",
+    "Charles Walter Greenlea": "Morehouse graduation established, year not established.",
+    "Rogers Henderson": "Morehouse honorary-alumnus status and chapel gifts established, year not established.",
+    "Graham Washington Jackson": "Morehouse attendance dates conflict: New Georgia Encyclopedia gives 1924; GPB family account gives 1922?1923.",
+    "Nina Culver King": "Spelman graduation established, year not established."
+  },
+  "additional_sources": [
+    "https://archive.org/details/catalogueofatla6718atla",
+    "https://genealogytrails.com/geo/fulton/ClarkUniv1879-81.html",
+    "https://www.georgiaencyclopedia.org/articles/arts-culture/graham-jackson-sr/"
+  ],
+  "sheet_rows": "Updated dated profiles at 55?58; eight undated profiles at 59?66",
+  "published_status": "Unchanged; all twelve remain unpublished",
+  "comments": "No comments or cell notes added"
+}
