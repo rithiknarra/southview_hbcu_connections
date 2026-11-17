@@ -144,7 +144,7 @@ body{margin:0;background:#fff}
 .sv-profile-band-in,.sv-profile-body{display:grid;grid-template-columns:280px minmax(0,1fr);gap:clamp(32px,5vw,72px)}
 .sv-profile-band-in{align-items:start;padding-block:40px}
 .sv-portrait{width:100%;max-width:var(--portrait-width,100%);min-width:0;margin:0;align-self:start}
-.sv-frame{width:100%;overflow:hidden;border:1px solid var(--school-rule);background:var(--wash)}
+.sv-frame{width:100%;overflow:hidden;border:1px solid var(--school-rule);background:transparent}
 .sv-profile-who{min-width:0;padding:0;align-self:start;text-align:left}
 .sv-feature .sv-profile-band h2{color:#fff}
 .sv-profile-band .sv-life-dates{color:var(--on-school-soft)}
@@ -214,7 +214,7 @@ body{margin:0;background:#fff}
 }
 @media(prefers-reduced-motion:reduce){.sv-feature *{scroll-behavior:auto!important;transition:none!important}}
 
-.sv-profile .sv-photo-contain{object-fit:contain;object-position:center;background:var(--wash)}
+.sv-profile .sv-photo-contain{aspect-ratio:auto;height:auto;object-fit:contain;object-position:center;background:transparent}
 .sv-photo-credit a{text-underline-offset:3px;overflow-wrap:anywhere}
 
 /* Keep former burial information visible before the biography sections. */
