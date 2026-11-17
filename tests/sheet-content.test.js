@@ -271,3 +271,31 @@ test('a published profile without a photo remains visible without an image reque
  const invalid=values.map((v,i)=>i===7?'not-an-image-url':v);
  assert.equal(readContent(csv([invalid]),institutions).people.length,0);
 });
+
+const secondaryHeaders=[...headers,'Secondary College','Timeline year for Secondary College','Secondary College connection','Secondary Institutional Connection and Legacy'];
+const twoColleges=[...institutions,{id:'morris',name:'Morris Brown College',founded:1881}];
+const secondaryValues=[...values,'Morris Brown College','1938','Graduated from Morris Brown.','Led a Morris Brown program.'];
+test('one shared row supplies separate timeline dates and legacy for two colleges',()=>{
+ const result=readContent(csv([secondaryValues],secondaryHeaders),twoColleges);
+ assert.equal(result.errors.length,0);assert.equal(result.people.length,1);
+ assert.deepEqual(result.people[0].connections.map(c=>[c.institutionId,c.legacy]),[['spelman',['Led a campus program.']],['morris',['Led a Morris Brown program.']]]);
+ assert.deepEqual(result.timelines.map(t=>[t.institutionId,t.entries[0].sortYear]),[['spelman',1964],['morris',1938]]);
+ assert.equal(result.timelines[0].entries[0].personId,result.timelines[1].entries[0].personId);
+});
+test('explicit no-secondary responses work and partial or duplicate college details are rejected',()=>{
+ for(const none of ['','No secondary college','No second college']){
+  assert.equal(readContent(csv([[...values,none,'','','']],secondaryHeaders),twoColleges).people.length,1);
+ }
+ for(const [index,value,message] of [[12,'Spelman College',/different college/],[13,'2026',/Timeline year for Secondary/],[14,'',/required/],[15,'',/required/],[12,'No secondary college',/clear its year/]]){
+  const row=[...secondaryValues];row[index]=value;const result=readContent(csv([row],secondaryHeaders),twoColleges);
+  assert.equal(result.people.length,0);assert.match(result.errors[0].message,message);
+ }
+});
+test('clearing a secondary college removes its old timeline assignment on refresh',async()=>{
+ const store={institutions:twoColleges,people:[{id:'test-person',name:'Example Person',connections:[{institutionId:'spelman'},{institutionId:'morris'}]}],timelines:twoColleges.map(s=>({institutionId:s.id,entries:[{id:s.id,personId:'test-person',sortYear:1964}]})),notify(){}};
+ let rows=[secondaryValues];
+ const adapter=install(store,{csvUrl:'https://example.org/feed.csv',sheetOwnsProfiles:true},{fetch:async()=>({ok:true,text:async()=>csv(rows,secondaryHeaders)}),checkImage:async()=>{}});
+ await adapter.refresh();assert.equal(store.people[0].connections.length,2);
+ rows=[[...values,'No secondary college','','','']];await adapter.refresh();
+ assert.equal(store.people[0].connections.length,1);assert.equal(store.timelines.some(t=>t.institutionId==='morris'),false);
+});

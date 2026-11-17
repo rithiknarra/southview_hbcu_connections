@@ -102,8 +102,26 @@
         return error('Name, college connection, legacy, biography, and entry ID are required.');
       if (name.length > 200 || connection.length > 2000 || bio.join('').length > 50000 || legacy.join('').length > 50000)
         return error('Content is too long. Shorten the name, connection, or biography sections.');
-      const identity = `${school.id}:${key(name)}`;
-      if (ids.has(sourceId) || names.has(identity)) return error('Duplicate person or entry ID. Edit the existing submission instead.');
+      const secondaryText = get('Secondary College');
+      const secondaryYearText = get('Timeline year for Secondary College');
+      const secondaryConnection = singleLine(get('Secondary College connection'));
+      const secondaryLegacy = bullets(get('Secondary Institutional Connection and Legacy'));
+      const noSecondary = !secondaryText || /^no (?:second|secondary) college$/i.test(secondaryText);
+      const hasSecondaryDetails = Boolean(secondaryYearText || secondaryConnection || secondaryLegacy.length);
+      let secondarySchool;
+      if (noSecondary && hasSecondaryDetails) return error('Secondary College: choose a college or clear its year, connection, and legacy.');
+      if (!noSecondary) {
+        secondarySchool = institutions.find(i => key(i.name) === key(secondaryText));
+        if (!secondarySchool) return error('Secondary College: choose a supported college.');
+        if (secondarySchool.id === school.id) return error('Secondary College: choose a different college from the first.');
+        if (!/^\d{4}$/.test(secondaryYearText) || Number(secondaryYearText) >= yearBefore || Number(secondaryYearText) < (secondarySchool.timelineStart ?? secondarySchool.founded))
+          return error(`Timeline year for Secondary College: use four digits from ${secondarySchool.timelineStart ?? secondarySchool.founded} through ${yearBefore - 1}.`);
+        if (!secondaryConnection || !secondaryLegacy.length) return error('Secondary College connection and Secondary Institutional Connection and Legacy are required.');
+        if (secondaryConnection.length > 2000 || secondaryLegacy.join('').length > 50000) return error('Secondary college connection or legacy is too long.');
+      }
+      const identities = [school, ...(secondarySchool ? [secondarySchool] : [])].map(item => `${item.id}:${key(name)}`);
+
+      if (ids.has(sourceId) || identities.some(identity => names.has(identity))) return error('Duplicate person or entry ID. Edit the existing submission instead.');
       const sources = [];
       for (const line of bullets(get('Sources'))) {
         const match = line.match(/^(.*?)\s*(https?:\/\/\S+)$/);
@@ -118,14 +136,16 @@
         }
         sources.push({ title: match[1].replace(/[|—–-]\s*$/, '').trim() || new URL(url).hostname, url });
       }
-      ids.add(sourceId); names.add(identity);
+      ids.add(sourceId); identities.forEach(identity => names.add(identity));
       const id = `sheet:${sourceId}`;
       people.push({ id, name, years: singleLine(get('Life dates')), bio, legacy, sources,
         ...(headers.includes('event connections') ? { eventConnections } : {}), showSources: true,
         ...(hasBurialLocation ? { burialLocation } : {}),
-        connections: [{ institutionId: school.id, label: connection }],
+        connections: [{ institutionId: school.id, label: connection, ...(headers.includes('secondary college') ? { legacy } : {}) },
+          ...(secondarySchool ? [{ institutionId: secondarySchool.id, label: secondaryConnection, legacy: secondaryLegacy }] : [])],
         image: image ? { url: image, sourceUrl: photoSource, alt: `Portrait of ${name}` } : null });
       timelines.push({ institutionId: school.id, entries: [{ id, personId: id, sortYear: year, displayDate: yearText }] });
+      if (secondarySchool) timelines.push({ institutionId: secondarySchool.id, entries: [{ id, personId: id, sortYear: Number(secondaryYearText), displayDate: secondaryYearText }] });
     });
     return { people, timelines, errors };
   }
@@ -174,7 +194,7 @@
           const original = people[existing];
           // Editing a shared profile must preserve its other college connections,
           // portrait treatment, attribution, and stable profile/timeline identifiers.
-          const connections = original.connections.map(connection =>
+          const connections = person.connections.some(connection => connection.legacy) ? [...person.connections] : original.connections.map(connection =>
             person.connections.find(item => item.institutionId === connection.institutionId) || connection);
           for (const connection of person.connections) {
             if (!connections.some(item => item.institutionId === connection.institutionId)) connections.push(connection);
@@ -189,6 +209,10 @@
           people.push(merged);
         }
         personIds.set(person.id, merged.id);
+        if (person.connections.some(connection => connection.legacy)) {
+          const schools = new Set(person.connections.map(connection => connection.institutionId));
+          timelines.forEach(timeline => { if (!schools.has(timeline.institutionId)) timeline.entries = timeline.entries.filter(entry => entry.personId !== merged.id); });
+        }
       }
       snapshot.timelines.forEach(t => {
         let target = timelines.find(item => item.institutionId === t.institutionId);
