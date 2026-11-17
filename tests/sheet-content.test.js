@@ -299,3 +299,27 @@ test('clearing a secondary college removes its old timeline assignment on refres
  rows=[[...values,'No secondary college','','','']];await adapter.refresh();
  assert.equal(store.people[0].connections.length,1);assert.equal(store.timelines.some(t=>t.institutionId==='morris'),false);
 });
+
+test('event descriptions stay paired with their event and missing descriptions reject publication',()=>{
+ const cols=[...headers,'Event Connections','Event Connection Descriptions'];
+ const events='First | https://example.org/first\nSecond | https://example.org/second';
+ const valid=readContent(csv([[...values,events,'First connection.\nSecond connection.']],cols),institutions);
+ assert.equal(valid.errors.length,0);
+ assert.deepEqual(valid.people[0].eventConnections.map(item=>[item.name,item.description]),[['First','First connection.'],['Second','Second connection.']]);
+ for(const [links,descs] of [[events,'Only one.'],['','Orphan.'],[events,'x'.repeat(2001)+'\nSecond.']]){
+ const result=readContent(csv([[...values,links,descs]],cols),institutions);assert.equal(result.people.length,0);assert.match(result.errors[0].message,/Event Connection Descriptions/);
+ }
+});
+
+test('spreadsheet edits replace event titles, links and descriptions, and clearing removes bundled events',async()=>{
+ const original={id:'test-person',name:'Example Person',connections:[{institutionId:'spelman'}],eventConnections:[{name:'Old event',url:'https://example.org/old',description:'Old text.'}]};
+ const columns=[...headers,'Event Connections','Event Connection Descriptions'];
+ let feed=csv([[...values,'New event | https://example.org/new','New connection.']],columns);
+ const store={institutions,people:[original],timelines:[],notify(){}};
+ const adapter=install(store,{csvUrl:'https://example.org/feed.csv'},{fetch:async()=>({ok:true,text:async()=>feed}),checkImage:async()=>{}});
+ await adapter.refresh();
+ assert.deepEqual(store.people[0].eventConnections,[{name:'New event',url:'https://example.org/new',description:'New connection.'}]);
+ feed=csv([[...values,'','']],columns);
+ await adapter.refresh();
+ assert.deepEqual(store.people[0].eventConnections,[]);
+});

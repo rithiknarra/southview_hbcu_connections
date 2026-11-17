@@ -4,14 +4,17 @@ const fs=require('node:fs');
 const vm=require('node:vm');
 const app=fs.readFileSync('app.js','utf8');
 const context={URL};vm.createContext(context);
-vm.runInContext(fs.readFileSync('data.js','utf8')+'\n'+app.slice(app.indexOf('const esc='),app.indexOf('const safeURL='))+'\n'+app.slice(app.indexOf('const burialLocationMarkup'),app.indexOf('const firstSentence'))+'\n'+app.slice(app.indexOf('const photoCreditMarkup'),app.indexOf('class ProfileCard'))+'\nglobalThis.data={PEOPLE,TIMELINES,profileSourcesMarkup,photoCreditMarkup,profileLinksMarkup};',context);
+vm.runInContext(fs.readFileSync('data.js','utf8')+'\n'+app.slice(app.indexOf('const esc='),app.indexOf('const safeURL='))+'\n'+app.slice(app.indexOf('const profileItems='),app.indexOf('// User-provided exact gravestone'))+'\n'+app.slice(app.indexOf('const burialLocationMarkup'),app.indexOf('const firstSentence'))+'\n'+app.slice(app.indexOf('const photoCreditMarkup'),app.indexOf('class ProfileCard'))+'\nglobalThis.data={PEOPLE,TIMELINES,profileSourcesMarkup,photoCreditMarkup,profileLinksMarkup};',context);
 const {PEOPLE,TIMELINES,profileSourcesMarkup,photoCreditMarkup,profileLinksMarkup}=context.data;
 
-test('event links appear on separate lines above the grave link',()=>{
+test('event cards use tabs and keep the grave link below them',()=>{
  const html=profileLinksMarkup({eventConnections:[{name:'Reconstruction Era',url:'https://example.org/reconstruction'},{name:'The Original 33 Expelled',url:'https://example.org/original-33'}],burialLocation:'https://example.org/grave'});
- assert.equal((html.match(/class="sv-burial-location"/g)||[]).length,3);
- assert(html.indexOf('Connection to Reconstruction Era')<html.indexOf('Connection to The Original 33 Expelled'));
- assert(html.indexOf('Connection to The Original 33 Expelled')<html.indexOf('View gravestone location'));
+ assert.equal((html.match(/class="sv-burial-location"/g)||[]).length,1);
+ assert.equal((html.match(/role="tab"/g)||[]).length,2);
+ assert.equal((html.match(/role="tabpanel"/g)||[]).length,2);
+ assert(html.includes('id="event-panel-1" aria-labelledby="event-tab-1" hidden'));
+ assert(html.indexOf('Reconstruction Era')<html.indexOf('The Original 33 Expelled'));
+ assert(html.indexOf('The Original 33 Expelled')<html.indexOf('View gravestone location'));
  assert(!profileLinksMarkup({eventConnections:[{name:'Unsafe',url:'javascript:alert(1)'}],burialLocation:''}));
 });
 
@@ -125,4 +128,17 @@ test('inline citations escape prose and accept only safe web sources',()=>{
  assert(!scope.render('[bad](https://user:password@example.org/)').includes('<a '));
  assert(!scope.render('[wiki](https://en.wikipedia.org/wiki/Test)').includes('<a '));
  assert.equal((scope.section('Biography',['First. [A](https://a.example/)','Second. [B](https://b.example/)']).match(/sv-inline-citation/g)||[]).length,2);
+});
+
+ test('a single event displays its escaped description without tabs',()=>{
+ const html=profileLinksMarkup({eventConnections:[{name:'Event <one>',url:'https://example.org/event',description:'A connection <script>bad</script>.'}]});
+ assert(!html.includes('role="tab"'));assert(html.includes('Event &lt;one&gt;'));assert(html.includes('A connection &lt;script&gt;'));assert(!html.includes('<script>'));assert(html.includes('Explore this event'));
+ });
+
+test('blank optional links leave no event or gravestone containers',()=>{
+ assert.equal(profileLinksMarkup({eventConnections:[],burialLocation:''}),'');
+ const graveOnly=profileLinksMarkup({burialLocation:'https://example.org/grave'});
+ assert(graveOnly.includes('sv-grave-link'));
+ assert(!graveOnly.includes('sv-related-events'));
+ assert(!graveOnly.includes('sv-event-card'));
 });

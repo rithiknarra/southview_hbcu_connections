@@ -91,12 +91,15 @@
       const burialLocation = publicURL(burialText);
       if (burialText && !burialLocation) return error('Burial Location must be a complete http or https map link, or left blank.');
       const eventConnections = [];
-      for (const line of bullets(get('Event Connections'))) {
+      const eventDescriptions = bullets(get('Event Connection Descriptions'));
+      const eventLines = bullets(get('Event Connections'));
+      if (headers.includes('event connection descriptions') && (eventDescriptions.length !== eventLines.length || eventDescriptions.some(text => text.length > 2000))) return error('Event Connection Descriptions: add one sentence per event in the same order, up to 2000 characters each.');
+      for (const [eventIndex, line] of eventLines.entries()) {
         const match = line.match(/^(.+?)\s*\|\s*(https?:\/\/\S+)$/);
         const url = match && publicURL(match[2]);
         const name = match && singleLine(match[1]);
         if (!name || !url || name.length > 200) return error('Use one event name and a complete http or https link per Event Connections line.');
-        if (!eventConnections.some(item => item.url === url)) eventConnections.push({ name, url });
+        if (!eventConnections.some(item => item.url === url)) eventConnections.push({ name, url, ...(eventDescriptions[eventIndex] ? { description: eventDescriptions[eventIndex] } : {}) });
       }
       if (!name || !connection || !bio.length || !legacy.length || !sourceId)
         return error('Name, college connection, legacy, biography, and entry ID are required.');
@@ -199,10 +202,9 @@
           for (const connection of person.connections) {
             if (!connections.some(item => item.institutionId === connection.institutionId)) connections.push(connection);
           }
-          const eventConnections = [...(original.eventConnections || []), ...(person.eventConnections || [])]
-            .filter((item, index, items) => items.findIndex(other => other.url === item.url) === index);
+          const eventConnections = person.eventConnections ?? original.eventConnections ?? [];
           merged = { ...original, ...person, id: original.id, connections,
-            ...(eventConnections.length ? { eventConnections } : {}),
+            ...(person.eventConnections !== undefined || original.eventConnections !== undefined ? { eventConnections } : {}),
             image: person.image ? { ...original.image, ...person.image, alt: original.image?.alt || person.image.alt } : null };
           people[existing] = merged;
         } else {
