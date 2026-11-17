@@ -229,8 +229,8 @@ window.southViewContent.refresh().then(result=>{
   if(schoolId)profileCard.open(person.id,{fromSearch:true,schoolId});
  }
  $('#southview-hbcu').dataset.contentStatus=result.state;
- contentStatus.hidden=result.state!=='error'&&result.state!=='partial';
- contentStatus.textContent=result.state==='error'?'Profiles could not be loaded. Please reload the page to try again.':result.state==='partial'?'Some profiles could not be loaded. Please try again later.':'';
+ contentStatus.hidden=result.state!=='error';
+ contentStatus.textContent=result.state==='error'?'Profiles could not be loaded. Please reload the page to try again.':'';
 });
 
 // Restore one navigation level at a time without rebuilding the current timeline.

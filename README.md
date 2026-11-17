@@ -26,6 +26,8 @@ Routine profile updates happen through Google Forms and Google Sheets, without e
 | Hide or restore a record | Uncheck or check **Published** in column M of its input tab. |
 | Change school information or website design | Ask the website maintainer to update the project files. |
 
+**Validation** in column N of both input tabs updates automatically. Fix the named fields before checking **Published**. Valid rows say “All fields valid, ready to publish”; empty rows stay blank. Validation checks required fields, college/year rules, link formatting, content lengths, and duplicate records. Different colleges for the same person are valid connections. It does not check image accessibility or historical accuracy. Do not edit the Validation formulas. **Event Connections** is now in column O.
+
 **Final Website** automatically combines published rows from both input tabs. Do not edit its generated cells. Keep column headings, Entry IDs, and formulas unchanged. If a person has multiple school rows, unpublish each relevant row to remove all appearances. Allow a few minutes for updates, then refresh the website.
 
 The form accepts an optional portrait upload. **Photo** stores the image link; **Photo source** stores the original webpage and appears beneath the portrait as a credit. A blank Photo displays the profile without an image, placeholder, or reserved picture area. Images must be accessible to website visitors—publishing the spreadsheet does not change private image permissions. Detailed photographer and license credits need maintainer assistance.
@@ -40,7 +42,7 @@ In **Event Connections**, enter one direct historical-map connection per line as
 
 - With a live feed configured, the published spreadsheet controls visibility. Unpublished records are not restored from bundled data. Bundled records may supply optional metadata for matching published people.
 - A failed refresh retains the current page’s last successfully loaded records. A fresh page with an unavailable feed shows an error and no profiles. Without a configured live feed, bundled profiles remain available offline.
-- Invalid records and profiles whose supplied portraits cannot load are rejected. Profiles with a blank Photo cell remain visible. The page reports a partial-load message; detailed errors are available in the browser console. Validation messages are not written back to the sheet.
+- Invalid records and profiles whose supplied portraits cannot load are rejected. Profiles with a blank Photo cell remain visible. The website keeps row-level validation warnings out of the visitor interface; detailed errors remain available in the browser console. Editors should check the spreadsheet’s Validation column. Validation messages are not written back to the sheet.
 - The current feed accepts four-digit timeline years **through 2025**, within the selected school’s timeline range. Later years require updating `yearBefore` in `content-config.js`. Approximate display dates such as “By 1953” are supported in bundled data, but not by the current spreadsheet adapter.
 
 ## Historical content and attribution
