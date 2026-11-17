@@ -123,9 +123,10 @@ test('inline citations escape prose and accept only safe web sources',()=>{
  const scope={URL};vm.createContext(scope);
  vm.runInContext(app.slice(app.indexOf('const esc='),app.indexOf('const safeURL='))+'\n'+app.slice(app.indexOf('const profileItems='),app.indexOf('// User-provided exact gravestone'))+'\nthis.render=citedTextMarkup;this.section=profileSection;',scope);
  const html=scope.render('Taught in 1930. [Archive](https://example.org/item?a=1&b=2) <script>bad</script>');
- assert(html.includes('>(Archive)</a>')||html.includes('>(Archive)<span'));
+ assert.match(html,/\. \(<a class="sv-inline-citation"[^>]*>Archive<span class="sv-sr">[^<]*<\/span><\/a>\)/);
  assert(html.includes('a=1&amp;b=2'));assert(!html.includes('<script>'));
  const wrapped=scope.render('Taught in 1930. ([Archive](https://example.org/item))');
+ assert.match(wrapped,/\. \(<a class="sv-inline-citation"[^>]*>Archive<span class="sv-sr">[^<]*<\/span><\/a>\)/);
  assert.equal(wrapped.replace(/<span class="sv-sr">[^<]*<\/span>/g,'').replace(/<[^>]+>/g,''),'Taught in 1930. (Archive)');
  const richings=scope.render('Graduated in 1883. ([Richings](https://example.org/item))');
  assert.equal(richings.replace(/<span class="sv-sr">[^<]*<\/span>/g,'').replace(/<[^>]+>/g,''),'Graduated in 1883. (Richings)');

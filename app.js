@@ -74,7 +74,7 @@ const citedTextMarkup=value=>{
   let url;try{url=new URL(match[2]);}catch{continue;}
   if(!['http:','https:'].includes(url.protocol)||url.username||url.password||/(^|\.)wikipedia\.org$/i.test(url.hostname))continue;
   const wrapped=text[match.index-1]==='('&&text[match.index+match[0].length]===')';
-  html+=italicTextMarkup(text.slice(offset,match.index))+`<a class="sv-inline-citation" href="${esc(url.href)}" target="_blank" rel="noopener noreferrer">${wrapped?esc(match[1]):`(${esc(match[1])})`}<span class="sv-sr"> (opens in a new tab)</span></a>`;
+  html+=italicTextMarkup(text.slice(offset,match.index))+(wrapped?'':'(')+`<a class="sv-inline-citation" href="${esc(url.href)}" target="_blank" rel="noopener noreferrer">${esc(match[1])}<span class="sv-sr"> (opens in a new tab)</span></a>`+(wrapped?'':')');
   offset=match.index+match[0].length;
  }
  return html+italicTextMarkup(text.slice(offset));
