@@ -6,6 +6,28 @@ const headers = ['College','Timeline year','Name','Life dates','College connecti
 const values = ['Spelman College','1964','Example Person','','Graduated in 1964.','- Led a campus program.','1. Served the community.','https://drive.google.com/file/d/portrait123/view','Archive | https://example.org/biography','test-person','','https://example.org/portrait'];
 const csv = (rows, columns = headers) => [columns, ...rows].map(row => row.map(v => '"' + String(v).replaceAll('"','""') + '"').join(',')).join('\n');
 
+test('two-line photo credits replace stale captions and links, including reviewed portraits', async () => {
+ const row = [...values]; row[11] = 'New archive credit\nhttps://example.org/new-source';
+ const oldImage = {url:'https://example.org/reviewed.jpg',caption:'Via Wikipedia',sourceUrl:'https://old.example.org',license:'Public domain'};
+ const store = {institutions,people:[{id:'test-person',name:'Example Person',image:oldImage,connections:[{institutionId:'spelman'}]}],timelines:[],notify(){}};
+ const adapter = install(store,{csvUrl:'https://example.org/feed',reviewedPortraits:{'example person':oldImage}},{fetch:async()=>({ok:true,text:async()=>csv([row])}),checkImage:async()=>{}});
+ await adapter.refresh();
+ assert.equal(store.people[0].image.caption,'New archive credit');
+ assert.equal(store.people[0].image.sourceUrl,'https://example.org/new-source');
+ assert.equal(store.people[0].image.license,'Public domain');
+ row[11]='Changed credit\nhttps://example.org/changed'; await adapter.refresh();
+ assert.equal(store.people[0].image.caption,'Changed credit');
+ assert.equal(store.people[0].image.sourceUrl,'https://example.org/changed');
+ row[11]='';await adapter.refresh();assert.equal(store.people[0].image.sourceUrl,'');
+});
+
+test('malformed two-line credits give an actionable error', () => {
+ for(const text of ['Archive\nnot a URL','Archive\nhttps://example.org\nExtra','\nhttps://example.org\nextra','Archive\nhttp://example.org']) {
+  const row=[...values];row[11]=text;const result=readContent(csv([row]),institutions);
+  assert.equal(result.people.length,0);assert.match(result.errors[0].message,/Photo source/);
+ }
+});
+
 test('sheet photo source is independent of the uploaded portrait and normalizes source bullets', () => {
  const result = readContent(csv([values]), institutions);
  assert.equal(result.errors.length, 0);

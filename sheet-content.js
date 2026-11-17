@@ -84,7 +84,11 @@
       const image = photoURL(get('Photo')), sourceId = singleLine(get('Entry ID'));
       if (get('Photo') && !image) return error('Photo must be a complete http or https link, or left blank.');
       const photoSourceText = get('Photo source');
-      const photoSource = publicURL(photoSourceText);
+      const photoLines = clean(photoSourceText).split('\n').map(line => line.trim());
+      const photoCaption = photoLines.length === 2 ? photoLines[0] : undefined;
+      const photoSource = publicURL(photoLines.length === 2 ? photoLines[1] : photoSourceText);
+      if (photoLines.length > 1 && (photoLines.length !== 2 || !photoCaption || photoCaption.length > 500 || !/^https:\/\//i.test(photoLines[1])))
+        return error('Photo source: use the photographer or organization on line 1 and a complete https:// source link on line 2.');
       if (photoSourceText && !photoSource) return error('Photo source must be a complete http or https link, or left blank.');
       const hasBurialLocation = headers.includes('burial location');
       const burialText = get('Burial Location');
@@ -146,7 +150,7 @@
         ...(hasBurialLocation ? { burialLocation } : {}),
         connections: [{ institutionId: school.id, label: connection, ...(headers.includes('secondary college') ? { legacy } : {}) },
           ...(secondarySchool ? [{ institutionId: secondarySchool.id, label: secondaryConnection, legacy: secondaryLegacy }] : [])],
-        image: image ? { url: image, sourceUrl: photoSource, alt: `Portrait of ${name}` } : null });
+        image: image ? { url: image, sourceUrl: photoSource, alt: `Portrait of ${name}`, ...(photoCaption !== undefined ? { caption: photoCaption } : {}) } : null });
       timelines.push({ institutionId: school.id, entries: [{ id, personId: id, sortYear: year, displayDate: yearText }] });
       if (secondarySchool) timelines.push({ institutionId: secondarySchool.id, entries: [{ id, personId: id, sortYear: Number(secondaryYearText), displayDate: secondaryYearText }] });
     });
@@ -267,9 +271,11 @@
             const originalId = person.id.slice('sheet:'.length);
             const original = basePeople.find(p => p.id === originalId || (key(p.name) === key(person.name) &&
               p.connections.some(c => c.institutionId === person.connections[0].institutionId)));
+            const sheetPhotoCredit = person.image && (person.image.caption !== undefined || !person.image.sourceUrl) ? { caption: person.image.caption || '', sourceUrl: person.image.sourceUrl } : null;
             if (person.image && original?.image?.license) person.image = structuredClone(original.image);
             const reviewedPortrait = config.reviewedPortraits?.[key(person.name)];
             if (person.image && reviewedPortrait) person.image = structuredClone(reviewedPortrait);
+            if (person.image && sheetPhotoCredit) Object.assign(person.image, sheetPhotoCredit);
             try { if (person.image?.url) await verifyImage(person.image.url); accepted.add(person.id); }
             catch (error) { snapshot.errors.push({ name: person.name, message: error.message }); }
           }
